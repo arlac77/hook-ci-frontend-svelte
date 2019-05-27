@@ -1,6 +1,7 @@
 <script>
+	import Queue from './pages/Queue.svelte';
+
 	export let name;
-	let src = 'tutorial/image.gif';
 </script>
 
 <style>
@@ -9,6 +10,11 @@
 	}
 </style>
 
-<h1>Hello {name.toUpperCase()}!</h1>
 
-<img src={src} alt="A man dancing">
+
+<div><Queue></Queue></div>
+
+<a href="/queue" data-navigo>Qeueue</a>&nbsp;|&nbsp;
+
+
+<h1>Hello {name}!</h1>
