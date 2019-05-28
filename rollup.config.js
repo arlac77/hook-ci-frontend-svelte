@@ -27,11 +27,7 @@ export default {
 
 		resolve(),
 		commonjs(),
-
-		// Watch the `public` directory and refresh the
-		// browser on changes when not in production
 		!production && livereload('public'),
-
 		production && terser()
 	],
 	watch: {
