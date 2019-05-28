@@ -32,7 +32,10 @@
         <Link path="/">Index</Link>
       </li>
       <li>
-        <Link path="/queue/77">Queue</Link>
+        <Link path="/queue/77">Queue 77</Link>
+      </li>
+	  <li>
+        <Link path="/queue/88">Queue 88</Link>
       </li>
     </ul>
   </div>
@@ -43,8 +46,7 @@
       </Route>
 
       <Route exact path="/queue/:id" let:params>
-        <h1>User with id: #{params.id} -> {params.section}</h1>
-		<Queue></Queue>
+		<Queue id={params.id}></Queue>
       </Route>
 
       <Route>

@@ -1,7 +1,7 @@
 <script>
-export let params = { id: 99};
+export let id = '';
 </script>
 
 <div>
-  <h1>Queue #{params.id}</h1>
+  <h1>Queue #{id}</h1>
 </div>
