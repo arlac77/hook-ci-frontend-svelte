@@ -1,6 +1,7 @@
 <script>
   import { Link, Switch, Route, Redirect } from "svelte-way";
   import Queue from "./pages/Queue.svelte";
+  import Queues from "./pages/Queues.svelte";
 </script>
 
 <style>
@@ -32,10 +33,13 @@
         <Link path="/">Index</Link>
       </li>
       <li>
-        <Link path="/queue/77">Queue 77</Link>
+        <Link path="/queues">Queues</Link>
       </li>
-	  <li>
-        <Link path="/queue/88">Queue 88</Link>
+      <li>
+        <Link path="/queue/q1">Queue q1</Link>
+      </li>
+      <li>
+        <Link path="/queue/q2">Queue q2</Link>
       </li>
     </ul>
   </div>
@@ -45,8 +49,11 @@
         <h1>Home</h1>
       </Route>
 
+      <Route exact path="/queues" let:params>
+        <Queues/>
+      </Route>
       <Route exact path="/queue/:id" let:params>
-		<Queue id={params.id}></Queue>
+        <Queue id={params.id} />
       </Route>
 
       <Route>
