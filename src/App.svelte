@@ -53,7 +53,7 @@
         <Queues/>
       </Route>
       <Route exact path="/queue/:name" let:params>
-        <Queue id={params.name} />
+        <Queue name={params.name} />
       </Route>
 
       <Route>
