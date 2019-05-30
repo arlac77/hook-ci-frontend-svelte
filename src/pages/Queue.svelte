@@ -1,7 +1,7 @@
 <script>
-export let id = '';
+export let name = '';
 </script>
 
 <div>
-  <h1>Queue #{id}</h1>
+  <h1>Queue #{name}</h1>
 </div>
