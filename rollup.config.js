@@ -2,6 +2,7 @@ import svelte from 'rollup-plugin-svelte';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
+import { scss } from 'svelte-preprocess'
 
 import history from "connect-history-api-fallback";
 import proxy from "http-proxy-middleware";
@@ -23,10 +24,12 @@ export default {
 	},
 	plugins: [
 		svelte({
-			// enable run-time checks when not in production
 			dev: !production,
-			// we'll extract any component CSS out into
-			// a separate file — better for performance
+
+      preprocess: 
+        scss({  })
+      ,
+
 			css: css => {
 				css.write(`${dist}/bundle.css`);
 			}
