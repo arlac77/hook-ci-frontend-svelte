@@ -1,12 +1,6 @@
 <script>
   import { Link } from "svelte-way";
-  import { queues as squeues } from '../stores.mjs';
-
-  export let queues = [{ name: "q1" }];
-
-  squeues.subscribe(value => {
-    queues = value;
-  });
+  import { queues } from '../stores.mjs';
 
 </script>
 
@@ -16,7 +10,7 @@
       <tr><td>Name</td><td>Active</td><td>Waiting</td><td>Delayed</td><td>Paused</td><td>Completed</td><td>Failed</td></tr>
     </thead>
     <tbody>
-    {#each queues as queue (queue.name)}
+    {#each $queues as queue (queue.name)}
       <tr>
         <td>
           <Link path="/queue/{queue.name}">{queue.name}</Link>
