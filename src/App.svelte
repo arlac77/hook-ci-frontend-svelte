@@ -9,39 +9,73 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 40px 100px 40px;
+
+    background-color: #fff;
+    color: #444;
+
+    grid-gap: 1em;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "content"
+      "footer";
   }
 
   .header {
+    grid-area: header;
     grid-column: span 12;
   }
   .menu {
     grid-column: span 4;
   }
+  .sidebar {
+    grid-area: sidebar;
+  }
   .content {
+    grid-area: content;
     grid-column: span 8;
   }
   .footer {
+    grid-area: footer;
     grid-column: span 12;
+  }
+
+  @media only screen and (min-width: 500px) {
+    .wrapper {
+      grid-template-columns: 20% auto;
+      grid-template-areas:
+        "header   header"
+        "sidebar  content"
+        "sidebar2 sidebar2"
+        "footer   footer";
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .wrapper {
+      grid-gap: 20px;
+      grid-template-columns: 120px auto 120px;
+      grid-template-areas:
+        "header  header  header"
+        "sidebar content sidebar2"
+        "footer  footer  footer";
+      max-width: 600px;
+    }
   }
 </style>
 
 <div class="wrapper">
-  <div class="header" />
-  <div class="menu">
-    <ul>
-      <li>
-        <Link path="/">Index</Link>
-      </li>
-      <li>
-        <Link path="/queues">Queues</Link>
-      </li>
-      <li>
-        <Link path="/queue/q1">Queue q1</Link>
-      </li>
-      <li>
-        <Link path="/queue/q2">Queue q2</Link>
-      </li>
-    </ul>
+  <div class="header">
+    <div class="menu">
+      <ul>
+        <li>
+          <Link path="/">Home</Link>
+        </li>
+        <li>
+          <Link path="/queues">Queues</Link>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="content">
     <Switch>
@@ -50,10 +84,10 @@
       </Route>
 
       <Route exact path="/queues" let:params>
-        <Queues/>
+        <Queues />
       </Route>
       <Route exact path="/queue/:name" let:params>
-        <Queue name={params.name} />
+        <Queue queue={params.name} />
       </Route>
 
       <Route>
