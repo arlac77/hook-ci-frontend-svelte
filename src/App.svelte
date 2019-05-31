@@ -3,7 +3,7 @@
   import Queue from "./pages/Queue.svelte";
   import Queues from "./pages/Queues.svelte";
 
-  import { queues } from './stores.mjs';
+  import { queues } from "./stores.mjs";
 </script>
 
 <style>
@@ -78,6 +78,7 @@
       </ul>
     </div>
   </div>
+  <div class="sidebar" />
   <div class="content">
     <Switch>
       <Route exact path="/">
@@ -85,7 +86,7 @@
       </Route>
 
       <Route exact path="/queues" let:params>
-        <Queues/>
+        <Queues />
       </Route>
       <Route exact path="/queue/:name" let:params>
         <Queue queue={params.name} />
