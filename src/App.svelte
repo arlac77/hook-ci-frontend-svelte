@@ -2,6 +2,8 @@
   import { Link, Switch, Route, Redirect } from "svelte-way";
   import Queue from "./pages/Queue.svelte";
   import Queues from "./pages/Queues.svelte";
+
+  import { queues } from './stores.mjs';
 </script>
 
 <style>
@@ -46,7 +48,6 @@
       grid-template-areas:
         "header   header"
         "sidebar  content"
-        "sidebar2 sidebar2"
         "footer   footer";
     }
   }
@@ -57,7 +58,7 @@
       grid-template-columns: 120px auto 120px;
       grid-template-areas:
         "header  header  header"
-        "sidebar content sidebar2"
+        "sidebar content"
         "footer  footer  footer";
       max-width: 600px;
     }
@@ -84,7 +85,7 @@
       </Route>
 
       <Route exact path="/queues" let:params>
-        <Queues />
+        <Queues/>
       </Route>
       <Route exact path="/queue/:name" let:params>
         <Queue queue={params.name} />

@@ -1,13 +1,13 @@
 <script>
   import { Link } from "svelte-way";
+  import { queues as squeues } from '../stores.mjs';
 
-  async function getQueues() {
-    const data = await fetch("api/queues");
-    queues = await data.json();
-  }
-
-  getQueues();
   export let queues = [{ name: "q1" }];
+
+  squeues.subscribe(value => {
+    queues = value;
+  });
+
 </script>
 
 <div>
