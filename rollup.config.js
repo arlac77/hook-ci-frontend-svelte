@@ -15,7 +15,7 @@ const proxyTarget = "https://mfelten.dynv6.net/services/ci/";
 const dist = "public";
 
 export default {
-	input: 'src/main.js',
+	input: 'src/main.mjs',
 	output: {
 		sourcemap: true,
 		format: 'iife',
