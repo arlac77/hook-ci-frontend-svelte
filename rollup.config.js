@@ -1,7 +1,6 @@
 import svelte from 'rollup-plugin-svelte';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 
 import history from "connect-history-api-fallback";
@@ -20,7 +19,7 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/bundle.js'
+		file: `${dist}/bundle.js`
 	},
 	plugins: [
 		svelte({
@@ -29,13 +28,12 @@ export default {
 			// we'll extract any component CSS out into
 			// a separate file — better for performance
 			css: css => {
-				css.write('public/bundle.css');
+				css.write(`${dist}/bundle.css`);
 			}
 		}),
 
 		resolve(),
 		commonjs(),
-		!production && livereload('public'),
 		production && terser()
 	],
 	watch: {
@@ -44,29 +42,28 @@ export default {
 };
 
 
-if(!production)
-{
+if (!production) {
 	function browsersync() {
-	  const browserSync = browserSyncFactory();
-	  const app = express();
-  
-	  app.use(
-		api,
-		proxy({
-		  target: proxyTarget,
-		  changeOrigin: true,
-		  logLevel: "debug"
-		})
-	  );
-  
-	  browserSync.init({
-		server: dist,
-		watch: true,
-		middleware: [app, history()]
-	  });
+		const browserSync = browserSyncFactory();
+		const app = express();
+
+		app.use(
+			api,
+			proxy({
+				target: proxyTarget,
+				changeOrigin: true,
+				logLevel: "debug"
+			})
+		);
+
+		browserSync.init({
+			server: dist,
+			watch: true,
+			middleware: [app, history()]
+		});
 	}
-  
+
 	setTimeout(() => {
-	  browsersync();
+		browsersync();
 	}, 500);
-  }
+}
