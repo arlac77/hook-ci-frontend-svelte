@@ -2,7 +2,7 @@ import svelte from 'rollup-plugin-svelte';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
-import { scss } from 'svelte-preprocess'
+import { scss, postcss } from 'svelte-preprocess';
 
 import history from "connect-history-api-fallback";
 import proxy from "http-proxy-middleware";
@@ -26,8 +26,10 @@ export default {
 		svelte({
 			dev: !production,
 
-			preprocess: scss({}),
-
+			preprocess: [
+				scss({}),
+			//	postcss({})
+			],
 			css: css => {
 				css.write(`${dist}/bundle.css`);
 			}
