@@ -4,7 +4,7 @@ export const queues = writable([]);
 
 async function getQueues() {
   const data = await fetch("api/queues");
-  queues.set((await data.json()).map(q => { q.jobs = [{id:1}]; return q; }));
+  queues.set((await data.json()).map(q => { q.jobs = [{ id: 1 }]; return q; }));
 }
 
 getQueues();
