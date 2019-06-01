@@ -3,17 +3,21 @@
   import { queues } from "../stores.mjs";
 </script>
 
+<style>
+  @import "../../node_modules//bulma/css/bulma.css";
+</style>
+
 <div>
-  <table class="table is-bordered">
+  <table class="table is-bordered is-striped is-hoverable">
     <thead>
       <tr>
-        <th><abbr title="Name">Name</abbr></th>
-        <th><abbr title="Active">A</abbr></th>
-        <th><abbr title="Waitng">W</abbr></th>
-        <th><abbr title="Delayed">D</abbr></th>
-        <th><abbr title="Paused">P</abbr></th>
-        <th><abbr title="Completed">C</abbr></th>
-        <th><abbr title="Failed">F</abbr></th>
+        <th>Name</th>
+        <th>Active</th>
+        <th>Waitng</th>
+        <th>Delayed</th>
+        <th>Paused</th>
+        <th>Completed</th>
+        <th>Failed</th>
       </tr>
     </thead>
     <tbody>

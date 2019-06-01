@@ -6,7 +6,9 @@
   import { queues } from "./stores.mjs";
 </script>
 
-<style global type="text/postcss">
+<style>
+  @import "../node_modules//bulma/css/bulma.css";
+
   .wrapper {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -37,18 +39,14 @@
     grid-area: content;
     grid-column: span 8;
   }
-  .footer {
-    grid-area: footer;
-    grid-column: span 12;
-  }
+
 
   @media only screen and (min-width: 500px) {
     .wrapper {
       grid-template-columns: 20% auto;
       grid-template-areas:
         "header   header"
-        "sidebar  content"
-        "footer   footer";
+        "sidebar  content";
     }
   }
 
@@ -58,26 +56,29 @@
       grid-template-columns: 120px auto 120px;
       grid-template-areas:
         "header  header  header"
-        "sidebar content"
-        "footer  footer  footer";
+        "sidebar content";
       max-width: 600px;
     }
   }
 </style>
 
 <div class="wrapper">
-  <div class="header">
-    <div class="menu">
-      <ul>
-        <li>
+  <nav
+    class="header navbar is-fixed-top"
+    role="navigation"
+    aria-label="main navigation">
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <div class="navbar-item has-dropdown is-hoverable">
           <Link path="/">Home</Link>
-        </li>
-        <li>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
           <Link path="/queues">Queues</Link>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
-  </div>
+  </nav>
   <div class="sidebar" />
   <div class="content">
     <Switch>
@@ -97,5 +98,4 @@
       </Route>
     </Switch>
   </div>
-  <div class="footer" />
 </div>

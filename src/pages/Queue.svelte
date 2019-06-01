@@ -8,11 +8,15 @@
   $: queue = $queues.find(q => q.name === name);
 </script>
 
+<style>
+  @import "../../node_modules//bulma/css/bulma.css";
+</style>
+
 <div>
   <h1>{queue.name}</h1>
    {queue.active} {queue.waiting} {queue.delayed} {queue.paused} {queue.completed}
   {queue.failed}
-  <table class="table">
+  <table class="table is-bordered is-striped is-hoverable">
     <thead>
       <tr>
         <th>
