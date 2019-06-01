@@ -7,8 +7,6 @@
 </script>
 
 <style>
-  @import "../node_modules//bulma/css/bulma.css";
-
   .wrapper {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -65,8 +63,7 @@
 <div class="wrapper">
   <nav
     class="header navbar is-fixed-top"
-    role="navigation"
-    aria-label="main navigation">
+    role="navigation">
     <div id="navbarExampleTransparentExample" class="navbar-menu">
       <div class="navbar-start">
         <div class="navbar-item has-dropdown is-hoverable">

@@ -8,14 +8,31 @@
   $: queue = $queues.find(q => q.name === name);
 </script>
 
-<style>
-  @import "../../node_modules//bulma/css/bulma.css";
+<style type="text/scss">
+  @import "../style/global.sass";
 </style>
 
 <div>
-  <h1>{queue.name}</h1>
-   {queue.active} {queue.waiting} {queue.delayed} {queue.paused} {queue.completed}
-  {queue.failed}
+  <div class="card">
+    <div class="card-content">
+      <div class="content">
+         {queue.name}
+        <br />
+         {queue.active}
+        <br />
+         {queue.waiting}
+        <br />
+         {queue.delayed}
+        <br />
+         {queue.paused}
+        <br />
+         {queue.completed}
+        <br />
+         {queue.failed}
+        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+      </div>
+    </div>
+  </div>
   <table class="table is-bordered is-striped is-hoverable">
     <thead>
       <tr>

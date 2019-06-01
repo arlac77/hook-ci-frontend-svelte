@@ -3,8 +3,8 @@
   import { queues } from "../stores.mjs";
 </script>
 
-<style>
-  @import "../../node_modules//bulma/css/bulma.css";
+<style type='text/scss'>
+  @import "../style/global.sass";
 </style>
 
 <div>
