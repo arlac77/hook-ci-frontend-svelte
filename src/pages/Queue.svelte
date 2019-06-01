@@ -30,7 +30,7 @@
           <td>
             <Link path="/queue/{queue.name}/job/{job.id}">{job.id}</Link>
           </td>
-          <td> {job.started} </td>
+          <td>{job.started}</td>
         </tr>
       {/each}
 
