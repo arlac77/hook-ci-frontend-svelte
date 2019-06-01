@@ -6,7 +6,7 @@
   import { queues } from "./stores.mjs";
 </script>
 
-<style>
+<style global type="text/postcss">
   .wrapper {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -89,7 +89,7 @@
         <Queues />
       </Route>
       <Route exact path="/queue/:name" let:params>
-        <Queue queue={params.name} />
+        <Queue name={params.name} />
       </Route>
 
       <Route>

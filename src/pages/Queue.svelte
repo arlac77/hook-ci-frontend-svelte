@@ -1,10 +1,16 @@
 <script>
+  import { Link } from "svelte-way";
+  import { queues } from "../stores.mjs";
+
+  export let name = "";
   export let queue = { name: "", jobs: [] };
+
+  $: queue = $queues.find(q => q.name === name);
 </script>
 
 
 <div>
-  <h1>Queue {queue.name}</h1>
+  <h1>{queue.name}</h1>
    {queue.active} {queue.waiting} {queue.delayed} {queue.paused} {queue.completed}
   {queue.failed}
   <table class="table">
@@ -19,7 +25,7 @@
       </tr>
     </thead>
     <tbody>
-      <!--
+      
     {#each queue.jobs as job (job.id)}
       <tr>
         <td>
@@ -30,7 +36,7 @@
         </td>
       </tr>
     {/each}
-    -->
+    
     </tbody>
   </table>
 
