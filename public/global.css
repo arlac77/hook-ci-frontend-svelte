@@ -59,3 +59,57 @@ button:active {
 button:focus {
 	border-color: #666;
 }
+
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px 100px 40px;
+
+    background-color: #fff;
+    color: #444;
+
+    grid-gap: 1em;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "content"
+      "footer";
+  }
+
+  .header {
+    grid-area: header;
+    grid-column: span 12;
+  }
+  .menu {
+    grid-column: span 4;
+  }
+  .sidebar {
+    grid-area: sidebar;
+  }
+  .content {
+    grid-area: content;
+    grid-column: span 8;
+  }
+
+
+  @media only screen and (min-width: 500px) {
+    .wrapper {
+      grid-template-columns: 20% auto;
+      grid-template-areas:
+        "header   header"
+        "sidebar  content";
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .wrapper {
+      grid-gap: 20px;
+      grid-template-columns: 120px auto 120px;
+      grid-template-areas:
+        "header  header  header"
+        "sidebar content";
+      max-width: 600px;
+    }
+  }

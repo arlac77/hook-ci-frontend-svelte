@@ -1,11 +1,12 @@
 <script>
-  import { Link } from "svelte-way";
   import { queues } from "../stores.mjs";
 
-  export let name = "";
   export let queue = { name: "", jobs: [] };
 
-  $: queue = $queues.find(q => q.name === name);
+  $: queue = $queues.find(q => q.name === req.params.name);
+
+  export let req;
+  export let nav;
 </script>
 
 <style type="text/scss">
@@ -49,7 +50,10 @@
       {#each queue.jobs as job (job.id)}
         <tr>
           <td>
-            <Link path="/queue/{queue.name}/job/{job.id}">{job.id}</Link>
+            <a
+              on:click={() => nav.navigate(`/queue/${queue.name}/job/${job.id}`)}>
+               {job.id}
+            </a>
           </td>
           <td>{job.started}</td>
         </tr>

@@ -1,6 +1,8 @@
 <script>
-  import { Link } from "svelte-way";
   import { queues } from "../stores.mjs";
+
+  export let req;
+	export let nav;
 </script>
 
 <style type='text/scss'>
@@ -24,7 +26,7 @@
       {#each $queues as queue (queue.name)}
         <tr>
           <td>
-            <Link path="/queue/{queue.name}">{queue.name}</Link>
+          	<a on:click={() => nav.navigate(`/queue/${queue.name}`)}>{queue.name}</a>
           </td>
           <td>{queue.active}</td>
           <td>{queue.waiting}</td>
