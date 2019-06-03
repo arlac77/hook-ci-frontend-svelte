@@ -14,7 +14,7 @@
         <a on:click={() => nav.navigate('/home')}>Home</a>
       </div>
       <div class="navbar-item has-dropdown is-hoverable">
-        <a href="/queue/incoming">Incoming</a>
+        <a class="anchored" on:click={() => nav.navigate('/queue/incoming')}>Incoming</a>
       </div>
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="anchored" on:click={() => nav.navigate('/queues')}>Queues</a>
