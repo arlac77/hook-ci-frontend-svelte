@@ -19,9 +19,8 @@ export default {
 	input: 'src/main.mjs',
 	output: {
 		sourcemap: true,
-		format: 'iife',
-		name: 'app',
-		file: `${dist}/bundle.js`
+		format: "esm",
+		file: `${dist}/bundle.mjs`
 	},
 	plugins: [
 		svelte({
