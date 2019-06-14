@@ -22,6 +22,6 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "autobuild": "rollup -c -w"
+    "start": "rollup -c -w"
   }
 }
