@@ -33,9 +33,7 @@ export default {
 				  },
 				},
 			  }),
-			css: css => {
-				css.write(`${dist}/bundle.css`);
-			}
+			css: css => css.write(`${dist}/bundle.css`)
 		}),
 
 		resolve(),
