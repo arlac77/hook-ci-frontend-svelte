@@ -1,9 +1,9 @@
-import svelte from 'rollup-plugin-svelte';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import { terser } from 'rollup-plugin-terser';
-import autoPreprocess from 'svelte-preprocess';
-import postcssImport from 'postcss-import';
+import svelte from "rollup-plugin-svelte";
+import resolve from "rollup-plugin-node-resolve";
+import commonjs from "rollup-plugin-commonjs";
+import { terser } from "rollup-plugin-terser";
+import autoPreprocess from "svelte-preprocess";
+import postcssImport from "postcss-import";
 
 import history from "connect-history-api-fallback";
 import proxy from "http-proxy-middleware";
@@ -16,58 +16,57 @@ const proxyTarget = "https://mfelten.dynv6.net/services/ci/";
 const dist = "public";
 
 export default {
-	input: 'src/main.mjs',
-	output: {
-		sourcemap: true,
-		format: "esm",
-		file: `${dist}/bundle.mjs`
-	},
-	plugins: [
-		svelte({
-			dev: !production,
+  input: "src/main.mjs",
+  output: {
+    sourcemap: true,
+    format: "esm",
+    file: `${dist}/bundle.mjs`
+  },
+  plugins: [
+    svelte({
+      dev: !production,
 
-			preprocess: autoPreprocess({
-				transformers: {
-				  postcss: {
-					plugins: [postcssImport],
-				  },
-				},
-			  }),
-			css: css => css.write(`${dist}/bundle.css`)
-		}),
+      preprocess: autoPreprocess({
+        transformers: {
+          postcss: {
+            plugins: [postcssImport]
+          }
+        }
+      }),
+      css: css => css.write(`${dist}/bundle.css`)
+    }),
 
-		resolve(),
-		commonjs(),
-		production && terser()
-	],
-	watch: {
-		clearScreen: false
-	}
+    resolve(),
+    commonjs(),
+    production && terser()
+  ],
+  watch: {
+    clearScreen: false
+  }
 };
 
-
 if (!production) {
-	function browsersync() {
-		const browserSync = browserSyncFactory();
-		const app = express();
+  function browsersync() {
+    const browserSync = browserSyncFactory();
+    const app = express();
 
-		app.use(
-			api,
-			proxy({
-				target: proxyTarget,
-				changeOrigin: true,
-				logLevel: "debug"
-			})
-		);
+    app.use(
+      api,
+      proxy({
+        target: proxyTarget,
+        changeOrigin: true,
+        logLevel: "debug"
+      })
+    );
 
-		browserSync.init({
-			server: dist,
-			watch: true,
-			middleware: [app, history()]
-		});
-	}
+    browserSync.init({
+      server: dist,
+      watch: true,
+      middleware: [app, history()]
+    });
+  }
 
-	setTimeout(() => {
-		browsersync();
-	}, 500);
+  setTimeout(() => {
+    browsersync();
+  }, 500);
 }
