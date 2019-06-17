@@ -5,8 +5,7 @@
   export let nav;
 </script>
 
-<style type="text/scss">
-  @import "../style/global.sass";
+<style>
 </style>
 
 <div>
@@ -26,7 +25,7 @@
       {#each $queues as queue (queue.name)}
         <tr>
           <td>
-            <a on:click={() => nav.navigate(`/queue/${queue.name}`)}>
+            <a href="/queue/{queue.name}" on:click={() => nav.navigate(`/queue/${queue.name}`)}>
               {queue.name}
             </a>
           </td>

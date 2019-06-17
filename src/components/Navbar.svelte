@@ -3,8 +3,7 @@
   export let nav;
 </script>
 
-<style type="text/scss">
-  @import "../style/global.sass";
+<style>
 </style>
 
 <nav class="navbar is-fixed-top">
