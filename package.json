@@ -15,7 +15,7 @@
     "rollup-plugin-node-resolve": "^5.0.4",
     "rollup-plugin-svelte": "^5.1.0",
     "rollup-plugin-terser": "^5.0.0",
-    "svelte": "^3.5.3",
+    "svelte": "^3.6.1",
     "svelte-preprocess": "^2.13.1"
   },
   "scripts": {
