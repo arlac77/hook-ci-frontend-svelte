@@ -1,11 +1,11 @@
 <script>
-  import { queues } from "../stores.mjs";
+  import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
 
-  export let req;
-  export let nav;
+  import { queues } from "../stores.mjs";
 </script>
 
 <style>
+
 </style>
 
 <div>
@@ -25,9 +25,7 @@
       {#each $queues as queue (queue.name)}
         <tr>
           <td>
-            <a href="/queue/{queue.name}" on:click={() => nav.navigate(`/queue/${queue.name}`)}>
-              {queue.name}
-            </a>
+            <RouterLink to="/queue/{queue.name}" text={queue.name} />
           </td>
           <td>{queue.active}</td>
           <td>{queue.waiting}</td>

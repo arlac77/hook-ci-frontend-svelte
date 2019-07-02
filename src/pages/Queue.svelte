@@ -1,15 +1,14 @@
 <script>
+  import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
   import { queues } from "../stores.mjs";
-
+  export let currentRoute;
   export let queue = { name: "", jobs: [] };
 
-  $: queue = $queues.find(q => q.name === req.params.name);
-
-  export let req;
-  export let nav;
+  $: queue = $queues.find(q => q.name === currentRoute.params.name);
 </script>
 
 <style>
+
 </style>
 
 <div>
@@ -49,10 +48,7 @@
       {#each queue.jobs as job (job.id)}
         <tr>
           <td>
-            <a href="/queue/{queue.name}/job/{job.id}"
-              on:click={() => nav.navigate(`/queue/${queue.name}/job/${job.id}`)}>
-               {job.id}
-            </a>
+            <RouterLink to="/queue/{queue.name}/job/{job.id}" text={job.id} />
           </td>
           <td>{job.started}</td>
         </tr>
