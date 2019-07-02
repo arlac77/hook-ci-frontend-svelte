@@ -10,7 +10,6 @@
   <header>
     <div id="nav">
       <RouterLink to="/" text={'Home'} />
-      <RouterLink to="/queue/incoming" text={'Incoming'} />
       <RouterLink to="/queues" text={'Queues'} />
     </div>
   </header>
