@@ -4,6 +4,7 @@ import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
 import Repositories from "./pages/Repositories.svelte";
 import Repository from "./pages/Repository.svelte";
+import Nodes from "./pages/Nodes.svelte";
 import Home from "./pages/Home.svelte";
 import App from "./components/App.svelte";
 
@@ -34,6 +35,11 @@ export const router = new Router({
       path: "/repository/:name",
       component: Repository,
       name: "Repository"
+    },
+    {
+      path: "/nodes",
+      component: Nodes,
+      name: "Nodes"
     }
   ]
 });

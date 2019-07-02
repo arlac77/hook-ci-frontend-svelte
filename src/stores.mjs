@@ -18,3 +18,13 @@ async function getRepositories() {
 }
 
 getRepositories();
+
+
+export const nodes = writable([]);
+
+async function getNodes() {
+  const data = await fetch("api/nodes/state");
+  nodes.set(await data.json());
+}
+
+getNodes();

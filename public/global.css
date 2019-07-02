@@ -17,11 +17,9 @@
 
 
 .wrapper>* {
-    background-color: #444;
-    color: #fff;
+    color: rgb(0, 0, 0);
     border-radius: 2px;
     padding: 5px;
-    font-size: 150%;
     margin-bottom: 2px;
 }
 
@@ -33,6 +31,13 @@
     grid-column: 1 / -1;
 }
 
+header {
+    font-size: 150%;
+    background-color: rgb(162, 180, 140);
+}
+
+main {
+}
 
 @media (min-width: 880px) {
     header {
