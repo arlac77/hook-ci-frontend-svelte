@@ -1,12 +1,7 @@
 <script>
   import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
-
   import { nodes } from "../stores.mjs";
 </script>
-
-<style>
-
-</style>
 
 <div>
   <table class="table is-bordered is-striped is-hoverable">

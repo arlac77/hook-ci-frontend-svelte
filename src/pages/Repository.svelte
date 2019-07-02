@@ -7,10 +7,6 @@
   $: repository = $repositories.find(r => r.name === currentRoute.params.name);
 </script>
 
-<style>
-
-</style>
-
 <div>
   <div class="card">
     <div class="card-content">

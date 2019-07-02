@@ -7,10 +7,6 @@
   $: queue = $queues.find(q => q.name === currentRoute.params.name);
 </script>
 
-<style>
-
-</style>
-
 <div>
   <div class="card">
     <div class="card-content">

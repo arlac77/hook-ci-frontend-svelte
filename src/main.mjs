@@ -10,6 +10,7 @@ import App from "./components/App.svelte";
 
 export const router = new Router({
   mode: "history",
+  base: "/services/ci",
   routes: [
     {
       path: "/",

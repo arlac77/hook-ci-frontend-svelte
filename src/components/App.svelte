@@ -7,7 +7,7 @@
 </script>
 
 <div class="wrapper">
-  <header>
+  <header id="topnav">
     <RouterLink to="/" text={'Home'} />
     <RouterLink to="/queues" text={'Queues'} />
     <RouterLink to="/repositories" text={'Repositories'} />
