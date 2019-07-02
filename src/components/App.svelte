@@ -11,6 +11,7 @@
     <div id="nav">
       <RouterLink to="/" text={'Home'} />
       <RouterLink to="/queues" text={'Queues'} />
+      <RouterLink to="/repositories" text={'Repositories'} />
     </div>
   </header>
   <main>

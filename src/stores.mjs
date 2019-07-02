@@ -9,3 +9,12 @@ async function getQueues() {
 
 getQueues();
 
+
+export const repositories = writable([]);
+
+async function getRepositories() {
+  const data = await fetch("api/repositories?pattern=arlac77/*");
+  repositories.set(await data.json());
+}
+
+getRepositories();
