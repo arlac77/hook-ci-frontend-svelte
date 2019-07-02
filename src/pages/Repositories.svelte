@@ -19,7 +19,9 @@
       {#each $repositories as repository (repository.name)}
         <tr>
           <td>
-            <RouterLink to="/repositories/{repository.name}" text={repository.name} />
+            <RouterLink
+              to="/repository/{repository.name}"
+              text={repository.name} />
           </td>
           <td>{repository.description}</td>
         </tr>

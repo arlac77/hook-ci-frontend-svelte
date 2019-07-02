@@ -1,0 +1,28 @@
+<script>
+  import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
+  import { repositories } from "../stores.mjs";
+  export let currentRoute;
+  export let repository = { name: "", description: "" };
+
+  $: repository = $repositories.find(r => r.name === currentRoute.params.name);
+</script>
+
+<style>
+
+</style>
+
+<div>
+  <div class="card">
+    <div class="card-content">
+      <div class="content">
+         {repository.name}
+        <br />
+         {repository.description}
+        <br />
+         {repository.id}
+        <br />
+         {repository.fullName}
+      </div>
+    </div>
+  </div>
+</div>
