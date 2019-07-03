@@ -1,11 +1,17 @@
 {
   "name": "svelte-playground",
   "version": "0.0.0-semantic-release",
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  },
   "devDependencies": {
+    "@semantic-release/exec": "^3.3.5",
     "browser-sync": "^2.26.7",
     "connect-history-api-fallback": "^1.6.0",
     "express": "^4.17.1",
     "http-proxy-middleware": "^0.19.1",
+    "npm-pkgbuild": "^6.5.5",
     "postcss": "^7.0.17",
     "postcss-import": "^12.0.1",
     "rollup": "^1.16.4",
@@ -13,12 +19,34 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.0",
     "rollup-plugin-terser": "^5.1.0",
+    "semantic-release": "^15.13.18",
     "svelte": "^3.6.3",
     "svelte-easyroute-rollup": "^1.0.0",
     "svelte-preprocess": "^2.14.3"
   },
-  "scripts": {
-    "build": "rollup -c",
-    "start": "rollup -c -w"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arlac77/svelte-playground.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arlac77/svelte-playground/issues"
+  },
+  "homepage": "https://github.com/arlac77/svelte-playground#readme",
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "npx npm-pkgbuild --pkgver ${nextRelease.version} pkgbuild pacman makepkg"
+        }
+      ]
+    ]
+  },
+  "template": {
+    "repository": {
+      "url": "https://github.com/arlac77/npm-package-template-svelte.git"
+    }
   }
 }
