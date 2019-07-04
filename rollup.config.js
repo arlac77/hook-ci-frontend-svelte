@@ -1,6 +1,7 @@
 import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
+import json from "rollup-plugin-json";
 import { terser } from "rollup-plugin-terser";
 import autoPreprocess from "svelte-preprocess";
 import postcssImport from "postcss-import";
@@ -9,6 +10,7 @@ import history from "connect-history-api-fallback";
 import proxy from "http-proxy-middleware";
 import express from "express";
 import { create as browserSyncFactory } from "browser-sync";
+import pkg from './package.json';
 
 const production = !process.env.ROLLUP_WATCH;
 const api = "/api";
@@ -38,6 +40,10 @@ export default {
 
     resolve(),
     commonjs(),
+    json({
+      preferConst: true,
+      compact: true
+    }),
     production && terser()
   ],
   watch: {
