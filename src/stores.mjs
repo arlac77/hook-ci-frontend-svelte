@@ -20,6 +20,7 @@ async function getRepositories() {
 getRepositories();
 
 
+/*
 export const nodes = writable([]);
 
 async function getNodes() {
@@ -28,3 +29,4 @@ async function getNodes() {
 }
 
 getNodes();
+*/

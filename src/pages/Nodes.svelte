@@ -1,27 +1,50 @@
 <script>
   import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
-  import { nodes } from "../stores.mjs";
+  import ApolloClient, { gql } from "apollo-boost";
+  import { query } from "svelte-apollo";
+
+  const client = new ApolloClient({ uri: "api/graphql" });
+
+  const NODES = gql`
+    {
+      nodes {
+        name
+        version
+      }
+    }
+  `;
+
+  const nodes = query(client, { query: NODES });
+
+  function reload() {
+    nodes.refetch();
+  }
 </script>
 
 <div>
-  <table class="table is-bordered is-striped is-hoverable">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Version</th>
-        <th>Uptime</th>
-      </tr>
-    </thead>
-    <tbody>
-      {#each $nodes as node (nodes.name)}
+  {#await $nodes}
+    Loading...
+  {:then result}
+    <table class="table is-bordered is-striped is-hoverable">
+      <thead>
         <tr>
-          <td>
-            <RouterLink to="/node/{node.name}" text={node.name} />
-          </td>
-          <td>{node.version}</td>
-          <td>{node.uptime}</td>
+          <th>Name</th>
+          <th>Version</th>
         </tr>
-      {/each}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {#each result.data.nodes as node (node.name)}
+          <tr>
+            <td>
+              <RouterLink to="/node/{node.name}" text={node.name} />
+            </td>
+            <td>{node.version}</td>
+          </tr>
+        {/each}
+      </tbody>
+    </table>
+  {:catch error}
+    Error: {error}
+  {/await}
 </div>
+<button on:click={reload}>Reload</button>

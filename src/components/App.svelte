@@ -3,6 +3,12 @@
   export let router;
   import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
 
+  /*
+  import ApolloClient from 'apollo-boost';  
+  import { setClient } from 'svelte-apollo';
+  const client = new ApolloClient({ uri: "api/graphql" });
+  setClient(client);
+*/
   onMount(() => router.createOutlet());
 </script>
 
