@@ -5,7 +5,8 @@
   "base": "/services/ci",
   "scripts": {
     "prepare": "rollup -c",
-    "start": "rollup -c -w"
+    "start": "rollup -c -w",
+    "deploy": "scp public/* root@odroid1:/services/hook-ci/frontend/"
   },
   "devDependencies": {
     "@semantic-release/exec": "^3.3.5",

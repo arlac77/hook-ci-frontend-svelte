@@ -8,6 +8,7 @@ import Jobs from "./pages/Jobs.svelte";
 import Job from "./pages/Job.svelte";
 import JobLog from "./pages/JobLog.svelte";
 import Nodes from "./pages/Nodes.svelte";
+import About from "./pages/About.svelte";
 import Home from "./pages/Home.svelte";
 import NotFound from "./pages/NotFound.svelte";
 import App from "./components/App.svelte";
@@ -18,7 +19,9 @@ export const router = new Router({
   base,
   routes: [
     { path: '*', component: NotFound },
+    { path: "/index.html", component: Home, name: "Home" },
     { path: "/", component: Home, name: "Home" },
+    { path: "/about", component: About, name: "About" },
     { path: "/repositories", component: Repositories, name: "Repositories" },
     { path: "/repository/:name", component: Repository, name: "Repository" },
     { path: "/queues", component: Queues, name: "Queues" },

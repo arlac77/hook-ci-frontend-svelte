@@ -12,6 +12,7 @@
     <RouterLink to="/queues" text={'Queues'} />
     <RouterLink to="/repositories" text={'Repositories'} />
     <RouterLink to="/nodes" text={'Nodes'} />
+    <RouterLink to="/about" text={'About'} />
   </header>
   <main>
     <div id="router-outlet" />
