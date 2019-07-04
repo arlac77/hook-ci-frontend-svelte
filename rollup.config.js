@@ -10,11 +10,11 @@ import history from "connect-history-api-fallback";
 import proxy from "http-proxy-middleware";
 import express from "express";
 import { create as browserSyncFactory } from "browser-sync";
-import pkg from './package.json';
+import { base } from './package.json';
 
 const production = !process.env.ROLLUP_WATCH;
 const api = "/api";
-const proxyTarget = "https://mfelten.dynv6.net/services/ci/";
+const proxyTarget = `https://mfelten.dynv6.net${base}`;
 const dist = "public";
 
 export default {
