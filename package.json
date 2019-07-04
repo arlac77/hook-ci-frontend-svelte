@@ -1,13 +1,11 @@
 {
   "name": "svelte-playground",
   "version": "0.0.0-semantic-release",
-  "description" : "some description",
-  "base": "/services/ci",
-  "api": "api",
+  "description": "some description",
   "scripts": {
+    "deploy": "scp public/* root@odroid1:/services/hook-ci/frontend/",
     "prepare": "rollup -c",
-    "start": "rollup -c -w",
-    "deploy": "scp public/* root@odroid1:/services/hook-ci/frontend/"
+    "start": "rollup -c -w"
   },
   "devDependencies": {
     "@semantic-release/exec": "^3.3.5",
@@ -52,6 +50,26 @@
   "template": {
     "repository": {
       "url": "https://github.com/arlac77/npm-package-template-svelte-app.git"
+    }
+  },
+  "base": "/services/ci",
+  "api": "api",
+  "pacman": {
+    "groups": "{{group}}",
+    "install": "pacman/install.sh",
+    "installdir": "/services/svelte-playground/frontend",
+    "properties": {
+      "urlPrefix": "/services/svelte-playground/"
+    },
+    "content": {
+      "${installdir}/": {
+        "base": "public"
+      },
+      "/etc/nginx/config.d/${name}.conf": "pacman/nginx.conf"
+    },
+    "depends": {
+      "systemd": ">=241.0",
+      "nginx-mainline": ">=1.17.1"
     }
   }
 }
