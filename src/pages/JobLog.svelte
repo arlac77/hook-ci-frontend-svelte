@@ -1,12 +1,16 @@
 <script>
+  export let currentRoute;
+
+  let lines;
+
   async function refresh() {
     const data = await fetch(
-      `api/queue/${this.$route.params.queue}/job/${
-        this.$route.params.job
+      `api/queue/${currentRoute.params.queue}/job/${
+        currentRoute.params.job
       }/log?start=0&end=10000`
     );
     const json = await data.json();
-    this.lines = json.logs.join("\n");
+    lines = json.logs.join("\n");
   }
 </script>
 
@@ -16,3 +20,5 @@
     font-family: courier, "courier new", monospace;
   }
 </style>
+
+<div class="log"> {lines} </div>
