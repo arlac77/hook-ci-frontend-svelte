@@ -56,14 +56,15 @@
       "url": "https://github.com/arlac77/npm-package-template-svelte-app.git"
     }
   },
-  "base": "/services/ci",
-  "api": "api",
+  "base": "/services/ci/svelte",
+  "api": "/services/ci/api",
+  "proxyTarget": "https://mfelten.dynv6.net",
   "pacman": {
-    "groups": "{{group}}",
+    "groups": "webapp",
     "install": "pacman/install.sh",
-    "installdir": "/services/svelte-playground/frontend",
+    "installdir": "/services/hook-ci/frontend-svelte",
     "properties": {
-      "urlPrefix": "/services/svelte-playground/"
+      "urlPrefix": "/services/ci/svelte"
     },
     "content": {
       "${installdir}/": {
@@ -72,7 +73,7 @@
       "/etc/nginx/config.d/${name}.conf": "pacman/nginx.conf"
     },
     "depends": {
-      "systemd": ">=241.0",
+      "systemd": ">=242.32",
       "nginx-mainline": ">=1.17.1"
     }
   }
