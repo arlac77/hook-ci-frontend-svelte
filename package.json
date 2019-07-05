@@ -26,7 +26,7 @@
     "rollup-plugin-svelte": "^5.1.0",
     "rollup-plugin-terser": "^5.1.0",
     "semantic-release": "^15.13.18",
-    "svelte": "^3.6.3",
+    "svelte": "^3.6.4",
     "svelte-apollo": "^0.3.0",
     "svelte-easyroute-rollup": "^1.0.1",
     "svelte-preprocess": "^2.14.3"
