@@ -16,7 +16,7 @@
     "express": "^4.17.1",
     "graphql": "^14.4.2",
     "http-proxy-middleware": "^0.19.1",
-    "npm-pkgbuild": "^6.5.5",
+    "npm-pkgbuild": "^6.5.6",
     "postcss": "^7.0.17",
     "postcss-import": "^12.0.1",
     "rollup": "^1.16.7",
@@ -26,7 +26,7 @@
     "rollup-plugin-svelte": "^5.1.0",
     "rollup-plugin-terser": "^5.1.0",
     "semantic-release": "^15.13.19",
-    "svelte": "^3.6.4",
+    "svelte": "^3.6.7",
     "svelte-apollo": "^0.3.0",
     "svelte-easyroute-rollup": "^1.0.1",
     "svelte-preprocess": "^2.14.3"
