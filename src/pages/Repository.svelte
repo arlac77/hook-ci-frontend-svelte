@@ -18,6 +18,10 @@
          {repository.id}
         <br />
          {repository.fullName}
+        {#each $repository.urls as url}
+          <br />
+           {url}
+        {/each}
       </div>
     </div>
   </div>
