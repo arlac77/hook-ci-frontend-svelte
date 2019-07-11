@@ -2,8 +2,9 @@
   import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
   import ApolloClient, { gql } from "apollo-boost";
   import { query } from "svelte-apollo";
+  import { graphQl } from "../../package.json";
 
-  const client = new ApolloClient({ uri: "api/graphql" });
+  const client = new ApolloClient({ uri: graphQl });
 
   const NODES = gql`
     {

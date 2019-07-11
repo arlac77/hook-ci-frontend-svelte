@@ -1,5 +1,12 @@
 <script>
-  import { name, version, description, base, api } from "../../package.json";
+  import {
+    name,
+    version,
+    description,
+    base,
+    api,
+    graphQl
+  } from "../../package.json";
 </script>
 
 <div>
@@ -18,5 +25,10 @@
       <td>API</td>
       <td>{api}</td>
     </tr>
+    <tr>
+      <td>Graphql API</td>
+      <td>{graphQl}</td>
+    </tr>
+
   </table>
 </div>

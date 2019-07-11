@@ -58,6 +58,7 @@
   },
   "base": "/services/ci/svelte",
   "api": "/services/ci/api",
+  "graphQl" : "/services/ci/api/graphql",
   "proxyTarget": "https://mfelten.dynv6.net",
   "pacman": {
     "groups": "webapp",
