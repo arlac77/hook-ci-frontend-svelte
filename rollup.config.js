@@ -10,7 +10,7 @@ import history from "connect-history-api-fallback";
 import proxy from "http-proxy-middleware";
 import express from "express";
 import { create as browserSyncFactory } from "browser-sync";
-import { api, proxyTarget } from './package.json';
+import { config } from './package.json';
 
 const production = !process.env.ROLLUP_WATCH;
 const dist = "public";
@@ -55,9 +55,9 @@ if (!production) {
     const app = express();
 
     app.use(
-      api,
+      config.api,
       proxy({
-        target: proxyTarget,
+        target: config.proxyTarget,
         changeOrigin: true,
         logLevel: "debug"
       })

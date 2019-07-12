@@ -12,11 +12,11 @@ import About from "./pages/About.svelte";
 import Home from "./pages/Home.svelte";
 import NotFound from "./pages/NotFound.svelte";
 import App from "./components/App.svelte";
-import { base } from '../package.json';
+import { config } from '../package.json';
 
 export const router = new Router({
   mode: "history",
-  base,
+  base: config.base,
   routes: [
     { path: '*', component: NotFound },
     { path: "/index.html", component: Home, name: "Home" },

@@ -3,9 +3,7 @@
     name,
     version,
     description,
-    base,
-    api,
-    graphQl
+    config,
   } from "../../package.json";
 </script>
 
@@ -19,15 +17,15 @@
     </tr>
     <tr>
       <td>Mounted</td>
-      <td>{base}</td>
+      <td>{config.base}</td>
     </tr>
     <tr>
       <td>API</td>
-      <td>{api}</td>
+      <td>{config.api}</td>
     </tr>
     <tr>
       <td>Graphql API</td>
-      <td>{graphQl}</td>
+      <td>{config.graphQl}</td>
     </tr>
 
   </table>
