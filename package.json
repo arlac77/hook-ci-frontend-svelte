@@ -16,7 +16,7 @@
     "express": "^4.17.1",
     "graphql": "^14.4.2",
     "http-proxy-middleware": "^0.19.1",
-    "npm-pkgbuild": "^6.5.6",
+    "npm-pkgbuild": "^6.6.0",
     "postcss": "^7.0.17",
     "postcss-import": "^12.0.1",
     "rollup": "^1.16.7",
@@ -39,6 +39,13 @@
     "url": "https://github.com/arlac77/svelte-playground/issues"
   },
   "homepage": "https://github.com/arlac77/svelte-playground#readme",
+  "config": {
+    "urlPrefix": "/services/ci/svelte",
+    "proxyTarget": "https://mfelten.dynv6.net/services/ci",
+    "base": "/services/ci/svelte",
+    "api": "api",
+    "graphQl": "api/graphql"
+  },
   "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",
@@ -55,13 +62,6 @@
     "repository": {
       "url": "https://github.com/arlac77/npm-package-template-svelte-app.git"
     }
-  },
-  "config": {
-    "urlPrefix": "/services/ci/svelte",
-    "proxyTarget": "https://mfelten.dynv6.net/services/ci",
-    "base": "/services/ci/svelte",
-    "api": "api",
-    "graphQl": "api/graphql"
   },
   "pacman": {
     "groups": "webapp",
