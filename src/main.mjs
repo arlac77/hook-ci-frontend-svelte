@@ -16,7 +16,7 @@ import { config } from '../package.json';
 
 export const router = new Router({
   mode: "history",
-  base: config.base,
+  base: config.urlPrefix,
   routes: [
     { path: '*', component: NotFound },
     { path: "/index.html", component: Home, name: "Home" },

@@ -41,10 +41,9 @@
   "homepage": "https://github.com/arlac77/svelte-playground#readme",
   "config": {
     "urlPrefix": "/services/ci/svelte",
-    "proxyTarget": "https://mfelten.dynv6.net/services/ci",
-    "base": "/services/ci/svelte",
-    "api": "api",
-    "graphQl": "api/graphql"
+    "api": "/services/ci/api",
+    "proxyTarget": "https://mfelten.dynv6.net/",
+    "graphQl": "/services/ci/api/graphql"
   },
   "release": {
     "plugins": [

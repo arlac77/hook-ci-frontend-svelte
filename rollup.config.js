@@ -59,6 +59,7 @@ if (!production) {
       proxy({
         target: config.proxyTarget,
         changeOrigin: true,
+       // ws: true,
         logLevel: "debug"
       })
     );
