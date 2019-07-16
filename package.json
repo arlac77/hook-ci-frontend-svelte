@@ -45,6 +45,22 @@
     "proxyTarget": "https://mfelten.dynv6.net/",
     "graphQl": "/services/ci/api/graphql"
   },
+  "pacman": {
+    "groups": "webapp",
+    "install": "pacman/install.sh",
+    "installdir": "/services/hook-ci/frontend-svelte",
+    "content": {
+      "${installdir}/": {
+        "base": "public"
+      },
+      "/etc/nginx/config.d/${name}.conf": "pacman/nginx.conf"
+    },
+    "depends": {
+      "systemd": ">=242.32",
+      "nginx-mainline": ">=1.17.1",
+      "hook-ci": ">=1.36.1"
+    }
+  },
   "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",
@@ -60,22 +76,6 @@
   "template": {
     "repository": {
       "url": "https://github.com/arlac77/npm-package-template-svelte-app.git"
-    }
-  },
-  "pacman": {
-    "groups": "webapp",
-    "install": "pacman/install.sh",
-    "installdir": "/services/hook-ci/frontend-svelte",
-    "content": {
-      "${installdir}/": {
-        "base": "public"
-      },
-      "/etc/nginx/config.d/${name}.conf": "pacman/nginx.conf"
-    },
-    "depends": {
-      "systemd": ">=242.32",
-      "nginx-mainline": ">=1.17.1",
-      "hook-ci": ">=1.36.1"
     }
   }
 }
