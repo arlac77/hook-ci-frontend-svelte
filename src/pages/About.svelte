@@ -17,7 +17,7 @@
     </tr>
     <tr>
       <td>Mounted</td>
-      <td>{config.base}</td>
+      <td>{config.urlPrefix}</td>
     </tr>
     <tr>
       <td>API</td>
