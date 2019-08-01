@@ -31,6 +31,9 @@
     "svelte-easyroute-rollup": "^1.1.0",
     "svelte-preprocess": "^2.15.0"
   },
+  "engines": {
+    "node": ">=10.16.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/arlac77/svelte-playground.git"
