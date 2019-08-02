@@ -21,7 +21,9 @@
       {#each queue.jobs as job (job.id)}
         <tr>
           <td>
-            <RouterLink to="/queue/{currentRoute.params.queue}/job/{job.id}" text={job.id} />
+            <RouterLink
+              to="/queue/{currentRoute.params.queue}/job/{job.id}"
+              text={job.id} />
           </td>
           <td>{job.id}</td>
           <td>{job.processedOn}</td>

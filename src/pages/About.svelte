@@ -1,10 +1,5 @@
 <script>
-  import {
-    name,
-    version,
-    description,
-    config,
-  } from "../../package.json";
+  import { name, version, description, config } from "../../package.json";
 </script>
 
 <div>

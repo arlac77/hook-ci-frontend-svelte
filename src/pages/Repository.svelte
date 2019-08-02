@@ -11,16 +11,16 @@
   <div class="card">
     <div class="card-content">
       <div class="content">
-         {repository.name}
+        {repository.name}
         <br />
-         {repository.description}
+        {repository.description}
         <br />
-         {repository.id}
+        {repository.id}
         <br />
-         {repository.fullName}
+        {repository.fullName}
         {#each $repository.urls as url}
           <br />
-           {url}
+          {url}
         {/each}
       </div>
     </div>
