@@ -13,6 +13,8 @@ import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
 import NotFound from "./pages/NotFound.svelte";
 import App from "./components/App.svelte";
+import { needsAuthentication } from "./auth.mjs";
+
 import { config } from "../package.json";
 
 export const router = new Router({
@@ -36,7 +38,7 @@ export const router = new Router({
 });
 
 router.beforeEach = (to, from, next) => {
-  if (!window.localStorage.token) {
+  if (needsAuthentication()) {
     to.fullPath = "/login";
     to.route = ["", "login"];
   }

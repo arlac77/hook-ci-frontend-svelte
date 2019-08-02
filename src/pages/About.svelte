@@ -1,5 +1,6 @@
 <script>
   import { name, version, description, config } from "../../package.json";
+  import { entitlements } from "../auth.mjs";
 </script>
 
 <div>
@@ -22,5 +23,12 @@
       <td>Graphql API</td>
       <td>{config.graphQl}</td>
     </tr>
+
+    {#each [...entitlements] as name}
+      <tr>
+        <td>Entitlement</td>
+        <td>{name}</td>
+      </tr>
+    {/each}
   </table>
 </div>

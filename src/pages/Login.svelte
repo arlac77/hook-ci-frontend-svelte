@@ -13,7 +13,6 @@
 <div>
   {name} {description} {version}
   <form on:submit|preventDefault={submit}>
-
     <div>
       <label>Username</label>
       <input bind:value={username} type="text" name="username" />
