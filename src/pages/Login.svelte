@@ -1,30 +1,18 @@
 <script>
-  import { name, version, description, config } from "../../package.json";
+  import { name, version, description } from "../../package.json";
+  import { authenticate } from "../auth.mjs";
 
   let username = "";
   let password = "";
 
-  async function authenticate() {
-    const response = await fetch(config.api + "/authenticate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        username,
-        password
-      })
-    });
-
-    const data = await response.json();
-
-    window.localStorage.token = data.token;
+  async function submit() {
+    return authenticate(username, password);
   }
 </script>
 
 <div>
   {name} {description} {version}
-  <form on:submit|preventDefault={authenticate}>
+  <form on:submit|preventDefault={submit}>
 
     <div>
       <label>Username</label>
