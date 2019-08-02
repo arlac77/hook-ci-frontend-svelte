@@ -1,8 +1,8 @@
 <script>
   import { name, version, description, config } from "../../package.json";
 
-  let username = "aaa";
-  let password = "bbb";
+  let username = "";
+  let password = "";
 
   async function authenticate() {
     const response = await fetch(config.api + "/authenticate", {
@@ -17,23 +17,28 @@
     });
 
     const data = await response.json();
-    console.log(data);
+
+    window.localStorage.token = data.token;
   }
 </script>
 
 <div>
   {name} {description} {version}
-  <div>
-    <label>Username</label>
-    <input bind:value={username} type="text" name="username" />
-  </div>
+  <form on:submit|preventDefault={authenticate}>
 
-  <div>
-    <label>Password</label>
-    <input bind:value={password} type="password" name="password" />
-  </div>
+    <div>
+      <label>Username</label>
+      <input bind:value={username} type="text" name="username" />
+    </div>
 
-  <div>
-    <button on:click={authenticate}>Login</button>
-  </div>
+    <div>
+      <label>Password</label>
+      <input bind:value={password} type="password" name="password" />
+    </div>
+
+    <div>
+      <button type="submit">Login</button>
+    </div>
+  </form>
+
 </div>
