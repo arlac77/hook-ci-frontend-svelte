@@ -20,6 +20,7 @@
     <RouterLink to="/repositories" text={'Repositories'} />
     <RouterLink to="/nodes" text={'Nodes'} />
     <RouterLink to="/about" text={'About'} />
+    <RouterLink to="/login" text={'Login'} />
   </header>
   <main>
     <div id="router-outlet" />

@@ -9,6 +9,7 @@ import Job from "./pages/Job.svelte";
 import JobLog from "./pages/JobLog.svelte";
 import Nodes from "./pages/Nodes.svelte";
 import About from "./pages/About.svelte";
+import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
 import NotFound from "./pages/NotFound.svelte";
 import App from "./components/App.svelte";
@@ -21,6 +22,7 @@ export const router = new Router({
     { path: '*', component: NotFound },
     { path: "/index.html", component: Home, name: "Home" },
     { path: "/", component: Home, name: "Home" },
+    { path: "/login", component: Login, name: "Login" },
     { path: "/about", component: About, name: "About" },
     { path: "/repositories", component: Repositories, name: "Repositories" },
     { path: "/repository/:name", component: Repository, name: "Repository" },

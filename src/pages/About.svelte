@@ -27,6 +27,5 @@
       <td>Graphql API</td>
       <td>{config.graphQl}</td>
     </tr>
-
   </table>
 </div>
