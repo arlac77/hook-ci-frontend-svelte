@@ -1,13 +1,19 @@
 <script>
+  import { onDestroy } from "svelte";
   import { name, version, description } from "../../package.json";
-  import { authenticate } from "../auth.mjs";
+  import { login, session } from "../session.mjs";
 
-  let username = "";
+  let username;
   let password = "";
 
   async function submit() {
-    return authenticate(username, password);
+    return login(username, password);
   }
+
+  onDestroy(session.subscribe(value => {
+    username = value.username;
+  }));
+
 </script>
 
 <div>
@@ -27,5 +33,4 @@
       <button type="submit">Login</button>
     </div>
   </form>
-
 </div>

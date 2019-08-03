@@ -1,6 +1,17 @@
 <script>
+  import { onDestroy } from "svelte";
   import { name, version, description, config } from "../../package.json";
-  import { entitlements } from "../auth.mjs";
+  import { session } from "../session.mjs";
+
+  let entitlements = [];
+  let username;
+
+  onDestroy(
+    session.subscribe(value => {
+      entitlements = [...value.entitlements];
+      username = value.username;
+    })
+  );
 </script>
 
 <div>
@@ -23,8 +34,11 @@
       <td>Graphql API</td>
       <td>{config.graphQl}</td>
     </tr>
-
-    {#each [...entitlements] as name}
+    <tr>
+      <td>Usrname</td>
+      <td>{username}</td>
+    </tr>
+    {#each entitlements as name}
       <tr>
         <td>Entitlement</td>
         <td>{name}</td>

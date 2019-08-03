@@ -1,5 +1,7 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, onDestroy } from "svelte";
+  import { session } from "../session.mjs";
+
   export let router;
   import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
 
@@ -11,6 +13,13 @@
       router.createOutlet();
     }
   });
+
+  let username;
+  onDestroy(
+    session.subscribe(value => {
+      username = value.username;
+    })
+  );
 </script>
 
 <div class="wrapper">
@@ -21,6 +30,7 @@
     <RouterLink to="/nodes" text={'Nodes'} />
     <RouterLink to="/about" text={'About'} />
     <RouterLink to="/login" text={'Login'} />
+    <div>{username}</div>
   </header>
   <main>
     <div id="router-outlet" />
