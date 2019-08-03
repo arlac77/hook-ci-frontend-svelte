@@ -37,15 +37,12 @@ export const router = new Router({
 });
 
 session.subscribe(aSession => {
-  console.log("new SESSION");
-
   router.beforeEach = (to, from, next) => {
-
     if (!aSession.isValid) {
       to.fullPath = "/login";
       to.route = ["", "login"];
     }
-  
+
     next();
   };
 });

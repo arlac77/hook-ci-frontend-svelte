@@ -49,7 +49,6 @@ export async function login(username, password) {
   session.set(makeSession({ username, access_token: data.token }));
 }
 
-
 function decode(token) {
   return token === undefined || token === "undefined" ? undefined : JSON.parse(atob(token.split(".")[1]));
 }
