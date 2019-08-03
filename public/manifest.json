@@ -1,0 +1,8 @@
+{
+  "name": "{{name}}",
+  "description": "{{description}}",
+  "icons": [{
+    "src": "images/icon.png",
+    "sizes": "192x192"
+  }]
+}
