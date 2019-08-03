@@ -19,18 +19,18 @@
 <div>
   {name} {description} {version}
   <form on:submit|preventDefault={submit}>
-    <div>
+    <fieldset>
       <label>Username</label>
-      <input bind:value={username} type="text" name="username" />
-    </div>
+      <input type="text" placeholder="Username" name="username" bind:value={username} />
+    </fieldset>
 
-    <div>
+    <fieldset>
       <label>Password</label>
-      <input bind:value={password} type="password" name="password" />
-    </div>
+      <input type="password" placeholder="Password" name="password" bind:value={password} />
+    </fieldset>
 
     <div>
-      <button type="submit">Login</button>
+      <button type="submit" disabled='{!username || !password}'>Login</button>
     </div>
   </form>
 </div>
