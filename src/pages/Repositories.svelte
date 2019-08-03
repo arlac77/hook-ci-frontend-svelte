@@ -15,7 +15,7 @@
       {#each $repositories as repository (repository.name)}
         <tr>
           <td>
-            <Link to="/repository/{repository.name}">{repository.name}</Link>
+            <Link href="/repository/{repository.name}">{repository.name}</Link>
           </td>
           <td>{repository.description}</td>
         </tr>

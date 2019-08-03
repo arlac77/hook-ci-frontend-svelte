@@ -20,7 +20,7 @@
       {#each $queues as queue (queue.name)}
         <tr>
           <td>
-            <Link to="/queue/{queue.name}">{queue.name}</Link>
+            <Link href="/queue/{queue.name}">{queue.name}</Link>
           </td>
           <td>{queue.active}</td>
           <td>{queue.waiting}</td>

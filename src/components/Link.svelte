@@ -1,10 +1,7 @@
 <script>
-  export let to;
+  export let href;
 
   function click(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
     window.dispatchEvent(
       new CustomEvent("svelteEasyrouteLinkClicked", {
         detail: { path: e.currentTarget.pathname, needAddBase: true }
@@ -13,6 +10,6 @@
   }
 </script>
 
-<a href={to} on:click={click}>
+<a {href} on:click|preventDefault={click}>
   <slot />
 </a>

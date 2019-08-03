@@ -37,7 +37,7 @@
         {#each result.data.nodes as node (node.name)}
           <tr>
             <td>
-              <Link to="/node/{node.name}">{node.name}</Link>
+              <Link href="/node/{node.name}">{node.name}</Link>
             </td>
             <td>{node.version}</td>
           </tr>

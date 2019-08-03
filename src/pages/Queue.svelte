@@ -44,7 +44,7 @@
       {#each queue.jobs as job (job.id)}
         <tr>
           <td>
-            <Link to="/queue/{queue.name}/job/{job.id}">{job.id}</Link>
+            <Link href="/queue/{queue.name}/job/{job.id}">{job.id}</Link>
           </td>
           <td>{job.started}</td>
         </tr>

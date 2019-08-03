@@ -21,7 +21,7 @@
       {#each queue.jobs as job (job.id)}
         <tr>
           <td>
-            <Link to="/queue/{currentRoute.params.queue}/job/{job.id}">
+            <Link href="/queue/{currentRoute.params.queue}/job/{job.id}">
               {job.id}
             </Link>
           </td>

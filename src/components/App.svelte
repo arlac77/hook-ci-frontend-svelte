@@ -24,12 +24,12 @@
 
 <div class="wrapper">
   <header id="topnav">
-    <Link to="/">Home</Link>
-    <Link to="/queues">Queues</Link>
-    <Link to="/repositories">Repositories</Link>
-    <Link to="/nodes">Nodes</Link>
-    <Link to="/about">About</Link>
-    <Link to="/login">Login</Link>
+    <Link href="/">Home</Link>
+    <Link href="/queues">Queues</Link>
+    <Link href="/repositories">Repositories</Link>
+    <Link href="/nodes">Nodes</Link>
+    <Link href="/about">About</Link>
+    <Link href="/login">Login</Link>
     <div>{username}</div>
   </header>
   <main>
