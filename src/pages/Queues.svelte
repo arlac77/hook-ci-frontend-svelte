@@ -1,6 +1,5 @@
 <script>
-  import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
-
+  import Link from "../components/Link.svelte";
   import { queues } from "../stores.mjs";
 </script>
 
@@ -21,7 +20,7 @@
       {#each $queues as queue (queue.name)}
         <tr>
           <td>
-            <RouterLink to="/queue/{queue.name}" text={queue.name} />
+            <Link to="/queue/{queue.name}">{queue.name}</Link>
           </td>
           <td>{queue.active}</td>
           <td>{queue.waiting}</td>

@@ -1,5 +1,4 @@
 <script>
-  import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
   import { repositories } from "../stores.mjs";
   export let currentRoute;
   export let repository = { name: "", description: "" };

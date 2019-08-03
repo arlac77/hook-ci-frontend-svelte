@@ -27,8 +27,6 @@
 }
 
 
-
-
 .wrapper {
     display: grid;
     grid-gap: 1px;
@@ -82,20 +80,6 @@ header {
     }
 }
 
-
-
-
-.router-link {
-    float: left;
-    padding: 12px 30px;
-    color: #999;
-    text-transform: uppercase;
-    font: bold 12px Arial, Helvetica;
-    text-decoration: none;
-    text-shadow: 0 1px 0 #000;
-}
-
-
 #topnav {
     border: 1px solid #222;
     background-color: #111;
@@ -107,24 +91,7 @@ header {
     clear: both;
 }
 
-#topnav li {
-    float: left;
-    border-right: 1px solid #222;
-    box-shadow: 1px 0 0 #444;
-    position: relative;
-}
-
-#topnav .router-link {
-    float: left;
-    padding: 12px 30px;
-    color: #999;
-    text-transform: uppercase;
-    font: bold 12px Arial, Helvetica;
-    text-decoration: none;
-    text-shadow: 0 1px 0 #000;
-}
-
-#topnav li:hover>a {
+#topnav a {
     color: #fafafa;
 }
 

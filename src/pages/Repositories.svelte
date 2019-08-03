@@ -1,5 +1,5 @@
 <script>
-  import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
+  import Link from "../components/Link.svelte";
   import { repositories } from "../stores.mjs";
 </script>
 
@@ -15,9 +15,7 @@
       {#each $repositories as repository (repository.name)}
         <tr>
           <td>
-            <RouterLink
-              to="/repository/{repository.name}"
-              text={repository.name} />
+            <Link to="/repository/{repository.name}">{repository.name}</Link>
           </td>
           <td>{repository.description}</td>
         </tr>

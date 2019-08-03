@@ -1,9 +1,9 @@
 <script>
   import { onMount, onDestroy } from "svelte";
   import { session } from "../session.mjs";
+  import Link from "./Link.svelte";
 
   export let router;
-  import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
 
   let done;
 
@@ -24,12 +24,12 @@
 
 <div class="wrapper">
   <header id="topnav">
-    <RouterLink to="/" text={'Home'} />
-    <RouterLink to="/queues" text={'Queues'} />
-    <RouterLink to="/repositories" text={'Repositories'} />
-    <RouterLink to="/nodes" text={'Nodes'} />
-    <RouterLink to="/about" text={'About'} />
-    <RouterLink to="/login" text={'Login'} />
+    <Link to="/">Home</Link>
+    <Link to="/queues">Queues</Link>
+    <Link to="/repositories">Repositories</Link>
+    <Link to="/nodes">Nodes</Link>
+    <Link to="/about">About</Link>
+    <Link to="/login">Login</Link>
     <div>{username}</div>
   </header>
   <main>

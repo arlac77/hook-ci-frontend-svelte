@@ -1,5 +1,5 @@
 <script>
-  import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
+  import Link from "../components/Link.svelte";
   import { queues } from "../stores.mjs";
   export let currentRoute;
   export let queue = { name: "", jobs: [] };
@@ -21,9 +21,9 @@
       {#each queue.jobs as job (job.id)}
         <tr>
           <td>
-            <RouterLink
-              to="/queue/{currentRoute.params.queue}/job/{job.id}"
-              text={job.id} />
+            <Link to="/queue/{currentRoute.params.queue}/job/{job.id}">
+              {job.id}
+            </Link>
           </td>
           <td>{job.id}</td>
           <td>{job.processedOn}</td>

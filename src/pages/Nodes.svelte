@@ -1,5 +1,5 @@
 <script>
-  import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
+  import Link from "../components/Link.svelte";
   import ApolloClient, { gql } from "apollo-boost";
   import { query } from "svelte-apollo";
   import { config } from "../../package.json";
@@ -37,7 +37,7 @@
         {#each result.data.nodes as node (node.name)}
           <tr>
             <td>
-              <RouterLink to="/node/{node.name}" text={node.name} />
+              <Link to="/node/{node.name}">{node.name}</Link>
             </td>
             <td>{node.version}</td>
           </tr>

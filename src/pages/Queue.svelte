@@ -1,5 +1,5 @@
 <script>
-  import RouterLink from "svelte-easyroute-rollup/RouterLink.svelte";
+  import Link from "../components/Link.svelte";
   import { queues } from "../stores.mjs";
   export let currentRoute;
   export let queue = { name: "", jobs: [] };
@@ -11,19 +11,19 @@
   <div class="card">
     <div class="card-content">
       <div class="content">
-         {queue.name}
+        {queue.name}
         <br />
-         {queue.active}
+        {queue.active}
         <br />
-         {queue.waiting}
+        {queue.waiting}
         <br />
-         {queue.delayed}
+        {queue.delayed}
         <br />
-         {queue.paused}
+        {queue.paused}
         <br />
-         {queue.completed}
+        {queue.completed}
         <br />
-         {queue.failed}
+        {queue.failed}
         <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
       </div>
     </div>
@@ -44,7 +44,7 @@
       {#each queue.jobs as job (job.id)}
         <tr>
           <td>
-            <RouterLink to="/queue/{queue.name}/job/{job.id}" text={job.id} />
+            <Link to="/queue/{queue.name}/job/{job.id}">{job.id}</Link>
           </td>
           <td>{job.started}</td>
         </tr>
