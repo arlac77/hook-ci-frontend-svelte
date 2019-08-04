@@ -4,11 +4,16 @@ import { writable } from "svelte/store";
 export const session = writable(makeSession(window.localStorage));
 
 function makeSession(data) {
-  if(data && data.access_token !== undefined && data.username !== undefined) {
+  if (
+    data &&
+    data.access_token !== undefined &&
+    data.access_token.length > 32 &&
+    data.username !== undefined &&
+    data.username !== "undefined"
+  ) {
     window.localStorage.access_token = data.access_token;
     window.localStorage.username = data.username;
-  }
-  else {
+  } else {
     delete window.localStorage.access_token;
     delete window.localStorage.username;
   }
@@ -18,7 +23,7 @@ function makeSession(data) {
 
   const decoded = decode(data.access_token);
 
-  if(decoded) {
+  if (decoded) {
     entitlements = new Set(decoded.entitlements.split(/,/));
     expirationDate.setUTCSeconds(decoded.exp);
   }
@@ -28,7 +33,9 @@ function makeSession(data) {
     username: data.username,
     access_token: data.access_token,
     hasEntitlement: name => entitlements.has(name),
-    get isValid() { return expirationDate.valueOf() > new Date().valueOf(); }
+    get isValid() {
+      return expirationDate.valueOf() > new Date().valueOf();
+    }
   };
 }
 
@@ -50,5 +57,7 @@ export async function login(username, password) {
 }
 
 function decode(token) {
-  return token === undefined || token === "undefined" ? undefined : JSON.parse(atob(token.split(".")[1]));
+  return token === undefined || token === "undefined"
+    ? undefined
+    : JSON.parse(atob(token.split(".")[1]));
 }
