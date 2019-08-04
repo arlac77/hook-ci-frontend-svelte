@@ -53,7 +53,7 @@ export async function login(username, password) {
 
   const data = await response.json();
 
-  session.set(makeSession({ username, access_token: data.access_token }));
+  session.set(makeSession({ username, access_token: data.access_token || data.token }));
 }
 
 function decode(token) {
