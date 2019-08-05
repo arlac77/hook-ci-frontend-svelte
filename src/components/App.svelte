@@ -1,18 +1,10 @@
 <script>
   import { onMount, onDestroy } from "svelte";
   import { session } from "../session.mjs";
+  import { router } from "../main.mjs";
+
   import Link from "./Link.svelte";
-
-  export let router;
-
-  let done;
-
-  onMount(() => {
-    if (!done) {
-      done = true;
-      router.createOutlet();
-    }
-  });
+  import Outlet from "./Outlet.svelte";
 
   let username;
   onDestroy(
@@ -20,6 +12,7 @@
       username = value.username;
     })
   );
+
 </script>
 
 <div class="wrapper">
@@ -33,6 +26,8 @@
     <div>{username}</div>
   </header>
   <main>
-    <div id="router-outlet" />
+    <Outlet {router}>
+      nothing there
+    </Outlet>
   </main>
 </div>

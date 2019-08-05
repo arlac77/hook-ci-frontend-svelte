@@ -1,4 +1,4 @@
-import { Router } from "svelte-easyroute-rollup";
+import { Router, route } from "./router";
 
 import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
@@ -13,43 +13,29 @@ import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
 import NotFound from "./pages/NotFound.svelte";
 import App from "./components/App.svelte";
-import { session } from "./session.mjs";
 import { config } from "../package.json";
 
-export const router = new Router({
-  mode: "history",
-  base: config.urlPrefix,
-  routes: [
-    { path: "*", component: NotFound },
-    { path: "/index.html", component: Home, name: "Home" },
-    { path: "/", component: Home, name: "Home" },
-    { path: "/login", component: Login, name: "Login" },
-    { path: "/about", component: About, name: "About" },
-    { path: "/repositories", component: Repositories, name: "Repositories" },
-    { path: "/repository/:name", component: Repository, name: "Repository" },
-    { path: "/queues", component: Queues, name: "Queues" },
-    { path: "/queue/:name", component: Queue, name: "Queue" },
-    { path: "/queue/:queue/jobs", component: Jobs, name: "Jobs" },
-    { path: "/queue/:queue/job/:job", component: Job, name: "Job" },
-    { path: "/queue/:queue/job/:job/log", component: JobLog, name: "jobLog" },
-    { path: "/nodes", component: Nodes, name: "Nodes" }
-  ]
-});
-
-session.subscribe(aSession => {
-  router.beforeEach = (to, from, next) => {
-    if (!aSession.isValid) {
-      to.fullPath = "/login";
-      to.route = ["", "login"];
-    }
-
-    next();
-  };
-});
+export const router = new Router(
+  [
+    route("*", NotFound),
+    route("/index.html", Home),
+    route("/", Home),
+    route("/login", Login),
+    route("/about", About),
+    route("/repositories", Repositories),
+    route("/repository/:name", Repository),
+    route("/queues", Queues),
+    route("/queue/:name", Queue),
+    route("/queue/:queue/jobs", Jobs),
+    route("/queue/:queue/job/:job", Job),
+    route("/queue/:queue/job/:job/log", JobLog),
+    route("/nodes", Nodes)
+  ],
+  config.urlPrefix
+);
 
 const app = new App({
-  target: document.body,
-  props: { router }
+  target: document.body
 });
 
 export default app;

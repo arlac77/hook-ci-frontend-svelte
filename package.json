@@ -28,7 +28,6 @@
     "semantic-release": "^15.13.19",
     "svelte": "^3.7.0",
     "svelte-apollo": "^0.3.0",
-    "svelte-easyroute-rollup": "^1.1.0",
     "svelte-preprocess": "^2.15.0"
   },
   "engines": {

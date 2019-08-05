@@ -3,7 +3,7 @@
 
   function click(e) {
     window.dispatchEvent(
-      new CustomEvent("svelteEasyrouteLinkClicked", {
+      new CustomEvent("routerLink", {
         detail: { path: e.currentTarget.pathname, needAddBase: true }
       })
     );
