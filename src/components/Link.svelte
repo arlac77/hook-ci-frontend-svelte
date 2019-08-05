@@ -4,7 +4,7 @@
   function click(e) {
     window.dispatchEvent(
       new CustomEvent("routerLink", {
-        detail: { path: e.currentTarget.pathname, needAddBase: true }
+        detail: { path: e.currentTarget.pathname }
       })
     );
   }
