@@ -1,3 +1,5 @@
+import { matcher } from "./route-matcher.mjs";
+
 export class Router {
   constructor(routes = [], prefix='') {
     let current;
@@ -64,12 +66,13 @@ export class Router {
 
   push(path) {
     console.log("PUSH", path);
-    this.current = this.routes.find(r => r.path === path);
+    this.current = matcher(this.routes, path);
   }
 
   subscribe(cb) {
     this.subscriptions.push(cb);
   }
+
 }
 
 export function route(path, component) {
@@ -78,3 +81,5 @@ export function route(path, component) {
     component
   };
 }
+
+
