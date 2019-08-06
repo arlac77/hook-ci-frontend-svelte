@@ -71,9 +71,6 @@ function decode(token) {
 
 export function hasEntitlements(...names) {
   return {
-    attach: (route) => {
-      console.log("attach",route);
-    },
     enter: async (context) => { console.log("hasEntitlements",...names); }
   };
 }

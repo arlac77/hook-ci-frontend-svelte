@@ -16,21 +16,48 @@ import NotFound from "./pages/NotFound.svelte";
 import App from "./components/App.svelte";
 import { config } from "../package.json";
 
+export function fetchQueues() {
+  return {
+    enter: async context => {
+      const data = await fetch(config.api + "/queues");
+      context.queues = (await data.json()).map(q => {
+        q.jobs = [{ id: 1 }];
+        return q;
+      });
+    },
+    leave: async context => {
+      delete context.queues;
+    }
+  };
+}
+
+export function fetchRepositories() {
+  return {
+    enter: async context => {
+      const data = await fetch(config.api + "/repositories?pattern=arlac77/*");
+      context.repositories = await data.json();
+    },
+    leave: async context => {
+      delete context.repositories;
+    }
+  };
+}
+
 export const router = new Router(
   [
     route("*", NotFound),
     route("/index.html", Home),
     route("/", Home),
     route("/login", Login),
-    route("/about", hasEntitlements('ci'), About),
-    route("/repository", Repositories),
-    route("/repository/:repository", Repository),
-    route("/queue", hasEntitlements('ci.queues.read'), Queues),
-    route("/queue/:queue", Queue),
-    route("/queue/:queue/jobs", Jobs),
-    route("/queue/:queue/job/:job", Job),
-    route("/queue/:queue/job/:job/log", JobLog),
-    route("/node", hasEntitlements('ci.nodes.read'), Nodes)
+    route("/about", hasEntitlements("ci"), About),
+    route("/repository", fetchRepositories(), Repositories),
+    route("/repository/:repository", fetchRepositories(),Repository),
+    route("/queue", hasEntitlements("ci.queues.read"), fetchQueues(), Queues),
+    route("/queue/:queue", fetchQueues(), Queue),
+    route("/queue/:queue/jobs", fetchQueues(), Jobs),
+    route("/queue/:queue/job/:job", fetchQueues(), Job),
+    route("/queue/:queue/job/:job/log", fetchQueues(), JobLog),
+    route("/node", hasEntitlements("ci.nodes.read"), Nodes)
   ],
   config.urlPrefix
 );

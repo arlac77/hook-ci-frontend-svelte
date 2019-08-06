@@ -1,6 +1,12 @@
 <script>
   import Link from "../components/Link.svelte";
-  import { repositories } from "../stores.mjs";
+  export let context;
+  
+  let repositories;
+
+  context.subscribe(value => {
+    repositories = value.repositories;
+  });
 </script>
 
 <div>
@@ -12,7 +18,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each $repositories as repository (repository.name)}
+      {#each repositories as repository (repository.name)}
         <tr>
           <td>
             <Link href="/repository/{repository.name}">{repository.name}</Link>

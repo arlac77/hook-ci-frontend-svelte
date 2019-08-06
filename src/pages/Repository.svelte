@@ -1,11 +1,10 @@
 <script>
-  import { repositories } from "../stores.mjs";
-  export let repository = { name: "", description: "" };
-
   export let context;
 
+  let repository = { name: "", description: "" };
+
   context.subscribe(value => {
-    repository = $repositories.find(q => q.name === value.params.repository);
+    repository = value.repositories.find(q => q.name === value.params.repository);
   });
 </script>
 
@@ -20,9 +19,9 @@
         {repository.id}
         <br />
         {repository.fullName}
-        {#each $repository.urls as url}
+        {#each repository.urls as url}
           <br />
-          {url}
+          <a href={url}>{url}</a>
         {/each}
       </div>
     </div>

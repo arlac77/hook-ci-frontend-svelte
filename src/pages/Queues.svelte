@@ -1,6 +1,12 @@
 <script>
   import Link from "../components/Link.svelte";
-  import { queues } from "../stores.mjs";
+  export let context;
+
+  let queues;
+
+  context.subscribe(value => {
+    queues = value.queues;
+  });
 </script>
 
 <div>
@@ -17,7 +23,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each $queues as queue (queue.name)}
+      {#each queues as queue (queue.name)}
         <tr>
           <td>
             <Link href="/queue/{queue.name}">{queue.name}</Link>

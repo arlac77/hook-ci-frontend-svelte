@@ -2,7 +2,7 @@
   import { onDestroy } from "svelte";
   import { name, version, description } from "../../package.json";
   import { login, session } from "../session.mjs";
-  export let router;
+  export let context;
 
   let username;
   let password = "";
@@ -13,7 +13,7 @@
     try {
       active = true;
       await login(username, password);
-      router.push("/");
+      context.router.push("/");
     } finally {
       active = false;
     }

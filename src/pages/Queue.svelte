@@ -1,13 +1,13 @@
 <script>
   import Link from "../components/Link.svelte";
-  import { queues } from "../stores.mjs";
-  export let queue = { name: "", jobs: [] };
-
   export let context;
 
+  let queue = { name: "", jobs: [] };
+
   context.subscribe(value => {
-    queue = $queues.find(q => q.name === value.params.queue);
+    queue = value.queues.find(q => q.name === value.params.queue);
   });
+
 </script>
 
 <div>

@@ -14,7 +14,7 @@
 
 <div>
   {#if component}
-    <svelte:component this={component} {router} {context}/>
+    <svelte:component this={component} {context}/>
   {:else}
     <slot />
   {/if}
