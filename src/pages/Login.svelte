@@ -7,9 +7,16 @@
   let username;
   let password = "";
 
+  let active = false;
+
   async function submit() {
-    await login(username, password);
-    router.push("/");
+    try {
+      active = true;
+      await login(username, password);
+      router.push("/");
+    } finally {
+      active = false;
+    }
   }
 
   onDestroy(
@@ -19,6 +26,28 @@
     })
   );
 </script>
+
+<style>
+  button {
+    text-align: center;
+    text-decoration: none;
+
+    margin: 2px 0;
+
+    border: solid 1px transparent;
+    border-radius: 4px;
+
+    padding: 0.5em 1em;
+
+    color: #ffffff;
+    background-color: #9555af;
+  }
+
+  button:active {
+    transform: translateY(1px);
+    filter: saturate(150%);
+  }
+</style>
 
 <div>
   {name} {description} {version}
@@ -42,7 +71,9 @@
     </fieldset>
 
     <div>
-      <button type="submit" disabled={!username || !password}>Login</button>
+      <button type="submit" class="{active ? 'active' : ''}" disabled={!username || !password}>
+        Login
+      </button>
     </div>
   </form>
 </div>

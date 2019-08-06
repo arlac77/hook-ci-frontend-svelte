@@ -53,7 +53,13 @@ export async function login(username, password) {
 
   const data = await response.json();
 
+  await deplay(2000);
   session.set(makeSession({ username, access_token: data.access_token || data.token }));
+}
+
+async function deplay(time)
+{
+  return new Promise((resolve,reject) => { setTimeout(() => resolve(), time); });
 }
 
 function decode(token) {
