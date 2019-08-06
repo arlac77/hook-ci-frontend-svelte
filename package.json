@@ -80,6 +80,6 @@
     }
   },
   "dependencies": {
-    "multi-path-matcher": "^1.0.0"
+    "multi-path-matcher": "^1.2.0"
   }
 }

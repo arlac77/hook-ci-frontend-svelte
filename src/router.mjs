@@ -6,9 +6,19 @@ export class Router {
 
     let compiledRoutes = compile(routes);
 
+    const context = {
+      subscribe: cb => {
+        this.contextSubscriptions.push(cb);
+        cb(this.context);
+      },
+      params: {}
+    };
+
     Object.defineProperties(this, {
       prefix: { value: prefix },
       subscriptions: { value: [] },
+      contextSubscriptions: { value: [] },
+      context: { value: context },
       compiledRoutes: {
         get() {
           return compiledRoutes;
@@ -80,9 +90,12 @@ export class Router {
   push(path) {
     const { route, params } = matcher(this.compiledRoutes, path);
 
-    console.log("PUSH", path, route, params);
+    //console.log("PUSH", path, route, params);
 
+    this.context.params = params;
     this.current = route;
+
+    this.contextSubscriptions.forEach(subscription => subscription(this.context));
   }
 
   subscribe(cb) {
