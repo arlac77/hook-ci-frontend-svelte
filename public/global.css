@@ -1,6 +1,9 @@
 :root {
-    /* buttons */
+    /*
     --buttons: #303ba6;
+    */
+    --buttons: #9555af;
+
     --primary-buttons-text-color: white;
     --buttons-hover-color: #303ca649;
     --primary-buttons-hover-color: var(--buttons);
@@ -177,10 +180,30 @@ th {
     border-bottom: 2px solid #dee2e6;
 }
 
-
 table th,
 .table td {
     padding: 0.75rem;
     vertical-align: top;
     border-top: 1px solid #dee2e6;
+}
+
+
+button {
+    text-align: center;
+    text-decoration: none;
+
+    margin: 2px 0;
+
+    border: solid 1px transparent;
+    border-radius: 4px;
+
+    padding: 0.5em 1em;
+
+    color: var(--primary-buttons-text-color);
+    background-color:  var(--buttons);
+}
+
+button:active {
+    transform: translateY(1px);
+    filter: saturate(150%);
 }

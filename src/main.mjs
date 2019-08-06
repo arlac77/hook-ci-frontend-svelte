@@ -23,14 +23,14 @@ export const router = new Router(
     route("/", Home),
     route("/login", Login),
     route("/about", hasEntitlements('ci'), About),
-    route("/repositories", Repositories),
+    route("/repository", Repositories),
     route("/repository/:repository", Repository),
-    route("/queues", hasEntitlements('ci.queues.read'), Queues),
+    route("/queue", hasEntitlements('ci.queues.read'), Queues),
     route("/queue/:queue", Queue),
     route("/queue/:queue/jobs", Jobs),
     route("/queue/:queue/job/:job", Job),
     route("/queue/:queue/job/:job/log", JobLog),
-    route("/nodes", hasEntitlements('ci.nodes.read'), Nodes)
+    route("/node", hasEntitlements('ci.nodes.read'), Nodes)
   ],
   config.urlPrefix
 );

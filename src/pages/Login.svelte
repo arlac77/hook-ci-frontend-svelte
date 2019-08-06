@@ -27,28 +27,6 @@
   );
 </script>
 
-<style>
-  button {
-    text-align: center;
-    text-decoration: none;
-
-    margin: 2px 0;
-
-    border: solid 1px transparent;
-    border-radius: 4px;
-
-    padding: 0.5em 1em;
-
-    color: #ffffff;
-    background-color: #9555af;
-  }
-
-  button:active {
-    transform: translateY(1px);
-    filter: saturate(150%);
-  }
-</style>
-
 <div>
   {name} {description} {version}
   <form on:submit|preventDefault={submit}>

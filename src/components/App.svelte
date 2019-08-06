@@ -18,9 +18,9 @@
 <div class="wrapper">
   <header id="topnav">
     <Link href="/">Home</Link>
-    <Link href="/queues">Queues</Link>
-    <Link href="/repositories">Repositories</Link>
-    <Link href="/nodes">Nodes</Link>
+    <Link href="/queue">Queues</Link>
+    <Link href="/repository">Repositories</Link>
+    <Link href="/node">Nodes</Link>
     <Link href="/about">About</Link>
     <Link href="/login">Login</Link>
     <div>{username}</div>
