@@ -21,7 +21,7 @@
             <Link href="/queue/{queue.name}/job/{job.id}">{job.id}</Link>
           </td>
           <td>{job.processedOn}</td>
-          <td><a href="/repository/{job.repository.name}">{job.repository.name}</a></td>
+          <td><Link href="/repository/{job.repository.name}">{job.repository.name}</Link></td>
           <td>{job.branch}</td>
         </tr>
       {/each}
