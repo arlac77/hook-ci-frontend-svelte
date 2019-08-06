@@ -31,6 +31,18 @@ export function fetchQueues() {
   };
 }
 
+export function fetchJobs() {
+  return {
+    enter: async context => {
+      const data = await fetch(config.api + `/queue/${context.params.queue}/jobs`);
+      context.jobs = await data.json();
+    },
+    leave: async context => {
+      delete context.jobs;
+    }
+  };
+}
+
 export function fetchRepositories() {
   return {
     enter: async context => {
@@ -53,10 +65,10 @@ export const router = new Router(
     route("/repository", fetchRepositories(), Repositories),
     route("/repository/:repository", fetchRepositories(),Repository),
     route("/queue", hasEntitlements("ci.queues.read"), fetchQueues(), Queues),
-    route("/queue/:queue", fetchQueues(), Queue),
-    route("/queue/:queue/jobs", fetchQueues(), Jobs),
-    route("/queue/:queue/job/:job", fetchQueues(), Job),
-    route("/queue/:queue/job/:job/log", fetchQueues(), JobLog),
+    route("/queue/:queue", fetchQueues(), fetchJobs(), Queue),
+    route("/queue/:queue/jobs", fetchJobs(), Jobs),
+    route("/queue/:queue/job/:job", fetchJobs(), Job),
+    route("/queue/:queue/job/:job/log", fetchJobs(), JobLog),
     route("/node", hasEntitlements("ci.nodes.read"), Nodes)
   ],
   config.urlPrefix

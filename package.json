@@ -3,7 +3,7 @@
   "version": "0.0.0-semantic-release",
   "description": "some description",
   "scripts": {
-    "deploy": "scp public/* root@odroid1:/services/hook-ci/frontend/",
+    "deploy": "scp public/* root@odroid1:/services/hook-ci/frontend-svelte/",
     "prepare": "rollup -c",
     "start": "rollup -c -w"
   },

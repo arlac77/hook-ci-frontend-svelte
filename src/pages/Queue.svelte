@@ -1,13 +1,15 @@
 <script>
   import Link from "../components/Link.svelte";
+  import JobTable from "../components/JobTable.svelte";
   export let context;
 
   let queue = { name: "", jobs: [] };
+  let jobs = [];
 
   context.subscribe(value => {
     queue = value.queues.find(q => q.name === value.params.queue);
+    jobs = value.jobs;
   });
-
 </script>
 
 <div>
@@ -31,29 +33,5 @@
       </div>
     </div>
   </div>
-  <table class="table is-bordered is-striped is-hoverable">
-    <thead>
-      <tr>
-        <th>
-          <abbr title="Id">Id</abbr>
-        </th>
-        <th>
-          <abbr title="Started">S</abbr>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-
-      {#each queue.jobs as job (job.id)}
-        <tr>
-          <td>
-            <Link href="/queue/{queue.name}/job/{job.id}">{job.id}</Link>
-          </td>
-          <td>{job.started}</td>
-        </tr>
-      {/each}
-
-    </tbody>
-  </table>
-
+  <JobTable {queue} {jobs}/>
 </div>
