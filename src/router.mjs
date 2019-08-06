@@ -86,16 +86,20 @@ export class Router {
     return r !== undefined && r.component;
   }
 
+  async replace(path) {
+    await this.push(path);
+  }
+
   async push(path) {
     const { route, params } = matcher(this.compiledRoutes, path);
 
     if(this.current !== undefined) {
-      await Promise.all(this.current.prerequisites.filter(p => p.leave !== undefined).map(p => p.leave(this.context)));
+      await Promise.all(this.current.guards.filter(p => p.leave !== undefined).map(p => p.leave(this.context)));
     }
 
     this.context.params = params;
 
-    await Promise.all(route.prerequisites.filter(p => p.enter !== undefined).map(p => p.enter(this.context)));
+    await Promise.all(route.guards.filter(p => p.enter !== undefined).map(p => p.enter(this.context)));
 
     this.current = route;
 
@@ -112,7 +116,7 @@ export function route(path, ...args) {
   return {
     path,
     component,
-    prerequisites : args
+    guards : args
   };
 }
 
