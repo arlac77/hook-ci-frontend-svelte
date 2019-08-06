@@ -1,15 +1,21 @@
 <script>
   export let router;
 
-  let component;
+  let component, context;
 
   router.subscribe(value => {
-    component = router.currentComponent;
+    component = router.component;
+  });
+
+  router.context.subscribe(value => {
+    context = value;
   });
 </script>
 
 <div>
   {#if component}
-    <svelte:component this={component} {router}/>
-  {:else}<slot />{/if}
+    <svelte:component this={component} {router} {context}/>
+  {:else}
+    <slot />
+  {/if}
 </div>

@@ -200,10 +200,19 @@ button {
     padding: 0.5em 1em;
 
     color: var(--primary-buttons-text-color);
-    background-color:  var(--buttons);
+    background-color: var(--buttons);
 }
 
 button:active {
     transform: translateY(1px);
     filter: saturate(150%);
+}
+
+
+
+fieldset {
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
 }

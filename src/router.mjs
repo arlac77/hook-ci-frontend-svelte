@@ -11,7 +11,8 @@ export class Router {
         this.contextSubscriptions.push(cb);
         cb(this.context);
       },
-      params: {}
+      params: {},
+      router: this
     };
 
     Object.defineProperties(this, {
@@ -83,7 +84,7 @@ export class Router {
     this.push(path);
   }
 
-  get currentComponent() {
+  get component() {
     const r = this.current;
     return r !== undefined && r.component;
   }

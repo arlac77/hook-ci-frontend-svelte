@@ -3,12 +3,11 @@
   import { queues } from "../stores.mjs";
   export let queue = { name: "", jobs: [] };
 
-  export let router;
+  export let context;
 
-  router.context.subscribe(value => {
+  context.subscribe(value => {
     queue = $queues.find(q => q.name === value.params.queue);
-});
-
+  });
 </script>
 
 <div>
@@ -25,9 +24,7 @@
       {#each queue.jobs as job (job.id)}
         <tr>
           <td>
-            <Link href="/queue/{queue.name}/job/{job.id}">
-              {job.id}
-            </Link>
+            <Link href="/queue/{queue.name}/job/{job.id}">{job.id}</Link>
           </td>
           <td>{job.id}</td>
           <td>{job.processedOn}</td>

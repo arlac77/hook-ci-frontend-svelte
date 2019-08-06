@@ -1,11 +1,10 @@
 <script>
   import { repositories } from "../stores.mjs";
-  export let currentRoute;
   export let repository = { name: "", description: "" };
 
-  export let router;
+  export let context;
 
-  router.context.subscribe(value => {
+  context.subscribe(value => {
     repository = $repositories.find(q => q.name === value.params.repository);
   });
 </script>

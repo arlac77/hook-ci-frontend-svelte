@@ -1,9 +1,10 @@
 <script>
   import { config } from "../../package.json";
+  export let context;
 
   let params;
 
-  router.context.subscribe(value => {
+  context.subscribe(value => {
     params = value.params;
   });
 
