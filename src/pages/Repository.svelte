@@ -6,7 +6,7 @@
   export let router;
 
   router.context.subscribe(value => {
-    repository = $repositories.find(q => q.name === value.params.name);
+    repository = $repositories.find(q => q.name === value.params.repository);
   });
 </script>
 

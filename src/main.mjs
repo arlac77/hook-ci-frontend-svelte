@@ -17,15 +17,15 @@ import { config } from "../package.json";
 
 export const router = new Router(
   [
-    //route("*", NotFound),
+    route("*", NotFound),
     route("/index.html", Home),
     route("/", Home),
     route("/login", Login),
     route("/about", About),
     route("/repositories", Repositories),
-    route("/repository/:name", Repository),
+    route("/repository/:repository", Repository),
     route("/queues", Queues),
-    route("/queue/:name", Queue),
+    route("/queue/:queue", Queue),
     route("/queue/:queue/jobs", Jobs),
     route("/queue/:queue/job/:job", Job),
     route("/queue/:queue/job/:job/log", JobLog),

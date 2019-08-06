@@ -6,7 +6,7 @@
   export let router;
 
   router.context.subscribe(value => {
-    queue = $queues.find(q => q.name === value.params.name);
+    queue = $queues.find(q => q.name === value.params.queue);
 });
 
 </script>

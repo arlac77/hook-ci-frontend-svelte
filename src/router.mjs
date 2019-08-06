@@ -67,8 +67,9 @@ export class Router {
         }
 
         const { route, params } = matcher(this.routes, path);
-        console.log("SET", path, route, params);
+        this.context.params = params;
         this.current = route;
+        this.contextSubscriptions.forEach(subscription => subscription(this.context));
       }
     });
 
@@ -77,8 +78,6 @@ export class Router {
 
   initializeCurrent() {
     const path = window.location.pathname + window.location.search;
-    console.log("INIT", path);
-
     this.push(path);
   }
 
@@ -89,8 +88,6 @@ export class Router {
 
   push(path) {
     const { route, params } = matcher(this.compiledRoutes, path);
-
-    //console.log("PUSH", path, route, params);
 
     this.context.params = params;
     this.current = route;
