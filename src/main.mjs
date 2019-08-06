@@ -1,4 +1,5 @@
 import { Router, route } from "./router";
+import { hasEntitlements } from "./session";
 
 import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
@@ -21,15 +22,15 @@ export const router = new Router(
     route("/index.html", Home),
     route("/", Home),
     route("/login", Login),
-    route("/about", About),
+    route("/about", hasEntitlements('ci'), About),
     route("/repositories", Repositories),
     route("/repository/:repository", Repository),
-    route("/queues", Queues),
+    route("/queues", hasEntitlements('ci.queues.read'), Queues),
     route("/queue/:queue", Queue),
     route("/queue/:queue/jobs", Jobs),
     route("/queue/:queue/job/:job", Job),
     route("/queue/:queue/job/:job/log", JobLog),
-    route("/nodes", Nodes)
+    route("/nodes", hasEntitlements('ci.nodes.read'), Nodes)
   ],
   config.urlPrefix
 );

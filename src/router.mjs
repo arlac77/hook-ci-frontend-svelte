@@ -86,10 +86,17 @@ export class Router {
     return r !== undefined && r.component;
   }
 
-  push(path) {
+  async push(path) {
     const { route, params } = matcher(this.compiledRoutes, path);
 
+    if(this.current !== undefined) {
+      await Promise.all(this.current.prerequisites.filter(p => p.leave !== undefined).map(p => p.leave(this.context)));
+    }
+
     this.context.params = params;
+
+    await Promise.all(route.prerequisites.filter(p => p.enter !== undefined).map(p => p.enter(this.context)));
+
     this.current = route;
 
     this.contextSubscriptions.forEach(subscription => subscription(this.context));
@@ -100,9 +107,12 @@ export class Router {
   }
 }
 
-export function route(path, component) {
+export function route(path, ...args) {
+  const component = args.pop();
   return {
     path,
-    component
+    component,
+    prerequisites : args
   };
 }
+

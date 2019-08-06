@@ -61,3 +61,11 @@ function decode(token) {
     ? undefined
     : JSON.parse(atob(token.split(".")[1]));
 }
+
+
+export function hasEntitlements(...names) {
+  return {
+    name: "hasEntitlements",
+    enter: async (context) => { console.log("hasEntitlements",...names); }
+  };
+}
