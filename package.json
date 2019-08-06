@@ -78,5 +78,8 @@
     "repository": {
       "url": "https://github.com/arlac77/npm-package-template-svelte-app.git"
     }
+  },
+  "dependencies": {
+    "multi-path-matcher": "^1.0.0"
   }
 }

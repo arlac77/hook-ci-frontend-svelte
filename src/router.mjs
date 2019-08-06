@@ -1,13 +1,28 @@
-import { matcher } from "./route-matcher.mjs";
+import { compile, matcher } from "multi-path-matcher";
 
 export class Router {
   constructor(routes = [], prefix = "") {
     let current;
 
+    let compiledRoutes = compile(routes);
+
     Object.defineProperties(this, {
       prefix: { value: prefix },
       subscriptions: { value: [] },
-      routes: { value: routes },
+      compiledRoutes: {
+        get() {
+          return compiledRoutes;
+        }
+      },
+      routes: {
+        get() {
+          return routes;
+        },
+        set(value) {
+          routes = value;
+          compiledRoutes = compile(routes);
+        }
+      },
       current: {
         get() {
           return current;
@@ -50,10 +65,6 @@ export class Router {
     setTimeout(() => this.initializeCurrent(), 10);
   }
 
-  add(routes) {
-    this.routes.push(...routes);
-  }
-
   initializeCurrent() {
     const path = window.location.pathname + window.location.search;
     console.log("INIT", path);
@@ -67,7 +78,7 @@ export class Router {
   }
 
   push(path) {
-    const { route, params } = matcher(this.routes, path);
+    const { route, params } = matcher(this.compiledRoutes, path);
 
     console.log("PUSH", path, route, params);
 
