@@ -3,7 +3,11 @@
   export let currentRoute;
   export let repository = { name: "", description: "" };
 
-  $: repository = $repositories.find(r => r.name === currentRoute.params.name);
+  export let router;
+
+  router.context.subscribe(value => {
+    repository = $repositories.find(q => q.name === value.params.name);
+  });
 </script>
 
 <div>

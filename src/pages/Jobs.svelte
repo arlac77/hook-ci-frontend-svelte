@@ -1,10 +1,14 @@
 <script>
   import Link from "../components/Link.svelte";
   import { queues } from "../stores.mjs";
-  export let currentRoute;
   export let queue = { name: "", jobs: [] };
 
-  $: queue = $queues.find(q => q.name === currentRoute.params.name);
+  export let router;
+
+  router.context.subscribe(value => {
+    queue = $queues.find(q => q.name === value.params.name);
+});
+
 </script>
 
 <div>
@@ -21,7 +25,7 @@
       {#each queue.jobs as job (job.id)}
         <tr>
           <td>
-            <Link href="/queue/{currentRoute.params.queue}/job/{job.id}">
+            <Link href="/queue/{queue.name}/job/{job.id}">
               {job.id}
             </Link>
           </td>
