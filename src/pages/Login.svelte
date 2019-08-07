@@ -49,7 +49,8 @@
     </fieldset>
 
     <div>
-      <button type="submit" class="{active ? 'active' : ''}" disabled={!username || !password}>
+      <button type="submit" class:active="{active}"
+      disabled={!username || !password}>
         Login
       </button>
     </div>
