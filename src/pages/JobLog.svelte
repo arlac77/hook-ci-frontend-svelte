@@ -1,20 +1,27 @@
 <script>
+  import { onDestroy } from "svelte";
   import { config } from "../../package.json";
   export let context;
 
-  let params;
+  let url;
 
-  $: params = $context.params;
+  onDestroy(
+    context.subscribe(value => {
+      const job = value.params.job;
+      const queue = value.params.queue;
+      url = `${config.api}/queue/${queue}/job/${job}/log?start=0&end=10000`;
+      refresh(url);
+    })
+  );
 
-  let lines;
+  let lines = [];
 
-  async function refresh() {
-    const data = await fetch(
-      `${config.api}/queue/${params.queue}/job/${params.job}/log?start=0&end=10000`
-    );
+  async function refresh(url) {
+    const data = await fetch(url);
     const json = await data.json();
     lines = json.logs.join("\n");
   }
+
 </script>
 
 <style>
