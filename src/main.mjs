@@ -69,9 +69,9 @@ export const router = new Router(
     route("/repository/:repository", guardRepositories, Repository),
     route("/queue", hasEntitlements("ci.queues.read"), guardQueues, Queues),
     route("/queue/:queue", guardQueues, guardJobs, Queue),
-    route("/queue/:queue/jobs", guardJobs, Jobs),
-    route("/queue/:queue/job/:job", guardJobs, Job),
-    route("/queue/:queue/job/:job/log", guardJobs, JobLog),
+    route("/queue/:queue/jobs", guardQueues, guardJobs, Jobs),
+    route("/queue/:queue/job/:job",guardQueues, guardJobs, Job),
+    route("/queue/:queue/job/:job/log", guardQueues, guardJobs, JobLog),
     route("/node", hasEntitlements("ci.nodes.read"), Nodes)
   ],
   config.urlPrefix

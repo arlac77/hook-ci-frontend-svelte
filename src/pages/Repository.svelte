@@ -1,11 +1,13 @@
 <script>
+  import { onDestroy } from "svelte";
+
   export let context;
 
   let repository = { name: "", description: "" };
 
-  context.subscribe(value => {
+  onDestroy(context.subscribe(value => {
     repository = value.repositories.find(q => q.name === value.params.repository);
-  });
+  }));
 </script>
 
 <div>

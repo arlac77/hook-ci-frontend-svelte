@@ -4,9 +4,7 @@
 
   let params;
 
-  context.subscribe(value => {
-    params = value.params;
-  });
+  $: params = $context.params;
 
   let lines;
 

@@ -1,4 +1,5 @@
 <script>
+  import { onDestroy } from "svelte";
   import { Link } from "svelte-guard-history-router";
   import JobTable from "../components/JobTable.svelte";
   export let context;
@@ -6,10 +7,10 @@
   let queue = { name: "", jobs: [] };
   let jobs = [];
 
-  context.subscribe(value => {
+  onDestroy(context.subscribe(value => {
     queue = value.queues.find(q => q.name === value.params.queue);
     jobs = value.jobs;
-  });
+  }));
 </script>
 
 <div>

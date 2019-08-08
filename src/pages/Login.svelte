@@ -16,15 +16,11 @@
       context.router.push("/");
     } finally {
       active = false;
+      password = '';
     }
   }
 
-  onDestroy(
-    session.subscribe(value => {
-      username = value.username;
-      password = "";
-    })
-  );
+  $: username = $session.username;
 </script>
 
 <div>

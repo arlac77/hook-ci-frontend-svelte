@@ -4,9 +4,7 @@
 
   let queues;
 
-  context.subscribe(value => {
-    queues = value.queues;
-  });
+  $: queues = $context.queues;
 </script>
 
 <div>

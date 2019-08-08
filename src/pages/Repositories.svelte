@@ -4,9 +4,8 @@
   
   let repositories;
 
-  context.subscribe(value => {
-    repositories = value.repositories;
-  });
+  $: repositories = $context.repositories;
+
 </script>
 
 <div>
