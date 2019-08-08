@@ -1,6 +1,7 @@
 <script>
   import { onDestroy } from "svelte";
-import { Link } from "svelte-guard-history-router";
+  import { Link } from "svelte-guard-history-router";
+  import Step from "../components/Step.svelte";
 
   export let context;
 
@@ -21,11 +22,9 @@ import { Link } from "svelte-guard-history-router";
   <Link href="/queue/{queue}/job/{job.id}/log">Log</Link>
 
   <ul>
-    {#each job.steps as { name, executable, args, started, ended, node }, i}
+    {#each job.steps as step, i}
       <li>
-        {name} {executable}
-        {#each args as a}{a}{/each}
-        {started} {ended} {node}
+        <Step {step} />
       </li>
     {/each}
   </ul>

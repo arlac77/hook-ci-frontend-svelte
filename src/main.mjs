@@ -10,6 +10,7 @@ import Jobs from "./pages/Jobs.svelte";
 import Job from "./pages/Job.svelte";
 import JobLog from "./pages/JobLog.svelte";
 import Nodes from "./pages/Nodes.svelte";
+import Node from "./pages/Nodes.svelte";
 import About from "./pages/About.svelte";
 import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
@@ -72,7 +73,8 @@ export const router = new Router(
     route("/queue/:queue/jobs", guardQueues, guardJobs, Jobs),
     route("/queue/:queue/job/:job",guardQueues, guardJobs, Job),
     route("/queue/:queue/job/:job/log", guardQueues, guardJobs, JobLog),
-    route("/node", hasEntitlements("ci.nodes.read"), Nodes)
+    route("/node", hasEntitlements("ci.nodes.read"), Nodes),
+    route("/node/:node", hasEntitlements("ci.nodes.read"), Node)
   ],
   config.urlPrefix
 );
