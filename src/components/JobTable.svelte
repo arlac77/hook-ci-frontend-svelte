@@ -1,5 +1,5 @@
 <script>
-  import Link from "./Link.svelte";
+  import { Link } from "svelte-guard-history-router";
   export let jobs = [];
   export let queue= { name: 'xxx' };
 </script>

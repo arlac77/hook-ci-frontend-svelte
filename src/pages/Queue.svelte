@@ -1,5 +1,5 @@
 <script>
-  import Link from "../components/Link.svelte";
+  import { Link } from "svelte-guard-history-router";
   import JobTable from "../components/JobTable.svelte";
   export let context;
 

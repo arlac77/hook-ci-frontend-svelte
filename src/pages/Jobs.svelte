@@ -1,5 +1,4 @@
 <script>
-  import Link from "../components/Link.svelte";
   import JobTable from "../components/JobTable.svelte";
   export let context;
 

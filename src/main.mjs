@@ -1,4 +1,5 @@
-import { Router, route } from "./router";
+import { Router, route } from "svelte-guard-history-router";
+
 import { hasEntitlements } from "./session";
 
 import Queues from "./pages/Queues.svelte";

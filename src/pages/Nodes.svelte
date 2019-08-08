@@ -1,5 +1,5 @@
 <script>
-  import Link from "../components/Link.svelte";
+  import { Link } from "svelte-guard-history-router";
   import ApolloClient, { gql } from "apollo-boost";
   import { query } from "svelte-apollo";
   import { config } from "../../package.json";

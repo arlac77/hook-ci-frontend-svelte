@@ -1,10 +1,8 @@
 <script>
+  import { Outlet, Link } from "svelte-guard-history-router";
   import { onMount, onDestroy } from "svelte";
   import { session } from "../session.mjs";
   import { router } from "../main.mjs";
-
-  import Link from "./Link.svelte";
-  import Outlet from "./Outlet.svelte";
 
   let username;
   onDestroy(

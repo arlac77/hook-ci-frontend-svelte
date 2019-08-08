@@ -8,7 +8,7 @@
     "start": "rollup -c -w"
   },
   "dependencies": {
-    "multi-path-matcher": "^1.3.2"
+    "svelte-guard-history-router": "git+https://github.com/arlac77/svelte-guard-history-router.git"
   },
   "devDependencies": {
     "@semantic-release/exec": "^3.3.5",
