@@ -17,44 +17,46 @@ import NotFound from "./pages/NotFound.svelte";
 import App from "./components/App.svelte";
 import { config } from "../package.json";
 
-export function fetchQueues() {
-  return {
-    enter: async context => {
-      const data = await fetch(config.api + "/queues");
-      context.queues = (await data.json()).map(q => {
-        q.jobs = [{ id: 1 }];
-        return q;
-      });
-    },
-    leave: async context => {
-      delete context.queues;
-    }
-  };
-}
+const guardQueues = {
+  enter: async context => {
+    console.log("enter queues");
+    const data = await fetch(config.api + "/queues");
+    context.queues = (await data.json()).map(q => {
+      q.jobs = [{ id: 1 }];
+      return q;
+    });
+  },
+  leave: async context => {
+    console.log("leave queues");
+    delete context.queues;
+  }
+};
 
-export function fetchJobs() {
-  return {
-    enter: async context => {
-      const data = await fetch(config.api + `/queue/${context.params.queue}/jobs`);
-      context.jobs = await data.json();
-    },
-    leave: async context => {
-      delete context.jobs;
-    }
-  };
-}
+const guardJobs = {
+  enter: async context => {
+    console.log("enter jobs");
+    const data = await fetch(
+      config.api + `/queue/${context.params.queue}/jobs`
+    );
+    context.jobs = await data.json();
+  },
+  leave: async context => {
+    console.log("leave jobs");
+    delete context.jobs;
+  }
+};
 
-export function fetchRepositories() {
-  return {
-    enter: async context => {
-      const data = await fetch(config.api + "/repositories?pattern=arlac77/*");
-      context.repositories = await data.json();
-    },
-    leave: async context => {
-      delete context.repositories;
-    }
-  };
-}
+const guardRepositories = {
+  enter: async context => {
+    console.log("enter repositories");
+    const data = await fetch(config.api + "/repositories?pattern=arlac77/*");
+    context.repositories = await data.json();
+  },
+  leave: async context => {
+    console.log("leave repositories");
+    delete context.repositories;
+  }
+};
 
 export const router = new Router(
   [
@@ -63,13 +65,13 @@ export const router = new Router(
     route("/", Home),
     route("/login", Login),
     route("/about", hasEntitlements("ci"), About),
-    route("/repository", fetchRepositories(), Repositories),
-    route("/repository/:repository", fetchRepositories(),Repository),
-    route("/queue", hasEntitlements("ci.queues.read"), fetchQueues(), Queues),
-    route("/queue/:queue", fetchQueues(), fetchJobs(), Queue),
-    route("/queue/:queue/jobs", fetchJobs(), Jobs),
-    route("/queue/:queue/job/:job", fetchJobs(), Job),
-    route("/queue/:queue/job/:job/log", fetchJobs(), JobLog),
+    route("/repository", guardRepositories, Repositories),
+    route("/repository/:repository", guardRepositories, Repository),
+    route("/queue", hasEntitlements("ci.queues.read"), guardQueues, Queues),
+    route("/queue/:queue", guardQueues, guardJobs, Queue),
+    route("/queue/:queue/jobs", guardJobs, Jobs),
+    route("/queue/:queue/job/:job", guardJobs, Job),
+    route("/queue/:queue/job/:job/log", guardJobs, JobLog),
     route("/node", hasEntitlements("ci.nodes.read"), Nodes)
   ],
   config.urlPrefix
