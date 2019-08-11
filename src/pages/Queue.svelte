@@ -7,10 +7,16 @@
   let queue = { name: "", jobs: [] };
   let jobs = [];
 
-  onDestroy(context.subscribe(value => {
-    queue = value.queues.find(q => q.name === value.params.queue);
-    jobs = value.jobs;
-  }));
+  onDestroy(
+    context.subscribe(value => {
+      if (value) {
+        if (value.queues) {
+          queue = value.queues.find(q => q.name === value.params.queue);
+        }
+        jobs = value.jobs;
+      }
+    })
+  );
 </script>
 
 <div>
@@ -34,5 +40,5 @@
       </div>
     </div>
   </div>
-  <JobTable {queue} {jobs}/>
+  <JobTable {queue} {jobs} />
 </div>
