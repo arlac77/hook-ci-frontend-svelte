@@ -3,12 +3,7 @@
   export let jobs = [];
   export let queue = { name: "xxx" };
 
-  const formatter = new Intl.DateTimeFormat("en", {
-    hour12: false,
-    hour: "numeric",
-    minute: "2-digit",
-    second: "2-digit"
-  });
+  const formatter = new Intl.DateTimeFormat("en");
 </script>
 
 <div>
@@ -16,7 +11,8 @@
     <thead>
       <tr>
         <th>Id</th>
-        <th>Processed On</th>
+        <th>Processed</th>
+        <th>Finished</th>
         <th>Repository</th>
         <th>Branch</th>
       </tr>
@@ -28,6 +24,7 @@
             <Link href="/queue/{queue.name}/job/{job.id}">{job.id}</Link>
           </td>
           <td>{formatter.format(new Date(job.processedOn))}</td>
+          <td>{formatter.format(new Date(job.finishedOn))}</td>
           <td>
             <Link href="/repository/{job.repository.name}">
               {job.repository.name}
