@@ -1,5 +1,7 @@
 <script>
   import { Link } from "svelte-guard-history-router";
+  import QueueLink from "../components/QueueLink.svelte";
+
   export let context;
 
   let queues;
@@ -24,7 +26,7 @@
       {#each queues as queue (queue.name)}
         <tr>
           <td>
-            <Link href="/queue/{queue.name}">{queue.name}</Link>
+            <QueueLink {queue}/>
           </td>
           <td>{queue.active}</td>
           <td>{queue.waiting}</td>
