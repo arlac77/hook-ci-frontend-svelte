@@ -1,11 +1,12 @@
 <script>
   import { Link } from "svelte-guard-history-router";
+  import RepositoryLink from "../components/RepositoryLink.svelte";
+
   export let context;
-  
+
   let repositories;
 
   $: repositories = $context.repositories;
-
 </script>
 
 <div>
@@ -20,7 +21,7 @@
       {#each repositories as repository (repository.name)}
         <tr>
           <td>
-            <Link href="/repository/{repository.name}">{repository.name}</Link>
+            <RepositoryLink {repository} />
           </td>
           <td>{repository.description}</td>
         </tr>
