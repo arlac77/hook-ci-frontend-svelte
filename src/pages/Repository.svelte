@@ -1,13 +1,15 @@
 <script>
   import { onDestroy } from "svelte";
+  import { repositories }  from "../store.mjs";
 
   export let context;
 
   let repository = { name: "", description: "" };
 
-  onDestroy(context.subscribe(value => {
-    repository = value.repositories.find(q => q.name === value.params.repository);
-  }));
+  const repositoryKey = context.keys.get('repository');
+
+  $: repository = $repositories.find(r => r.name === $repositoryKey);
+  
 </script>
 
 <div>

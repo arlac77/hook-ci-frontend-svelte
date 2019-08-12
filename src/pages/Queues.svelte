@@ -1,12 +1,9 @@
 <script>
   import { Link } from "svelte-guard-history-router";
   import QueueLink from "../components/QueueLink.svelte";
+  import { queues }  from "../store.mjs";
 
   export let context;
-
-  let queues;
-
-  $: queues = $context.queues;
 </script>
 
 <div>
@@ -23,7 +20,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each queues as queue (queue.name)}
+      {#each $queues as queue (queue.name)}
         <tr>
           <td>
             <QueueLink {queue}/>

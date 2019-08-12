@@ -2,21 +2,17 @@
   import { onDestroy } from "svelte";
   import { Link } from "svelte-guard-history-router";
   import JobTable from "../components/JobTable.svelte";
+  import { queues }  from "../store.mjs";
   export let context;
 
-  let queue = { name: "", jobs: [] };
-  let jobs = [];
+  const jobs = [];
 
-  onDestroy(
-    context.subscribe(value => {
-      if (value) {
-        if (value.queues) {
-          queue = value.queues.find(q => q.name === value.params.queue);
-        }
-        jobs = value.jobs;
-      }
-    })
-  );
+  let queue = { name: "", jobs: [] };
+
+  const queueKey = context.keys.get('queue');
+
+  $: queue = $queues.find(q => q.name === $queueKey);
+
 </script>
 
 <div>
