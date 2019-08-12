@@ -2,7 +2,7 @@
   import { Link } from "svelte-guard-history-router";
   import { dateFormatter } from '../util.mjs';
 
-  //import { RepositoryLink } from "./RepositoryLink.svelte";
+  import RepositoryLink from "./RepositoryLink.svelte";
   export let jobs = [];
   export let queue = { name: "xxx" };
 </script>
@@ -27,7 +27,7 @@
           <td>{dateFormatter.format(new Date(job.processedOn))}</td>
           <td>{dateFormatter.format(new Date(job.finishedOn))}</td>
           <td>
-    <!--        <RepositoryLink repository={job.repository} /> -->
+            <RepositoryLink repository={job.repository} />
           </td>
           <td>{job.branch}</td>
         </tr>
