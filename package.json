@@ -11,7 +11,7 @@
     "svelte-guard-history-router": "git+https://github.com/arlac77/svelte-guard-history-router.git"
   },
   "devDependencies": {
-    "@semantic-release/exec": "^3.3.5",
+    "@semantic-release/exec": "^3.3.6",
     "apollo-boost": "^0.4.3",
     "apollo-client": "^2.6.3",
     "browser-sync": "^2.26.7",
@@ -29,7 +29,7 @@
     "rollup-plugin-svelte": "^5.1.0",
     "rollup-plugin-terser": "^5.1.1",
     "semantic-release": "^15.13.19",
-    "svelte": "^3.7.1",
+    "svelte": "^3.8.0",
     "svelte-apollo": "^0.3.0",
     "svelte-preprocess": "^2.15.0"
   },
