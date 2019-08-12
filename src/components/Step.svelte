@@ -1,17 +1,16 @@
 <script>
   import NodeLink from "./NodeLink.svelte";
-
+  import { dateFormatter } from '../util.mjs';
   export let step;
 
-  const formatter = new Intl.DateTimeFormat("en");
 </script>
 
 <div>
   <h3>{step.name}</h3>
   {step.executable}
   {#each step.args as a}{a}{/each}
-  {formatter.format(new Date(step.started))}
-  {formatter.format(new Date(step.ended))}
+  {dateFormatter.format(new Date(step.started))}
+  {dateFormatter.format(new Date(step.ended))}
   <NodeLink name={step.node}>{step.node}</NodeLink>
 
   <table>
