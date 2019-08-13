@@ -1,15 +1,27 @@
 <script>
-  import { onDestroy } from "svelte";
-  import { repositories }  from "../store.mjs";
+  import { derived } from "svelte/store";
+  import { repositories } from "../store.mjs";
 
   export let context;
 
   let repository = { name: "", description: "" };
-
   const repositoryKey = context.keys.get('repository');
 
+  
   $: repository = $repositories.find(r => r.name === $repositoryKey);
   
+
+/*
+  export const rs = derived(
+    repositories,
+    repositoryKey,
+    ($repositories, $repositoryKey) =>
+      $repositories.find(r => r.name === $repositoryKey)
+  );
+   $: repository = $rs;
+*/
+
+
 </script>
 
 <div>

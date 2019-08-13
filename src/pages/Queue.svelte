@@ -1,5 +1,4 @@
 <script>
-  import { onDestroy } from "svelte";
   import { Link } from "svelte-guard-history-router";
   import JobTable from "../components/JobTable.svelte";
   import { queues }  from "../store.mjs";

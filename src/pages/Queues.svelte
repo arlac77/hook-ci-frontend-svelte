@@ -12,7 +12,7 @@
       <tr>
         <th>Name</th>
         <th>Active</th>
-        <th>Waitng</th>
+        <th>Waiting</th>
         <th>Delayed</th>
         <th>Paused</th>
         <th>Completed</th>
@@ -25,7 +25,7 @@
           <td>
             <QueueLink {queue}/>
           </td>
-          <td>{queue.active}</td>
+          <td><QueueLink {queue} state={'active'}>{queue.active}</QueueLink></td>
           <td>{queue.waiting}</td>
           <td>{queue.delayed}</td>
           <td>{queue.paused}</td>

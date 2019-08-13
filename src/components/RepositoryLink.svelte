@@ -3,4 +3,6 @@
   export let repository;
 </script>
 
-<Link href="/repository/{repository.name}">{repository.name}</Link>
+<Link href="/repository/{repository.name}">
+  <slot>{repository.name}</slot>
+</Link>

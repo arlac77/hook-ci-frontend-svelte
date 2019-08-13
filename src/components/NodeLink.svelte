@@ -4,5 +4,5 @@
 </script>
 
 <Link href="/node/{name}">
-  <slot />
+  <slot>{name}</slot>
 </Link>
