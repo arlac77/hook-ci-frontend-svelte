@@ -29,7 +29,7 @@
     "rollup-plugin-svelte": "^5.1.0",
     "rollup-plugin-terser": "^5.1.1",
     "semantic-release": "^15.13.21",
-    "svelte": "^3.8.0",
+    "svelte": "^3.8.1",
     "svelte-apollo": "^0.3.0",
     "svelte-preprocess": "^2.15.0"
   },
