@@ -34,7 +34,7 @@
     "svelte-preprocess": "^2.15.0"
   },
   "engines": {
-    "node": ">=10.16.2"
+    "node": ">=10.16.3"
   },
   "repository": {
     "type": "git",
