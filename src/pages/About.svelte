@@ -1,7 +1,7 @@
 <script>
   import { onDestroy } from "svelte";
   import { name, version, description, config } from "../../package.json";
-  import { session } from "../session.mjs";
+  import { session } from "svelte-session-manager";
 
   let entitlements = [];
   let username;
@@ -12,7 +12,6 @@
       username = value.username;
     })
   );
-
 </script>
 
 <div>

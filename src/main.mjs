@@ -1,7 +1,5 @@
 import { Router, route } from "svelte-guard-history-router";
 
-import { hasEntitlements } from "./session";
-
 import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
 import Repositories from "./pages/Repositories.svelte";
@@ -18,17 +16,8 @@ import NotFound from "./pages/NotFound.svelte";
 import App from "./components/App.svelte";
 import { config } from "../package.json";
 
-const guardJobs = {
-  enter: async context => {
-    const data = await fetch(
-      config.api + `/queue/${context.params.queue}/jobs`
-    );
-    context.jobs = await data.json();
-  },
-  leave: async context => {
-    delete context.jobs;
-  }
-};
+
+
 
 export const router = new Router(
   [
@@ -36,11 +25,11 @@ export const router = new Router(
     route("/index.html", Home),
     route("/*", Home),
     route("/login", Login),
-    route("/about", hasEntitlements("ci"), About),
+    route("/about", About),
     route("/repository", Repositories),
     route("/repository/:repository",  Repository),
     route("/repository/:repositoryProvider/:repositoryGroup/:repository", Repository),
-    route("/queue", hasEntitlements("ci.queues.read"), Queues),
+    route("/queue", Queues),
     route("/queue/:queue", Queue),
     route("/queue/:queue/active", Queue),
     route("/queue/:queue/waiting", Queue),
@@ -48,11 +37,11 @@ export const router = new Router(
     route("/queue/:queue/failed", Queue),
     route("/queue/:queue/completed", Queue),
     route("/queue/:queue/paused", Queue),
-    route("/queue/:queue/job", guardJobs, Jobs),
-    route("/queue/:queue/job/:job", guardJobs, Job),
-    route("/queue/:queue/job/:job/log", guardJobs, JobLog),
-    route("/node", hasEntitlements("ci.nodes.read"), Nodes),
-    route("/node/:node", hasEntitlements("ci.nodes.read"), Node)
+    route("/queue/:queue/job", Jobs),
+    route("/queue/:queue/job/:job", Job),
+    route("/queue/:queue/job/:job/log", JobLog),
+    route("/node", Nodes),
+    route("/node/:node", Node)
   ],
   config.urlPrefix
 );

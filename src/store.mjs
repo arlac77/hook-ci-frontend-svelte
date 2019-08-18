@@ -7,7 +7,6 @@ export const repositories = readable([], set => {
   );
 
   return () => {
-    console.log("unsubscribe repositories");
   };
 });
 
@@ -15,6 +14,21 @@ export const queues = readable([], set => {
   fetch(config.api + "/queues").then(async data => set(await data.json()));
 
   return () => {
-    console.log("unsubscribe queues");
   };
 });
+
+
+
+/*
+const guardJobs = {
+  enter: async context => {
+    const data = await fetch(
+      config.api + `/queue/${context.params.queue}/jobs`
+    );
+    context.jobs = await data.json();
+  },
+  leave: async context => {
+    delete context.jobs;
+  }
+};
+*/
