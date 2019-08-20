@@ -4,12 +4,10 @@
   import { session } from "svelte-session-manager";
 
   let entitlements = [];
-  let username;
 
   onDestroy(
     session.subscribe(value => {
       entitlements = [...value.entitlements];
-      username = value.username;
     })
   );
 </script>
@@ -36,7 +34,7 @@
     </tr>
     <tr>
       <td>Usrname</td>
-      <td>{username}</td>
+      <td>{$session.username}</td>
     </tr>
     {#each entitlements as name}
       <tr>
