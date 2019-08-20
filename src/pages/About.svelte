@@ -15,7 +15,7 @@
 <div>
   <h3>{name}</h3>
   <p>{description}</p>
-  <table class="is-bordered is-striped is-hoverable">
+  <table class="bordered striped hoverable">
     <tr>
       <td>Version</td>
       <td>{version}</td>

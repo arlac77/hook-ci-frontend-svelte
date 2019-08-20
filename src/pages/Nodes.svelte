@@ -26,7 +26,7 @@
   {#await $nodes}
     Loading...
   {:then result}
-    <table class="is-bordered is-striped is-hoverable">
+    <table class="bordered striped hoverable">
       <thead>
         <tr>
           <th>Name</th>

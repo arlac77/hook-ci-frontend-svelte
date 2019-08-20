@@ -7,7 +7,7 @@
 </script>
 
 <div>
-  <table class="is-bordered is-striped is-hoverable">
+  <table class="bordered striped shoverable">
     <thead>
       <tr>
         <th>Name</th>

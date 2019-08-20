@@ -1,14 +1,12 @@
 :root {
-
   --buttons: #9555af;
-
   --primary-buttons-text-color: white;
   --buttons-hover-color: #303ca649;
   --primary-buttons-hover-color: var(--buttons);
   --buttons-ripple-color: #303ca69d;
   --primary-buttons-ripple-color: rgba(255, 255, 255, 0.5);
+  --table-border-color: #e6dee3;
 
-  /* inputs */
   --inputs: var(--buttons);
   --inputs-background: #ecebeb;
   --inputs-background-hover: #ebebeb;
@@ -17,13 +15,11 @@
   --inputs-outline: grey;
   --inputs-outline-hover: var(--inputs-outline);
 
-  /* IconButtons */
   --icon-buttons: var(--buttons);
   --icon-buttons-hover: rgba(0, 0, 0, 0.07);
   --icon-buttons-active: rgba(0, 0, 0, 0.1);
   --icon-buttons-ripple: rgba(0, 0, 0, 0.2);
 
-  /* error */
   --all-errors: #b00020;
 }
 
@@ -147,25 +143,27 @@ th {
   font-weight: bold;
 }
 
-.table-bordered {
-  border: 1px solid #dee2e6;
-}
-
-.table-bordered thead th,
-.table-bordered thead td {
-  border-bottom-width: 2px;
-}
-
 thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid #dee2e6;
+  border-bottom: 2px solid var(--table-border-color);
 }
 
-table th,
 td {
   padding: 0.75rem;
   vertical-align: top;
-  border-top: 1px solid #dee2e6;
+  border-top: 1px solid var(--table-border-color);
+}
+
+table .bordered {
+  border: 1px solid var(--table-border-color);
+}
+
+.striped tr:nth-of-type(even) {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.hoverable tr:hover {
+  background-color: #ffff996e;
 }
 
 button {

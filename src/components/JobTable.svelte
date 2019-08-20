@@ -8,7 +8,7 @@
 </script>
 
 <div>
-  <table class="table is-bordered is-striped is-hoverable">
+  <table class="bordered striped hoverable">
     <thead>
       <tr>
         <th>Id</th>
