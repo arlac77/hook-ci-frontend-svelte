@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "svelte-guard-history-router": "git+https://github.com/arlac77/svelte-guard-history-router.git",
-    "svelte-sesion-manager": "git+https://github.com/arlac77/svelte-session-manager.git"
+    "svelte-session-manager": "git+https://github.com/arlac77/svelte-session-manager.git"
   },
   "devDependencies": {
     "@semantic-release/exec": "^3.3.6",
