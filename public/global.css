@@ -183,9 +183,14 @@ button {
   background-color: var(--buttons);
 }
 
+button:hover {
+  outline: 2px;
+}
+
 button:active {
   transform: translateY(1px);
   filter: saturate(150%);
+  outline: none;
 }
 
 fieldset {
