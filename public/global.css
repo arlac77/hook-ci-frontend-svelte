@@ -105,6 +105,10 @@ header {
   color: #fafafa;
 }
 
+#topnav a:hover {
+  color: #aaaaaa;
+}
+
 #topnav ul {
   height: 34px;
   margin-left: auto;
