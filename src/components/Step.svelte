@@ -15,7 +15,7 @@
 
   <table>
     <thead>
-      <th>Executable</th>
+      <th aria-sort="none">Executable</th>
       <th>Version</th>
     </thead>
     <tbody>

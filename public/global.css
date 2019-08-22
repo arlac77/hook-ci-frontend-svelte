@@ -41,11 +41,11 @@
   margin-top: 1%;
 }
 
-.row > div {
+.row>div {
   margin-right: 0.5%;
 }
 
-.wrapper > * {
+.wrapper>* {
   color: rgb(0, 0, 0);
   border-radius: 2px;
   padding: 5px;
@@ -155,7 +155,7 @@ th {
   border: 1px solid var(--table-border-color);
 }
 
-th[class="sortable"]::before {
+th[aria-sort]::before {
   display: inline-block;
   float: right;
   margin-left: 0.5em;
@@ -163,8 +163,16 @@ th[class="sortable"]::before {
   font-size: inherit;
   line-height: inherit;
   opacity: 0.4;
-  content: "↕";
   cursor: pointer;
+  content: "↕";
+}
+
+th[aria-sort="descending"]::before {
+  content: "↑";
+}
+
+th[aria-sort="ascending"]::before {
+  content: "↓";
 }
 
 td {
@@ -230,8 +238,7 @@ button:disabled {
 }
 
 
-button[class=primary] {
-}
+button[class=primary] {}
 
 fieldset {
   border-top-width: 0;

@@ -1,8 +1,8 @@
 <script>
   import { Link } from "svelte-guard-history-router";
   import { dateFormatter } from '../util.mjs';
-
   import RepositoryLink from "./RepositoryLink.svelte";
+  
   export let jobs = [];
   export let queue = { name: "xxx" };
 </script>
@@ -11,11 +11,11 @@
   <table class="bordered striped hoverable">
     <thead>
       <tr>
-        <th class="sortable">Id</th>
-        <th class="sortable">Processed</th>
-        <th class="sortable">Finished</th>
-        <th class="sortable">Repository</th>
-        <th class="sortable">Branch</th>
+        <th aria-sort="none">Id</th>
+        <th aria-sort="none">Processed</th>
+        <th aria-sort="none">Finished</th>
+        <th aria-sort="none">Repository</th>
+        <th aria-sort="none">Branch</th>
       </tr>
     </thead>
     <tbody>
