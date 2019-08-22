@@ -13,34 +13,36 @@
 </script>
 
 <div>
-  <h3>{name}</h3>
+  <h2>{name}</h2>
   <p>{description}</p>
   <table class="bordered striped hoverable">
-    <tr>
-      <td>Version</td>
-      <td>{version}</td>
-    </tr>
-    <tr>
-      <td>Mounted</td>
-      <td>{config.urlPrefix}</td>
-    </tr>
-    <tr>
-      <td>API</td>
-      <td>{config.api}</td>
-    </tr>
-    <tr>
-      <td>Graphql API</td>
-      <td>{config.graphQl}</td>
-    </tr>
-    <tr>
-      <td>Usrname</td>
-      <td>{$session.username}</td>
-    </tr>
-    {#each entitlements as name}
+    <tbody>
       <tr>
-        <td>Entitlement</td>
-        <td>{name}</td>
+        <td>Version</td>
+        <td>{version}</td>
       </tr>
-    {/each}
+      <tr>
+        <td>Mounted</td>
+        <td>{config.urlPrefix}</td>
+      </tr>
+      <tr>
+        <td>API</td>
+        <td>{config.api}</td>
+      </tr>
+      <tr>
+        <td>Graphql API</td>
+        <td>{config.graphQl}</td>
+      </tr>
+      <tr>
+        <td>Usrname</td>
+        <td>{$session.username}</td>
+      </tr>
+      {#each entitlements as name}
+        <tr>
+          <td>Entitlement</td>
+          <td>{name}</td>
+        </tr>
+      {/each}
+    </tbody>
   </table>
 </div>
