@@ -155,7 +155,7 @@ th {
   border: 1px solid var(--table-border-color);
 }
 
-th[class="sorted"]::before {
+th[class="sortable"]::before {
   display: inline-block;
   float: right;
   margin-left: 0.5em;

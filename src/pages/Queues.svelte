@@ -10,13 +10,13 @@
   <table class="bordered striped hoverable">
     <thead>
       <tr>
-        <th class="sorted">Name</th>
-        <th class="sorted">Active</th>
-        <th class="sorted">Waiting</th>
-        <th class="sorted">Delayed</th>
-        <th class="sorted">Paused</th>
-        <th class="sorted">Completed</th>
-        <th class="sorted">Failed</th>
+        <th class="sortable">Name</th>
+        <th class="sortable">Active</th>
+        <th class="sortable">Waiting</th>
+        <th class="sortable">Delayed</th>
+        <th class="sortable">Paused</th>
+        <th class="sortable">Completed</th>
+        <th class="sortable">Failed</th>
       </tr>
     </thead>
     <tbody>

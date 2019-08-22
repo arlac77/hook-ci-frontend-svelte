@@ -9,7 +9,7 @@
   <table class="bordered striped hoverable">
     <thead>
       <tr>
-        <th class="sorted">Repository</th>
+        <th class="sortable">Repository</th>
         <th>Description</th>
       </tr>
     </thead>

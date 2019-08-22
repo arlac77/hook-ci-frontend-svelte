@@ -29,7 +29,7 @@
     <table class="bordered striped hoverable">
       <thead>
         <tr>
-          <th>Name</th>
+          <th class="sortable">Name</th>
           <th>Version</th>
         </tr>
       </thead>

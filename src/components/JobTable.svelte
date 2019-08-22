@@ -11,11 +11,11 @@
   <table class="bordered striped hoverable">
     <thead>
       <tr>
-        <th class="sorted">Id</th>
-        <th class="sorted">Processed</th>
-        <th class="sorted">Finished</th>
-        <th class="sorted">Repository</th>
-        <th class="sorted">Branch</th>
+        <th class="sortable">Id</th>
+        <th class="sortable">Processed</th>
+        <th class="sortable">Finished</th>
+        <th class="sortable">Repository</th>
+        <th class="sortable">Branch</th>
       </tr>
     </thead>
     <tbody>
