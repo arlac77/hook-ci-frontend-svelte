@@ -3,8 +3,8 @@
   "description": "{{description}}",
   "icons": [
     {
-      "src": "images/icon.png",
-      "sizes": "192x192"
+      "src": "facicon.ico",
+      "sizes": "16x16"
     }
   ]
 }
