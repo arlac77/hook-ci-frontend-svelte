@@ -7,7 +7,7 @@
 </script>
 
 <div>
-  <table class="bordered striped shoverable">
+  <table class="bordered striped hoverable">
     <thead>
       <tr>
         <th class="sorted">Name</th>

@@ -118,7 +118,7 @@ header {
   flex-wrap: nowrap;
   list-style: none;
   padding: 5px;
- /* width: 100%;*/
+  /* width: 100%;*/
 }
 
 body {
@@ -151,8 +151,20 @@ th {
   border: 1px solid var(--table-border-color);
 }
 
-th .sorted {
+th[sorted] {
   cursor: pointer;
+}
+
+thead > tr > th[sorted]::before,
+tfoot > tr > th[sorted]::before {
+  display: inline-block;
+  float: right;
+  margin-left: 0.5em;
+  width: 0.5em;
+  font-size: inherit;
+  line-height: inherit;
+  opacity: 0.4;
+  content: "↕";
 }
 
 td {
