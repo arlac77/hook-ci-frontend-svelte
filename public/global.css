@@ -1,9 +1,11 @@
 :root {
   --buttons: #9555af;
-  --primary-buttons-text-color: white;
-  --buttons-hover-color: #303ca649;
-  --primary-buttons-hover-color: var(--buttons);
+  --buttons-active-color: #cf89eb;
+  --buttons-hover-color: #451c55;
   --buttons-ripple-color: #303ca69d;
+
+  --primary-buttons-hover-color: var(--buttons);
+  --primary-buttons-text-color: white;
   --primary-buttons-ripple-color: rgba(255, 255, 255, 0.5);
 
   --table-border-color: #dee2e6;
@@ -118,7 +120,6 @@ header {
   flex-wrap: nowrap;
   list-style: none;
   padding: 5px;
-  /* width: 100%;*/
 }
 
 body {
@@ -151,12 +152,7 @@ th {
   border: 1px solid var(--table-border-color);
 }
 
-th[sorted] {
-  cursor: pointer;
-}
-
-thead > tr > th[sorted]::before,
-tfoot > tr > th[sorted]::before {
+th[class=sorted]::before {
   display: inline-block;
   float: right;
   margin-left: 0.5em;
@@ -165,6 +161,7 @@ tfoot > tr > th[sorted]::before {
   line-height: inherit;
   opacity: 0.4;
   content: "↕";
+  cursor: pointer;
 }
 
 td {
@@ -181,7 +178,7 @@ table .bordered {
   background: rgba(0, 0, 0, 0.05);
 }
 
-.hoverable tr:hover {
+.hoverable tbody tr:hover {
   background-color: #ffff996e;
 }
 
@@ -202,12 +199,18 @@ button {
 
 button:hover {
   outline: 2px;
+  background-color: var(--buttons-hover-color);
 }
 
 button:active {
-  transform: translateY(1px);
+  transform: translateY(2px);
   filter: saturate(150%);
-  outline: none;
+
+  font-size: 75%;
+  padding: 0.6em 1.2em;
+  border-radius: 6px;
+
+  background-color: var(--buttons-active-color);
 }
 
 fieldset {
