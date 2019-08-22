@@ -10,13 +10,13 @@
   <table class="bordered striped shoverable">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Active</th>
-        <th>Waiting</th>
-        <th>Delayed</th>
-        <th>Paused</th>
-        <th>Completed</th>
-        <th>Failed</th>
+        <th class="sorted">Name</th>
+        <th class="sorted">Active</th>
+        <th class="sorted">Waiting</th>
+        <th class="sorted">Delayed</th>
+        <th class="sorted">Paused</th>
+        <th class="sorted">Completed</th>
+        <th class="sorted">Failed</th>
       </tr>
     </thead>
     <tbody>

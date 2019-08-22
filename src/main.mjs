@@ -17,8 +17,6 @@ import App from "./components/App.svelte";
 import { config } from "../package.json";
 
 
-
-
 export const router = new Router(
   [
     route("*", NotFound),

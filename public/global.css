@@ -5,7 +5,10 @@
   --primary-buttons-hover-color: var(--buttons);
   --buttons-ripple-color: #303ca69d;
   --primary-buttons-ripple-color: rgba(255, 255, 255, 0.5);
-  --table-border-color: #e6dee3;
+
+
+  --table-border-color: #dee2e6;
+  --table-padding: 0.75rem;
 
   --inputs: var(--buttons);
   --inputs-background: #ecebeb;
@@ -109,62 +112,39 @@ table {
   width: 100%;
   margin-bottom: 1rem;
   color: #212529;
-}
-
-thead {
-  display: table-header-group;
-  vertical-align: middle;
-  border-top-color: inherit;
-  border-right-color: inherit;
-  border-bottom-color: inherit;
-  border-left-color: inherit;
-}
-
-tbody {
-  display: table-row-group;
-  vertical-align: middle;
-  border-top-color: inherit;
-  border-right-color: inherit;
-  border-bottom-color: inherit;
-  border-left-color: inherit;
-}
-
-tr {
-  display: table-row;
-  vertical-align: inherit;
-  border-top-color: inherit;
-  border-right-color: inherit;
-  border-bottom-color: inherit;
-  border-left-color: inherit;
+  border-collapse: collapse;
 }
 
 th {
   text-align: inherit;
   font-weight: bold;
+  padding: var(--table-padding);
+  vertical-align: bottom;
+  border: 1px solid var(--table-border-color);
 }
 
-thead th {
-  vertical-align: bottom;
-  border-bottom: 2px solid var(--table-border-color);
+th .sorted {
+  cursor: pointer;
 }
 
 td {
-  padding: 0.75rem;
+  padding: var(--table-padding);
   vertical-align: top;
-  border-top: 1px solid var(--table-border-color);
+  border: 1px solid var(--table-border-color);
 }
 
 table .bordered {
   border: 1px solid var(--table-border-color);
 }
 
-.striped tr:nth-of-type(even) {
-  background: rgba(0, 0, 0, 0.08);
+.striped tbody tr:nth-of-type(odd) {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .hoverable tr:hover {
   background-color: #ffff996e;
 }
+
 
 button {
   text-align: center;
