@@ -13,7 +13,7 @@ import About from "./pages/About.svelte";
 import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
 import NotFound from "./pages/NotFound.svelte";
-import App from "./components/App.svelte";
+import App from "./App.svelte";
 import { config } from "../package.json";
 
 
@@ -44,8 +44,6 @@ export const router = new Router(
   config.urlPrefix
 );
 
-const app = new App({
+export default new App({
   target: document.body
 });
-
-export default app;
