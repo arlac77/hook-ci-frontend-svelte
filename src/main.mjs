@@ -1,4 +1,4 @@
-import { Router, route } from "svelte-guard-history-router";
+import { Router, route, NotFound } from "svelte-guard-history-router";
 
 import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
@@ -12,7 +12,6 @@ import Node from "./pages/Nodes.svelte";
 import About from "./pages/About.svelte";
 import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
-import NotFound from "./pages/NotFound.svelte";
 import App from "./App.svelte";
 import { config } from "../package.json";
 
