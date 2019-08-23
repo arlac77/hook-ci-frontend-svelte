@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "svelte-guard-history-router": "git+https://github.com/arlac77/svelte-guard-history-router.git",
-    "svelte-session-manager": "git+https://github.com/arlac77/svelte-session-manager.git"
+    "svelte-session-manager": "git+https://github.com/arlac77/svelte-session-manager.git",
+    "mf-styling": "git+https://github.com/arlac77/mf-styling.git"
   },
   "devDependencies": {
     "@semantic-release/exec": "^3.3.6",
@@ -25,6 +26,7 @@
     "postcss-import": "^12.0.1",
     "rollup": "^1.20.1",
     "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.0",
