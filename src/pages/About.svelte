@@ -1,16 +1,14 @@
 <script>
-  import { onDestroy } from "svelte";
   import { name, version, description, config } from "../../package.json";
   import { session } from "svelte-session-manager";
 
-  let entitlements = [];
+  const dateFormatter = new Intl.DateTimeFormat(/*{
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric"
+  }*/);
 
-  onDestroy(
-    session.subscribe(value => {
-      entitlements = [...value.entitlements];
-    })
-  );
-</script>
+´</script>
 
 <div>
   <h2>{name}</h2>
@@ -37,7 +35,11 @@
         <td>Usrname</td>
         <td>{$session.username}</td>
       </tr>
-      {#each entitlements as name}
+      <tr>
+        <td>Session Expiration</td>
+        <td>{dateFormatter.format($session.expirationDate)}</td>
+      </tr>
+      {#each [...$session.entitlements] as name}
         <tr>
           <td>Entitlement</td>
           <td>{name}</td>
