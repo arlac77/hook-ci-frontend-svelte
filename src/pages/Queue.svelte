@@ -8,7 +8,7 @@
 
   let queue = { name: "", jobs: [] };
 
-  const queueKey = context.keys.get('queue');
+  const queueKey = context.keys.queue;
 
   $: queue = $queues.find(q => q.name === $queueKey);
 

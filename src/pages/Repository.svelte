@@ -5,9 +5,8 @@
   export let context;
 
   let repository = { name: "", description: "" };
-  const repositoryKey = context.keys.get('repository');
+  const repositoryKey = context.keys.repository;
 
-  
   $: repository = $repositories.find(r => r.name === $repositoryKey);
   
 
