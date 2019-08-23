@@ -1,8 +1,8 @@
 <script>
   import { Link } from "svelte-guard-history-router";
-  export let name;
+  export let node;
 </script>
 
-<Link href="/node/{name}">
-  <slot>{name}</slot>
+<Link href="/node/{node.name}">
+  <slot>{node.name}</slot>
 </Link>

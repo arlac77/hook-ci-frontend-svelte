@@ -2,6 +2,7 @@
   import { Link } from "svelte-guard-history-router";
   import ApolloClient, { gql } from "apollo-boost";
   import { query } from "svelte-apollo";
+  import NodeLink from "../components/NodeLink.svelte";
   import { config } from "../../package.json";
 
   const client = new ApolloClient({ uri: config.graphQl });
@@ -37,7 +38,7 @@
         {#each result.data.nodes as node (node.name)}
           <tr>
             <td>
-              <Link href="/node/{node.name}">{node.name}</Link>
+              <NodeLink {node}/>
             </td>
             <td>{node.version}</td>
           </tr>
