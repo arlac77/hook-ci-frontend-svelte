@@ -26,24 +26,14 @@
   {#await $nodes}
     Loading...
   {:then result}
-    <table class="bordered striped hoverable">
-      <thead>
-        <tr>
-          <th aria-sort="none">Name</th>
-          <th>Version</th>
-        </tr>
-      </thead>
-      <tbody>
-        {#each result.data.nodes as node (node.name)}
-          <tr>
-            <td>
-              <NodeLink {node}/>
-            </td>
-            <td>{node.version}</td>
-          </tr>
-        {/each}
-      </tbody>
-    </table>
+    <ul class="item-list">
+      {#each result.data.nodes as node (node.name)}
+        <li class="item">
+          <NodeLink {node} />
+          <span>{node.version}</span>
+        </li>
+      {/each}
+    </ul>
   {:catch error}
     Error: {error}
   {/await}
