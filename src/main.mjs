@@ -19,7 +19,6 @@ import { config } from "../package.json";
 export const router = new Router(
   [
     route("*", NotFound),
-    route("/index.html", Home),
     route("/*", Home),
     route("/login", Login),
     route("/about", About),
