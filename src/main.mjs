@@ -8,13 +8,12 @@ import Jobs from "./pages/Jobs.svelte";
 import Job from "./pages/Job.svelte";
 import JobLog from "./pages/JobLog.svelte";
 import Nodes from "./pages/Nodes.svelte";
-import Node from "./pages/Nodes.svelte";
+import Node from "./pages/Node.svelte";
 import About from "./pages/About.svelte";
 import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
 import { config } from "../package.json";
-
 
 export const router = new Router(
   [
@@ -23,8 +22,11 @@ export const router = new Router(
     route("/login", Login),
     route("/about", About),
     route("/repository", Repositories),
-    route("/repository/:repository",  Repository),
-    route("/repository/:repositoryProvider/:repositoryGroup/:repository", Repository),
+    route("/repository/:repository", Repository),
+    route(
+      "/repository/:repositoryProvider/:repositoryGroup/:repository",
+      Repository
+    ),
     route("/queue", Queues),
     route("/queue/:queue", Queue),
     route("/queue/:queue/active", Queue),

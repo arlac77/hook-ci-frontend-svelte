@@ -1,6 +1,7 @@
 <script>
   import ApolloClient, { gql } from "apollo-boost";
   import { query } from "svelte-apollo";
+  import { Link } from "svelte-guard-history-router";
   import NodeLink from "../components/NodeLink.svelte";
   import { config } from "../../package.json";
 
@@ -17,8 +18,8 @@
 
   const nodes = query(client, { query: NODES });
 
-  function reload() {
-    nodes.refetch();
+  async function reload() {
+    return nodes.refetch();
   }
 </script>
 
