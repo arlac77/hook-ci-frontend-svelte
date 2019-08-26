@@ -16,19 +16,3 @@ export const queues = readable([], set => {
   return () => {
   };
 });
-
-
-
-/*
-const guardJobs = {
-  enter: async context => {
-    const data = await fetch(
-      config.api + `/queue/${context.params.queue}/jobs`
-    );
-    context.jobs = await data.json();
-  },
-  leave: async context => {
-    delete context.jobs;
-  }
-};
-*/
