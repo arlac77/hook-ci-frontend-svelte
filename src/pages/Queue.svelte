@@ -1,7 +1,7 @@
 <script>
   import { Link } from "svelte-guard-history-router";
   import JobTable from "../components/JobTable.svelte";
-  import { queue } from "../main.mjs";
+  import { queue, jobs } from "../main.mjs";
   export let context;
 </script>
 
@@ -26,6 +26,6 @@
         </div>
       </div>
     </div>
-    <JobTable {$queue} />
+    <JobTable queue={$queue} jobs={$jobs}/>
   {:else}No such queue{/if}
 </div>

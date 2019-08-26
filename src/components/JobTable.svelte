@@ -3,7 +3,8 @@
   import { dateFormatter } from '../util.mjs';
   import RepositoryLink from "./RepositoryLink.svelte";
   
-  export let queue = { name: "xxx", jobs: [] };
+  export let queue = { name: "xxx" };
+  export let jobs = [];
 </script>
 
 <div>
@@ -18,7 +19,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each queue.jobs as job (job.id)}
+      {#each jobs as job (job.id)}
         <tr>
           <td>
             <Link href="/queue/{queue.name}/job/{job.id}">{job.id}</Link>

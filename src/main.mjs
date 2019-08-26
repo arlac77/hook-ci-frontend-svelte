@@ -54,6 +54,14 @@ export const queue = derived(
   }
 );
 
+export const jobs = derived(
+  router.keys.queue,
+  ($queue, set) => {
+    fetch(config.api + `/queue/${$queue}/jobs`).then(async data => set(await data.json()));
+    return () => {};
+  }
+);
+
 export const repository = derived(
   [repositories, router.keys.repository],
   ([$repositories, $repository], set) => {
