@@ -1,10 +1,10 @@
 <script>
   import NodeLink from "./NodeLink.svelte";
-  import { dateFormatter } from '../util.mjs';
+  import { dateFormatter } from "../util.mjs";
   export let step;
-
 </script>
 
+{#if step}
 <div>
   <h3>{step.name}</h3>
   {step.executable}
@@ -27,5 +27,5 @@
       {/each}
     </tbody>
   </table>
-
 </div>
+{/if}

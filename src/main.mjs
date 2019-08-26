@@ -62,6 +62,14 @@ export const jobs = derived(
   }
 );
 
+export const job = derived(
+  [jobs, router.keys.job],
+  ([$jobs, $job], set) => {
+    set($jobs.find(a => a.id === $job));
+    return () => {};
+  }
+);
+
 export const repository = derived(
   [repositories, router.keys.repository],
   ([$repositories, $repository], set) => {
