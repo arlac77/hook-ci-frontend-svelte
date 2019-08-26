@@ -3,6 +3,7 @@
   import { query } from "svelte-apollo";
   import { Link } from "svelte-guard-history-router";
   import NodeLink from "../components/NodeLink.svelte";
+  import ActionButton from "../components/ActionButton.svelte";
   import { config } from "../../package.json";
 
   const client = new ApolloClient({ uri: config.graphQl });
@@ -39,4 +40,4 @@
     Error: {error}
   {/await}
 </div>
-<button on:click={reload}>Reload</button>
+<ActionButton action={reload}>Reload</ActionButton>
