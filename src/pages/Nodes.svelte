@@ -13,6 +13,7 @@
       nodes {
         name
         version
+        uptime
       }
     }
   `;
@@ -33,6 +34,7 @@
         <li class="item">
           <NodeLink {node} />
           <span>{node.version}</span>
+          <span>{node.uptime}</span>
         </li>
       {/each}
     </ul>
