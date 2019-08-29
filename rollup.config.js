@@ -5,11 +5,8 @@ import json from "rollup-plugin-json";
 import { terser } from "rollup-plugin-terser";
 import copy from 'rollup-plugin-copy';
 
-import { config } from './package.json';
-
 const production = !process.env.ROLLUP_WATCH;
 const dist = "public";
-
 
 export default {
   input: "src/main.mjs",

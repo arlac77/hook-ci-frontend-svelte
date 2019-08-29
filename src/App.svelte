@@ -1,5 +1,6 @@
 <script>
   import { Outlet, Link } from "svelte-guard-history-router";
+  import { session } from "svelte-session-manager";
   import { router } from "./main.mjs";
 </script>
 
@@ -26,6 +27,7 @@
         <Link href="/login">Login</Link>
       </li>
     </ul>
+    {$session.isValid ? $session.username : '-'}
   </header>
   <main>
     <Outlet {router}>nothing there</Outlet>

@@ -1,4 +1,4 @@
-import { derived } from "svelte/store";
+import { derived, readable } from "svelte/store";
 import { Router, route, NotFound } from "svelte-guard-history-router";
 
 import Queues from "./pages/Queues.svelte";
@@ -15,7 +15,6 @@ import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
 import { config } from "../package.json";
-import { queues, repositories } from "./store.mjs";
 
 export const router = new Router(
   [
@@ -45,6 +44,22 @@ export const router = new Router(
   ],
   config.urlPrefix
 );
+
+export const repositories = readable([], set => {
+  fetch(config.api + "/repositories?pattern=arlac77/*").then(async data =>
+    set(await data.json())
+  );
+
+  return () => {
+  };
+});
+
+export const queues = readable([], set => {
+  fetch(config.api + "/queues").then(async data => set(await data.json()));
+
+  return () => {
+  };
+});
 
 export const queue = derived(
   [queues, router.keys.queue],

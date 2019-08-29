@@ -1,7 +1,7 @@
 <script>
   import { Link } from "svelte-guard-history-router";
   import RepositoryLink from "../components/RepositoryLink.svelte";
-  import { repositories }  from "../store.mjs";
+  import { repositories }  from "../main.mjs";
   export let context;
 </script>
 
