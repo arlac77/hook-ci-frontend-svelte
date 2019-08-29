@@ -5,7 +5,7 @@
   "scripts": {
     "deploy": "scp public/* root@odroid1:/services/hook-ci/frontend-svelte/",
     "prepare": "rollup -c",
-    "start": "light-server -s public --servePrefix /services/ci/svelte --historyindex /services/ci/svelte/index.html -p 5000 --proxypath /services/ci/api -x https://mfelten.dynv6.net/ -w src/**,public/** # rollup -c",
+    "start": "light-server -s public --servePrefix /services/ci/svelte --historyindex /services/ci/svelte/index.html -p 5000 --proxypath /services/ci/api -x https://mfelten.dynv6.net/ -w 'src/**,public/*.css # rollup -c'",
     "watch": "rollup -c -w"
   },
   "dependencies": {
