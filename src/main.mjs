@@ -54,6 +54,14 @@ export const repositories = readable([], set => {
   };
 });
 
+export const repository = derived(
+  [repositories, router.keys.repository],
+  ([$repositories, $repository], set) => {
+    set($repositories.find(a => a.name === $repository));
+    return () => {};
+  }
+);
+
 export const queues = readable([], set => {
   fetch(config.api + "/queues").then(async data => set(await data.json()));
 
@@ -85,13 +93,6 @@ export const job = derived(
   }
 );
 
-export const repository = derived(
-  [repositories, router.keys.repository],
-  ([$repositories, $repository], set) => {
-    set($repositories.find(a => a.name === $repository));
-    return () => {};
-  }
-);
 
 export default new App({
   target: document.body
