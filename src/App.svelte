@@ -37,6 +37,7 @@
         {/if}
       </li>
     </ul>
+    {$session.isValid ? $session.username : '-'}
   </header>
   <main>
     <Outlet {router}>nothing there</Outlet>

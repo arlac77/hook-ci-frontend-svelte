@@ -1,7 +1,7 @@
 <script>
   import { Link } from "svelte-guard-history-router";
   import QueueLink from "../components/QueueLink.svelte";
-  import { queues }  from "../store.mjs";
+  import { queues }  from "../main.mjs";
 
   export let context;
 </script>
