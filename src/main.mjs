@@ -1,5 +1,6 @@
 import { derived, readable } from "svelte/store";
 import { Router, route, NotFound } from "svelte-guard-history-router";
+import { session } from "svelte-session-manager";
 
 import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
@@ -45,14 +46,18 @@ export const router = new Router(
   config.urlPrefix
 );
 
-export const repositories = readable([], set => {
-  fetch(config.api + "/repositories?pattern=arlac77/*").then(async data =>
-    set(await data.json())
-  );
-
-  return () => {
-  };
-});
+export const repositories = derived(
+  session,
+  async ($session, set) => {
+    const data = await fetch(config.api + "/repositories?pattern=arlac77/*", {
+      method: "GET",
+      headers: $session.authorizationHeader
+    });
+    set(await data.json());
+    return () => {};
+  },
+  []
+);
 
 export const repository = derived(
   [repositories, router.keys.repository],
@@ -62,12 +67,18 @@ export const repository = derived(
   }
 );
 
-export const queues = readable([], set => {
-  fetch(config.api + "/queues").then(async data => set(await data.json()));
-
-  return () => {
-  };
-});
+export const queues = derived(
+  session,
+  async ($session, set) => {
+    const data = await fetch(config.api + "/queues", {
+      method: "GET",
+      headers: $session.authorizationHeader
+    });
+    set(await data.json());
+    return () => {};
+  },
+  []
+);
 
 export const queue = derived(
   [queues, router.keys.queue],
@@ -77,22 +88,17 @@ export const queue = derived(
   }
 );
 
-export const jobs = derived(
-  router.keys.queue,
-  ($queue, set) => {
-    fetch(config.api + `/queue/${$queue}/jobs`).then(async data => set(await data.json()));
-    return () => {};
-  }
-);
+export const jobs = derived(router.keys.queue, ($queue, set) => {
+  fetch(config.api + `/queue/${$queue}/jobs`).then(async data =>
+    set(await data.json())
+  );
+  return () => {};
+});
 
-export const job = derived(
-  [jobs, router.keys.job],
-  ([$jobs, $job], set) => {
-    set($jobs.find(a => a.id === $job));
-    return () => {};
-  }
-);
-
+export const job = derived([jobs, router.keys.job], ([$jobs, $job], set) => {
+  set($jobs.find(a => a.id === $job));
+  return () => {};
+});
 
 export default new App({
   target: document.body
