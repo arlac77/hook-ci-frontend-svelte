@@ -29,15 +29,14 @@
       </li>
       <li>
         {#if $session.isValid}
-          <Link href="/login">Login</Link>
-        {:else}
           <a href="/" on:click|preventDefault={logout}>
             Logout {$session.username}
           </a>
+        {:else}
+          <Link href="/login">Login</Link>
         {/if}
       </li>
     </ul>
-    {$session.isValid ? $session.username : '-'}
   </header>
   <main>
     <Outlet {router}>nothing there</Outlet>
