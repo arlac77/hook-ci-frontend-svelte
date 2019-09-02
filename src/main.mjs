@@ -1,4 +1,4 @@
-import { derived, readable } from "svelte/store";
+import { derived } from "svelte/store";
 import { Router, route, NotFound } from "svelte-guard-history-router";
 import { session } from "svelte-session-manager";
 
@@ -88,10 +88,12 @@ export const queue = derived(
   }
 );
 
-export const jobs = derived(router.keys.queue, ($queue, set) => {
-  fetch(config.api + `/queue/${$queue}/jobs`).then(async data =>
-    set(await data.json())
-  );
+export const jobs = derived([session,router.keys.queue], async ([$session,$queue], set) => {
+  const data = await fetch(config.api + `/queue/${$queue}/jobs`, {
+    method: "GET",
+    headers: $session.authorizationHeader
+  });
+  set(await data.json());
   return () => {};
 });
 
