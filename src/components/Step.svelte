@@ -9,8 +9,8 @@
   <h3>{step.name}</h3>
   {step.executable}
   {#each step.args as a}{a}{/each}
-  {dateFormatter.format(new Date(step.started))}
-  {dateFormatter.format(new Date(step.ended))}
+  Started: {dateFormatter.format(new Date(step.started))}
+  Ended: {dateFormatter.format(new Date(step.ended))}
   <NodeLink name={step.node}>{step.node}</NodeLink>
 
   <table>
