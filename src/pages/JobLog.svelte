@@ -1,12 +1,12 @@
 <script>
   import { onDestroy } from "svelte";
   import { config } from "../../package.json";
-  export let context;
+  export let state;
 
   let url;
 
   onDestroy(
-    context.subscribe(value => {
+    state.subscribe(value => {
       const job = value.params.job;
       const queue = value.params.queue;
       url = `${config.api}/queue/${queue}/job/${job}/log?start=0&end=10000`;

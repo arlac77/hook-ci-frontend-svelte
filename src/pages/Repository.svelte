@@ -2,7 +2,7 @@
   import { derived } from "svelte/store";
   import { repository } from "../main.mjs";
 
-  export let context;
+  export let state;
 </script>
 
 {#if $repository}

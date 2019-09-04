@@ -3,7 +3,7 @@
   import QueueLink from "../components/QueueLink.svelte";
   import { queues }  from "../main.mjs";
 
-  export let context;
+  export let state;
 </script>
 
 <div>

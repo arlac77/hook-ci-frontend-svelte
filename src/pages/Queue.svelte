@@ -2,7 +2,7 @@
   import { Link } from "svelte-guard-history-router";
   import JobTable from "../components/JobTable.svelte";
   import { queue, jobs } from "../main.mjs";
-  export let context;
+  export let state;
 </script>
 
 <div>

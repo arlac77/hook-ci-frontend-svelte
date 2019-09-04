@@ -2,12 +2,12 @@
   import { onDestroy } from "svelte";
 
   import JobTable from "../components/JobTable.svelte";
-  export let context;
+  export let state;
 
   let jobs = [];
   let queue = { name: ""};
 
-  onDestroy(context.subscribe(value => {
+  onDestroy(state.subscribe(value => {
     jobs = value.jobs;
     queue = { name: value.params.queue };
   }));

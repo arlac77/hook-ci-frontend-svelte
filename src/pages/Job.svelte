@@ -4,8 +4,7 @@
   import Step from "../components/Step.svelte";
   import { queue, job } from "../main.mjs";
 
-  export let context;
-
+  export let state;
 </script>
 
 <div>
