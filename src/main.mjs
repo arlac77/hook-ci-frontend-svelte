@@ -1,5 +1,5 @@
 import { derived } from "svelte/store";
-import { Router, route, NotFound } from "svelte-guard-history-router";
+import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
 import { session } from "svelte-session-manager";
 
 import Queues from "./pages/Queues.svelte";
@@ -17,31 +17,54 @@ import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
 import { config } from "../package.json";
 
+class SessionGuard extends Guard {
+  attach(route) {
+    session.subscribe(value => route.session = value);
+  }
+
+  async enter(state) {
+    if(state.route === undefined) {
+      alert("route undefined");
+      return;
+    }
+    const session = state.route.session;
+
+    console.log(state.route, session);
+
+    if (session === undefined || !session.isValid) {
+      alert("login");
+    }
+  }
+}
+
+const needsSession = new SessionGuard();
+
+
 export const router = new Router(
   [
     route("*", NotFound),
     route("/*", Home),
     route("/login", Login),
     route("/about", About),
-    route("/repository", Repositories),
-    route("/repository/:repository", Repository),
+    route("/repository", needsSession, Repositories),
+    route("/repository/:repository", needsSession, Repository),
     route(
       "/repository/:repositoryProvider/:repositoryGroup/:repository",
       Repository
     ),
-    route("/queue", Queues),
-    route("/queue/:queue", Queue),
-    route("/queue/:queue/active", Queue),
-    route("/queue/:queue/waiting", Queue),
-    route("/queue/:queue/delayed", Queue),
-    route("/queue/:queue/failed", Queue),
-    route("/queue/:queue/completed", Queue),
-    route("/queue/:queue/paused", Queue),
-    route("/queue/:queue/job", Jobs),
-    route("/queue/:queue/job/:job", Job),
-    route("/queue/:queue/job/:job/log", JobLog),
-    route("/node", Nodes),
-    route("/node/:node", Node)
+    route("/queue", needsSession, Queues),
+    route("/queue/:queue", needsSession, Queue),
+    route("/queue/:queue/active", needsSession, Queue),
+    route("/queue/:queue/waiting", needsSession, Queue),
+    route("/queue/:queue/delayed", needsSession, Queue),
+    route("/queue/:queue/failed", needsSession, Queue),
+    route("/queue/:queue/completed", needsSession, Queue),
+    route("/queue/:queue/paused", needsSession, Queue),
+    route("/queue/:queue/job", needsSession, Jobs),
+    route("/queue/:queue/job/:job", needsSession, Job),
+    route("/queue/:queue/job/:job/log", needsSession, JobLog),
+    route("/node", needsSession, Nodes),
+    route("/node/:node", needsSession, Node)
   ],
   config.urlPrefix
 );
