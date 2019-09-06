@@ -41,9 +41,11 @@ export default {
       targets: [{ src: "node_modules/mf-styling/global.css", dest: dist }]
     }),
     svelte({
-      dev: !production
+      dev: !production,
+      css: css => {
+				css.write(`${dist}/bundle.css`);
+			}
     }),
-
     resolve(),
     commonjs(),
     json({
