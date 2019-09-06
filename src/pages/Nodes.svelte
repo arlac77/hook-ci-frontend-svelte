@@ -23,6 +23,22 @@
   async function reload() {
     return nodes.refetch();
   }
+  
+  function formatDuration(seconds) {
+    const durations = [[604800, "w"],[86400, "d"], [3600, "h"], [60, "m"], [1, "s"]];
+
+    let out = [];
+    for (const d of durations) {
+      const n = Math.floor(seconds / d[0]);
+      if (n > 0) {
+        out.push(`${n}${d[1]}`);
+        seconds -= n * d[0];
+      }
+    }
+
+    return out.join(' ');
+  }
+
 </script>
 
 <div>
@@ -34,7 +50,7 @@
         <li class="item">
           <NodeLink {node} />
           <span>{node.version}</span>
-          <span>{node.uptime}</span>
+          <span>{formatDuration(node.uptime)}</span>
         </li>
       {/each}
     </ul>
