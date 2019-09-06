@@ -19,14 +19,10 @@ import { config } from "../package.json";
 
 class SessionGuard extends Guard {
   attach(route) {
-    session.subscribe(value => route.session = value);
+    session.subscribe(value => (route.session = value));
   }
 
   async enter(state) {
-    if(state.route === undefined) {
-      alert("route undefined");
-      return;
-    }
     const session = state.route.session;
 
     console.log(state.route, session);
@@ -39,7 +35,6 @@ class SessionGuard extends Guard {
 
 const needsSession = new SessionGuard();
 
-
 export const router = new Router(
   [
     route("*", NotFound),
@@ -50,6 +45,7 @@ export const router = new Router(
     route("/repository/:repository", needsSession, Repository),
     route(
       "/repository/:repositoryProvider/:repositoryGroup/:repository",
+      needsSession,
       Repository
     ),
     route("/queue", needsSession, Queues),
@@ -73,7 +69,6 @@ export const repositories = derived(
   session,
   async ($session, set) => {
     const data = await fetch(config.api + "/repositories?pattern=arlac77/*", {
-      method: "GET",
       headers: $session.authorizationHeader
     });
     set(await data.json());
@@ -94,7 +89,6 @@ export const queues = derived(
   session,
   async ($session, set) => {
     const data = await fetch(config.api + "/queues", {
-      method: "GET",
       headers: $session.authorizationHeader
     });
     set(await data.json());
@@ -111,14 +105,16 @@ export const queue = derived(
   }
 );
 
-export const jobs = derived([session,router.keys.queue], async ([$session,$queue], set) => {
-  const data = await fetch(config.api + `/queue/${$queue}/jobs`, {
-    method: "GET",
-    headers: $session.authorizationHeader
-  });
-  set(await data.json());
-  return () => {};
-});
+export const jobs = derived(
+  [session, router.keys.queue],
+  async ([$session, $queue], set) => {
+    const data = await fetch(config.api + `/queue/${$queue}/jobs`, {
+      headers: $session.authorizationHeader
+    });
+    set(await data.json());
+    return () => {};
+  }
+);
 
 export const job = derived([jobs, router.keys.job], ([$jobs, $job], set) => {
   set($jobs.find(a => a.id === $job));
