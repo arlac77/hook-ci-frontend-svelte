@@ -9,8 +9,10 @@
     state.subscribe(value => {
       const job = value.params.job;
       const queue = value.params.queue;
-      url = `${config.api}/queue/${queue}/job/${job}/log?start=0&end=10000`;
-      refresh(url);
+      if (job && queue) {
+        url = `${config.api}/queue/${queue}/job/${job}/log?start=0&end=10000`;
+        refresh(url);
+      }
     })
   );
 
