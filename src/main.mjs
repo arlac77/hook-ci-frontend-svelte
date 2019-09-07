@@ -27,7 +27,11 @@ class SessionGuard extends Guard {
 
     console.log(state.route, session);
 
-    if (session === undefined || !session.isValid) {
+    if(session === undefined) {
+      alert("no session");
+    }
+
+    if (!session.isValid) {
       alert("login");
     }
   }
