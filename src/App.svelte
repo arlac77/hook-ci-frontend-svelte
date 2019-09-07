@@ -1,5 +1,6 @@
 <script>
   import { Outlet, Link } from "svelte-guard-history-router";
+  import Menue from "./components/Menue.svelte";
   import { router, session } from "./main.mjs";
 
   function logout() {
@@ -28,9 +29,23 @@
       </li>
       <li>
         {#if $session.isValid}
-          <a href="/" on:click|preventDefault={logout}>
-            Logout {$session.username}
-          </a>
+          <Menue>
+            <div slot="title">{$session.username}</div>
+            <ul class="dropdown-content">
+              <li>
+                <a href="/" on:click|preventDefault={logout}>
+                  Logout {$session.username}
+                </a>
+              </li>
+              <li>
+                <a href="#!">two</a>
+              </li>
+              <li class="divider" />
+              <li>
+                <a href="#!">three</a>
+              </li>
+            </ul>
+          </Menue>
         {:else}
           <Link href="/login">Login</Link>
         {/if}
