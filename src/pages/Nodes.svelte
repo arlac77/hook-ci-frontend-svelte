@@ -50,7 +50,7 @@
         <li class="item">
           <NodeLink {node} />
           <span>{node.version}</span>
-          <span>{formatDuration(node.uptime)}</span>
+          <span class="{node.uptime > 0 ? 'ok' : 'error'}">{formatDuration(node.uptime)}</span>
         </li>
       {/each}
     </ul>
