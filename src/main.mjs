@@ -18,19 +18,7 @@ import App from "./App.svelte";
 import { config } from "../package.json";
 
 class SessionGuard extends Guard {
-  attach(route) {
-    session.subscribe(value => (route.session = value));
-  }
-
   async enter(state) {
-    const session = state.route.session;
-
-    console.log(state.route, session);
-
-    if(session === undefined) {
-      alert("no session");
-    }
-
     if (!session.isValid) {
       alert("login");
     }
