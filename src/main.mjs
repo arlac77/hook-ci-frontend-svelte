@@ -20,9 +20,9 @@ import { config } from "../package.json";
 export const session = new Session(localStorage);
 
 class SessionGuard extends Guard {
-  async enter(state) {
+  async enter(transition) {
     if (!session.isValid) {
-      alert("login");
+      return transition.redirect('/login');
     }
   }
 }
