@@ -26,11 +26,11 @@
             <QueueLink {queue}/>
           </td>
           <td><QueueLink {queue} state={'active'}>{queue.active}</QueueLink></td>
-          <td>{queue.waiting}</td>
-          <td>{queue.delayed}</td>
-          <td>{queue.paused}</td>
-          <td>{queue.completed}</td>
-          <td>{queue.failed}</td>
+          <td><QueueLink {queue} state={'waiting'}>{queue.waiting}</QueueLink></td>
+          <td><QueueLink {queue} state={'delayed'}>{queue.delayed}</QueueLink></td>
+          <td><QueueLink {queue} state={'paused'}>{queue.paused}</QueueLink></td>
+          <td><QueueLink {queue} state={'completed'}>{queue.completed}</QueueLink></td>
+          <td><QueueLink {queue} state={'failed'}>{queue.failed}</QueueLink></td>
         </tr>
       {/each}
     </tbody>
