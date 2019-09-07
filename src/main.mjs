@@ -1,6 +1,6 @@
 import { derived } from "svelte/store";
 import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
-import { session } from "svelte-session-manager";
+import { Session } from "svelte-session-manager";
 
 import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
@@ -17,17 +17,11 @@ import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
 import { config } from "../package.json";
 
+export const session = new Session(localStorage);
+
 class SessionGuard extends Guard {
-  attach(route) {
-    session.subscribe(value => (route.session = value));
-  }
-
   async enter(state) {
-    const session = state.route.session;
-
-    console.log(state.route, session);
-
-    if (session === undefined || !session.isValid) {
+    if (!session.isValid) {
       alert("login");
     }
   }

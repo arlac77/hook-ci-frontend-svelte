@@ -1,6 +1,6 @@
 <script>
   import { name, version, description, config } from "../../package.json";
-  import { session } from "svelte-session-manager";
+  import { session } from "../main.mjs";
 
   const dateFormatter = new Intl.DateTimeFormat("default", {
     hour: "numeric",
@@ -31,19 +31,21 @@
         <td>{config.graphQl}</td>
       </tr>
       <tr>
-        <td>Usrname</td>
+        <td>Username</td>
         <td>{$session.username}</td>
       </tr>
       <tr>
         <td>Session Expiration</td>
         <td>{dateFormatter.format($session.expirationDate)}</td>
       </tr>
-      {#each [...$session.entitlements] as name}
-        <tr>
-          <td>Entitlement</td>
-          <td>{name}</td>
-        </tr>
-      {/each}
+      <tr>
+        <td>Entitlements</td>
+        <td>
+          {#each [...$session.entitlements] as name}
+            <div>{name}</div>
+          {/each}
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
