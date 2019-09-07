@@ -21,14 +21,6 @@
     const json = await data.json();
     lines = json.logs.join("\n");
   }
-
 </script>
-
-<style>
-  .log {
-    white-space: pre;
-    font-family: courier, "courier new", monospace;
-  }
-</style>
 
 <div class="log">{lines}</div>
