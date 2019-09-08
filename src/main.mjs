@@ -22,7 +22,7 @@ export const session = new Session(localStorage);
 class SessionGuard extends Guard {
   async enter(transition) {
     if (!session.isValid) {
-      return transition.redirect('/login');
+      return transition.redirect("/login");
     }
   }
 }
@@ -61,11 +61,14 @@ export const router = new Router(
 
 export const repositories = derived(
   session,
-  async ($session, set) => {
-    const data = await fetch(config.api + "/repositories?pattern=arlac77/*", {
-      headers: $session.authorizationHeader
-    });
-    set(await data.json());
+  ($session, set) => {
+    if (session.isValid) {
+      fetch(config.api + "/repositories?pattern=arlac77/*", {
+        headers: session.authorizationHeader
+      }).then(async data => set(await data.json()));
+    } else {
+      set([]);
+    }
     return () => {};
   },
   []
@@ -81,11 +84,14 @@ export const repository = derived(
 
 export const queues = derived(
   session,
-  async ($session, set) => {
-    const data = await fetch(config.api + "/queues", {
-      headers: $session.authorizationHeader
-    });
-    set(await data.json());
+  ($session, set) => {
+    if (session.isValid) {
+      fetch(config.api + "/queues", {
+        headers: session.authorizationHeader
+      }).then(async data => set(await data.json()));
+    } else {
+      set([]);
+    }
     return () => {};
   },
   []
@@ -101,11 +107,14 @@ export const queue = derived(
 
 export const jobs = derived(
   [session, router.keys.queue],
-  async ([$session, $queue], set) => {
-    const data = await fetch(config.api + `/queue/${$queue}/jobs`, {
-      headers: $session.authorizationHeader
-    });
-    set(await data.json());
+  ([$session, $queue], set) => {
+    if (session.isValid) {
+      fetch(config.api + `/queue/${$queue}/jobs`, {
+        headers: session.authorizationHeader
+      }).then(async data => set(await data.json()));
+    } else {
+      set([]);
+    }
     return () => {};
   }
 );
