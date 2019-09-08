@@ -49,7 +49,6 @@
       {#each result.data.nodes as node (node.name)}
         <li class="item">
           <NodeLink {node} />
-          <span>{node.version}</span>
           <span class="{node.uptime > 0 ? 'ok' : 'error'}">{formatDuration(node.uptime)}</span>
         </li>
       {/each}
