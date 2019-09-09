@@ -33,10 +33,15 @@
     <ul class="item-list">
       {#each result.data.nodes as node (node.name)}
         <li class="item">
-          <NodeLink {node} />
-          <span class={node.uptime > 0 ? 'ok' : 'error'}>
-            {formatDuration(node.uptime)}
-          </span>
+          <NodeLink {node}>
+            <strong>{node.name}</strong>
+            <span>
+              {formatDuration(node.uptime)}
+              {#if node.uptime > 0}
+                <abbr class="ok-hint" />
+              {/if}
+            </span>
+          </NodeLink>
         </li>
       {/each}
     </ul>

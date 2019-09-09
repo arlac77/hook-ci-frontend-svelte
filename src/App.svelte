@@ -11,33 +11,25 @@
 <nav>
   <Link href="/">
     <img class="logo" src="hook_ci.svg" alt="Hook CI" />
-    <h2>Hook CI</h2>
+    Hook CI
   </Link>
   <ul>
     <li>
-      <Link href="/queue">
-        <h3>Queues</h3>
-      </Link>
+      <Link href="/queue">Queues</Link>
     </li>
     <li>
-      <Link href="/repository">
-        <h3>Repositories</h3>
-      </Link>
+      <Link href="/repository">Repositories</Link>
     </li>
     <li>
-      <Link href="/node">
-        <h3>Nodes</h3>
-      </Link>
+      <Link href="/node">Nodes</Link>
     </li>
     <li>
-      <Link href="/about">
-        <h3>About</h3>
-      </Link>
+      <Link href="/about">About</Link>
     </li>
     <li>
       {#if $session.isValid}
         <Menue>
-          <h3 slot="title" class="dropdown-trigger">{$session.username}</h3>
+          <div slot="title" class="dropdown-trigger">{$session.username}</div>
           <ul class="dropdown-content">
             <li>
               <a href="/" on:click|preventDefault={logout}>
@@ -54,9 +46,7 @@
           </ul>
         </Menue>
       {:else}
-        <Link href="/login">
-          <h3>Login</h3>
-        </Link>
+        <Link href="/login">Login</Link>
       {/if}
     </li>
   </ul>
