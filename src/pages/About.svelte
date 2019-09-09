@@ -1,16 +1,7 @@
 <script>
   import { name, version, description, config } from "../../package.json";
   import { session } from "../main.mjs";
-
-  const dateFormatter = new Intl.DateTimeFormat("default", {
-    year: "numeric",
-    month: "numeric",
-    day: "numeric",
-    hour12: false,
-    hour: "numeric",
-    minute: "2-digit",
-    second: "2-digit"
-  });
+  import { dateFormatter } from "../util.mjs";
 </script>
 
 <div>

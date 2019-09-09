@@ -1,4 +1,12 @@
-export const dateFormatter = new Intl.DateTimeFormat();
+export const dateFormatter = new Intl.DateTimeFormat("default", {
+  year: "numeric",
+  month: "numeric",
+  day: "numeric",
+  hour12: false,
+  hour: "numeric",
+  minute: "2-digit",
+  second: "2-digit"
+});
 
 const durations = [
   [604800, "w"],
