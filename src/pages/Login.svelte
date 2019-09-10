@@ -4,8 +4,18 @@
   import { session } from "../main.mjs";
 
   export let state;
+
+  async function result() {
+    const transition = state.router.transition;
+
+    console.log("transition", transition);
+
+    if (transition) {
+      transition.continue();
+    }
+  }
 </script>
 
 <div class="center">
-  <Login {session} endpoint={config.api + '/authenticate'} />
+  <Login {session} endpoint={config.api + '/authenticate'} {result} />
 </div>
