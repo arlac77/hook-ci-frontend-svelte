@@ -8,11 +8,12 @@
 </script>
 
 <div>
-  <h3>{$job.id}</h3>
+  <h3>Job {$job.id}</h3>
   AttemptsMade: {$job.attemptsMade}
   <Link href="/queue/{$queue.name}/job/{$job.id}/log">Log</Link>
 
 <!--
+  {#if $job}
   <ul>
     {#each $job.steps as step, i}
       <li>
@@ -20,5 +21,6 @@
       </li>
     {/each}
   </ul>
+  {/if}
   -->
 </div>

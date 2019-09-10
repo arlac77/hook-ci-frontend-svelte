@@ -36,9 +36,6 @@
                 Logout {$session.username}
               </a>
             </li>
-            <li>
-              <a href="#!">two</a>
-            </li>
             <li class="divider" />
             <li>
               <a href="#!">three</a>

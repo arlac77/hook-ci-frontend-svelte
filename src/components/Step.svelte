@@ -1,6 +1,6 @@
 <script>
   import NodeLink from "./NodeLink.svelte";
-  import { dateFormatter } from "../util.mjs";
+  import { formatSecondsSinceEpoch } from "../util.mjs";
   export let step;
 </script>
 
@@ -9,8 +9,8 @@
   <h3>{step.name}</h3>
   {step.executable}
   {#each step.args as a}{a}{/each}
-  Started: {dateFormatter.format(new Date(step.started))}
-  Ended: {dateFormatter.format(new Date(step.ended))}
+  Started: {formatSecondsSinceEpoch(step.started)}
+  Ended: {formatSecondsSinceEpoch(step.ended)}
   <NodeLink name={step.node}>{step.node}</NodeLink>
 
   <table>
