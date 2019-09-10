@@ -1,6 +1,6 @@
 <script>
   import { Link } from "svelte-guard-history-router";
-  import { dateFormatter } from '../util.mjs';
+  import { formatSecondsSinceEpoch } from '../util.mjs';
   import RepositoryLink from "./RepositoryLink.svelte";
   
   export let queue = { name: "xxx" };
@@ -24,8 +24,8 @@
           <td>
             <Link href="/queue/{queue.name}/job/{job.id}">{job.id}</Link>
           </td>
-          <td>{dateFormatter.format(new Date(job.processedOn))}</td>
-          <td>{dateFormatter.format(new Date(job.finishedOn))}</td>
+          <td>{formatSecondsSinceEpoch(job.processedOn)}</td>
+          <td>{formatSecondsSinceEpoch(job.finishedOn)}</td>
           <td>
             <RepositoryLink repository={job.repository} />
           </td>

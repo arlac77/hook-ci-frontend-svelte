@@ -8,6 +8,15 @@ export const dateFormatter = new Intl.DateTimeFormat("default", {
   second: "2-digit"
 });
 
+
+export function formatSecondsSinceEpoch(sse) {
+  if(sse === undefined) {
+    return '-';
+  }
+  return dateFormatter.format(new Date(sse));
+}
+
+
 const durations = [
   [604800, "w"],
   [86400, "d"],
