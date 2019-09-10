@@ -1,9 +1,9 @@
 {
-  "name": "svelte-playground",
+  "name": "hook-ci-frontend-svelte",
   "version": "0.0.0-semantic-release",
   "description": "some description",
   "scripts": {
-    "deploy": "scp public/* root@odroid1:/services/hook-ci/frontend-svelte/",
+    "deploy": "scp public/* root@odroid1:/services/hook-ci/frontend/",
     "prepare": "rollup -c",
     "start": "rollup -c -w"
   },
@@ -35,14 +35,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arlac77/svelte-playground.git"
+    "url": "https://github.com/arlac77/hook-ci-frontend-svelte.git"
   },
   "bugs": {
-    "url": "https://github.com/arlac77/svelte-playground/issues"
+    "url": "https://github.com/arlac77/hook-ci-frontend-svelte/issues"
   },
-  "homepage": "https://github.com/arlac77/svelte-playground#readme",
+  "homepage": "https://github.com/arlac77/hook-ci-frontend-svelte#readme",
   "config": {
-    "urlPrefix": "/services/ci/svelte",
+    "urlPrefix": "/services/ci",
     "api": "/services/ci/api",
     "proxyTarget": "https://mfelten.dynv6.net/",
     "graphQl": "/services/ci/api/graphql"
@@ -50,7 +50,7 @@
   "pacman": {
     "groups": "webapp",
     "hooks": "pacman/install.sh",
-    "installdir": "/services/hook-ci/frontend-svelte",
+    "installdir": "/services/hook-ci/frontend",
     "content": {
       "${installdir}/": {
         "base": "public"
@@ -59,7 +59,7 @@
     },
     "depends": {
       "nginx-mainline": ">=1.17.3",
-      "hook-ci": ">=1.41.8"
+      "hook-ci": ">=1.43.1"
     }
   },
   "release": {
