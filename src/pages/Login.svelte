@@ -8,8 +8,6 @@
   async function result() {
     const transition = state.router.transition;
 
-    console.log("transition", transition);
-
     if (transition) {
       transition.continue();
     }
