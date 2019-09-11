@@ -1,6 +1,6 @@
 <script>
   import { Link } from "svelte-guard-history-router";
-  import { formatSecondsSinceEpoch } from '../util.mjs';
+  import { formatSecondsSinceEpoch } from 'svelte-common';
   import RepositoryLink from "./RepositoryLink.svelte";
   
   export let queue = { name: "xxx" };

@@ -1,6 +1,6 @@
 <script>
   import { Link } from "svelte-guard-history-router";
-  import { tooltip } from "../tooltip.mjs";
+  import { tooltip } from "svelte-common";
   export let node;
 </script>
 

@@ -1,6 +1,6 @@
 <script>
+  import { formatSecondsSinceEpoch } from "svelte-common";
   import NodeLink from "./NodeLink.svelte";
-  import { formatSecondsSinceEpoch } from "../util.mjs";
   export let step;
 </script>
 

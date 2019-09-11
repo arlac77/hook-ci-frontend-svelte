@@ -1,6 +1,6 @@
 <script>
-  import { config } from "../../package.json";
   import { Login } from "svelte-session-manager";
+  import { config } from "../../package.json";
   import { session } from "../main.mjs";
 
   export let state;

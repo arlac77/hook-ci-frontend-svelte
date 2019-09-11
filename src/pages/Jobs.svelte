@@ -1,6 +1,5 @@
 <script>
   import { onDestroy } from "svelte";
-
   import JobTable from "../components/JobTable.svelte";
   export let state;
 
