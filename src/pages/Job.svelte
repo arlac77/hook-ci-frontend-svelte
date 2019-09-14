@@ -10,6 +10,7 @@
 <div>
   <h3>Job {$job.id}</h3>
   AttemptsMade: {$job.attemptsMade}
+  Node: {$job.node}
   <Link href="/queue/{$queue.name}/job/{$job.id}/log">Log</Link>
 
 <!--

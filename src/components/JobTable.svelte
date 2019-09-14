@@ -14,6 +14,7 @@
         <th aria-sort="none">Id</th>
         <th aria-sort="none">Processed</th>
         <th aria-sort="none">Finished</th>
+        <th aria-sort="none">Node</th>
         <th aria-sort="none">Repository</th>
         <th aria-sort="none">Branch</th>
       </tr>
@@ -26,6 +27,7 @@
           </td>
           <td>{formatSecondsSinceEpoch(job.processedOn)}</td>
           <td>{formatSecondsSinceEpoch(job.finishedOn)}</td>
+          <td>{job.node}</td>
           <td>
             <RepositoryLink repository={job.repository} />
           </td>
