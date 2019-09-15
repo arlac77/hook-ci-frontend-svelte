@@ -3211,7 +3211,7 @@ npm-pick-manifest@^3.0.0, npm-pick-manifest@^3.0.2:
     npm-package-arg "^6.0.0"
     semver "^5.4.1"
 
-npm-pkgbuild@^6.9.1:
+npm-pkgbuild@^6.10.1:
   version "6.10.1"
   resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.10.1.tgz#134b9fa4be1539c6e0d486e67471f0ea6070a95c"
   integrity sha512-tLX8C+MHReEHtAdXPzF7YZ94rh8eS6VnB2LTdj+hvd0vKmMzICssSQa/rVgoSYXw7kVhWqt6l1A/raQ7Uaxahw==
@@ -4205,7 +4205,7 @@ rollup-plugin-svelte@^5.1.0:
     rollup-pluginutils "^2.3.3"
     sourcemap-codec "^1.4.4"
 
-rollup-plugin-terser@^5.1.1:
+rollup-plugin-terser@^5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/rollup-plugin-terser/-/rollup-plugin-terser-5.1.2.tgz#3e41256205cb75f196fc70d4634227d1002c255c"
   integrity sha512-sWKBCOS+vUkRtHtEiJPAf+WnBqk/C402fBD9AVHxSIXMqjsY7MnYWKYEUqGixtr0c8+1DjzUEPlNgOYQPVrS1g==
@@ -4223,7 +4223,7 @@ rollup-pluginutils@^2.3.3, rollup-pluginutils@^2.5.0, rollup-pluginutils@^2.8.1:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^1.21.0:
+rollup@^1.21.3:
   version "1.21.3"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.21.3.tgz#2d957e04b230b06a85b8c617bf594f92c37c4d5d"
   integrity sha512-43CgeUtHhfiqBOUd0uJo5NEOg2FuheF3SqGN8BqgvnqB4xM2TbfPdudeSdllDcMKpagHb//qtpaAADBurT4GzA==
@@ -4804,7 +4804,7 @@ svelte-session-manager@^1.0.0:
   resolved "https://registry.yarnpkg.com/svelte-session-manager/-/svelte-session-manager-1.0.0.tgz#f238806b416dfbcabcb1dcaf06bd00f50cc21be2"
   integrity sha512-VrJsZVE2dIN3vUarFcogf2OQ8Q10L2sQR6clnMHJrcvbx6ZDuw+IRChpV/VipBxC+Y8PAl6a4R5xalpRwerx5g==
 
-svelte@^3.11.0:
+svelte@^3.12.1:
   version "3.12.1"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.12.1.tgz#ddfacd43272ac3255907c682b74ee7d3d8b06b0c"
   integrity sha512-t29WJNjHIqfrdMcVXqIyRfgLEaNz7MihKXTpb8qHlbzvf0WyOOIhIlwIGvl6ahJ9+9CLJwz0sjhFNAmPgo8BHg==
