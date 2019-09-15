@@ -20,15 +20,15 @@
     "graphql": "^14.5.3",
     "light-server": "^2.6.4",
     "npm-pkgbuild": "^6.10.1",
-    "rollup": "^1.21.0",
+    "rollup": "^1.21.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.0",
-    "rollup-plugin-terser": "^5.1.1",
+    "rollup-plugin-terser": "^5.1.2",
     "semantic-release": "^15.13.24",
-    "svelte": "^3.11.0",
+    "svelte": "^3.12.1",
     "svelte-apollo": "^0.3.0"
   },
   "engines": {
