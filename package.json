@@ -10,7 +10,7 @@
   "dependencies": {
     "mf-styling": "arlac77/mf-styling",
     "svelte-common": "arlac77/svelte-common",
-    "svelte-guard-history-router": "^1.0.1",
+    "svelte-guard-history-router": "^1.1.0",
     "svelte-session-manager": "^1.0.0"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 <script>
-  import { Outlet, Link } from "svelte-guard-history-router";
+  import { Outlet, link, active } from "svelte-guard-history-router";
   import Menue from "svelte-common";
   import { router, session } from "./main.mjs";
 
@@ -9,22 +9,24 @@
 </script>
 
 <nav>
-  <Link href="/">
+  <a href="/" use:link={router} use:active={router}>
     <img class="logo" src="hook_ci.svg" alt="Hook CI" />
     Hook CI
-  </Link>
+  </a>
   <ul>
     <li>
-      <Link href="/queue">Queues</Link>
+      <a href="/queue" use:link={router} use:active={router}>Queues</a>
     </li>
     <li>
-      <Link href="/repository">Repositories</Link>
+      <a href="/repository" use:link={router} use:active={router}>
+        Repositories
+      </a>
     </li>
     <li>
-      <Link href="/node">Nodes</Link>
+      <a href="/node" use:link={router} use:active={router}>Nodes</a>
     </li>
     <li>
-      <Link href="/about">About</Link>
+      <a href="/about" use:link={router} use:active={router}>About</a>
     </li>
     <li>
       {#if $session.isValid}
@@ -43,7 +45,7 @@
           </ul>
         </Menue>
       {:else}
-        <Link href="/login">Login</Link>
+        <a href="/login" use:link={router} use:active={router}>Login</a>
       {/if}
     </li>
   </ul>

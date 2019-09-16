@@ -1,7 +1,6 @@
 <script>
   import ApolloClient, { gql } from "apollo-boost";
   import { query } from "svelte-apollo";
-  import { Link } from "svelte-guard-history-router";
   import { formatDuration, ActionButton } from "svelte-common";
   import NodeLink from "../components/NodeLink.svelte";
   import { config } from "../../package.json";
