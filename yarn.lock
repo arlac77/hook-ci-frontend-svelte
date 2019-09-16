@@ -1639,11 +1639,11 @@ fs-extra@^8.0.0, fs-extra@^8.1.0:
     universalify "^0.1.0"
 
 fs-minipass@^1.2.5:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/fs-minipass/-/fs-minipass-1.2.6.tgz#2c5cc30ded81282bfe8a0d7c7c1853ddeb102c07"
-  integrity sha512-crhvyXcMejjv3Z5d2Fa9sf5xLYVCF5O1c71QxbVnbLsmYMBEvDAftewesN/HhY03YRoA7zOMxjNGrF5svGaaeQ==
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/fs-minipass/-/fs-minipass-1.2.7.tgz#ccff8570841e7fe4265693da88936c55aed7f7c7"
+  integrity sha512-GWSSJGFy4e9GUeCcbIkED+bgAoFyj7XF1mV8rma3QW4NIqX9Kyx79N/PF61H5udOV3aY1IaMLs6pGbH71nlCTA==
   dependencies:
-    minipass "^2.2.1"
+    minipass "^2.6.0"
 
 fs-vacuum@^1.2.10, fs-vacuum@~1.2.10:
   version "1.2.10"
@@ -2884,7 +2884,7 @@ merge2@^1.2.3:
 
 mf-styling@arlac77/mf-styling:
   version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/2663b094def560f2f81294ce951971ce799d5d3b"
+  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/7c9574d8919ce1b4706a6c9928fb41857825a4ab"
 
 micromatch@^4.0.2:
   version "4.0.2"
@@ -2961,10 +2961,10 @@ minimist@~0.0.1:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
   integrity sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=
 
-minipass@^2.2.1, minipass@^2.3.5:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/minipass/-/minipass-2.6.0.tgz#80a68c8a43257b7f744ce09733f6a9c6eef9f731"
-  integrity sha512-OuNZ0OHrrI+jswzmgivYBZ+fAAGHZA4293d5q0z631/I9QSw3yumKB92njxHIHiB1eAdGRsE+3CcOPkoEyV5FQ==
+minipass@^2.2.1, minipass@^2.3.5, minipass@^2.6.0:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/minipass/-/minipass-2.6.1.tgz#5f44a94f0d0cd1a347fd65274f32122f68b76acd"
+  integrity sha512-B+5oiJnCKYgeJxBiy5FJi/s/0x56Oe0WdaAGlxNLHhhfdvkfgbKKEkLIiikYoxZLA3OKzVrXvN25fuhKH7FZxg==
   dependencies:
     safe-buffer "^5.1.2"
     yallist "^3.0.0"
@@ -3469,9 +3469,9 @@ opener@^1.5.1:
   integrity sha512-goYSy5c2UXE4Ra1xixabeVh1guIX/ZV/YokJksb6q2lubWu6UbvPQ20p542/sFIll1nl8JnCyK9oBaOcCWXwvA==
 
 optimism@^0.10.0:
-  version "0.10.2"
-  resolved "https://registry.yarnpkg.com/optimism/-/optimism-0.10.2.tgz#626b6fd28b0923de98ecb36a3fd2d3d4e5632dd9"
-  integrity sha512-zPfBIxFFWMmQboM9+Z4MSJqc1PXp82v1PFq/GfQaufI69mHKlup7ykGNnfuGIGssXJQkmhSodQ/k9EWwjd8O8A==
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/optimism/-/optimism-0.10.3.tgz#163268fdc741dea2fb50f300bedda80356445fd7"
+  integrity sha512-9A5pqGoQk49H6Vhjb9kPgAeeECfUDF6aIICbMDL23kDLStBn1MWk3YvcZ4xWF9CsSf6XEgvRLkXy4xof/56vVw==
   dependencies:
     "@wry/context" "^0.4.0"
 
@@ -4787,10 +4787,10 @@ svelte-common@arlac77/svelte-common:
   version "0.0.0-semantic-release"
   resolved "https://codeload.github.com/arlac77/svelte-common/tar.gz/402701ee804cb6f63734df2d73ff0c1e3d862ca6"
 
-svelte-guard-history-router@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-1.1.0.tgz#9f1a09bf5029843e80a9fe84369b0ceb34e2e2f6"
-  integrity sha512-vdMwU1+gLRHYCUka5uKxdQuooUElcxE+DMXMUDR90oNaRgGFVelsuiDaKXnWR0iPccRWmT+08FVgxxFKMdYVug==
+svelte-guard-history-router@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-1.1.1.tgz#f43a852a29124a525daeebe5e2fd13ce9e196c75"
+  integrity sha512-AYHZYfYyoA0H/0saufL+QQ+bF+rheEqdhiJYszmTXB/wncqcp7A2CD1V4HdfQifChb6elezNcjYV7HpuCYascw==
   dependencies:
     multi-path-matcher "^2.0.3"
 
