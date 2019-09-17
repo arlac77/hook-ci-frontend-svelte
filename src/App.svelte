@@ -13,7 +13,7 @@
     <img class="logo" src="hook_ci.svg" alt="Hook CI" />
     Hook CI
   </a>
-  <ul>
+  <ul class="left">
     <li>
       <a href="/queue" use:link={router} use:active={router}>Queues</a>
     </li>
@@ -28,6 +28,8 @@
     <li>
       <a href="/about" use:link={router} use:active={router}>About</a>
     </li>
+  </ul>
+  <ul>
     <li>
       {#if $session.isValid}
         <Menue>
@@ -51,5 +53,5 @@
   </ul>
 </nav>
 <main>
-  <Outlet {router}>nothing there</Outlet>
+  <Outlet {router} />
 </main>
