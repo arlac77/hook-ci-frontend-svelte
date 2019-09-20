@@ -7,13 +7,13 @@
   export let state;
 </script>
 
-<div>
-  <h3>Job {$job.id}</h3>
-  AttemptsMade: {$job.attemptsMade}
-  Node: {$job.node}
-  <Link href="/queue/{$queue.name}/job/{$job.id}/log">Log</Link>
+{#if $job}
+  <div>
+    <h3>Job {$job.id}</h3>
+    AttemptsMade: {$job.attemptsMade} Node: {$job.node}
+    <Link href="/queue/{$queue.name}/job/{$job.id}/log">Log</Link>
 
-<!--
+    <!--
   {#if $job}
   <ul>
     {#each $job.steps as step, i}
@@ -24,4 +24,5 @@
   </ul>
   {/if}
   -->
-</div>
+  </div>
+{/if}
