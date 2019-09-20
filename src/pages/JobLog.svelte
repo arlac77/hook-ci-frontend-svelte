@@ -1,6 +1,7 @@
 <script>
   import { onDestroy } from "svelte";
   import { config } from "../../package.json";
+  import { session } from "../main.mjs";
   export let state;
 
   let url;
@@ -19,7 +20,9 @@
   let lines = [];
 
   async function refresh(url) {
-    const data = await fetch(url);
+    const data = await fetch(url, {
+      headers: session.authorizationHeader
+    });
     const json = await data.json();
     lines = json.logs.join("\n");
   }
