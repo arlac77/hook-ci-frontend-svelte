@@ -14,7 +14,7 @@
     "svelte-session-manager": "^1.0.0"
   },
   "devDependencies": {
-    "@semantic-release/exec": "^3.3.6",
+    "@semantic-release/exec": "^3.3.7",
     "apollo-boost": "^0.4.3",
     "apollo-client": "^2.6.3",
     "graphql": "^14.5.3",
