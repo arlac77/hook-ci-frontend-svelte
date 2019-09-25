@@ -108,7 +108,7 @@ export const queue = derived(
 export const jobs = derived(
   [session, router.keys.queue],
   ([$session, $queue], set) => {
-    if (session.isValid) {
+    if (session.isValid && $queue) {
       fetch(config.api + `/queue/${$queue}/jobs`, {
         headers: session.authorizationHeader
       }).then(async data => set(await data.json()));
