@@ -31,7 +31,7 @@
           <td>
             <RepositoryLink repository={job.repository} />
           </td>
-          <td>{job.branch}</td>
+          <td>{#if job.branch}{job.branch}{:else}-{/if}</td>
         </tr>
       {/each}
     </tbody>
