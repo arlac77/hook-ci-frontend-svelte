@@ -1,7 +1,7 @@
 {
   "name": "hook-ci-frontend-svelte",
   "version": "0.0.0-semantic-release",
-  "description": "some description",
+  "description": "hook-ci web fronend",
   "scripts": {
     "deploy": "scp public/* root@odroid1:/services/hook-ci/frontend/",
     "prepare": "rollup -c",
