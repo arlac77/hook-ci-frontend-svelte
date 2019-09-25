@@ -5,8 +5,10 @@
 
 </script>
 
+{#if repository}
 <Link href="/repository/{repository.name}">
   <slot>
     <div use:tooltip={repository.description}>{repository.name}</div>
   </slot>
 </Link>
+{/if}
