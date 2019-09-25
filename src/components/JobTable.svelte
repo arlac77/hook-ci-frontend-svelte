@@ -27,7 +27,7 @@
           </td>
           <td>{formatSecondsSinceEpoch(job.processedOn)}</td>
           <td>{formatSecondsSinceEpoch(job.finishedOn)}</td>
-          <td>{job.node}</td>
+          <td>{#if job.node}{job.node}{:else}-{/if}</td>
           <td>
             <RepositoryLink repository={job.repository} />
           </td>
