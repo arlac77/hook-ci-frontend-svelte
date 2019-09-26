@@ -3,31 +3,13 @@ import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import json from "rollup-plugin-json";
 import { terser } from "rollup-plugin-terser";
+import dev from "rollup-plugin-dev";
+
 import copy from "rollup-plugin-copy";
-import { spawn } from "child_process";
 import { config } from "./package.json";
 
 const production = !process.env.ROLLUP_WATCH;
 const dist = "public";
-
-if (!production) {
-  const ls = spawn("./node_modules/.bin/light-server", [
-    "-s",
-    dist,
-    "--servePrefix",
-    config.urlPrefix,
-    "--historyindex",
-    config.urlPrefix + "/index.html",
-    "-p",
-    "5000",
-    "--proxypath",
-    config.api,
-    "-x",
-    config.proxyTarget,
-    "-w", `${dist}/*.mjs,${dist}/*.css`
-  ]);
-  ls.stdout.pipe(process.stdout);
-}
 
 export default {
   input: "src/main.mjs",
@@ -43,8 +25,8 @@ export default {
     svelte({
       dev: !production,
       css: css => {
-				css.write(`${dist}/bundle.css`);
-			}
+        css.write(`${dist}/bundle.css`);
+      }
     }),
     resolve({ browser: true }),
     commonjs(),
@@ -52,7 +34,14 @@ export default {
       preferConst: true,
       compact: true
     }),
-    production && terser()
+    production && terser(),
+    dev({
+      port: 5000,
+      dirs: [dist],
+      spa: `${dist}/index.html`,
+      basePath: config.urlPrefix,
+      proxy: { [`${config.api}/*`]: [config.proxyTarget, { https: true }] }
+    })
   ],
   watch: {
     clearScreen: false
