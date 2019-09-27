@@ -11,8 +11,9 @@
   {#each step.args as a}{a}{/each}
   Started: {formatSecondsSinceEpoch(step.started)}
   Ended: {formatSecondsSinceEpoch(step.ended)}
-  <NodeLink name={step.node}>{step.node}</NodeLink>
+  <NodeLink node={step.node}/>
 
+  {#if step.requirements}
   <table>
     <thead>
       <th aria-sort="none">Executable</th>
@@ -21,11 +22,12 @@
     <tbody>
       {#each step.requirements as r}
         <tr>
-          <td>{r.name}</td>
+          <td>{r.executable}</td>
           <td>{r.version}</td>
         </tr>
       {/each}
     </tbody>
   </table>
+  {/if}
 </div>
 {/if}
