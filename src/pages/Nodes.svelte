@@ -4,6 +4,7 @@
   import { formatDuration, ActionButton } from "svelte-common";
   import NodeLink from "../components/NodeLink.svelte";
   import { config } from "../../package.json";
+  import { Node } from "../Node.mjs";
 
   const client = new ApolloClient({ uri: config.graphQl });
 
