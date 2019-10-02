@@ -1,6 +1,6 @@
 <script>
   import { Outlet, link, active } from "svelte-guard-history-router";
-  import Menue from "svelte-common";
+  import { Menue } from "svelte-common";
   import { router, session } from "./main.mjs";
 
   function logout() {
