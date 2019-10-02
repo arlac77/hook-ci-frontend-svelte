@@ -35,7 +35,7 @@
     "svelte-apollo": "^0.3.0"
   },
   "engines": {
-    "node": ">=12.11.0"
+    "node": ">=12.10.0"
   },
   "repository": {
     "type": "git",
@@ -62,8 +62,8 @@
       "/etc/nginx/config.d/${name}.conf": "pacman/nginx.conf"
     },
     "depends": {
-      "nginx-mainline": ">=1.17.3",
-      "hook-ci": ">=1.43.1"
+      "nginx-mainline": ">=1.17.4",
+      "hook-ci": ">=1.45.5"
     }
   },
   "release": {
