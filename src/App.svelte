@@ -2,6 +2,7 @@
   import { Outlet, link, active } from "svelte-guard-history-router";
   import { Menue } from "svelte-common";
   import { router, session } from "./main.mjs";
+  import { config } from "../package.json";
 
   function logout() {
     session.invalidate();
@@ -10,7 +11,7 @@
 
 <nav>
   <a href="/" use:link={router} use:active={router}>
-    <img class="logo" src="hook_ci.svg" alt="Hook CI" />
+    <img class="logo" src="{config.urlPrefix}/hook_ci.svg" alt="Hook CI" />
     Hook CI
   </a>
   <ul class="left">
