@@ -151,6 +151,14 @@ export const nodes = derived(
   []
 );
 
+export const node = derived(
+  [nodes, router.keys.node],
+  ([$nodes, $node], set) => {
+    set($nodes.find(a => a.name === $node));
+    return () => {};
+  }
+);
+
 export default new App({
   target: document.body
 });
