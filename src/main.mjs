@@ -1,6 +1,8 @@
 import { derived } from "svelte/store";
 import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
 import { Session } from "svelte-session-manager";
+import ApolloClient, { gql } from "apollo-boost";
+import { query } from "svelte-apollo";
 
 import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
@@ -15,6 +17,7 @@ import About from "./pages/About.svelte";
 import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
+import { Node as myNode } from "./Node.mjs";
 import { config } from "../package.json";
 
 export const session = new Session(localStorage);
@@ -123,6 +126,30 @@ export const job = derived([jobs, router.keys.job], ([$jobs, $job], set) => {
   set($jobs.find(a => a.id === $job));
   return () => {};
 });
+
+const NODES = gql`
+  {
+    nodes {
+      name
+      version
+      uptime
+    }
+  }
+`;
+
+const client = new ApolloClient({ uri: config.graphQl });
+export const rawNodes = query(client, { query: NODES });
+
+export const nodes = derived(
+  rawNodes,
+  ($rawNodes, set) => {
+    $rawNodes.then(nodes => {
+      set(nodes.data.nodes.map(node => new myNode(node.name, node)));
+    });
+    return () => {};
+  },
+  []
+);
 
 export default new App({
   target: document.body

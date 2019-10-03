@@ -1,51 +1,24 @@
 <script>
-  import ApolloClient, { gql } from "apollo-boost";
-  import { query } from "svelte-apollo";
   import { formatDuration, ActionButton } from "svelte-common";
   import NodeLink from "../components/NodeLink.svelte";
-  import { config } from "../../package.json";
-  import { Node } from "../Node.mjs";
-
-  const client = new ApolloClient({ uri: config.graphQl });
-
-  const NODES = gql`
-    {
-      nodes {
-        name
-        version
-        uptime
-      }
-    }
-  `;
-
-  const nodes = query(client, { query: NODES });
-
-  async function reload() {
-    return nodes.refetch();
-  }
+  import { nodes } from "../main.mjs";
 </script>
 
 <div>
-  {#await $nodes}
-    Loading...
-  {:then result}
-    <ul class="item-list">
-      {#each result.data.nodes as node (node.name)}
-        <li class="item">
-          <NodeLink {node}>
-            <strong>{node.name}</strong>
-            <span>
-              {formatDuration(node.uptime)}
-              {#if node.uptime > 0}
-                <abbr class="ok-hint" />
-              {/if}
-            </span>
-          </NodeLink>
-        </li>
-      {/each}
-    </ul>
-  {:catch error}
-    Error: {error}
-  {/await}
+  <ul class="item-list">
+    {#each $nodes as node (node.name)}
+      <li class="item">
+        <NodeLink {node}>
+          <strong>{node.name}</strong>
+          <span>
+            {formatDuration(node.uptime)}
+            {#if node.uptime > 0}
+              <abbr class="ok-hint" />
+            {/if}
+          </span>
+        </NodeLink>
+        {node.version}
+      </li>
+    {/each}
+  </ul>
 </div>
-<ActionButton action={reload}>Reload</ActionButton>
