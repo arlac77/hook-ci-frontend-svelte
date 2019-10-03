@@ -16,6 +16,13 @@
       headers: session.authorizationHeader
     });
   }
+
+  async function reload() {
+    return fetch(`${config.api}/node/${$node.name}/reload`, {
+      method: "POST",
+      headers: session.authorizationHeader
+    });
+  }
 </script>
 
 {#if $node}
@@ -27,4 +34,5 @@
 
   <ActionButton action={restart}>Restart</ActionButton>
   <ActionButton action={stop}>Stop</ActionButton>
+  <ActionButton action={reload}>Reload</ActionButton>
 {:else}Not found{/if}
