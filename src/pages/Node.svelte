@@ -1,5 +1,5 @@
 <script>
-  import { formatDuration, ActionButton } from "svelte-common";
+  import { formatDuration, ActionButton, formatBytes } from "svelte-common";
   import { node, session } from "../main.mjs";
   import { config } from "../../package.json";
 
@@ -28,6 +28,12 @@
 {#if $node}
   <h3>Node {$node.name}</h3>
   {$node.version} {formatDuration($node.uptime)}
+  {$node.isLocal ? 'LOCAL' : 'REMOTE'}
+  rss: {formatBytes($node.memory.rss)}
+  heapTotal: {formatBytes($node.memory.heapTotal)}
+  heapUsed: {formatBytes($node.memory.heapUsed)}
+  external: {formatBytes($node.memory.external)}
+  
   {#if $node.uptime > 0}
     <abbr class="ok-hint" />
   {/if}

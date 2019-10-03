@@ -133,6 +133,13 @@ const NODES = gql`
       name
       version
       uptime
+      memory {
+        rss
+        heapTotal
+        heapUsed
+        external
+      }
+      isLocal
     }
   }
 `;

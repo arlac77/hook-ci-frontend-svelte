@@ -5,7 +5,9 @@ export class Node {
     Object.defineProperties(this, {
       name: { value: name },
       version: { value: options.version },
-      uptime: { value: options.uptime }
+      uptime: { value: options.uptime },
+      isLocal: { value: options.isLocal },
+      memory: { value: options.memory }
     });
   }
 }
