@@ -29,13 +29,14 @@
   <h3>Node {$node.name}</h3>
   {$node.version} {formatDuration($node.uptime)}
   {$node.isLocal ? 'LOCAL' : 'REMOTE'}
-  rss: {formatBytes($node.memory.rss)}
-  heapTotal: {formatBytes($node.memory.heapTotal)}
-  heapUsed: {formatBytes($node.memory.heapUsed)}
-  external: {formatBytes($node.memory.external)}
-  
   {#if $node.uptime > 0}
     <abbr class="ok-hint" />
+    <ul>
+      <li>rss: {formatBytes($node.memory.rss)}</li>
+      <li>heapTotal: {formatBytes($node.memory.heapTotal)}</li>
+      <li>heapUsed: {formatBytes($node.memory.heapUsed)}</li>
+      <li>external: {formatBytes($node.memory.external)}</li>
+    </ul>
   {/if}
 
   <ActionButton action={restart}>Restart</ActionButton>
