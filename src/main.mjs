@@ -59,7 +59,7 @@ export const router = new Router(
     route("/node", needsSession, Nodes),
     route("/node/:node", needsSession, Node)
   ],
-  config.urlPrefix
+  config.base
 );
 
 export const repositories = derived(

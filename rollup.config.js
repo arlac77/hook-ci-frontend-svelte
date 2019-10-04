@@ -39,7 +39,7 @@ export default {
       port: 5000,
       dirs: [dist],
       spa: `${dist}/index.html`,
-      basePath: config.urlPrefix,
+      basePath: config.base,
       proxy: { [`${config.api}/*`]: [config.proxyTarget, { https: true }] }
     })
   ],

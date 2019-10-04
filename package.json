@@ -46,7 +46,7 @@
   },
   "homepage": "https://github.com/arlac77/hook-ci-frontend-svelte#readme",
   "config": {
-    "urlPrefix": "/services/ci",
+    "base": "/services/ci",
     "api": "/services/ci/api",
     "proxyTarget": "https://mfelten.dynv6.net/",
     "graphQl": "/services/ci/api/graphql"
