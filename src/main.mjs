@@ -117,6 +117,9 @@ export const jobs = derived(
       }).then(async data => {
         const jobs = (await data.json()).map(job => {
           job.node = getNode(job.node);
+          if(job.steps !== undefined) {
+            job.steps.forEach(s => s.node = getNode(s.node));
+          }
           return job;
         });
         set(jobs);
@@ -156,7 +159,7 @@ function getNode(name, options) {
   if(name === '' || name === undefined) {
     return undefined;
   }
-  
+
   let node = _nodes.get(name);
 
   if (node === undefined) {
