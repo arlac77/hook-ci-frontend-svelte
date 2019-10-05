@@ -3,22 +3,8 @@
   import { node, session } from "../main.mjs";
   import { config } from "../../package.json";
 
-  async function restart() {
-    return fetch(`${config.api}/node/${$node.name}/restart`, {
-      method: "POST",
-      headers: session.authorizationHeader
-    });
-  }
-
-  async function stop() {
-    return fetch(`${config.api}/node/${$node.name}/stop`, {
-      method: "POST",
-      headers: session.authorizationHeader
-    });
-  }
-
-  async function reload() {
-    return fetch(`${config.api}/node/${$node.name}/reload`, {
+  async function postNode(suffix) {
+    return fetch(`${config.api}/node/${$node.name}/${suffix}`, {
       method: "POST",
       headers: session.authorizationHeader
     });
@@ -39,7 +25,7 @@
     </ul>
   {/if}
 
-  <ActionButton action={restart}>Restart</ActionButton>
-  <ActionButton action={stop}>Stop</ActionButton>
-  <ActionButton action={reload}>Reload</ActionButton>
+  <ActionButton action={()=>postNode('restart')}>Restart</ActionButton>
+  <ActionButton action={()=>postNode('stop')}>Stop</ActionButton>
+  <ActionButton action={()=>postNode('reload')}>Reload</ActionButton>
 {:else}Not found{/if}
