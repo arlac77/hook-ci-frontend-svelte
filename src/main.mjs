@@ -114,7 +114,13 @@ export const jobs = derived(
     if (session.isValid && $queue) {
       fetch(config.api + `/queue/${$queue}/jobs`, {
         headers: session.authorizationHeader
-      }).then(async data => set(await data.json()));
+      }).then(async data => {
+        const jobs = (await data.json()).map(job => {
+          job.node = getNode(job.node);
+          return job;
+        });
+        set(jobs);
+      });
     } else {
       set([]);
     }
@@ -144,6 +150,25 @@ const NODES = gql`
   }
 `;
 
+const _nodes = new Map();
+
+function getNode(name, options) {
+  if(name === '' || name === undefined) {
+    return undefined;
+  }
+  
+  let node = _nodes.get(name);
+
+  if (node === undefined) {
+    node = new myNode(name, options);
+    _nodes.set(name, node);
+  } else {
+    node.update(options);
+  }
+
+  return node;
+}
+
 const client = new ApolloClient({ uri: config.graphQl });
 export const rawNodes = query(client, { query: NODES });
 
@@ -151,7 +176,7 @@ export const nodes = derived(
   rawNodes,
   ($rawNodes, set) => {
     $rawNodes.then(nodes => {
-      set(nodes.data.nodes.map(node => new myNode(node.name, node)));
+      set(nodes.data.nodes.map(node => getNode(node.name, node)));
     });
     return () => {};
   },

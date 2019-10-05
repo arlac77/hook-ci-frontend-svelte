@@ -1,8 +1,9 @@
 <script>
   import { Link } from "svelte-guard-history-router";
-  import { formatSecondsSinceEpoch } from 'svelte-common';
+  import { formatSecondsSinceEpoch } from "svelte-common";
   import RepositoryLink from "./RepositoryLink.svelte";
-  
+  import NodeLink from "./NodeLink.svelte";
+
   export let queue = { name: "xxx" };
   export let jobs = [];
 </script>
@@ -27,11 +28,15 @@
           </td>
           <td>{formatSecondsSinceEpoch(job.processedOn)}</td>
           <td>{formatSecondsSinceEpoch(job.finishedOn)}</td>
-          <td>{#if job.node}{job.node}{:else}-{/if}</td>
+          <td>
+            <NodeLink node={job.node} />
+          </td>
           <td>
             <RepositoryLink repository={job.repository} />
           </td>
-          <td>{#if job.branch}{job.branch}{:else}-{/if}</td>
+          <td>
+            {#if job.branch}{job.branch}{:else}-{/if}
+          </td>
         </tr>
       {/each}
     </tbody>
