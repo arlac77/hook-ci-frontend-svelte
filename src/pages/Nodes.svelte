@@ -12,9 +12,7 @@
           <strong>{node.name}</strong>
           <span>
             {formatDuration(node.uptime)}
-            {#if node.uptime > 0}
-              <abbr class="ok-hint" />
-            {/if}
+            <abbr class={node.uptime > 0 ? 'ok-hint' : 'error-hint'} />
           </span>
         </NodeLink>
         {node.version}

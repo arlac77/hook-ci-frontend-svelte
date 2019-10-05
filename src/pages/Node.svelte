@@ -23,6 +23,8 @@
       <li>heapUsed: {formatBytes($node.memory.heapUsed)}</li>
       <li>external: {formatBytes($node.memory.external)}</li>
     </ul>
+  {:else}
+    <abbr class="error-hint"/>
   {/if}
 
   <ActionButton action={()=>postNode('restart')}>Restart</ActionButton>
