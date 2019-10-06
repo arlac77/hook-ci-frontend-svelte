@@ -25,7 +25,7 @@
     <ActionButton action={()=>jobAction('cancel')}>Cancel</ActionButton>
     <Link href="/queue/{$queue.name}/job/{$job.id}/log">Log</Link>
 
-    {#if $job}
+    {#if $job && $job.steps}
       <ul>
         {#each $job.steps as step, i}
           <li>
