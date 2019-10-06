@@ -3,6 +3,7 @@ import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
 import { Session } from "svelte-session-manager";
 import ApolloClient, { gql } from "apollo-boost";
 import { query } from "svelte-apollo";
+import { AggregationProvider } from "aggregation-repository-provider";
 import { Provider, Repository as MyRepository } from "repository-provider";
 import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
@@ -63,7 +64,7 @@ export const router = new Router(
   config.base
 );
 
-const repositoryProvider = new Provider();
+const repositoryProvider = new AggregationProvider([new Provider()]);
 
 function getRepository(rdata) {
   if(rdata === undefined) { return undefined; }

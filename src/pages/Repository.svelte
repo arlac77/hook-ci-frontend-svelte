@@ -15,10 +15,15 @@
       {$repository.id}
       <br />
       {$repository.fullName}
-      {#each $repository.urls as url}
-        <br />
-        <a href={url}>{url}</a>
-      {/each}
+    </div>
+    <div class="item-content">
+      <ul>
+        {#each $repository.urls as url}
+          <li>
+            <a href={url}>{url}</a>
+          </li>
+        {/each}
+      </ul>
     </div>
   </div>
 {:else}No such repository{/if}
