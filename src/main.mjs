@@ -128,11 +128,12 @@ export const jobs = derived(
       set([]);
     }
     return () => {};
-  }
+  },
+  []
 );
 
 export const job = derived([jobs, router.keys.job], ([$jobs, $job], set) => {
-  set($jobs.find(a => a.id === $job));
+  set($jobs.find(j => j.id === $job));
   return () => {};
 });
 
