@@ -3,7 +3,7 @@ import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
 import { Session } from "svelte-session-manager";
 import ApolloClient, { gql } from "apollo-boost";
 import { query } from "svelte-apollo";
-
+import { Owner, Repository as MyRepository } from "repository-provider";
 import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
 import Repositories from "./pages/Repositories.svelte";
@@ -62,13 +62,18 @@ export const router = new Router(
   config.base
 );
 
+const owner = new Owner()
+
 export const repositories = derived(
   session,
   ($session, set) => {
     if (session.isValid) {
       fetch(config.api + "/repositories?pattern=arlac77/*", {
         headers: session.authorizationHeader
-      }).then(async data => set(await data.json()));
+      }).then(async data => {
+        let json = await data.json();
+        json = json.map(j => new MyRepository(owner,j.name,j));
+        set(json); });
     } else {
       set([]);
     }

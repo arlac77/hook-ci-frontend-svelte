@@ -2807,6 +2807,11 @@ lodash@^4.17.15, lodash@^4.17.4, lodash@^4.2.1:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
+loglevel-mixin@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/loglevel-mixin/-/loglevel-mixin-3.0.0.tgz#27cc1d0ea3513dde3b4f3eba7b861091ac812b25"
+  integrity sha512-2m8+XvrpGE4p+oI0h94V91Irp8aEcOvgouhTsYvxzPUTfQVXtd6rZkzxnpp+BHbrPCt26/B2vmex1uZ8zza/wQ==
+
 loud-rejection@^1.0.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/loud-rejection/-/loud-rejection-1.6.0.tgz#5b46f80147edee578870f086d04821cf998e551f"
@@ -4122,6 +4127,13 @@ registry-url@^3.0.3:
   integrity sha1-PU74cPc93h138M+aOBQyRE4XSUI=
   dependencies:
     rc "^1.0.1"
+
+repository-provider@^16.7.3:
+  version "16.7.3"
+  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-16.7.3.tgz#a0589e8d7a8d6eb05ab00aa358629b46a3eeaaad"
+  integrity sha512-eY1n7c18/M//Lg3tcc+JcCXPbar+pKLgHWZ9U6po4YARubovldkLgU+ISvMMi5UXEp9AUiaQ93U8zQrc2Y8jLw==
+  dependencies:
+    loglevel-mixin "^3.0.0"
 
 request@^2.87.0, request@^2.88.0:
   version "2.88.0"
