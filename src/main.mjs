@@ -62,7 +62,11 @@ export const router = new Router(
   config.base
 );
 
-const owner = new Owner()
+const repositoryOwner = new Owner();
+
+function getRepository(name, options) {
+  return new MyRepository(repositoryOwner, name, options);
+}
 
 export const repositories = derived(
   session,
@@ -71,9 +75,9 @@ export const repositories = derived(
       fetch(config.api + "/repositories?pattern=arlac77/*", {
         headers: session.authorizationHeader
       }).then(async data => {
-        let json = await data.json();
-        json = json.map(j => new MyRepository(owner,j.name,j));
-        set(json); });
+        const json = await data.json();
+        set(json.map(j => getRepository(j.name, j)));
+      });
     } else {
       set([]);
     }
@@ -122,8 +126,11 @@ export const jobs = derived(
       }).then(async data => {
         const jobs = (await data.json()).map(job => {
           job.node = getNode(job.node);
-          if(job.steps !== undefined) {
-            job.steps.forEach(s => s.node = getNode(s.node));
+          if(job.repository) {
+            job.repository = getRepository(job.repository.name,job.repository);
+          }
+          if (job.steps !== undefined) {
+            job.steps.forEach(s => (s.node = getNode(s.node)));
           }
           return job;
         });
@@ -162,7 +169,7 @@ const NODES = gql`
 const _nodes = new Map();
 
 function getNode(name, options) {
-  if(name === '' || name === undefined) {
+  if (name === "" || name === undefined) {
     return undefined;
   }
 
