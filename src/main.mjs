@@ -3,7 +3,7 @@ import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
 import { Session } from "svelte-session-manager";
 import ApolloClient, { gql } from "apollo-boost";
 import { query } from "svelte-apollo";
-import { Owner, Repository as MyRepository } from "repository-provider";
+import { Provider, Repository as MyRepository } from "repository-provider";
 import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
 import Repositories from "./pages/Repositories.svelte";
@@ -40,6 +40,7 @@ export const router = new Router(
     route("/about", About),
     route("/repository", needsSession, Repositories),
     route("/repository/:repository", needsSession, Repository),
+    route("/repository/:repositoryGroup/:repository", needsSession, Repository),
     route(
       "/repository/:repositoryProvider/:repositoryGroup/:repository",
       needsSession,
@@ -62,10 +63,11 @@ export const router = new Router(
   config.base
 );
 
-const repositoryOwner = new Owner();
+const repositoryProvider = new Provider();
 
-function getRepository(name, options) {
-  return new MyRepository(repositoryOwner, name, options);
+function getRepository(rdata) {
+  if(rdata === undefined) { return undefined; }
+  return new MyRepository(repositoryProvider, rdata.name, rdata);
 }
 
 export const repositories = derived(
@@ -74,10 +76,9 @@ export const repositories = derived(
     if (session.isValid) {
       fetch(config.api + "/repositories?pattern=arlac77/*", {
         headers: session.authorizationHeader
-      }).then(async data => {
-        const json = await data.json();
-        set(json.map(j => getRepository(j.name, j)));
-      });
+      }).then(async data =>
+        set((await data.json()).map(j => getRepository(j)))
+      );
     } else {
       set([]);
     }
@@ -126,9 +127,8 @@ export const jobs = derived(
       }).then(async data => {
         const jobs = (await data.json()).map(job => {
           job.node = getNode(job.node);
-          if(job.repository) {
-            job.repository = getRepository(job.repository.name,job.repository);
-          }
+          job.repository = getRepository(job.repository);
+          
           if (job.steps !== undefined) {
             job.steps.forEach(s => (s.node = getNode(s.node)));
           }
