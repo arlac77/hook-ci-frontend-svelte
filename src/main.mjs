@@ -92,7 +92,7 @@ function getRepositoryGroup(gdata) {
 
   let g = repositoryProvider._repositoryGroups.get(gdata.name);
   if (g === undefined) {
-    g = new repositoryProvider.repositoryGroupClass(p, gn);
+    g = new repositoryProvider.repositoryGroupClass(repositoryProvider, gdata.name);
     repositoryProvider._repositoryGroups.set(g.name, g);
   }
   return g;
