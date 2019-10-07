@@ -6,9 +6,9 @@
 </script>
 
 {#if repository}
-<Link href="/repository/{repository.name}">
+<Link href="/repository/{repository.fullName}">
   <slot>
-    <div use:tooltip={repository.description}>{repository.name}</div>
+    <div use:tooltip={repository.description}>{repository.fullName}</div>
   </slot>
 </Link>
 {/if}

@@ -67,8 +67,25 @@ export const router = new Router(
 const repositoryProvider = new AggregationProvider([new Provider()]);
 
 function getRepository(rdata) {
-  if(rdata === undefined) { return undefined; }
-  return new MyRepository(repositoryProvider, rdata.name, rdata);
+  if (rdata === undefined) {
+    return undefined;
+  }
+
+  const p = repositoryProvider.providers[0];
+  const fn = rdata.full_name || rdata.fullName;
+  const [gn, rn] = fn.split(/\//);
+  let g = p._repositoryGroups.get(gn);
+  if (g === undefined) {
+    g = new p.repositoryGroupClass(p, gn);
+    p._repositoryGroups.set(g.name, g);
+  }
+  let r = g._repositories.get(rn);
+  if (r === undefined) {
+    r = new MyRepository(g, rn, rdata);
+    g._repositories.set(r.name, r);
+  }
+
+  return r;
 }
 
 export const repositories = derived(
@@ -129,7 +146,7 @@ export const jobs = derived(
         const jobs = (await data.json()).map(job => {
           job.node = getNode(job.node);
           job.repository = getRepository(job.repository);
-          
+
           if (job.steps !== undefined) {
             job.steps.forEach(s => (s.node = getNode(s.node)));
           }
