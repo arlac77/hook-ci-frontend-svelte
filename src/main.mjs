@@ -9,6 +9,7 @@ import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
 import Repositories from "./pages/Repositories.svelte";
 import Repository from "./pages/Repository.svelte";
+import RepositoryGroup from "./pages/RepositoryGroup.svelte";
 import Jobs from "./pages/Jobs.svelte";
 import Job from "./pages/Job.svelte";
 import JobLog from "./pages/JobLog.svelte";
@@ -39,8 +40,8 @@ export const router = new Router(
     route("/*", Home),
     route("/login", Login),
     route("/about", About),
+    route("/group/:group", needsSession, RepositoryGroup),
     route("/repository", needsSession, Repositories),
-    route("/repository/:repository", needsSession, Repository),
     route("/repository/:repositoryGroup/:repository", needsSession, Repository),
     route(
       "/repository/:repositoryProvider/:repositoryGroup/:repository",
