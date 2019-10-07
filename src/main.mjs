@@ -40,14 +40,14 @@ export const router = new Router(
     route("/*", Home),
     route("/login", Login),
     route("/about", About),
-    route("/group/:group", needsSession, RepositoryGroup),
+    route("/group/:repositoryGroup", needsSession, RepositoryGroup),
+    route("/group/:repositoryGroup/:repository", needsSession, Repository),
     route("/repository", needsSession, Repositories),
-    route("/repository/:repositoryGroup/:repository", needsSession, Repository),
-    route(
+   /* route(
       "/repository/:repositoryProvider/:repositoryGroup/:repository",
       needsSession,
       Repository
-    ),
+    ),*/
     route("/queue", needsSession, Queues),
     route("/queue/:queue", needsSession, Queue),
     route("/queue/:queue/active", needsSession, Queue),
@@ -110,6 +110,14 @@ export const repository = derived(
   [repositories, router.keys.repository],
   ([$repositories, $repository], set) => {
     set($repositories.find(a => a.name === $repository));
+    return () => {};
+  }
+);
+
+export const repositoryGroup = derived(
+  router.keys.repositoryGroup,
+  ($repositoryGroup, set) => {
+    repositoryProvider.repositoryGroup($repositoryGroup).then(rg => set(rg));
     return () => {};
   }
 );

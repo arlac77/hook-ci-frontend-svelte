@@ -1,6 +1,10 @@
 <script>
+  import RepositoryGroupCard from "../components/RepositoryGroupCard.svelte";
+  import { repositoryGroup } from "../main.mjs";
+
   export let state;
 </script>
 
-
-<h3>Group</h3>
+{#if $repositoryGroup}
+  <RepositoryGroupCard repositoryGroup={$repositoryGroup} />
+{:else}No such group{/if}

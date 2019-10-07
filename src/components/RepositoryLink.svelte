@@ -5,7 +5,7 @@
 </script>
 
 {#if repository}
-<Link href="/repository/{repository.fullName}">
+<Link href="/group/{repository.owner.name}/{repository.name}">
   <slot>
     <div use:tooltip={repository.description}>{repository.fullName}</div>
   </slot>

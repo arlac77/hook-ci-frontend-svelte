@@ -10,8 +10,6 @@
     {repository.description}
     <br />
     {repository.id}
-    <br />
-    {repository.fullName}
   </div>
   <div class="item-content">
     <ul>
@@ -22,5 +20,5 @@
       {/each}
     </ul>
   </div>
-  <RepositoryGroupLink group={repository.owner} />
+  <RepositoryGroupLink repositoryGroup={repository.owner} />
 </div>
