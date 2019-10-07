@@ -3,13 +3,13 @@ import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
 import { Session } from "svelte-session-manager";
 import ApolloClient, { gql } from "apollo-boost";
 import { query } from "svelte-apollo";
-import { AggregationProvider } from "aggregation-repository-provider";
 import { Provider, Repository as MyRepository } from "repository-provider";
 import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
 import Repositories from "./pages/Repositories.svelte";
 import Repository from "./pages/Repository.svelte";
 import RepositoryGroup from "./pages/RepositoryGroup.svelte";
+import RepositoryGroups from "./pages/RepositoryGroups.svelte";
 import Jobs from "./pages/Jobs.svelte";
 import Job from "./pages/Job.svelte";
 import JobLog from "./pages/JobLog.svelte";
@@ -40,14 +40,10 @@ export const router = new Router(
     route("/*", Home),
     route("/login", Login),
     route("/about", About),
+    route("/group/", needsSession, RepositoryGroups),
     route("/group/:repositoryGroup", needsSession, RepositoryGroup),
     route("/group/:repositoryGroup/:repository", needsSession, Repository),
     route("/repository", needsSession, Repositories),
-   /* route(
-      "/repository/:repositoryProvider/:repositoryGroup/:repository",
-      needsSession,
-      Repository
-    ),*/
     route("/queue", needsSession, Queues),
     route("/queue/:queue", needsSession, Queue),
     route("/queue/:queue/active", needsSession, Queue),
@@ -65,14 +61,14 @@ export const router = new Router(
   config.base
 );
 
-const repositoryProvider = new AggregationProvider([new Provider()]);
+const repositoryProvider = new Provider();
 
 function getRepository(rdata) {
   if (rdata === undefined) {
     return undefined;
   }
 
-  const p = repositoryProvider.providers[0];
+  const p = repositoryProvider;
   const fn = rdata.full_name || rdata.fullName;
   const [gn, rn] = fn.split(/\//);
   let g = p._repositoryGroups.get(gn);
@@ -87,6 +83,19 @@ function getRepository(rdata) {
   }
 
   return r;
+}
+
+function getRepositoryGroup(gdata) {
+  if (gdata === undefined) {
+    return undefined;
+  }
+
+  let g = repositoryProvider._repositoryGroups.get(gdata.name);
+  if (g === undefined) {
+    g = new repositoryProvider.repositoryGroupClass(p, gn);
+    repositoryProvider._repositoryGroups.set(g.name, g);
+  }
+  return g;
 }
 
 export const repositories = derived(
@@ -112,6 +121,23 @@ export const repository = derived(
     set($repositories.find(a => a.name === $repository));
     return () => {};
   }
+);
+
+export const repositoryGroups = derived(
+  session,
+  ($session, set) => {
+    if (session.isValid) {
+      fetch(config.api + "/groups", {
+        headers: session.authorizationHeader
+      }).then(async data =>
+        set((await data.json()).map(j => getRepositoryGroup(j)))
+      );
+    } else {
+      set([]);
+    }
+    return () => {};
+  },
+  []
 );
 
 export const repositoryGroup = derived(
