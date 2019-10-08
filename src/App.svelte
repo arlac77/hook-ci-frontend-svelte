@@ -17,6 +17,12 @@
     <li>
       <a href="/queue" use:link={router} use:active={router}>Queues</a>
     </li>
+        <li>
+      <a href="/group" use:link={router} use:active={router}>
+        Repository Groups
+      </a>
+    </li>
+
     <li>
       <a href="/repository" use:link={router} use:active={router}>
         Repositories

@@ -40,7 +40,7 @@ export const router = new Router(
     route("/*", Home),
     route("/login", Login),
     route("/about", About),
-    route("/group/", needsSession, RepositoryGroups),
+    route("/group", needsSession, RepositoryGroups),
     route("/group/:repositoryGroup", needsSession, RepositoryGroup),
     route("/group/:repositoryGroup/:repository", needsSession, Repository),
     route("/repository", needsSession, Repositories),
@@ -92,7 +92,7 @@ function getRepositoryGroup(gdata) {
 
   let g = repositoryProvider._repositoryGroups.get(gdata.name);
   if (g === undefined) {
-    g = new repositoryProvider.repositoryGroupClass(repositoryProvider, gdata.name);
+    g = new repositoryProvider.repositoryGroupClass(repositoryProvider, gdata.name, gdata);
     repositoryProvider._repositoryGroups.set(g.name, g);
   }
   return g;
