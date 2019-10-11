@@ -3,9 +3,9 @@
   import { tooltip } from "svelte-common";
 
   export let queue;
-  export let state = "";
+  export let state;
 </script>
 
-<Link href="/queue/{queue.name}{state}">
+<Link href="/queue/{state === undefined ? queue.name : queue.name + '/' + state}">
   <slot><div use:tooltip={`Active: ${queue.active}`}>{queue.name}</div></slot>
 </Link>
