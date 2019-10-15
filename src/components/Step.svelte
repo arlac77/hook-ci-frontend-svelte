@@ -8,15 +8,17 @@
 {#if step}
   <div>
     <h3>{step.name}</h3>
-    {step.executable}&#160;
-    {#each step.args as a}{a}{/each}
-    started: {formatSecondsSinceEpoch(step.started)}
-    {#if step.ended}
-      ended: {formatSecondsSinceEpoch(step.ended)} exit: {step.exitCode}
-      {#if step.ok}
-        <abbr class="ok-hint" />
-      {:else}
-        <abbr class="error-hint" />
+    {step.executable}
+    {#each step.args as a}&#160;{a}{/each}
+    {#if step.started}
+      started: {formatSecondsSinceEpoch(step.started)}
+      {#if step.ended}
+        ended: {formatSecondsSinceEpoch(step.ended)} exit: {step.exitCode}
+        {#if step.ok}
+          <abbr class="ok-hint" />
+        {:else}
+          <abbr class="error-hint" />
+        {/if}
       {/if}
     {:else}
       <abbr class="unknown-hint" />
