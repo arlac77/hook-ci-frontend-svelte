@@ -4158,10 +4158,10 @@ registry-url@^3.0.3:
   dependencies:
     rc "^1.0.1"
 
-repository-provider@^16.7.8:
-  version "16.7.8"
-  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-16.7.8.tgz#5a5a29cf05a741682a65b6c0043872395fb6bc80"
-  integrity sha512-6EriYgfvN2kJXsf4X2/HaJ5TjVZtX8TmrwdqzQJ6JgIpkZlXULYOITrnrPCahiXA92PMZFN1JcGG0IqdbhCmRA==
+repository-provider@^16.7.9:
+  version "16.7.9"
+  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-16.7.9.tgz#6f806edb3c878686786578bd5c2f30df57ba136c"
+  integrity sha512-2rl0hwkKijqKMWWzpxMdKGi6mHRnFy4yC+Dh+HXS0NWOLOhsiD1gBmQCuJNOzBUbL5rkFn8q1xgKlszzComXGA==
   dependencies:
     loglevel-mixin "^3.0.0"
 
