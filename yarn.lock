@@ -203,9 +203,9 @@
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
 "@types/node@*", "@types/node@>=6":
-  version "12.11.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.11.0.tgz#7f893924970076b20ca0089df50ab9f171088909"
-  integrity sha512-7v0K9WHdjFpE3LMj1rdRan7PDO2d9Qky51T0cYzzk7fWoqoYKu/fZHnrF7OhNZVx0uKwYoQFMZ3dgVD51s/vYA==
+  version "12.11.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.11.1.tgz#1fd7b821f798b7fa29f667a1be8f3442bb8922a3"
+  integrity sha512-TJtwsqZ39pqcljJpajeoofYRfeZ7/I/OMUQ5pR4q5wOKf2ocrUvBAZUMhWsOvKx3dVc/aaV5GluBivt0sWqA5A==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -2977,7 +2977,7 @@ methods@~1.1.0:
 
 mf-styling@arlac77/mf-styling:
   version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/8df53b118a86e435488071a0e05b7d5467c36b9b"
+  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/f5563847425abc7935e7320842f0b07036752242"
 
 micromatch@^4.0.2:
   version "4.0.2"
@@ -4841,9 +4841,10 @@ svelte-apollo@^0.3.0:
     apollo-utilities "^1.2.1"
     svelte-observable "^0.4.0"
 
-svelte-common@arlac77/svelte-common:
-  version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/svelte-common/tar.gz/47c4188ddcba74e33ed225517cf8c5b98dbc49de"
+svelte-common@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-1.0.4.tgz#7e83eccf8ca44a278110618ebda5539c039b00a1"
+  integrity sha512-eYJVGy9ieFGI1sZkmZbEdsO5mEyovr1R4pfDE6+jRgq4VWKEr9m//3bWx7kh/6WXzyy/DaH3W65SUgFWg4lpGQ==
 
 svelte-guard-history-router@^1.1.5:
   version "1.1.5"
