@@ -10,7 +10,7 @@
 
 <nav>
   <a href="/" use:link={router} use:active={router}>
-    <img class="logo" src="hook_ci.svg" alt="Hook CI" />
+    <img class="logo" src="logo.svg" alt="Hook CI" />
     Hook CI
   </a>
   <ul class="left">
