@@ -182,9 +182,9 @@
   integrity sha512-EaObqwIvayI5a8dCzhFrjKzVwKLxjoG9T6Ppd5CEo07LRKfQ8Yokw54r5+Wq7FaBQ+yXRvQAYPrHwya1/UFt9g==
 
 "@types/fs-extra@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-8.0.0.tgz#d3e2c313ca29f95059f198dd60d1f774642d4b25"
-  integrity sha512-bCtL5v9zdbQW86yexOlXWTEGvLNqWxMFyi7gQA7Gcthbezr2cPSOb8SkESVKA937QD5cIwOFLDFt0MQoXOEr9Q==
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-8.0.1.tgz#a2378d6e7e8afea1564e44aafa2e207dadf77686"
+  integrity sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
   dependencies:
     "@types/node" "*"
 
@@ -4846,10 +4846,10 @@ svelte-common@^1.0.5:
   resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-1.0.5.tgz#248a5f368d55950814e47e067e0054a483a88cf5"
   integrity sha512-jsoEhtrk4qxqjaECz2wMF2DRSZLU8FF5AXijgEtn/utJLYOVuDXqzT0//pVDnDKwMPNgOvUlCtIlalhiu6ojwg==
 
-svelte-guard-history-router@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-1.1.5.tgz#2f74c8f2f437f5aae74e862e687c934f0a6d96a7"
-  integrity sha512-TlGCaEXFML4wVEwwRPzA3aqkdIk11K+zQ4SZvaheWQ68RzMfVlTDx/vYctwJ/sN0zvY3d5rz6Fka7S1Fe900fA==
+svelte-guard-history-router@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-1.1.6.tgz#ebe79e4e554ae19fb58eed0b6150e870513a8d9c"
+  integrity sha512-Q7Oy2edYdQwcOerPmiBSiPDprioF/SY+v6fpZMa6IAKhRIzYuIzvaUcTZuUHjL8IsqWocT0rTc5Dm9/pV1ZY9Q==
   dependencies:
     multi-path-matcher "^2.0.3"
 
