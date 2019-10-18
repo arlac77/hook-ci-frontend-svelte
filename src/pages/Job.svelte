@@ -10,10 +10,14 @@
   export let state;
 
   async function jobAction(suffix) {
-    return fetch(`${config.api}/queue/${$queue.name}/job/${$job.id}/${suffix}`, {
+    const response = await fetch(`${config.api}/queue/${$queue.name}/job/${$job.id}/${suffix}`, {
       method: "POST",
       headers: session.authorizationHeader
     });
+
+    if(!response.ok) {
+      throw new Error(response.statusText);
+    }
   }
 </script>
 
