@@ -1,5 +1,7 @@
 <script>
   import { formatDuration, ActionButton, formatBytes } from "svelte-common";
+  import KeyValues from "../components/KeyValues.svelte";
+
   import { node, session } from "../main.mjs";
   import { config } from "../../package.json";
 
@@ -23,6 +25,7 @@
       <li>heapUsed: {formatBytes($node.memory.heapUsed)}</li>
       <li>external: {formatBytes($node.memory.external)}</li>
     </ul>
+    <KeyValues object={$node.env}/>
   {:else}
     <abbr class="error-hint"/>
   {/if}

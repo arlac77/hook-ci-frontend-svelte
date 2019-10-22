@@ -8,7 +8,7 @@ export class Node {
   }
 
   update(options) {
-    if(options === undefined) {
+    if (options === undefined) {
       return;
     }
 
@@ -16,7 +16,13 @@ export class Node {
       version: { value: options.version },
       uptime: { value: options.uptime },
       isLocal: { value: options.isLocal },
-      memory: { value: options.memory }
+      memory: { value: options.memory },
+      env: {
+        value: options.env ? options.env.reduce((a, c) => {
+          a[c.key] = c.value;
+          return a;
+        }, {}) : {}
+      }
     });
   }
 }
