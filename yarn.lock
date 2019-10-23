@@ -69,9 +69,9 @@
     universal-user-agent "^4.0.0"
 
 "@octokit/rest@^16.27.0":
-  version "16.33.1"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.33.1.tgz#19229f5fd28d8e071644d37c249775ee40add433"
-  integrity sha512-lOQ+fJZwkeJ/1PRTdnY1uNja01aKOMioRhQfZtei64gZMXIX3EAfF4koMQMvoLFwsnVBu3ifj1JW1WAAKdXcnA==
+  version "16.34.0"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.34.0.tgz#8703e46d7e9f6aec24a7e591b073f325ca13f6e2"
+  integrity sha512-EBe5qMQQOZRuezahWCXCnSe0J6tAqrW2hrEH9U8esXzKor1+HUDf8jgImaZf5lkTyWCQA296x9kAH5c0pxEgVQ==
   dependencies:
     "@octokit/request" "^5.2.0"
     "@octokit/request-error" "^1.0.2"
@@ -1975,9 +1975,9 @@ https-proxy-agent@^2.2.3:
     debug "^3.1.0"
 
 https-proxy-agent@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-3.0.0.tgz#0106efa5d63d6d6f3ab87c999fa4877a3fd1ff97"
-  integrity sha512-y4jAxNEihqvBI5F3SaO2rtsjIOnnNA8sEbuiP+UhJZJHeM2NRm6c09ax2tgqme+SgUUvjao2fJXF4h3D6Cb2HQ==
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-3.0.1.tgz#b8c286433e87602311b01c8ea34413d856a4af81"
+  integrity sha512-+ML2Rbh6DAuee7d07tYGEKOEi2voWPUGan+ExdPbPW6Z3svq+JCqr0v8WmKPOkz1vOVykPCBSuobe7G8GJUtVg==
   dependencies:
     agent-base "^4.3.0"
     debug "^3.1.0"
@@ -2992,7 +2992,7 @@ methods@~1.1.0:
 
 mf-styling@arlac77/mf-styling:
   version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/084d7afce6da61cb944c84cb1ea0c6b5b1f1e224"
+  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/fe80c227946ffcad8933e43f1ece51bb0421a9bc"
 
 micromatch@^4.0.2:
   version "4.0.2"
@@ -4175,10 +4175,10 @@ registry-url@^3.0.3:
   dependencies:
     rc "^1.0.1"
 
-repository-provider@^16.8.1:
-  version "16.8.1"
-  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-16.8.1.tgz#cce35097701134e80d220e1d804a57531bd4c5bb"
-  integrity sha512-vr7zVmTUoAnqCD30rzc34YfMhfTLEK8zwUx0zaZ8uighQIkwCUaGkRfNGjHkWh7N9XObUNICI9k58X24unhtGw==
+repository-provider@^16.8.2:
+  version "16.8.2"
+  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-16.8.2.tgz#a35fc64e811359d20226230a495774b0540e0d8a"
+  integrity sha512-+Uv4MRSVZ3B0pzUkTcml6gbDx4YMBZ4E821Zda1mW1Z2uvtWGixfYaeLKxVcqN4vLDcFUUdeG0lrCV83eLrUvA==
   dependencies:
     loglevel-mixin "^3.0.0"
 
@@ -5071,9 +5071,9 @@ typedarray@^0.0.6:
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
 uglify-js@^3.1.4:
-  version "3.6.3"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.6.3.tgz#1351533bbe22cc698f012589ed6bd4cbd971bff8"
-  integrity sha512-KfQUgOqTkLp2aZxrMbCuKCDGW9slFYu2A23A36Gs7sGzTLcRBDORdOi5E21KWHFIfkY8kzgi/Pr1cXCh0yIp5g==
+  version "3.6.4"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.6.4.tgz#88cc880c6ed5cf9868fdfa0760654e7bed463f1d"
+  integrity sha512-9Yc2i881pF4BPGhjteCXQNaXx1DCwm3dtOyBaG2hitHjLWOczw/ki8vD1bqyT3u6K0Ms/FpCShkmfg+FtlOfYA==
   dependencies:
     commander "~2.20.3"
     source-map "~0.6.1"
