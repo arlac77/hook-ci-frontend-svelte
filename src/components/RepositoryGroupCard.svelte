@@ -5,7 +5,7 @@
 <div class="item">
   <div class="item-content">
     {repositoryGroup.name}
-    {repositoryGroup.description}
-    {repositoryGroup.id}
+    {#if repositoryGroup.description}{repositoryGroup.description}{/if}
+    {#if repositoryGroup.id}{repositoryGroup.id}{/if}
   </div>
 </div>

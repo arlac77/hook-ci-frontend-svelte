@@ -18,7 +18,7 @@
           <td>
             <RepositoryLink {repository} />
           </td>
-          <td>{repository.description}</td>
+          <td>{#if repository.description}{repository.description}{/if}</td>
         </tr>
       {/each}
     </tbody>
