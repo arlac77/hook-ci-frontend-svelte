@@ -102,7 +102,7 @@ export const repositories = derived(
   session,
   ($session, set) => {
     if (session.isValid) {
-      fetch(config.api + "/repositories?pattern=arlac77/*", {
+      fetch(config.api + "/repositories", {
         headers: session.authorizationHeader
       }).then(async data =>
         set((await data.json()).map(j => getRepository(j)))
