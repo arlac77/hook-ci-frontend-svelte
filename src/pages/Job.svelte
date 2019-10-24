@@ -21,30 +21,32 @@
     if (!response.ok) {
       throw new Error(response.statusText);
     }
+
+    return next();
   }
 
-  function findNext(list,id) {      
-      let i = 1000000;
+  function findNext(list, id) {
+    let i = 1000000;
 
-      list.forEach(o => {
-        if(o.id < i && o.id > id) {
-          i = o.id;
-        }
-      });
+    list.forEach(o => {
+      if (o.id < i && o.id > id) {
+        i = o.id;
+      }
+    });
 
-      return i;
+    return i;
   }
 
-  function findPrevious(list,id) {      
-      let i = 0;
+  function findPrevious(list, id) {
+    let i = 0;
 
-      list.forEach(o => {
-        if(o.id > i && o.id < id) {
-          i = o.id;
-        }
-      });
+    list.forEach(o => {
+      if (o.id > i && o.id < id) {
+        i = o.id;
+      }
+    });
 
-      return i;
+    return i;
   }
 
   async function next() {
@@ -58,11 +60,10 @@
       return router.push(`/queue/${$queue.name}/job/${id}`);
     }
   }
-  
-  async function all() {
-      return router.push(`/queue/${$queue.name}`);
-  }
 
+  async function all() {
+    return router.push(`/queue/${$queue.name}`);
+  }
 </script>
 
 <ActionButton action={next}>Next</ActionButton>
