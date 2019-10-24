@@ -179,6 +179,7 @@ export const jobs = derived(
         headers: session.authorizationHeader
       }).then(async data => {
         const jobs = (await data.json()).map(job => {
+          job.id = Number(job.id);
           job.node = getNode(job.node);
           job.repository = getRepository(job.repository);
 
@@ -198,7 +199,7 @@ export const jobs = derived(
 );
 
 export const job = derived([jobs, router.keys.job], ([$jobs, $job], set) => {
-  set($jobs.find(j => j.id === $job));
+  set($jobs.find(j => j.id == $job));
   return () => {};
 });
 

@@ -4,7 +4,7 @@
   import { ActionButton } from "svelte-common";
   import NodeLink from "../components/NodeLink.svelte";
   import Step from "../components/Step.svelte";
-  import { queue, session, job, router } from "../main.mjs";
+  import { queue, session, job, jobs, router } from "../main.mjs";
   import { config } from "../../package.json";
 
   export let state;
@@ -23,21 +23,51 @@
     }
   }
 
+  function findNext(list,id) {      
+      let i = 1000000;
+
+      list.forEach(o => {
+        if(o.id < i && o.id > id) {
+          i = o.id;
+        }
+      });
+
+      return i;
+  }
+
+  function findPrevious(list,id) {      
+      let i = 0;
+
+      list.forEach(o => {
+        if(o.id > i && o.id < id) {
+          i = o.id;
+        }
+      });
+
+      return i;
+  }
+
   async function next() {
-    const id = parseInt(router.keys.job.value) + 1;
-    router.push(`/queue/${$queue.name}/job/${id}`);
+    const id = findNext($jobs, parseInt(router.keys.job.value));
+    return router.push(`/queue/${$queue.name}/job/${id}`);
   }
 
   async function previous() {
-    const id = parseInt(router.keys.job.value) - 1;
+    const id = findPrevious($jobs, parseInt(router.keys.job.value));
     if (id > 0) {
-      router.push(`/queue/${$queue.name}/job/${id}`);
+      return router.push(`/queue/${$queue.name}/job/${id}`);
     }
   }
+  
+  async function all() {
+      return router.push(`/queue/${$queue.name}`);
+  }
+
 </script>
 
 <ActionButton action={next}>Next</ActionButton>
 <ActionButton action={previous}>Previous</ActionButton>
+<ActionButton action={all}>All</ActionButton>
 
 {#if $job}
   <div>
@@ -48,7 +78,7 @@
     <ActionButton action={() => jobAction('cancel')}>Cancel</ActionButton>
     <Link href="/queue/{$queue.name}/job/{$job.id}/log">Log</Link>
 
-    {#if $job && $job.steps}
+    {#if $job.steps}
       <ul>
         {#each $job.steps as step, i}
           <li>
@@ -56,6 +86,6 @@
           </li>
         {/each}
       </ul>
-    {:else}no jobs{/if}
+    {:else}no steps{/if}
   </div>
 {/if}
