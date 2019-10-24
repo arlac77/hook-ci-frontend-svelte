@@ -26,7 +26,7 @@
   }
 
   function findNext(list, id) {
-    let i = 1000000;
+    let i = Number.MAX_SAFE_INTEGER;
 
     list.forEach(o => {
       if (o.id < i && o.id > id) {
@@ -51,7 +51,9 @@
 
   async function next() {
     const id = findNext($jobs, parseInt(router.keys.job.value));
-    return router.push(`/queue/${$queue.name}/job/${id}`);
+    if (id < Number.MAX_SAFE_INTEGER) {
+      return router.push(`/queue/${$queue.name}/job/${id}`);
+    }
   }
 
   async function previous() {
