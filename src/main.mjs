@@ -179,7 +179,6 @@ export const jobs = derived(
         headers: session.authorizationHeader
       }).then(async data => {
         const jobs = (await data.json()).map(job => {
-          job.id = Number(job.id);
           job.node = getNode(job.node);
           job.repository = getRepository(job.repository);
 
