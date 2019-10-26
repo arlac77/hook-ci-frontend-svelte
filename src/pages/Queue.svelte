@@ -6,26 +6,8 @@
 
   export let state;
 
-  let qn;
-
-  $: qn = $queue ? $queue.name : '';
-
-  async function pause() {
-    return fetch(`${config.api}/queue/${qn}/pause`, {
-      method: "POST",
-      headers: session.authorizationHeader
-    });
-  }
-
-  async function resume() {
-    return fetch(`${config.api}/queue/${qn}/resume`, {
-      method: "POST",
-      headers: session.authorizationHeader
-    });
-  }
-
-  async function empty() {
-    return fetch(`${config.api}/queue/${qn}/empty`, {
+  async function queueAction(action) {
+    return fetch(`${config.api}/queue/${$queue.name}/${action}`, {
       method: "POST",
       headers: session.authorizationHeader
     });
@@ -36,22 +18,20 @@
   {#if $queue}
     <div class="card">
       <div class="card-content">
-        <div class="content">
-          {$queue.name}
-          <br />
-          {$queue.active}
-          <br />
-          {$queue.waiting}
-          <br />
-          {$queue.delayed}
-          <br />
-          {$queue.completed}
-          <br />
-          {$queue.failed}
-          <ActionButton action={pause}>Pause ({$queue.paused})</ActionButton>
-          <ActionButton action={resume}>Resume</ActionButton>
-          <ActionButton action={empty}>Empty</ActionButton>
-        </div>
+        {$queue.name}
+        <br />
+        {$queue.active}
+        <br />
+        {$queue.waiting}
+        <br />
+        {$queue.delayed}
+        <br />
+        {$queue.completed}
+        <br />
+        {$queue.failed}
+        <ActionButton action={()=>queueAction('pause')}>Pause ({$queue.paused})</ActionButton>
+        <ActionButton action={()=>queueAction('resume')}>Resume</ActionButton>
+        <ActionButton action={()=>queueAction('empty')}>Empty</ActionButton>
       </div>
     </div>
     <JobTable queue={$queue} jobs={$jobs} />
