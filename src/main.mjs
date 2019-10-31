@@ -12,6 +12,7 @@ import RepositoryGroup from "./pages/RepositoryGroup.svelte";
 import RepositoryGroups from "./pages/RepositoryGroups.svelte";
 import Jobs from "./pages/Jobs.svelte";
 import Job from "./pages/Job.svelte";
+import JobRaw from "./pages/JobRaw.svelte";
 import JobLog from "./pages/JobLog.svelte";
 import Nodes from "./pages/Nodes.svelte";
 import Node from "./pages/Node.svelte";
@@ -54,6 +55,7 @@ export const router = new Router(
     route("/queue/:queue/paused", needsSession, Queue),
     route("/queue/:queue/job", needsSession, Jobs),
     route("/queue/:queue/job/:job", needsSession, Job),
+    route("/queue/:queue/job/:job/raw", needsSession, JobRaw),
     route("/queue/:queue/job/:job/log", needsSession, JobLog),
     route("/node", needsSession, Nodes),
     route("/node/:node", needsSession, Node)
