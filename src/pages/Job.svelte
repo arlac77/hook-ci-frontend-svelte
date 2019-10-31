@@ -80,6 +80,7 @@
     <ActionButton action={() => jobAction('rerun')}>Rerun</ActionButton>
     <ActionButton action={() => jobAction('cancel')}>Cancel</ActionButton>
     <Link href="/queue/{$queue.name}/job/{$job.id}/log">Log</Link>
+    <Link href="/queue/{$queue.name}/job/{$job.id}/raw">Raw</Link>
 
     {#if $job.steps}
       <ul>
