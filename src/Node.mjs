@@ -25,4 +25,10 @@ export class Node {
       }
     });
   }
+
+  toJSON() {
+    return {
+      name: this.name
+    };
+  }
 }
