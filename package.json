@@ -65,7 +65,7 @@
     },
     "depends": {
       "nginx-mainline": ">=1.17.4",
-      "hook-ci": ">=1.50.7"
+      "hook-ci": ">=1.51.10"
     }
   },
   "release": {
