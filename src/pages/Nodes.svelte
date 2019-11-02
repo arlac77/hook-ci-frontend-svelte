@@ -4,11 +4,12 @@
   import { nodes } from "../main.mjs";
 </script>
 
+<div class="card-panel">
 {#each $nodes as node (node.name)}
   <div class="card">
+    <div class="card-title">{node.name}</div>
     <div class="card-content">
       <NodeLink {node}>
-        <strong>{node.name}</strong>
         <span>
           {formatDuration(node.uptime)}
           <abbr class={node.uptime > 0 ? 'ok-hint' : 'error-hint'} />
@@ -18,3 +19,4 @@
     </div>
   </div>
 {/each}
+  </div>

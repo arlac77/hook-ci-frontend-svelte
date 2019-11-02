@@ -14,11 +14,11 @@
   }
 </script>
 
-<div>
+<div class="card-panel">
   {#if $queue}
     <div class="card">
+      <div class="card-title">{$queue.name}</div>
       <div class="card-content">
-        {$queue.name}
         <br />
         {$queue.active}
         <br />
@@ -29,9 +29,11 @@
         {$queue.completed}
         <br />
         {$queue.failed}
-        <ActionButton action={()=>queueAction('pause')}>Pause ({$queue.paused})</ActionButton>
-        <ActionButton action={()=>queueAction('resume')}>Resume</ActionButton>
-        <ActionButton action={()=>queueAction('empty')}>Empty</ActionButton>
+        <ActionButton action={() => queueAction('pause')}>
+          Pause ({$queue.paused})
+        </ActionButton>
+        <ActionButton action={() => queueAction('resume')}>Resume</ActionButton>
+        <ActionButton action={() => queueAction('empty')}>Empty</ActionButton>
       </div>
     </div>
     <JobTable queue={$queue} jobs={$jobs} />
