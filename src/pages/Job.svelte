@@ -73,23 +73,25 @@
 <ActionButton action={all}>All</ActionButton>
 
 {#if $job}
-  <div>
-    <h3>Job {$job.id}</h3>
-    AttemptsMade: {$job.attemptsMade}
-    <NodeLink node={$job.node} />
-    <ActionButton action={() => jobAction('rerun')}>Rerun</ActionButton>
-    <ActionButton action={() => jobAction('cancel')}>Cancel</ActionButton>
-    <Link href="/queue/{$queue.name}/job/{$job.id}/log">Log</Link>
-    <Link href="/queue/{$queue.name}/job/{$job.id}/raw">Raw</Link>
+  <div class="card">
+    <div class="card-content">
+      <h3>Job {$job.id}</h3>
+      AttemptsMade: {$job.attemptsMade}
+      <NodeLink node={$job.node} />
+      <ActionButton action={() => jobAction('rerun')}>Rerun</ActionButton>
+      <ActionButton action={() => jobAction('cancel')}>Cancel</ActionButton>
+      <Link href="/queue/{$queue.name}/job/{$job.id}/log">Log</Link>
+      <Link href="/queue/{$queue.name}/job/{$job.id}/raw">Raw</Link>
 
-    {#if $job.steps}
-      <ul>
-        {#each $job.steps as step, i}
-          <li>
-            <Step {step} />
-          </li>
-        {/each}
-      </ul>
-    {:else}no steps{/if}
+      {#if $job.steps}
+        <ul>
+          {#each $job.steps as step, i}
+            <li>
+              <Step {step} />
+            </li>
+          {/each}
+        </ul>
+      {:else}no steps{/if}
+    </div>
   </div>
 {/if}
