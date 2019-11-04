@@ -55,7 +55,7 @@
   },
   "pacman": {
     "groups": "webapp",
-    "hooks": "pacman/install.sh",
+    "hooks": "pacman/hooks.sh",
     "installdir": "/services/hook-ci/frontend",
     "content": {
       "${installdir}/": {
