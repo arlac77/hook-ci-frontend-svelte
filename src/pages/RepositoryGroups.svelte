@@ -5,6 +5,8 @@
   export let state;
 </script>
 
-{#each $repositoryGroups as rg (rg.name)}
-  <RepositoryGroupCard repositoryGroup={rg} />
-{/each}
+<div class="card-panel">
+  {#each $repositoryGroups as rg (rg.name)}
+    <RepositoryGroupCard repositoryGroup={rg} />
+  {/each}
+</div>
