@@ -5,18 +5,18 @@
 </script>
 
 <div class="card-panel">
-{#each $nodes as node (node.name)}
-  <div class="card">
-    <div class="card-title">{node.name}</div>
-    <div class="card-content">
-      <NodeLink {node}>
-        <span>
-          {formatDuration(node.uptime)}
-          <abbr class={node.uptime > 0 ? 'ok-hint' : 'error-hint'} />
-        </span>
-      </NodeLink>
-      {node.version}
+  {#each $nodes as node (node.name)}
+    <div class="card">
+      <div class="card-content">
+        <div class="card-title">{node.name}</div>
+        <NodeLink {node}>
+          <span>
+            {formatDuration(node.uptime)}
+            <abbr class={node.uptime > 0 ? 'ok-hint' : 'error-hint'} />
+          </span>
+        </NodeLink>
+        {node.version}
+      </div>
     </div>
-  </div>
-{/each}
-  </div>
+  {/each}
+</div>

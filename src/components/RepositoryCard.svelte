@@ -3,22 +3,19 @@
   export let repository;
 </script>
 
-<div class="item">
-  <div class="item-content">
-    {repository.name}
-    <br />
+<div class="card">
+  <div class="card-content">
+    <div class="card-title">{repository.name}</div>
     {repository.description}
     <br />
     {repository.id}
   </div>
-  <div class="item-content">
-    <ul>
-      {#each repository.urls as url}
-        <li>
-          <a href={url}>{url}</a>
-        </li>
-      {/each}
-    </ul>
-  </div>
+  <ul>
+    {#each repository.urls as url}
+      <li>
+        <a href={url}>{url}</a>
+      </li>
+    {/each}
+  </ul>
   <RepositoryGroupLink repositoryGroup={repository.owner} />
 </div>

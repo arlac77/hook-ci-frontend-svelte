@@ -17,9 +17,8 @@
 <div class="card-panel">
   {#if $queue}
     <div class="card">
-      <div class="card-title">{$queue.name}</div>
       <div class="card-content">
-        <br />
+        <div class="card-title">{$queue.name}</div>
         {$queue.active}
         <br />
         {$queue.waiting}
