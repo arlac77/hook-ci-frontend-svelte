@@ -208,7 +208,12 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@types/node@*", "@types/node@>=6":
+"@types/node@*":
+  version "12.12.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.6.tgz#a47240c10d86a9a57bb0c633f0b2e0aea9ce9253"
+  integrity sha512-FjsYUPzEJdGXjwKqSpE0/9QEh6kzhTAeObA54rn6j3rR4C/mzpI9L0KNfoeASSPMMdxIsoJuCLDWcM/rVjIsSA==
+
+"@types/node@>=6":
   version "12.11.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.11.5.tgz#6c3c8dc84988aff11fd2a63d7b5fbf39eaaab7b1"
   integrity sha512-LC8ALj/24PhByn39nr5jnTvpE7MujK8y7LQmV74kHYF5iQ0odCPkMH4IZNZw+cobKfSXqaC8GgegcbIsQpffdA==
@@ -2420,11 +2425,6 @@ koa-convert@^1.2.0:
     co "^4.6.0"
     koa-compose "^3.0.0"
 
-koa-is-json@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/koa-is-json/-/koa-is-json-1.0.0.tgz#273c07edcdcb8df6a2c1ab7d59ee76491451ec14"
-  integrity sha1-JzwH7c3Ljfaiwat9We52SRRR7BQ=
-
 koa-mount@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/koa-mount/-/koa-mount-4.0.0.tgz#e0265e58198e1a14ef889514c607254ff386329c"
@@ -2461,9 +2461,9 @@ koa-static@^5.0.0:
     koa-send "^5.0.0"
 
 koa@^2.8.1:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/koa/-/koa-2.10.0.tgz#86a583ff280896dce3a36b0b6dae80f9559240d3"
-  integrity sha512-vcZopGEWHDokchYtjU6jF1BCy+2MA2hnvGP7xPi26qWoIS0OiAUb4+lCqkqf05qG5ULnGYUFTvFnSK9RyOoiKw==
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/koa/-/koa-2.11.0.tgz#fe5a51c46f566d27632dd5dc8fd5d7dd44f935a4"
+  integrity sha512-EpR9dElBTDlaDgyhDMiLkXrPwp6ZqgAIBvhhmxQ9XN4TFgW+gEz6tkcsNI6BnUbUftrKDjVFj4lW2/J2aNBMMA==
   dependencies:
     accepts "^1.3.5"
     cache-content-type "^1.0.0"
@@ -2483,7 +2483,6 @@ koa@^2.8.1:
     is-generator-function "^1.0.7"
     koa-compose "^4.1.0"
     koa-convert "^1.2.0"
-    koa-is-json "^1.0.0"
     on-finished "^2.3.0"
     only "~0.0.2"
     parseurl "^1.3.2"
@@ -2939,7 +2938,7 @@ methods@~1.1.0:
 
 mf-styling@arlac77/mf-styling:
   version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/768448cabccb679649779b5daddca2f96017abf8"
+  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/d8a4143262bee451b83b2cc7f2519c09314a514f"
 
 micromatch@^4.0.2:
   version "4.0.2"
@@ -3245,9 +3244,9 @@ npm-pick-manifest@^3.0.0, npm-pick-manifest@^3.0.2:
     semver "^5.4.1"
 
 npm-pkgbuild@^6.10.4:
-  version "6.10.4"
-  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.10.4.tgz#abd757688607861ba7198ee61772a25c1ff8a000"
-  integrity sha512-DuqTW28xuuDaNJytY36OfCYTCrDd9h+J63EMi3IkhA9Y+ia9CDWPo706UxSSypcAB1TakLqx6OPlJpM3UR92oQ==
+  version "6.10.6"
+  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.10.6.tgz#9f1d9100ffd184cc7000ef254ac23d2e7a1cfc3c"
+  integrity sha512-/9f+da7Ym/mWk0ldlt6Ps1UvQfzNtI6LXdNvkJUyZZLJqZQfgW/Rq85P4dTJ7rr8cump/8vfDyMQNVCqK5oJ1Q==
   dependencies:
     commander "^4.0.0"
     execa "^3.2.0"
@@ -3792,9 +3791,9 @@ performance-now@^2.1.0:
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
 picomatch@^2.0.5:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.0.7.tgz#514169d8c7cd0bdbeecc8a2609e34a7163de69f6"
-  integrity sha512-oLHIdio3tZ0qH76NybpeneBhYVj0QFTfXEFTc/B3zKQspYfYYkWYgFsmzo+4kvId/bQRcNkVeguI3y+CD22BtA==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.1.0.tgz#0fd042f568d08b1ad9ff2d3ec0f0bfb3cb80e177"
+  integrity sha512-uhnEDzAbrcJ8R3g2fANnSuXZMBtkpSjxTTgn2LeSiQlfmq72enQJWdQllXW24MBLYnA1SBD2vfvx2o0Zw3Ielw==
 
 pify@^3.0.0:
   version "3.0.0"
@@ -4257,9 +4256,9 @@ rollup-plugin-copy@^3.1.0:
     is-plain-object "^3.0.0"
 
 rollup-plugin-dev@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-dev/-/rollup-plugin-dev-1.0.0.tgz#c16be30920df327a848b140db9c2b68036d90d21"
-  integrity sha512-Brs6xz9o+rvdaAJ3um96Y7hQ+gFMLSewSpDgjwad/C9Wuo0tWjQ7bzGgdp4zZ4BFE2knXy8HJIzbL60guQccQA==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-dev/-/rollup-plugin-dev-1.0.1.tgz#69d04e472718ff23d7cf2c29f19c0f57fa571614"
+  integrity sha512-b4cC1e4YJ80p1fDvIJxpPqBYfJ2UfhU3dDdrpwimDxIOTW78/PJRj0JijLjDc1u+LSX4rI49MYBbWC8e+9r0IA==
   dependencies:
     colorette "^1.1.0"
     date-time "^3.1.0"
@@ -4351,7 +4350,7 @@ safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, 
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-semantic-release@^15.13.29:
+semantic-release@^15.13.30:
   version "15.13.30"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.13.30.tgz#89a67d1c53fb1f3caee3ce9958a9017333747119"
   integrity sha512-QetSFNr2hO6dZ/NDBh49neESF6OGinJfh4NcVhzMRg+rZpeqXq9sCbpZr0uDu+5HSkJYnX25MpMTF0QyyFhpxg==
