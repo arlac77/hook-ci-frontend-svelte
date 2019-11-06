@@ -1,5 +1,5 @@
 <script>
-  import { formatSecondsSinceEpoch } from "svelte-common";
+  import { Expandable, formatSecondsSinceEpoch } from "svelte-common";
   import NodeLink from "./NodeLink.svelte";
   import Requirements from "./Requirements.svelte";
   export let step;
@@ -24,8 +24,13 @@
       <abbr class="unknown-hint" />
     {/if}
     <NodeLink node={step.node} />
-    {#if step.requirements}
-      <Requirements requirements={step.requirements} />
+        {#if step.requirements}
+
+    <Expandable>Requirements
+      <div slot="content">
+        <Requirements requirements={step.requirements} />
+      </div>
+    </Expandable>
     {/if}
   </div>
 {/if}
