@@ -5,10 +5,9 @@
 
 <div class="card">
   <div class="card-content">
-    <div class="card-title">{repository.name}</div>
-    {repository.description}
-    <br />
-    {repository.id}
+    <h5 class="card-title">{repository.name}</h5>
+    <h6 class="card-subtitle">{repository.description}</h6>
+    <p class="card-text">{repository.id}</p>
   </div>
   <ul>
     {#each repository.urls as url}

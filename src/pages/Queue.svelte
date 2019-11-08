@@ -18,16 +18,11 @@
   {#if $queue}
     <div class="card">
       <div class="card-content">
-        <div class="card-title">{$queue.name}</div>
-        {$queue.active}
-        <br />
-        {$queue.waiting}
-        <br />
-        {$queue.delayed}
-        <br />
-        {$queue.completed}
-        <br />
-        {$queue.failed}
+        <h5 class="card-title">{$queue.name}</h5>
+        <p class="card-text">{$queue.active}</p>
+        <p class="card-text">{$queue.waiting}</p>
+        <p class="card-text">{$queue.completed}</p>
+        <p class="card-text">{$queue.failed}</p>
         <ActionButton action={() => queueAction('pause')}>
           Pause ({$queue.paused})
         </ActionButton>

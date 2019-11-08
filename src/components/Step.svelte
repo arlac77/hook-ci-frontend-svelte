@@ -24,13 +24,13 @@
       <abbr class="unknown-hint" />
     {/if}
     <NodeLink node={step.node} />
-        {#if step.requirements}
-
-    <Expandable>Requirements
-      <div slot="content">
-        <Requirements requirements={step.requirements} />
-      </div>
-    </Expandable>
+    {#if step.requirements}
+      <Expandable>
+        Requirements
+        <div slot="content">
+          <Requirements requirements={step.requirements} />
+        </div>
+      </Expandable>
     {/if}
   </div>
 {/if}

@@ -8,14 +8,14 @@
   {#each $nodes as node (node.name)}
     <div class="card">
       <div class="card-content">
-        <div class="card-title">{node.name}</div>
+        <h5 class="card-title">{node.name}</h5>
         <NodeLink {node}>
           <span>
             {formatDuration(node.uptime)}
             <abbr class={node.uptime > 0 ? 'ok-hint' : 'error-hint'} />
           </span>
         </NodeLink>
-        {node.version}
+        <p class="card-text">{node.version}</p>
       </div>
     </div>
   {/each}

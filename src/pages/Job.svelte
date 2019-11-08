@@ -75,7 +75,7 @@
 {#if $job}
   <div class="card">
     <div class="card-content">
-      <div class="card-title">Job {$job.id}</div>
+      <h5 class="card-title">Job {$job.id}</h5>
       AttemptsMade: {$job.attemptsMade}
       <NodeLink node={$job.node} />
       <ActionButton action={() => jobAction('rerun')}>Rerun</ActionButton>
