@@ -24,7 +24,7 @@
     "apollo-client": "^2.6.3",
     "graphql": "^14.5.3",
     "npm-pkgbuild": "^6.10.4",
-    "rollup": "^1.26.3",
+    "rollup": "^1.26.4",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-dev": "^1.0.0",
