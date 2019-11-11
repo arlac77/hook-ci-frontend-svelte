@@ -1,5 +1,6 @@
 <script>
-  import { Expandable, formatSecondsSinceEpoch } from "svelte-common";
+	import { fade } from 'svelte/transition';
+  import { Collapse, formatSecondsSinceEpoch } from "svelte-common";
   import NodeLink from "./NodeLink.svelte";
   import Requirements from "./Requirements.svelte";
   export let step;
@@ -25,12 +26,12 @@
     {/if}
     <NodeLink node={step.node} />
     {#if step.requirements}
-      <Expandable>
+      <Collapse>
         Requirements
-        <div slot="content">
+        <div slot="content" in:fade out:fade>
           <Requirements requirements={step.requirements} />
         </div>
-      </Expandable>
+      </Collapse>
     {/if}
   </div>
 {/if}
