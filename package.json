@@ -22,7 +22,7 @@
     "@semantic-release/exec": "^3.3.8",
     "apollo-boost": "^0.4.3",
     "apollo-client": "^2.6.3",
-    "graphql": "^14.5.3",
+    "graphql": "^14.5.8",
     "npm-pkgbuild": "^6.10.8",
     "rollup": "^1.27.0",
     "rollup-plugin-commonjs": "^10.1.0",
