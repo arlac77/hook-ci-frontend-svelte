@@ -1,5 +1,5 @@
 <script>
-	import { fade } from 'svelte/transition';
+  import { fade } from "svelte/transition";
   import { Collapse, formatSecondsSinceEpoch } from "svelte-common";
   import NodeLink from "./NodeLink.svelte";
   import Requirements from "./Requirements.svelte";
@@ -8,6 +8,13 @@
 
 {#if step}
   <div>
+    {#if step.ok}
+      <abbr class="ok-hint" />
+    {:else if step.ended}
+      <abbr class="error-hint" />
+    {:else}
+      <abbr class="unknown-hint" />
+    {/if}
     <h3>{step.name}</h3>
     {step.executable}
     {#each step.args as a}&#160;{a}{/each}
@@ -15,14 +22,7 @@
       started: {formatSecondsSinceEpoch(step.started)}
       {#if step.ended}
         ended: {formatSecondsSinceEpoch(step.ended)} exit: {step.exitCode}
-        {#if step.ok}
-          <abbr class="ok-hint" />
-        {:else}
-          <abbr class="error-hint" />
-        {/if}
       {/if}
-    {:else}
-      <abbr class="unknown-hint" />
     {/if}
     <NodeLink node={step.node} />
     {#if step.requirements}
