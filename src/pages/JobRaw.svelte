@@ -1,7 +1,5 @@
 <script>
   import { job } from "../main.mjs";
-
-  export let state;
 </script>
 
 {#if $job}

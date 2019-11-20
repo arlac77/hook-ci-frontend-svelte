@@ -3,8 +3,6 @@
   import { config } from "../../package.json";
   import { session } from "../main.mjs";
 
-  export let state;
-
   async function result() {
     const transition = state.router.transition;
 

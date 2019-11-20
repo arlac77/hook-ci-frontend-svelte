@@ -1,8 +1,6 @@
 <script>
   import QueueLink from "../components/QueueLink.svelte";
   import { queues }  from "../main.mjs";
-
-  export let state;
 </script>
 
 <div>

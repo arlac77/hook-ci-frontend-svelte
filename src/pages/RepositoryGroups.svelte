@@ -1,8 +1,6 @@
 <script>
   import RepositoryGroupCard from "../components/RepositoryGroupCard.svelte";
   import { repositoryGroups } from "../main.mjs";
-
-  export let state;
 </script>
 
 <div class="card-panel">

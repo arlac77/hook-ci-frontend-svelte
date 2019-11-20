@@ -1,8 +1,6 @@
 <script>
   import RepositoryCard from '../components/RepositoryCard.svelte';
   import { repository } from "../main.mjs";
-
-  export let state;
 </script>
 
 {#if $repository}

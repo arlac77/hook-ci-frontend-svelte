@@ -4,8 +4,6 @@
   import { queue, session, jobs } from "../main.mjs";
   import { config } from "../../package.json";
 
-  export let state;
-
   async function queueAction(action) {
     return fetch(`${config.api}/queue/${$queue.name}/${action}`, {
       method: "POST",

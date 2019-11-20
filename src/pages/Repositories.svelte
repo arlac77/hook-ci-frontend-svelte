@@ -1,7 +1,6 @@
 <script>
   import RepositoryLink from "../components/RepositoryLink.svelte";
   import { repositories }  from "../main.mjs";
-  export let state;
 </script>
 
 <div>

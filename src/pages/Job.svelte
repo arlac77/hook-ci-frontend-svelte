@@ -7,8 +7,6 @@
   import { queue, session, job, jobs, router } from "../main.mjs";
   import { config } from "../../package.json";
 
-  export let state;
-
   async function jobAction(suffix) {
     const response = await fetch(
       `${config.api}/queue/${$queue.name}/job/${$job.id}/${suffix}`,
