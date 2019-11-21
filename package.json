@@ -24,7 +24,7 @@
     "apollo-boost": "^0.4.3",
     "apollo-client": "^2.6.3",
     "graphql": "^14.5.8",
-    "npm-pkgbuild": "^6.10.10",
+    "npm-pkgbuild": "^6.10.11",
     "rollup": "^1.27.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-copy": "^3.1.0",
@@ -65,7 +65,7 @@
     },
     "depends": {
       "nginx-mainline": ">=1.17.4",
-      "hook-ci": ">=1.51.10"
+      "hook-ci": ">=1.51.24"
     }
   },
   "release": {

@@ -13,11 +13,7 @@
     <thead>
       <tr>
         <th aria-sort="none">Id</th>
-        <th aria-sort="none">Processed</th>
-        <th aria-sort="none">Finished</th>
-        <th aria-sort="none">Node</th>
-        <th aria-sort="none">Repository</th>
-        <th aria-sort="none">Branch</th>
+        <th aria-sort="none">Artifact</th>
       </tr>
     </thead>
     <tbody>
@@ -26,16 +22,8 @@
           <td>
             <Link href="/queue/{queue.name}/job/{job.id}">{job.id}</Link>
           </td>
-          <td>{formatSecondsSinceEpoch(job.processedOn)}</td>
-          <td>{formatSecondsSinceEpoch(job.finishedOn)}</td>
           <td>
-            <NodeLink node={job.node} />
-          </td>
-          <td>
-            <RepositoryLink repository={job.repository} />
-          </td>
-          <td>
-            {#if job.branch}{job.branch}{:else}-{/if}
+            {job.artifact}
           </td>
         </tr>
       {/each}

@@ -180,9 +180,9 @@
     tempy "^0.3.0"
 
 "@semantic-release/release-notes-generator@^7.1.2":
-  version "7.3.3"
-  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-7.3.3.tgz#1827de68a80facd74a62cb6e7b0bd6dab22ce088"
-  integrity sha512-uF7f9+epsxGNE39i0Ssu56V4w/xd3L4/yWw7FeAFp+SNLXPWTkTErdF2wwkVpxpRpCdgXsoj6T01tMN8tPfciQ==
+  version "7.3.4"
+  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-7.3.4.tgz#32882dbd74129c0a0dd8a4d1929eefae76be7e0e"
+  integrity sha512-d5YlpzuWrsq1UrFeOgv6vIb11R0ICRRJwNzSM4NpljF8hZBYxaaNOw3FbfSufgOLiyvLznhh3/91QoRVPKVwqw==
   dependencies:
     conventional-changelog-angular "^5.0.0"
     conventional-changelog-writer "^4.0.0"
@@ -1901,7 +1901,7 @@ has-flag@^3.0.0:
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
   integrity sha1-tdRU3CGZriJWmfNGfloH87lVuv0=
 
-has-symbols@^1.0.0:
+has-symbols@^1.0.0, has-symbols@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/has-symbols/-/has-symbols-1.0.1.tgz#9f5214758a44196c406d9bd76cebf81ec2dd31e8"
   integrity sha512-PLcsoqu++dmEIZB+6totNFKq/7Do+Z0u4oT0zKOJNl3lYK6vGwwu2hjHs+68OEZbTjiUE9bgOABXbP/GvrS0Kg==
@@ -2288,11 +2288,11 @@ is-stream@^2.0.0:
   integrity sha512-XCoy+WlUr7d1+Z8GgSuXmpuUFC9fOhRXglJMx+dwLKTkL44Cjd4W1Z5P+BQZpr+cR93aGP4S/s7Ftw6Nd/kiEw==
 
 is-symbol@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/is-symbol/-/is-symbol-1.0.2.tgz#a055f6ae57192caee329e7a860118b497a950f38"
-  integrity sha512-HS8bZ9ox60yCJLH9snBpIwv9pYUAkcuLhSA1oero1UB5y9aiQpRA8y2ex945AOtCZL1lJDeIk3G5LthswI46Lw==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/is-symbol/-/is-symbol-1.0.3.tgz#38e1014b9e6329be0de9d24a414fd7441ec61937"
+  integrity sha512-OwijhaRSgqvhm/0ZdAcXNZt9lYdKFpcRDT5ULUuYXPoT794UNOdU+gpT6Rzo7b4V2HUl/op6GqY894AZwv9faQ==
   dependencies:
-    has-symbols "^1.0.0"
+    has-symbols "^1.0.1"
 
 is-text-path@^1.0.1:
   version "1.0.1"
@@ -3303,10 +3303,10 @@ npm-pick-manifest@^3.0.0, npm-pick-manifest@^3.0.2:
     npm-package-arg "^6.0.0"
     semver "^5.4.1"
 
-npm-pkgbuild@^6.10.10:
-  version "6.10.10"
-  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.10.10.tgz#1a5b86a07b822db123dbad1f36e4a6603071ccff"
-  integrity sha512-Naqs+KVNuT3xHXCZK93U9AFEZn3PIq6Esrznk/gweKn2yrpzKF7O5YtOixlQTOoHWG+xRJGCstboAiBsVWZiyQ==
+npm-pkgbuild@^6.10.11:
+  version "6.10.11"
+  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.10.11.tgz#267e2fbfe0e708a725b518276f303c76a54d9309"
+  integrity sha512-3qEhi4nUnsmtBEDVyl07TiytMmifM7+piHo88jDoXsbhgZJwmEX7Lt6OPZtsy1ZL3t54SrjRx9/Z86aF6obakw==
   dependencies:
     commander "^4.0.1"
     execa "^3.3.0"
@@ -4865,7 +4865,7 @@ svelte-session-manager@^1.0.2:
   resolved "https://registry.yarnpkg.com/svelte-session-manager/-/svelte-session-manager-1.0.2.tgz#3f9e484088daad8022ebb10c6f1b5ba31d3cef4a"
   integrity sha512-f5+PloN7efBhkgHD2LWtK8l/EkkkrsAfp5eVVWyp2uapxoiu1ZLxVauproVMElEXhWiUQknsHPXH/0uU0IBHuw==
 
-svelte@^3.14.1:
+svelte@^3.15.0:
   version "3.15.0"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.15.0.tgz#9dda8ad1d86cd74626b25f9c182f3ae86599fd79"
   integrity sha512-OL9FIdUAmVTXR38cB/2vQQ9xWvW/7IuOASjWMfwRAB5NXywLW4Xqhblouan4odjI0S/JFGsytkgp7jelWpFgSA==

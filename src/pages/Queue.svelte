@@ -1,6 +1,7 @@
 <script>
   import { ActionButton } from "svelte-common";
   import JobTable from "../components/JobTable.svelte";
+  import PublishJobTable from "../components/PublishJobTable.svelte";
   import { queue, session, jobs } from "../main.mjs";
   import { config } from "../../package.json";
 
@@ -28,6 +29,10 @@
         <ActionButton action={() => queueAction('empty')}>Empty</ActionButton>
       </div>
     </div>
-    <JobTable queue={$queue} jobs={$jobs} />
+    {#if $queue.name === 'publish'}
+        <PublishJobTable queue={$queue} jobs={$jobs} />
+    {:else}
+        <JobTable queue={$queue} jobs={$jobs} />
+    {/if}
   {:else}No such queue{/if}
 </div>
