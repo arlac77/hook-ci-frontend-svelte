@@ -3,6 +3,8 @@
   import { config } from "../../package.json";
   import { session } from "../main.mjs";
 
+  export let state;
+  
   let url;
 
   onDestroy(
