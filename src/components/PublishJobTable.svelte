@@ -13,6 +13,8 @@
     <thead>
       <tr>
         <th aria-sort="none">Id</th>
+        <th aria-sort="none">Processed</th>
+        <th aria-sort="none">Node</th>
         <th aria-sort="none">Artifact</th>
       </tr>
     </thead>
@@ -21,6 +23,10 @@
         <tr>
           <td>
             <Link href="/queue/{queue.name}/job/{job.id}">{job.id}</Link>
+          </td>
+          <td>{formatSecondsSinceEpoch(job.processedOn)}</td>
+          <td>
+            <NodeLink node={job.node} />
           </td>
           <td>
             {job.artifact}
