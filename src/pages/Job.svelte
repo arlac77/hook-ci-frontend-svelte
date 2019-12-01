@@ -5,11 +5,11 @@
   import NodeLink from "../components/NodeLink.svelte";
   import Step from "../components/Step.svelte";
   import { queue, session, job, jobs, router } from "../main.mjs";
-  import { config } from "../../package.json";
+  import api from 'consts:api';
 
   async function jobAction(suffix) {
     const response = await fetch(
-      `${config.api}/queue/${$queue.name}/job/${$job.id}/${suffix}`,
+      `${api}/queue/${$queue.name}/job/${$job.id}/${suffix}`,
       {
         method: "POST",
         headers: session.authorizationHeader

@@ -3,10 +3,10 @@
   import KeyValues from "../components/KeyValues.svelte";
 
   import { node, session } from "../main.mjs";
-  import { config } from "../../package.json";
+  import api from 'consts:api';
 
   async function postNode(suffix) {
-    return fetch(`${config.api}/node/${$node.name}/${suffix}`, {
+    return fetch(`${api}/node/${$node.name}/${suffix}`, {
       method: "POST",
       headers: session.authorizationHeader
     });

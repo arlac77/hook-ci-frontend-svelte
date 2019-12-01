@@ -21,7 +21,9 @@ import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
 import { Node as myNode } from "./Node.mjs";
-import { config } from "../package.json";
+import base from 'consts:base';
+import api from 'consts:api';
+import graphQl from 'consts:graphQl';
 
 export const session = new Session(localStorage);
 
@@ -60,7 +62,7 @@ export const router = new Router(
     route("/node", needsSession, Nodes),
     route("/node/:node", needsSession, Node)
   ],
-  config.base
+  base
 );
 
 const repositoryProvider = new Provider();
@@ -104,7 +106,7 @@ export const repositories = derived(
   session,
   ($session, set) => {
     if (session.isValid) {
-      fetch(config.api + "/repositories", {
+      fetch(api + "/repositories", {
         headers: session.authorizationHeader
       }).then(async data =>
         set((await data.json()).map(j => getRepository(j)))
@@ -129,7 +131,7 @@ export const repositoryGroups = derived(
   session,
   ($session, set) => {
     if (session.isValid) {
-      fetch(config.api + "/groups", {
+      fetch(api + "/groups", {
         headers: session.authorizationHeader
       }).then(async data =>
         set((await data.json()).map(j => getRepositoryGroup(j)))
@@ -154,7 +156,7 @@ export const queues = derived(
   session,
   ($session, set) => {
     if (session.isValid) {
-      fetch(config.api + "/queues", {
+      fetch(api + "/queues", {
         headers: session.authorizationHeader
       }).then(async data => set(await data.json()));
     } else {
@@ -177,7 +179,7 @@ export const jobs = derived(
   [session, router.keys.queue],
   ([$session, $queue], set) => {
     if (session.isValid && $queue) {
-      fetch(config.api + `/queue/${$queue}/jobs`, {
+      fetch(api + `/queue/${$queue}/jobs`, {
         headers: session.authorizationHeader
       }).then(async data => {
         const jobs = (await data.json()).map(job => {
@@ -240,7 +242,7 @@ function getNode(name, options) {
   return node;
 }
 
-const client = new ApolloClient({ uri: config.graphQl });
+const client = new ApolloClient({ uri: graphQl });
 export const rawNodes = query(client, { query: NODES });
 
 export const nodes = derived(

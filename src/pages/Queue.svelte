@@ -3,10 +3,10 @@
   import JobTable from "../components/JobTable.svelte";
   import PublishJobTable from "../components/PublishJobTable.svelte";
   import { queue, session, jobs } from "../main.mjs";
-  import { config } from "../../package.json";
+  import api from 'consts:api';
 
   async function queueAction(action) {
-    return fetch(`${config.api}/queue/${$queue.name}/${action}`, {
+    return fetch(`${api}/queue/${$queue.name}/${action}`, {
       method: "POST",
       headers: session.authorizationHeader
     });

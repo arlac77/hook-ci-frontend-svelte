@@ -1,7 +1,7 @@
 <script>
   import { onDestroy } from "svelte";
-  import { config } from "../../package.json";
   import { session } from "../main.mjs";
+  import api from 'consts:api';
 
   export let state;
   
@@ -12,7 +12,7 @@
       const job = value.params.job;
       const queue = value.params.queue;
       if (job && queue) {
-        url = `${config.api}/queue/${queue}/job/${job}/log?start=0&end=10000`;
+        url = `${api}/queue/${queue}/job/${job}/log?start=0&end=10000`;
         refresh(url);
       }
     })
