@@ -18,34 +18,31 @@ export default {
     format: "esm",
     file: `${dist}/bundle.mjs`
   },
-  plugins: [
-    copy({
-      targets: [
-        { src: 'node_modules/mf-styling/global.css', dest: dist }
-      ]
-    }),
-    svelte({
-      dev: !production,
-      css: css => {
-				css.write(`${dist}/bundle.css`);
-			}
-    }),
-
-    resolve({ browser: true }),
-    commonjs(),
-    json({
-      preferConst: true,
-      compact: true
-    }),
-    production && terser(),
-    dev({
-      port,
-      dirs: [dist],
-      spa: `${dist}/index.html`,
-      basePath: config.base,
-      proxy: { [`${config.api}/*`]: [config.proxyTarget, { https: true }] }
-    })
-  ],
+  plugins: [copy({
+    targets: [
+      { src: 'node_modules/mf-styling/global.css', dest: dist }
+    ]
+  }), svelte({
+    dev: !production,
+    css: css => {
+              css.write(`${dist}/bundle.css`);
+          }
+  }), resolve({ browser: true }), commonjs(), json({
+    preferConst: true,
+    compact: true
+  }), production && terser(), dev({
+    port,
+    dirs: [dist],
+    spa: `${dist}/index.html`,
+    basePath: config.base,
+    proxy: { [`${config.api}/*`]: [config.proxyTarget, { https: true }] }
+  }), consts({
+    name,
+    version,
+    description,
+    api: config.api,
+    base: config.base
+  })],
   watch: {
     clearScreen: false
   }

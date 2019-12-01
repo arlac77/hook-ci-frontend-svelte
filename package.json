@@ -19,7 +19,6 @@
     "svelte-session-manager": "^1.0.2"
   },
   "devDependencies": {
-    "@rollup/plugin-json": "^4.0.0",
     "@semantic-release/exec": "^3.3.8",
     "apollo-boost": "^0.4.3",
     "apollo-client": "^2.6.3",
