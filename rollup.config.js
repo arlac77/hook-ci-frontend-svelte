@@ -1,3 +1,5 @@
+import { config } from "./package.json";
+
 import consts from 'rollup-plugin-consts';
 import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
