@@ -5,15 +5,12 @@
 
   export let state;
   
-  let url;
-
   onDestroy(
     state.subscribe(value => {
       const job = value.params.job;
       const queue = value.params.queue;
       if (job && queue) {
-        url = `${api}/queue/${queue}/job/${job}/log?start=0&end=10000`;
-        refresh(url);
+        refresh(`${api}/queue/${queue}/job/${job}/log?start=0&end=10000`);
       }
     })
   );
