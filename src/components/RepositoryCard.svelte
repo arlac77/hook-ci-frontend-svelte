@@ -8,6 +8,7 @@
     <h5 class="card-title">{repository.name}</h5>
     <h6 class="card-subtitle">{repository.description}</h6>
     <p class="card-text">{repository.id}</p>
+    <p class="card-text">{repository.isArchived}</p>
   </div>
   <ul>
     {#each repository.urls as url}
