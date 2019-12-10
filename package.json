@@ -21,7 +21,6 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^6.0.0",
     "@semantic-release/exec": "^3.3.8",
-    "acorn-class-fields": "https://github.com/arlac77/acorn-class-fields.git",
     "apollo-boost": "^0.4.3",
     "apollo-client": "^2.6.3",
     "graphql": "^14.5.8",
