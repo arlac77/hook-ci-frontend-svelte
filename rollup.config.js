@@ -37,7 +37,7 @@ export default {
     }),
     resolve({ browser: true }),
     commonjs(),
-  //  production && terser(),
+    production && terser(),
     dev({
       port,
       dirs: [dist],
