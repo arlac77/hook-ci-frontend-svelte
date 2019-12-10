@@ -1,4 +1,3 @@
-import acornClassFields from "acorn-class-fields";
 import consts from "rollup-plugin-consts";
 import svelte from "rollup-plugin-svelte";
 import resolve from "@rollup/plugin-node-resolve";
@@ -46,7 +45,6 @@ export default {
       proxy: { [`${config.api}/*`]: [config.proxyTarget, { https: true }] }
     })
   ],
-  acornInjectPlugins: [acornClassFields],
   watch: {
     clearScreen: false
   }
