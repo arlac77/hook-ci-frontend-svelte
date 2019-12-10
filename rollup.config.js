@@ -1,3 +1,4 @@
+import acornClassFields from "acorn-class-fields";
 import consts from 'rollup-plugin-consts';
 import svelte from "rollup-plugin-svelte";
 import resolve from "@rollup/plugin-node-resolve";
