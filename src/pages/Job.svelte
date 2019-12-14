@@ -5,7 +5,7 @@
   import NodeLink from "../components/NodeLink.svelte";
   import Step from "../components/Step.svelte";
   import { queue, session, job, jobs, router } from "../main.mjs";
-  import api from 'consts:api';
+  import api from "consts:api";
 
   async function jobAction(suffix) {
     const response = await fetch(
@@ -65,6 +65,12 @@
     return router.push(`/queue/${$queue.name}`);
   }
 </script>
+
+<style>
+  li {
+    list-style-type: none;
+  }
+</style>
 
 <ActionButton action={next}>Next</ActionButton>
 <ActionButton action={previous}>Previous</ActionButton>
