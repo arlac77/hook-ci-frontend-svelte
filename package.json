@@ -12,6 +12,9 @@
     "start": "rollup -c -w"
   },
   "dependencies": {
+    "apollo-boost": "^0.4.7",
+    "apollo-client": "^2.6.8",
+    "graphql": "^14.5.8",
     "mf-styling": "arlac77/mf-styling",
     "repository-provider": "^16.10.3",
     "svelte-common": "^1.1.2",
@@ -21,9 +24,6 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^6.0.0",
     "@semantic-release/exec": "^3.3.8",
-    "apollo-boost": "^0.4.3",
-    "apollo-client": "^2.6.3",
-    "graphql": "^14.5.8",
     "npm-pkgbuild": "^6.11.0",
     "rollup": "^1.27.13",
     "rollup-plugin-commonjs": "^10.1.0",
