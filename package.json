@@ -22,11 +22,11 @@
     "svelte-session-manager": "^1.0.4"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.0.0",
-    "@rollup/plugin-node-resolve": "^6.0.0",
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^6.1.0",
     "@semantic-release/exec": "^3.3.8",
     "npm-pkgbuild": "^6.11.2",
-    "rollup": "^1.27.14",
+    "rollup": "^1.28.0",
     "rollup-plugin-consts": "^1.0.1",
     "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-dev": "^1.1.1",
@@ -48,10 +48,10 @@
   },
   "homepage": "https://github.com/arlac77/hook-ci-frontend-svelte#readme",
   "config": {
-    "base": "/services/ci",
     "api": "/services/ci/api",
-    "proxyTarget": "https://mfelten.dynv6.net/",
-    "graphQl": "/services/ci/api/graphql"
+    "base": "/services/ci",
+    "graphQl": "/services/ci/api/graphql",
+    "proxyTarget": "https://mfelten.dynv6.net/"
   },
   "pacman": {
     "groups": "webapp",
