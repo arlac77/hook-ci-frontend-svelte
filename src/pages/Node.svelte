@@ -1,5 +1,5 @@
 <script>
-  import { formatDuration, ActionButton, formatBytes } from "svelte-common";
+  import { Duration, ActionButton, formatBytes } from "svelte-common";
   import KeyValues from "../components/KeyValues.svelte";
 
   import { node, session } from "../main.mjs";
@@ -15,7 +15,7 @@
 
 {#if $node}
   <h3>Node {$node.name}</h3>
-  {$node.version} {formatDuration($node.uptime)}
+  {$node.version} <Duration seconds={$node.uptime}/>
   {$node.isLocal ? 'LOCAL' : 'REMOTE'}
   {#if $node.uptime > 0}
     <abbr class="ok-hint" />

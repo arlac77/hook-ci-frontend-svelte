@@ -1,5 +1,5 @@
 <script>
-  import { formatDuration, ActionButton } from "svelte-common";
+  import { Duration, ActionButton } from "svelte-common";
   import NodeLink from "../components/NodeLink.svelte";
   import { nodes } from "../main.mjs";
 </script>
@@ -11,7 +11,7 @@
         <h5 class="card-title">{node.name}</h5>
         <NodeLink {node}>
           <span>
-            {formatDuration(node.uptime)}
+            <Duration seconds={node.uptime}/>
             <abbr class={node.uptime > 0 ? 'ok-hint' : 'error-hint'} />
           </span>
         </NodeLink>
