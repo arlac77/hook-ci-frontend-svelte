@@ -1,5 +1,7 @@
 build
 tests
+test-results
+example
 doc
 *.log
 *.tmp
