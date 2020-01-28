@@ -64,8 +64,8 @@
       "/etc/nginx/config.d/${name}.conf": "pacman/nginx.conf"
     },
     "depends": {
-      "nginx-mainline": ">=1.17.4",
-      "hook-ci": ">=1.53.1"
+      "nginx-mainline": ">=1.17.8",
+      "hook-ci": ">=1.55.14"
     }
   },
   "release": {
