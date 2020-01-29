@@ -75,9 +75,9 @@
   integrity sha512-ywoxP68aOT3zHCLgWZgwUJatiENeHE7xJzYjfz8WI0goynp96wETBF+d95b8g/uL4QmS6owPVlaxiz3wyMAzcw==
 
 "@octokit/plugin-rest-endpoint-methods@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-2.1.0.tgz#d49a058cc06d9a4d8365b36795f336112e2c3023"
-  integrity sha512-F2LoDCc4EIfXQlTA29tM2tKOk3QLhbMF5D7zqnD60IZT33PieN1mOSHMd4UPPlrEjgTUZahud6whgdDeM7CrrA==
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-2.1.2.tgz#c9b72657a1dca049aa8f51cca7d12faa85ccefc1"
+  integrity sha512-PS77CqifhDqYONWAxLh+BKGlmuhdEX39JVEVQoWWDvkh5B+2bcg9eaxMEFUEJtfuqdAw33sdGrrlGtqtl+9lqg==
   dependencies:
     "@octokit/types" "^2.0.1"
     deprecation "^2.3.1"
@@ -106,9 +106,9 @@
     universal-user-agent "^4.0.0"
 
 "@octokit/rest@^16.27.0":
-  version "16.40.0"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.40.0.tgz#a2b5dee3486aee5543a92f2a3bdb2ed391229e8c"
-  integrity sha512-owk1H7XRSGrs9aE+phHuwYLuECSOBmanUNLBTb6VzMHELm9bZwvyK3US7SnVHxlmnlFUf1n7U/n0G/1PccSH/Q==
+  version "16.40.1"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.40.1.tgz#211e9c8baa0cc86726ad86f7369425975e928f4f"
+  integrity sha512-H8Twi0NfeQYrpsQ2T63vww9DQ5oKwWl89ZTZyMOVJwdgIPAIn969HqQPtBQMWq26qx+VkYi/WlhFzaZYabN2yg==
   dependencies:
     "@octokit/auth-token" "^2.4.0"
     "@octokit/plugin-paginate-rest" "^1.1.1"
@@ -4761,10 +4761,10 @@ repeat-string@^1.6.1:
   resolved "https://registry.yarnpkg.com/repeat-string/-/repeat-string-1.6.1.tgz#8dcae470e1c88abc2d600fff4a776286da75e637"
   integrity sha1-jcrkcOHIirwtYA//Sndihtp15jc=
 
-repository-provider@^16.11.3:
-  version "16.11.3"
-  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-16.11.3.tgz#716a1c8de6d6f80ae209b268537e5ed9c7b65a68"
-  integrity sha512-qvt7AZRmlsgVuLCf3Uc4VPaM1cXp9L+1ZuRduHBe66ptNdPBMVz/o+Vk/Masw8Kc7LDrrQ7fvwfXHFtTSBqiWA==
+repository-provider@^16.12.1:
+  version "16.12.1"
+  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-16.12.1.tgz#73354cbbb66eb55894c5af31c98cc538b8d3d5e9"
+  integrity sha512-JswKdoxqbc6ciMAA2FeaUroBxvrcfGmo4hKP4VJmd4O2vNhp4DgAOfMpxmjzuHwu4wMSbS/hpl0Fk+9Lw4onFA==
   dependencies:
     loglevel-mixin "^5.0.3"
 
@@ -4971,7 +4971,7 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-semantic-release@^17.0.0:
+semantic-release@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.0.1.tgz#56498106881660cf744c4edea3fe56e7465dacf8"
   integrity sha512-sbiYitlrX+mPVLfxL+1ekcqeTftBjj2F1MffwlJ140LFSNOpn/Mf8cM+gTV0EYn8DDCQ4EMUAXDahY6G0lfvHQ==
@@ -5524,10 +5524,10 @@ svelte-observable@^0.4.0:
   resolved "https://registry.yarnpkg.com/svelte-observable/-/svelte-observable-0.4.0.tgz#74756e42fa3516c154d53f4244fa9cf691854224"
   integrity sha512-e8CfnkUfOZ/nAIpdFi+g63lS5oU+8J+KKhwkHpO0/reADeTBbIiVbcCqVrLsETp8+i+4ydQoawNCwMP/C8oMyA==
 
-svelte-session-manager@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/svelte-session-manager/-/svelte-session-manager-1.0.4.tgz#ebb516a23d0863d78d7512a0bcee4c88bddc821c"
-  integrity sha512-aTqPshFG+0RQDF51buFJZxxG7v2kYsIB4A98vwVA7fJtLkLGrgf5RW0kOyr6zM5tthgqkXLPQkluo5rxvkwwOQ==
+svelte-session-manager@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/svelte-session-manager/-/svelte-session-manager-1.0.5.tgz#8e991a5760d489b3923dda1827484820f9da9759"
+  integrity sha512-+y5uK4uz+0SE5G8R2Hk/RaMSLgtTHvL2VISTV8PMMJaeuhTnKB6lksGjL4V3kVLYU7EdTFiKJwkaqYj0m3dUSw==
 
 svelte@^3.18.1:
   version "3.18.1"
