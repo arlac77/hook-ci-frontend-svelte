@@ -22,16 +22,9 @@
     "svelte-session-manager": "^1.0.5"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.0.2",
-    "@rollup/plugin-node-resolve": "^7.1.1",
     "@semantic-release/exec": "^5.0.0",
     "npm-pkgbuild": "^6.11.5",
     "rollup": "^1.31.0",
-    "rollup-plugin-consts": "^1.0.1",
-    "rollup-plugin-copy": "^3.3.0",
-    "rollup-plugin-dev": "^1.1.1",
-    "rollup-plugin-svelte": "^5.1.1",
-    "rollup-plugin-terser": "^5.2.0",
     "semantic-release": "^17.0.2",
     "svelte": "^3.18.2",
     "svelte-apollo": "^0.3.0"
