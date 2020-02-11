@@ -37,7 +37,7 @@
     "svelte-apollo": "^0.3.0"
   },
   "engines": {
-    "node": ">=12.14.1"
+    "node": ">=13.8.0"
   },
   "repository": {
     "type": "git",
