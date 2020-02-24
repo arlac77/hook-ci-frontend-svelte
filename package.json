@@ -7,7 +7,6 @@
   ],
   "license": "BSD-2-Clause",
   "scripts": {
-    "deploy": "scp public/* root@odroid1:/services/hook-ci/frontend/",
     "prepare": "rollup -c",
     "start": "rollup -c -w"
   },
