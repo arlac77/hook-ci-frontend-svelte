@@ -81,8 +81,6 @@
     ]
   },
   "template": {
-    "repository": {
-      "url": "https://github.com/arlac77/npm-package-template-svelte-app.git"
-    }
+    "inheritFrom": "arlac77/template-svelte-app"
   }
 }
