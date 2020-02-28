@@ -3,7 +3,8 @@
   "version": "0.0.0-semantic-release",
   "description": "hook-ci web fronend",
   "keywords": [
-    "svelte"
+    "svelte",
+    "web"
   ],
   "license": "BSD-2-Clause",
   "scripts": {
