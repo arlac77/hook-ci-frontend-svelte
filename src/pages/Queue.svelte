@@ -11,6 +11,18 @@
       headers: session.authorizationHeader
     });
   }
+
+  async function jobAction(suffix) {
+    for (const job of $jobs) {
+      const response = await fetch(
+        `${api}/queue/${$queue.name}/job/${job.id}/${suffix}`,
+        {
+          method: "POST",
+          headers: session.authorizationHeader
+        }
+      );
+    }
+  }
 </script>
 
 <div class="card-panel">
@@ -27,6 +39,8 @@
         </ActionButton>
         <ActionButton action={() => queueAction('resume')}>Resume</ActionButton>
         <ActionButton action={() => queueAction('empty')}>Empty</ActionButton>
+        <ActionButton action={() => jobAction('rerun')}>Rerun</ActionButton>
+        <ActionButton action={() => jobAction('cancel')}>Cancel</ActionButton>
       </div>
     </div>
     {#if $queue.name === 'publish'}
