@@ -3,5 +3,5 @@
 </script>
 
 {#if $job}
-<div class="log">{JSON.stringify($job,undefined,2)}</div>
+  <div class="log">{JSON.stringify($job, undefined, 2)}</div>
 {/if}
