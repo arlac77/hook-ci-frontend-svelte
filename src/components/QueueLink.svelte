@@ -1,11 +1,10 @@
 <script>
   import { Link } from "svelte-guard-history-router";
-  import { tooltip } from "svelte-common";
 
   export let queue;
   export let state;
 </script>
 
 <Link href="/queue/{state === undefined ? queue.name : queue.name + '/' + state}">
-  <slot><div use:tooltip={`Active: ${queue.active}`}>{queue.name}</div></slot>
+  <slot><div aria-label="Active: {queue.active}" data-microtip-position="up" role="tooltip">{queue.name}</div></slot>
 </Link>
