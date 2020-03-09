@@ -31,6 +31,7 @@ export default {
     }),
     postcss({
       extract: true,
+      minimize: production,
       plugins: [postcssImport]
     }),
     svelte({
