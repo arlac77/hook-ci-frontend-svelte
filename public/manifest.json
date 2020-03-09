@@ -1,6 +1,6 @@
 {
   "name": "{{name}}",
-  "description": "{{description}} ({{version}})",
+  "description": "{{description}}",
   "icons": [
     {
       "src": "logo.svg",
