@@ -28,7 +28,7 @@
     "@semantic-release/exec": "^5.0.0",
     "npm-pkgbuild": "^6.11.6",
     "postcss-import": "^12.0.1",
-    "rollup": "^2.0.4",
+    "rollup": "^2.0.6",
     "rollup-plugin-consts": "^1.0.1",
     "rollup-plugin-dev": "^1.1.1",
     "rollup-plugin-postcss": "^2.4.0",
@@ -39,7 +39,7 @@
     "svelte-apollo": "^0.3.0"
   },
   "engines": {
-    "node": ">=13.10.1"
+    "node": ">=13.11.0"
   },
   "repository": {
     "type": "git",
