@@ -37,9 +37,7 @@ export default {
     }),
     svelte({
       dev: !production,
-      css: css => {
-        css.write(`${dist}/bundle.svelte.css`);
-      }
+      css: css => css.write(`${dist}/bundle.svelte.css`)
     }),
     resolve({ browser: true }),
     commonjs(),
