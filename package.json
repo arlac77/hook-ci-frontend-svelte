@@ -18,7 +18,7 @@
     "mf-styling": "arlac77/mf-styling",
     "microtip": "^0.2.2",
     "repository-provider": "^16.12.3",
-    "svelte-common": "^2.0.0",
+    "svelte-common": "^2.0.1",
     "svelte-guard-history-router": "^1.1.16",
     "svelte-session-manager": "^1.0.9"
   },
