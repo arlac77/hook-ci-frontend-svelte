@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each $repositories as repository (repository.name)}
+      {#each $repositories as repository (repository.fullName)}
         <tr>
           <td>
             <RepositoryLink {repository} />
