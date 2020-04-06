@@ -5275,10 +5275,10 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
-repository-provider@^16.13.0:
-  version "16.13.0"
-  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-16.13.0.tgz#f04252b01db4823b7279fc323aa3c2b2f9e05d73"
-  integrity sha512-02slbzPZHjagTfrnJyOLpeBDZmvpLwAkHrKONRB0diK8Ouh55GDmGWBva8Dxu30P+Abfz468kK2okpCWsYLdQA==
+repository-provider@^16.13.1:
+  version "16.13.1"
+  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-16.13.1.tgz#c21bd50086571321808bee9bad16694c25539c50"
+  integrity sha512-tNS7ToPoMyFt2/NsncmrehA7w40IRtSxueBUKu8SuDf2gjuhWgtLZpREVrBs3aYploF3Dy90Qn4yi4je8wwi3Q==
   dependencies:
     loglevel-mixin "^5.0.3"
 
