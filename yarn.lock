@@ -3554,10 +3554,10 @@ marked-terminal@^4.0.0:
     node-emoji "^1.10.0"
     supports-hyperlinks "^2.0.0"
 
-marked@^0.8.0:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.8.2.tgz#4faad28d26ede351a7a1aaa5fec67915c869e355"
-  integrity sha512-EGwzEeCcLniFX51DhTpmTom+dSA/MG/OBUDjnWtHbEnjAH180VzUeAw+oE4+Zv+CoYBWyRlYOTR0N8SO9R1PVw==
+marked@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-1.0.0.tgz#d35784245a04871e5988a491e28867362e941693"
+  integrity sha512-Wo+L1pWTVibfrSr+TTtMuiMfNzmZWiOPeO7rZsQUY5bgsxpHesBEcIWJloWVTFnrMXnf/TL30eTFSGJddmQAng==
 
 mdn-data@2.0.4:
   version "2.0.4"
@@ -3953,7 +3953,7 @@ npm-pick-manifest@^3.0.0, npm-pick-manifest@^3.0.2:
     npm-package-arg "^6.0.0"
     semver "^5.4.1"
 
-npm-pkgbuild@^6.11.9:
+npm-pkgbuild@^6.11.16:
   version "6.11.16"
   resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.11.16.tgz#37358ebdf6aae8bea52071319e98539f02eb6aa5"
   integrity sha512-Pm7KmGVnGdDZv0PCZRIGs73DrjVojl7/HnBZxT8rue0v4UFSq6f0BpkQYzStfmMJO/KaYZzREIumIZmtzyxsag==
@@ -5500,10 +5500,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.6.1.tgz#8354e67caa7b8bf24c2488d9e2f64da2be62eebe"
-  integrity sha512-1RhFDRJeg027YjBO6+JxmVWkEZY0ASztHhoEUEWxOwkh4mjO58TFD6Uo7T7Y3FbmDpRTfKhM5NVxJyimCn0Elg==
+rollup@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.7.1.tgz#d571e49a35b1c923fe9cf6f7290dba2482864fdc"
+  integrity sha512-c1FCjY8HK1nAq0bTZHaR72ZknpP7p0EjxbcVc6BcmtOosurK//P5jtwxX+f/4fgtbrjczqf0uvR+EdtxpriE8g==
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -5544,10 +5544,10 @@ sax@~1.2.4:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
 
-semantic-release@^17.0.6:
-  version "17.0.6"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.0.6.tgz#18e6a4f99b343f5d4d10b7fb8d9900a03040ede3"
-  integrity sha512-4djSoKUiq8ShAiKEzDKkcrzFyDREFJRMsY/efr/b48dcin2g+s4TsZUTniTg3Zvk+TM9G5rNBKyXfFgVO6wJNA==
+semantic-release@^17.0.7:
+  version "17.0.7"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.0.7.tgz#03792bf6e1a9ad2353dfd0da6a5d5511fa672b06"
+  integrity sha512-F6FzJI1yiGavzCTXir4yPthK/iozZPJ4myUYndiHhSHbmOcCSJ2m7V+P6sFwVpDpQKQp1Q31M68sTJ/Q/27Bow==
   dependencies:
     "@semantic-release/commit-analyzer" "^8.0.0"
     "@semantic-release/error" "^2.2.0"
@@ -5566,7 +5566,7 @@ semantic-release@^17.0.6:
     hook-std "^2.0.0"
     hosted-git-info "^3.0.0"
     lodash "^4.17.15"
-    marked "^0.8.0"
+    marked "^1.0.0"
     marked-terminal "^4.0.0"
     micromatch "^4.0.2"
     p-each-series "^2.1.0"
