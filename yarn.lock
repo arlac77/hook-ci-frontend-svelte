@@ -293,9 +293,9 @@
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
 "@types/node@*", "@types/node@>= 8", "@types/node@>=6":
-  version "13.13.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.2.tgz#160d82623610db590a64e8ca81784e11117e5a54"
-  integrity sha512-LB2R1Oyhpg8gu4SON/mfforE525+Hi/M1ineICEDftqNVTyFg1aRIeGuTvXAoWHc4nbrFncWtJgMmoyRvuGh7A==
+  version "13.13.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.4.tgz#1581d6c16e3d4803eb079c87d4ac893ee7501c2c"
+  integrity sha512-x26ur3dSXgv5AwKS0lNfbjpCakGIduWU1DU91Zz58ONRWrIKGunmZBNv4P7N+e27sJkiGDsw/3fT4AtsqQBrBA==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -5311,10 +5311,10 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
-repository-provider@^16.17.3:
-  version "16.17.3"
-  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-16.17.3.tgz#25c663b711bde38f7f1da04662d8313f5faa3746"
-  integrity sha512-aRvSdA+kZui1Kl/4xjtJOjPLMhWDv0owtjYW2mdHg2fgE14SV7gYzjNYpz6oNy6mve/9mnn2AH11SPBZPVGChA==
+repository-provider@^16.17.5:
+  version "16.17.5"
+  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-16.17.5.tgz#3310a3a2f2f2a5038d8fd9872f94ac7df20e9583"
+  integrity sha512-7lwZVSOzimjuZok9VMH9kKQliBOwd980xCR7RRse5hMXAEDqRIrGY4rrxPaMknVR4LyGMI1HlbUE+eSRsV0jSQ==
   dependencies:
     loglevel-mixin "^5.0.3"
 
