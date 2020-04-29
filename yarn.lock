@@ -3945,7 +3945,7 @@ npm-pick-manifest@^3.0.0, npm-pick-manifest@^3.0.2:
     npm-package-arg "^6.0.0"
     semver "^5.4.1"
 
-npm-pkgbuild@^6.11.17:
+npm-pkgbuild@^6.11.18:
   version "6.11.18"
   resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.11.18.tgz#0badd80cf3dd738f9ef414b609436016abd41a22"
   integrity sha512-KRbSwForyqcrZwkqHZkDZAwyvJ+VKywMNf3j5y/kBgWboDPMPELFME9GZ7Xsc/WiZJGooTtts+5csAzJjgpSEQ==
@@ -5311,10 +5311,10 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
-repository-provider@^16.17.5:
-  version "16.17.5"
-  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-16.17.5.tgz#3310a3a2f2f2a5038d8fd9872f94ac7df20e9583"
-  integrity sha512-7lwZVSOzimjuZok9VMH9kKQliBOwd980xCR7RRse5hMXAEDqRIrGY4rrxPaMknVR4LyGMI1HlbUE+eSRsV0jSQ==
+repository-provider@^16.17.6:
+  version "16.17.6"
+  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-16.17.6.tgz#06d1cc4fa3d7396f124a58eff2d16c9c3b444739"
+  integrity sha512-u4N4BZFQ/lcKaow4IBz+bi/lotGoWAzsiqhdEccMvVplx07Sa7hwQzeJjyMEA9/yLNlPWHZv3ySp7A+L0+CQZw==
   dependencies:
     loglevel-mixin "^5.0.3"
 
