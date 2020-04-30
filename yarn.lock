@@ -5184,10 +5184,10 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
-repository-provider@^16.17.6:
-  version "16.17.6"
-  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-16.17.6.tgz#06d1cc4fa3d7396f124a58eff2d16c9c3b444739"
-  integrity sha512-u4N4BZFQ/lcKaow4IBz+bi/lotGoWAzsiqhdEccMvVplx07Sa7hwQzeJjyMEA9/yLNlPWHZv3ySp7A+L0+CQZw==
+repository-provider@^17.0.0:
+  version "17.0.0"
+  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-17.0.0.tgz#a864e8edc9b9bf285fef62a34b9584b1e67eadea"
+  integrity sha512-lIGZuEv31C7METg5w7lJpHYk4SBG1FWKgwbW/maJ9rxAoTsgwv10DD1Z1WlNdR/5SgicNOtcakPy/D6yty+Gpg==
   dependencies:
     loglevel-mixin "^5.0.3"
 
@@ -6023,9 +6023,9 @@ term-size@^1.2.0:
     execa "^0.7.0"
 
 terser@^4.6.2:
-  version "4.6.12"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-4.6.12.tgz#44b98aef8703fdb09a3491bf79b43faffc5b4fee"
-  integrity sha512-fnIwuaKjFPANG6MAixC/k1TDtnl1YlPLUlLVIxxGZUn1gfUx2+l3/zGNB72wya+lgsb50QBi2tUV75RiODwnww==
+  version "4.6.13"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-4.6.13.tgz#e879a7364a5e0db52ba4891ecde007422c56a916"
+  integrity sha512-wMvqukYgVpQlymbnNbabVZbtM6PN63AzqexpwJL8tbh/mRT9LE5o+ruVduAGL7D6Fpjl+Q+06U5I9Ul82odAhw==
   dependencies:
     commander "^2.20.0"
     source-map "~0.6.1"
