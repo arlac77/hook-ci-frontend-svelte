@@ -8,9 +8,19 @@
     <h5 class="card-title">{repository.name}</h5>
     <h6 class="card-subtitle">{repository.description}</h6>
     <p class="card-text">Id {repository.id}</p>
-    <p class="card-text">Archived {repository.isArchived}</p>
-    <p class="card-text">Locked {repository.isLocked}</p>
-    <p class="card-text">Disabled {repository.isDisabled}</p>
+
+    <label>
+      <input type="checkbox" bind:checked={repository.isArchived} />
+      Archived
+    </label>
+    <label>
+      <input type="checkbox" bind:checked={repository.isLocked} />
+      Locked
+    </label>
+    <label>
+      <input type="checkbox" bind:checked={repository.isDisabled} />
+      Disabled
+    </label>
   </div>
   <ul>
     {#each repository.urls as url}
