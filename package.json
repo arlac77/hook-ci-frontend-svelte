@@ -13,9 +13,6 @@
     "start": "rollup -c -w"
   },
   "dependencies": {
-    "apollo-boost": "^0.4.7",
-    "apollo-client": "^2.6.8",
-    "graphql": "^15.0.0",
     "mf-styling": "arlac77/mf-styling",
     "microtip": "^0.2.2",
     "repository-provider": "^16.17.6",
@@ -39,7 +36,7 @@
     "rollup-plugin-terser": "^5.3.0",
     "semantic-release": "^17.0.7",
     "svelte": "^3.21.0",
-    "svelte-apollo": "^0.3.0"
+    "svql": "0.0.27"
   },
   "engines": {
     "node": ">=14.0.0"

@@ -1,8 +1,7 @@
-import { derived } from "svelte/store";
+import { derived, readable } from "svelte/store";
 import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
 import { Session } from "svelte-session-manager";
-import ApolloClient, { gql } from "apollo-boost";
-import { query } from "svelte-apollo";
+import { setupClient, query } from "svql";
 import { Provider, Repository as MyRepository } from "repository-provider";
 import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
@@ -21,9 +20,9 @@ import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
 import { Node as myNode } from "./Node.mjs";
-import base from 'consts:base';
-import api from 'consts:api';
-import graphQl from 'consts:graphQl';
+import base from "consts:base";
+import api from "consts:api";
+import graphQl from "consts:graphQl";
 
 export const session = new Session(localStorage);
 
@@ -96,7 +95,11 @@ function getRepositoryGroup(gdata) {
 
   let g = repositoryProvider._repositoryGroups.get(gdata.name);
   if (g === undefined) {
-    g = new repositoryProvider.repositoryGroupClass(repositoryProvider, gdata.name, gdata);
+    g = new repositoryProvider.repositoryGroupClass(
+      repositoryProvider,
+      gdata.name,
+      gdata
+    );
     repositoryProvider._repositoryGroups.set(g.name, g);
   }
   return g;
@@ -206,7 +209,7 @@ export const job = derived([jobs, router.keys.job], ([$jobs, $job], set) => {
   return () => {};
 });
 
-const NODES = gql`
+const NODES = `
   {
     nodes {
       name
@@ -242,19 +245,15 @@ function getNode(name, options) {
   return node;
 }
 
-const client = new ApolloClient({ uri: graphQl });
-export const rawNodes = query(client, { query: NODES });
+setupClient({
+  url: graphQl
+});
 
-export const nodes = derived(
-  rawNodes,
-  ($rawNodes, set) => {
-    $rawNodes.then(nodes => {
-      set(nodes.data.nodes.map(node => getNode(node.name, node)));
-    });
-    return () => {};
-  },
-  []
-);
+export const nodes = readable([], async set => {
+  const data = await query(NODES, {});
+  set(data.nodes.map(node => getNode(node.name, node)));
+  return () => {};
+});
 
 export const node = derived(
   [nodes, router.keys.node],
