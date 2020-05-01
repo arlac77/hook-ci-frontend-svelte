@@ -2,7 +2,7 @@ import { derived, readable } from "svelte/store";
 import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
 import { Session } from "svelte-session-manager";
 import { setupClient, query } from "svql";
-import { Provider, Repository as MyRepository } from "repository-provider";
+import { Provider } from "repository-provider";
 import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
 import Repositories from "./pages/Repositories.svelte";
@@ -71,38 +71,19 @@ function getRepository(rdata) {
     return undefined;
   }
 
-  const p = repositoryProvider;
   const fn = rdata.full_name || rdata.fullName;
   const [gn, rn] = fn.split(/\//);
-  let g = p._repositoryGroups.get(gn);
-  if (g === undefined) {
-    g = new p.repositoryGroupClass(p, gn);
-    p._repositoryGroups.set(g.name, g);
-  }
-  let r = g._repositories.get(rn);
-  if (r === undefined) {
-    r = new MyRepository(g, rn, rdata);
-    g._repositories.set(r.name, r);
-  }
 
-  return r;
+  const g = repositoryProvider.addRepositoryGroup(gn);
+  return g.addRepository(rn, rdata);
 }
 
 function getRepositoryGroup(gdata) {
   if (gdata === undefined) {
     return undefined;
   }
-
-  let g = repositoryProvider._repositoryGroups.get(gdata.name);
-  if (g === undefined) {
-    g = new repositoryProvider.repositoryGroupClass(
-      repositoryProvider,
-      gdata.name,
-      gdata
-    );
-    repositoryProvider._repositoryGroups.set(g.name, g);
-  }
-  return g;
+  
+  return repositoryProvider.addRepositoryGroup(gdata.name, gdata);
 }
 
 export const repositories = derived(
