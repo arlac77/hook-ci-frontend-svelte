@@ -21,6 +21,10 @@
       <input type="checkbox" bind:checked={repository.isDisabled} />
       Disabled
     </label>
+    <label>
+      <input type="checkbox" bind:checked={repository.isTemplate} />
+      Template
+    </label>
   </div>
   <ul>
     {#each repository.urls as url}
