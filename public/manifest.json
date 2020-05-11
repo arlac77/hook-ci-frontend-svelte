@@ -1,15 +1,15 @@
 {
   "name": "{{name}}",
+  "short_name": "{{name}}",
   "description": "{{description}}",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "logo.svg",
       "sizes": "50x50",
       "purpose": "any"
     }
-  ],
-  "start_url": "/index.html",
-  "display": "standalone",
-  "orientation": "portrait",
-  "short_name": "{{name}}"
+  ]
 }
