@@ -1,11 +1,20 @@
 {
   "name": "hook-ci-frontend-svelte",
   "version": "0.0.0-semantic-release",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "hook-ci web fronend",
   "keywords": [
     "svelte",
     "web",
     "hook-ci"
+  ],
+  "contributors": [
+    {
+      "name": "Markus Felten",
+      "email": "markus.felten@gmx.de"
+    }
   ],
   "license": "BSD-2-Clause",
   "scripts": {
@@ -84,8 +93,8 @@
   },
   "template": {
     "inheritFrom": [
-      "arlac77/template-svelte-app",
-      "arlac77/template-github"
+      "arlac77/template-arlac77-github",
+      "arlac77/template-svelte-app"
     ]
   }
 }
