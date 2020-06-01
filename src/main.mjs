@@ -1,5 +1,5 @@
 import { derived, readable } from "svelte/store";
-import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
+import { Router, route, Guard } from "svelte-guard-history-router";
 import { Session } from "svelte-session-manager";
 import { setupClient, query } from "svql";
 import { Provider } from "repository-provider";
@@ -38,8 +38,7 @@ const needsSession = new SessionGuard();
 
 export const router = new Router(
   [
-    route("*", NotFound),
-    route("/*", Home),
+    route("*", Home),
     route("/login", Login),
     route("/about", About),
     route("/group", needsSession, RepositoryGroups),
