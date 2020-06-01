@@ -3417,6 +3417,11 @@ marked@^1.0.0:
   resolved "https://registry.yarnpkg.com/marked/-/marked-1.1.0.tgz#62504ad4d11550c942935ccc5e39d64e5a4c4e50"
   integrity sha512-EkE7RW6KcXfMHy2PA7Jg0YJE1l8UPEZE8k45tylzmZM30/r1M1MUXWQfJlrSbsTeh7m/XTwHbWUENvAJZpp1YA==
 
+matching-iterator@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/matching-iterator/-/matching-iterator-1.1.0.tgz#4733fb22cc0d17dfdece2896205ed3c31ef637ed"
+  integrity sha512-EAQAIQnBP4eNORnE6THJ1g9ek1eN7ICONEthIhQ+4SKKQk3DaUVeXVmHAPXNBaoAG+lX6BYAxvxztbz0Tm5UXQ==
+
 mdn-data@2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.4.tgz#699b3c38ac6f1d728091a64650b65d388502fd5b"
@@ -5158,12 +5163,13 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
-repository-provider@^19.4.0:
-  version "19.4.0"
-  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-19.4.0.tgz#53b88b23f18f3fdfcbc14fc3b6424e86cb8fbc89"
-  integrity sha512-uqX6/8U5P2q+5lrh6r8yjVhvnEQrQZn6yvXn77M5IMttaSG+W3ZsDjZJe8RTbGPa4wFR6N7YRG7ltju8Dq/fgw==
+repository-provider@^20.1.1:
+  version "20.1.1"
+  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-20.1.1.tgz#a229430dfd16578f4c5403533cafeede3778809c"
+  integrity sha512-Gky05mPP5y65bUlOlZHft3P0LVa1oirRzoV95kDtwgX4I506l/NJZpE8zNf3zNZV+/2BKrYIhEBp+x4dRGGyfA==
   dependencies:
     loglevel-mixin "^5.0.3"
+    matching-iterator "^1.0.0"
 
 request@^2.88.0:
   version "2.88.2"
