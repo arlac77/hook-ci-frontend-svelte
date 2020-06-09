@@ -6,9 +6,9 @@
   },
   "description": "hook-ci web fronend",
   "keywords": [
+    "hook-ci",
     "svelte",
-    "web",
-    "hook-ci"
+    "web"
   ],
   "contributors": [
     {
