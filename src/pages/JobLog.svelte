@@ -1,14 +1,12 @@
 <script>
   import { onDestroy } from "svelte";
-  import { session } from "../main.mjs";
+  import { session, router } from "../main.mjs";
   import api from "consts:api";
 
-  export let state;
-
   onDestroy(
-    state.subscribe(value => {
-      const job = value.params.job;
-      const queue = value.params.queue;
+    router.subscribe(router => {
+      const job = router.params.job;
+      const queue = router.params.queue;
       if (job && queue) {
         refresh(`${api}/queue/${queue}/job/${job}/log?start=0&end=10000`);
       }

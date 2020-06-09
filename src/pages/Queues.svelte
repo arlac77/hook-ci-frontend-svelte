@@ -20,7 +20,7 @@
       {#each $queues as queue (queue.name)}
         <tr>
           <td>
-            <QueueLink {queue}/>
+            <QueueLink {queue} state=''/>
           </td>
           <td><QueueLink {queue} state={'active'}>{queue.active}</QueueLink></td>
           <td><QueueLink {queue} state={'waiting'}>{queue.waiting}</QueueLink></td>
