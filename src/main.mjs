@@ -2,7 +2,7 @@ import { derived, readable } from "svelte/store";
 import { Router, route, Guard } from "svelte-guard-history-router";
 import { Session } from "svelte-session-manager";
 import { setupClient, query } from "svql";
-import { Provider } from "repository-provider";
+import { MultiGroupProvider } from "repository-provider";
 import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
 import Repositories from "./pages/Repositories.svelte";
@@ -63,7 +63,7 @@ export const router = new Router(
   base
 );
 
-const repositoryProvider = new Provider();
+const repositoryProvider = new MultiGroupProvider();
 
 function getRepository(rdata) {
   if (rdata === undefined) {
