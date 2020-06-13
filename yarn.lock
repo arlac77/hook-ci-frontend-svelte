@@ -5165,10 +5165,10 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
-repository-provider@^21.0.1:
-  version "21.0.1"
-  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-21.0.1.tgz#6f7c54fb6ef1a18c67366f8d51ab0ae74961fe0d"
-  integrity sha512-zBZ6HcjiK81MTMfYailsQejSpfwOBcnvOIOg8/EY4vSbGPTRflOMyFj85fmjd/D9zzgGJsXyNVE81gFXwOLv8w==
+repository-provider@^21.0.4:
+  version "21.0.4"
+  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-21.0.4.tgz#9883f467e1041b2fb40346f191a4a4c433654a16"
+  integrity sha512-F8y6tv1RU4l5gWu7DXp2m9vHt5YmIQMZ33ps7XAeFpzBCQ9/3wgnYXpXRl50OmQPgSABE6mP1LXIMzszaDWpkA==
   dependencies:
     matching-iterator "^1.0.0"
 
@@ -5344,10 +5344,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.15.0:
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.15.0.tgz#1324633188c7f82138bd3bdc99416009ee541f48"
-  integrity sha512-HAk4kyXiV5sdNDnbKWk5zBPnkX/DAgx09Kbp8rRIRDVsTUVN3vnSowR7ZHkV6/lAiE6c2TQ8HtYb72aCPGW4Jw==
+rollup@^2.16.0:
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.16.0.tgz#f45ed04a2cafdb4d1b71a2a77b5673334d811a32"
+  integrity sha512-95NglykUQAhl+mTFZqVvGUWDoGHV4/XanOZBbR7LOwTKODde5yFNHfVDZEnERBMuQViDuYaxOlFW87i1GQMihA==
   optionalDependencies:
     fsevents "~2.1.2"
 
