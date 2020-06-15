@@ -5165,10 +5165,10 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
-repository-provider@^22.1.0:
-  version "22.1.0"
-  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-22.1.0.tgz#a98dd74f54e11413b6ddc4b7049251854e6038eb"
-  integrity sha512-KAKuNIp/fh8jB7yFaCpt7LlNnrJ1/fBldSo4Wu96GzsCq/9hVG7fZUlKlMAZQu1zVHbFmbaDO10kpW8wwy0txg==
+repository-provider@^22.1.2:
+  version "22.1.2"
+  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-22.1.2.tgz#9e1802ffdba367876005275fb259670d49800601"
+  integrity sha512-owokHQpqN4L9bhyurNrA+xWHEre3aOfWXBVao/XdoYQ9ETS8UmFqx07pDOEq68cK1JwHNiDkVvR2BBncY7ptrA==
   dependencies:
     matching-iterator "^1.0.0"
 
