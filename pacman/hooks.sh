@@ -1,6 +1,6 @@
 
 post_install() {
-	(cd {{installdir}}; gzip -k -9 *.html *.css *.mjs *.json *.map)
+	(cd {{installdir}}; gzip -k -9 *.html *.css *.mjs *.json *.map *.svg)
 	systemctl reload nginx
 }
 
@@ -9,7 +9,7 @@ pre_upgrade() {
 }
 
 post_upgrade() {
-	(cd {{installdir}}; gzip -k -9 *.html *.css *.mjs *.json *.map)
+	(cd {{installdir}}; gzip -k -9 *.html *.css *.mjs *.json *.map *.svg)
 	systemctl reload nginx
 }
 
