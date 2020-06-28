@@ -1,23 +1,22 @@
 import { derived, readable } from "svelte/store";
-import { Router, route, Guard } from "svelte-guard-history-router";
+import {
+  BaseRouter,
+  SkeletonRoute,
+  route,
+  Guard
+} from "svelte-guard-history-router";
 import { Session } from "svelte-session-manager";
 import { setupClient, query } from "svql";
 import { MultiGroupProvider } from "repository-provider";
-import Queues from "./pages/Queues.svelte";
 import Queue from "./pages/Queue.svelte";
-import Repositories from "./pages/Repositories.svelte";
 import Repository from "./pages/Repository.svelte";
 import RepositoryGroup from "./pages/RepositoryGroup.svelte";
-import RepositoryGroups from "./pages/RepositoryGroups.svelte";
 import Jobs from "./pages/Jobs.svelte";
 import Job from "./pages/Job.svelte";
 import JobRaw from "./pages/JobRaw.svelte";
 import JobLog from "./pages/JobLog.svelte";
 import Nodes from "./pages/Nodes.svelte";
 import Node from "./pages/Node.svelte";
-import About from "./pages/About.svelte";
-import Login from "./pages/Login.svelte";
-import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
 import { Node as myNode } from "./Node.mjs";
 import base from "consts:base";
@@ -34,31 +33,35 @@ class SessionGuard extends Guard {
   }
 }
 
-const needsSession = new SessionGuard();
+export const needsSession = new SessionGuard();
 
-export const router = new Router(
+export const router = new BaseRouter(
   [
-    route("*", Home),
-    route("/login", Login),
-    route("/about", About),
-    route("/group", needsSession, RepositoryGroups),
-    route("/group/:repositoryGroup", needsSession, RepositoryGroup),
-    route("/group/:repositoryGroup/:repository", needsSession, Repository),
-    route("/repository", needsSession, Repositories),
-    route("/queue", needsSession, Queues),
-    route("/queue/:queue", needsSession, Queue),
-    route("/queue/:queue/active", needsSession, Queue),
-    route("/queue/:queue/waiting", needsSession, Queue),
-    route("/queue/:queue/delayed", needsSession, Queue),
-    route("/queue/:queue/failed", needsSession, Queue),
-    route("/queue/:queue/completed", needsSession, Queue),
-    route("/queue/:queue/paused", needsSession, Queue),
-    route("/queue/:queue/job", needsSession, Jobs),
-    route("/queue/:queue/job/:job", needsSession, Job),
-    route("/queue/:queue/job/:job/raw", needsSession, JobRaw),
-    route("/queue/:queue/job/:job/log", needsSession, JobLog),
-    route("/node", needsSession, Nodes),
-    route("/node/:node", needsSession, Node)
+    route(
+      "/group/:repositoryGroup",
+      SkeletonRoute,
+      needsSession,
+      RepositoryGroup
+    ),
+    route(
+      "/group/:repositoryGroup/:repository",
+      SkeletonRoute,
+      needsSession,
+      Repository
+    ),
+    route("/queue/:queue", SkeletonRoute, needsSession, Queue),
+    route("/queue/:queue/active", SkeletonRoute, needsSession, Queue),
+    route("/queue/:queue/waiting", SkeletonRoute, needsSession, Queue),
+    route("/queue/:queue/delayed", SkeletonRoute, needsSession, Queue),
+    route("/queue/:queue/failed", SkeletonRoute, needsSession, Queue),
+    route("/queue/:queue/completed", SkeletonRoute, needsSession, Queue),
+    route("/queue/:queue/paused", SkeletonRoute, needsSession, Queue),
+    route("/queue/:queue/job", SkeletonRoute, needsSession, Jobs),
+    route("/queue/:queue/job/:job", SkeletonRoute, needsSession, Job),
+    route("/queue/:queue/job/:job/raw", SkeletonRoute, needsSession, JobRaw),
+    route("/queue/:queue/job/:job/log", SkeletonRoute, needsSession, JobLog),
+    route("/node", SkeletonRoute, needsSession, Nodes),
+    route("/node/:node", SkeletonRoute, needsSession, Node)
   ],
   base
 );
@@ -81,7 +84,7 @@ function getRepositoryGroup(gdata) {
   if (gdata === undefined) {
     return undefined;
   }
-  
+
   return repositoryProvider.addRepositoryGroup(gdata.name, gdata);
 }
 

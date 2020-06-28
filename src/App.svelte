@@ -1,60 +1,81 @@
 <script>
   import * as style from "./main.css";
-  import { Outlet, link, active } from "svelte-guard-history-router";
+  import {
+    Router,
+    Route,
+    Outlet,
+    link,
+    active
+  } from "svelte-guard-history-router";
   import { Menue } from "svelte-common";
-  import { router, session } from "./main.mjs";
+  import { router, session, needsSession } from "./main.mjs";
+  import Home from "./pages/Home.svelte";
+  import About from "./pages/About.svelte";
+  import Login from "./pages/Login.svelte";
+  import Queues from "./pages/Queues.svelte";
+  import Repositories from "./pages/Repositories.svelte";
+  import RepositoryGroups from "./pages/RepositoryGroups.svelte";
 
   function logout() {
     session.invalidate();
   }
 </script>
 
-<nav>
-  <a href="/" use:link={router} use:active={router}>
-    <img class="logo" src="logo.svg" alt="Hook CI" />
-    Hook CI
-  </a>
-  <ul class="left">
-    <li>
-      <a href="/queue" use:link={router} use:active={router}>Queues</a>
-    </li>
-    <li>
-      <a href="/group" use:link={router} use:active={router}>
-        Repository Groups
-      </a>
-    </li>
-
-    <li>
-      <a href="/repository" use:link={router} use:active={router}>
-        Repositories
-      </a>
-    </li>
-    <li>
-      <a href="/node" use:link={router} use:active={router}>Nodes</a>
-    </li>
-    <li>
-      <a href="/about" use:link={router} use:active={router}>About</a>
-    </li>
-  </ul>
-  <ul>
-    <li>
-      {#if $session.isValid}
-        <Menue>
-          <div slot="title" class="dropdown-trigger">{$session.username}</div>
-          <div slot="content" class="dropdown-menu dropdown-menu-sw">
-            <a href="/" class="dropdown-item" on:click|preventDefault={logout}>
-              Logout {$session.username}
-            </a>
-            <div class="dropdown-divider" />
-            <a href="#!" class="dropdown-item">three</a>
-          </div>
-        </Menue>
-      {:else}
-        <a href="/login" use:link={router} use:active={router}>Login</a>
-      {/if}
-    </li>
-  </ul>
-</nav>
-<main>
-  <Outlet {router} />
-</main>
+<Router {router}>
+  <nav>
+    <Route path="/" component={Home}>
+      <img class="logo" src="logo.svg" alt="Hook CI" />
+      Hook CI
+    </Route>
+    <ul class="left">
+      <li>
+        <Route path="/queue" guards={needsSession} component={Queues}>
+          Queues
+        </Route>
+      </li>
+      <li>
+        <Route path="/group" guards={needsSession} component={RepositoryGroups}>
+          Repository Groups
+        </Route>
+      </li>
+      <li>
+        <Route
+          path="/repository"
+          guards={needsSession}
+          component={Repositories}>
+          Repositories
+        </Route>
+      </li>
+      <li>
+        <a href="/node" use:link={router} use:active={router}>Nodes</a>
+      </li>
+      <li>
+        <Route path="/about" component={About}>About</Route>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        {#if $session.isValid}
+          <Menue>
+            <div slot="title" class="dropdown-trigger">{$session.username}</div>
+            <div slot="content" class="dropdown-menu dropdown-menu-sw">
+              <a
+                href="/"
+                class="dropdown-item"
+                on:click|preventDefault={logout}>
+                Logout {$session.username}
+              </a>
+              <div class="dropdown-divider" />
+              <a href="#!" class="dropdown-item">three</a>
+            </div>
+          </Menue>
+        {:else}
+          <Route path="/login" component={Login}>Login</Route>
+        {/if}
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <Outlet />
+  </main>
+</Router>
