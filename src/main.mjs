@@ -1,7 +1,6 @@
 import { derived, readable } from "svelte/store";
 import {
   BaseRouter,
-  SkeletonRoute,
   route,
   Guard
 } from "svelte-guard-history-router";
@@ -37,31 +36,21 @@ export const needsSession = new SessionGuard();
 
 export const router = new BaseRouter(
   [
-    route(
-      "/group/:repositoryGroup",
-      SkeletonRoute,
-      needsSession,
-      RepositoryGroup
-    ),
-    route(
-      "/group/:repositoryGroup/:repository",
-      SkeletonRoute,
-      needsSession,
-      Repository
-    ),
-    route("/queue/:queue", SkeletonRoute, needsSession, Queue),
-    route("/queue/:queue/active", SkeletonRoute, needsSession, Queue),
-    route("/queue/:queue/waiting", SkeletonRoute, needsSession, Queue),
-    route("/queue/:queue/delayed", SkeletonRoute, needsSession, Queue),
-    route("/queue/:queue/failed", SkeletonRoute, needsSession, Queue),
-    route("/queue/:queue/completed", SkeletonRoute, needsSession, Queue),
-    route("/queue/:queue/paused", SkeletonRoute, needsSession, Queue),
-    route("/queue/:queue/job", SkeletonRoute, needsSession, Jobs),
-    route("/queue/:queue/job/:job", SkeletonRoute, needsSession, Job),
-    route("/queue/:queue/job/:job/raw", SkeletonRoute, needsSession, JobRaw),
-    route("/queue/:queue/job/:job/log", SkeletonRoute, needsSession, JobLog),
-    route("/node", SkeletonRoute, needsSession, Nodes),
-    route("/node/:node", SkeletonRoute, needsSession, Node)
+    route("/group/:repositoryGroup", needsSession, RepositoryGroup),
+    route("/group/:repositoryGroup/:repository", needsSession, Repository),
+    route("/queue/:queue", needsSession, Queue),
+    route("/queue/:queue/active", needsSession, Queue),
+    route("/queue/:queue/waiting", needsSession, Queue),
+    route("/queue/:queue/delayed", needsSession, Queue),
+    route("/queue/:queue/failed", needsSession, Queue),
+    route("/queue/:queue/completed", needsSession, Queue),
+    route("/queue/:queue/paused", needsSession, Queue),
+    route("/queue/:queue/job", needsSession, Jobs),
+    route("/queue/:queue/job/:job", needsSession, Job),
+    route("/queue/:queue/job/:job/raw", needsSession, JobRaw),
+    route("/queue/:queue/job/:job/log", needsSession, JobLog),
+    route("/node", needsSession, Nodes),
+    route("/node/:node", needsSession, Node)
   ],
   base
 );
