@@ -15,6 +15,7 @@
   import Queues from "./pages/Queues.svelte";
   import Repositories from "./pages/Repositories.svelte";
   import RepositoryGroups from "./pages/RepositoryGroups.svelte";
+  import Nodes from "./pages/Nodes.svelte";
 
   function logout() {
     session.invalidate();
@@ -47,7 +48,7 @@
         </Route>
       </li>
       <li>
-        <a href="/node" use:link={router} use:active={router}>Nodes</a>
+        <Route path="/node" guards={needsSession} component={Nodes}>Nodes</Route>
       </li>
       <li>
         <Route path="/about" component={About}>About</Route>

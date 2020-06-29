@@ -14,7 +14,6 @@ import Jobs from "./pages/Jobs.svelte";
 import Job from "./pages/Job.svelte";
 import JobRaw from "./pages/JobRaw.svelte";
 import JobLog from "./pages/JobLog.svelte";
-import Nodes from "./pages/Nodes.svelte";
 import Node from "./pages/Node.svelte";
 import App from "./App.svelte";
 import { Node as myNode } from "./Node.mjs";
@@ -49,7 +48,6 @@ export const router = new BaseRouter(
     route("/queue/:queue/job/:job", needsSession, Job),
     route("/queue/:queue/job/:job/raw", needsSession, JobRaw),
     route("/queue/:queue/job/:job/log", needsSession, JobLog),
-    route("/node", needsSession, Nodes),
     route("/node/:node", needsSession, Node)
   ],
   base
