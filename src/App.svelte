@@ -24,7 +24,7 @@
 
 <Router {router}>
   <nav>
-    <Route path="/" component={Home}>
+    <Route href="/" path="*" component={Home}>
       <img class="logo" src="logo.svg" alt="Hook CI" />
       Hook CI
     </Route>
@@ -48,7 +48,9 @@
         </Route>
       </li>
       <li>
-        <Route path="/node" guards={needsSession} component={Nodes}>Nodes</Route>
+        <Route path="/node" guards={needsSession} component={Nodes}>
+          Nodes
+        </Route>
       </li>
       <li>
         <Route path="/about" component={About}>About</Route>
