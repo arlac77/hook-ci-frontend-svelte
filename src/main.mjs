@@ -1,9 +1,5 @@
 import { derived, readable } from "svelte/store";
-import {
-  BaseRouter,
-  route,
-  Guard
-} from "svelte-guard-history-router";
+import { BaseRouter, route, Guard } from "svelte-guard-history-router";
 import { Session } from "svelte-session-manager";
 import { setupClient, query } from "svql";
 import { MultiGroupProvider } from "repository-provider";
@@ -33,21 +29,23 @@ class SessionGuard extends Guard {
 
 export const needsSession = new SessionGuard();
 
+export const queueRoute = route("/queue/:queue", needsSession, Queue);
+
 export const router = new BaseRouter(
   [
     route("/group/:repositoryGroup", needsSession, RepositoryGroup),
     route("/group/:repositoryGroup/:repository", needsSession, Repository),
-    route("/queue/:queue", needsSession, Queue),
-    route("/queue/:queue/active", needsSession, Queue),
-    route("/queue/:queue/waiting", needsSession, Queue),
-    route("/queue/:queue/delayed", needsSession, Queue),
-    route("/queue/:queue/failed", needsSession, Queue),
-    route("/queue/:queue/completed", needsSession, Queue),
-    route("/queue/:queue/paused", needsSession, Queue),
-    route("/queue/:queue/job", needsSession, Jobs),
-    route("/queue/:queue/job/:job", needsSession, Job),
-    route("/queue/:queue/job/:job/raw", needsSession, JobRaw),
-    route("/queue/:queue/job/:job/log", needsSession, JobLog),
+    queueRoute,
+    route(queueRoute, "/active", Queue),
+    route(queueRoute, "/waiting", Queue),
+    route(queueRoute, "/delayed", Queue),
+    route(queueRoute, "/failed", Queue),
+    route(queueRoute, "/completed", Queue),
+    route(queueRoute, "/paused", Queue),
+    route(queueRoute, "/job", Jobs),
+    route(queueRoute, "/job/:job", Job),
+    route(queueRoute, "/job/:job/raw", JobRaw),
+    route(queueRoute, "/job/:job/log", JobLog),
     route("/node/:node", needsSession, Node)
   ],
   base
