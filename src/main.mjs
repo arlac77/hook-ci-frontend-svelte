@@ -30,6 +30,8 @@ class SessionGuard extends Guard {
 export const needsSession = new SessionGuard();
 
 export const queueRoute = route("/queue/:queue", needsSession, Queue);
+export const jobsRoute = route(queueRoute, "/job", Jobs);
+export const jobRoute = route(jobsRoute, "/:job", Job);
 
 export const router = new BaseRouter(
   [
@@ -42,10 +44,10 @@ export const router = new BaseRouter(
     route(queueRoute, "/failed", Queue),
     route(queueRoute, "/completed", Queue),
     route(queueRoute, "/paused", Queue),
-    route(queueRoute, "/job", Jobs),
-    route(queueRoute, "/job/:job", Job),
-    route(queueRoute, "/job/:job/raw", JobRaw),
-    route(queueRoute, "/job/:job/log", JobLog),
+    jobsRoute,
+    jobRoute,
+    route(jobRoute, "/raw", JobRaw),
+    route(jobRoute, "/log", JobLog),
     route("/node/:node", needsSession, Node)
   ],
   base
