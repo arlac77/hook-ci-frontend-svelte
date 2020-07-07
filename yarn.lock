@@ -5167,10 +5167,10 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
-repository-provider@^23.3.0:
-  version "23.3.0"
-  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-23.3.0.tgz#6e754b5afdafdff9b76855a4359830617e71314d"
-  integrity sha512-94fjQKRlN0MuWOwy7Hlmv8u0fY5QTKu2AqenybZtwvE1MSCc7qLGM6wx57t2L6k+RDdS2uHczdKyrnG2Sr0kaw==
+repository-provider@^23.4.0:
+  version "23.4.0"
+  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-23.4.0.tgz#b5a09466d0521d170bdcff0d4cac33fd498e2087"
+  integrity sha512-rc2HgmQpQ2tsn0TdatQA5z4VSsSX3bOtAAirQafj+8N7Vmq60yM1hwCgzs8wjX65s3cwZGqhAY6OUxPgTLt4dA==
   dependencies:
     matching-iterator "^1.0.0"
 
@@ -5346,10 +5346,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.18.2:
-  version "2.18.2"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.18.2.tgz#886ac6e4549e493df106c3e2580c89aeb997be25"
-  integrity sha512-+mzyZhL9ZyLB3eHBISxRNTep9Z2qCuwXzAYkUbFyz7yNKaKH03MFKeiGOS1nv2uvPgDb4ASKv+FiS5mC4h5IFQ==
+rollup@^2.20.0:
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.20.0.tgz#7456fed8424a5247954958751642e9fdd0ad7485"
+  integrity sha512-hkbp//ne1om8+PQRpd81zk0KDvbJxkLZdZJh1ZNxjd1EkI0H1TmYuHqqXx88yciS+5YnMom3geubQjTeeUnNNw==
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -5916,10 +5916,10 @@ svelte-common@^2.0.3:
   resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.0.3.tgz#1605ac9cea0803e536aa87d52a2d3abc8179fc6c"
   integrity sha512-U3yA3ZnLqV8RFYzPckiXnnfGfbOz5cpllddZE/NiBhJo575qhFnI63ccCJ3k/pxxvFZANFkUcJYLibvnYWhAOg==
 
-svelte-guard-history-router@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-2.4.1.tgz#94d0f1641c4c571de170c171494a995708ebdb81"
-  integrity sha512-7xcG2pAoPfXjFYEe7ZKQYJMLH6qV7xec6LnBNPv4LiUW7SHDbVloMxTOBki2W9lxCm2bk/59pUpB524KAi5nEw==
+svelte-guard-history-router@^2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-2.5.3.tgz#1081c4014c128fc5cfc6258c5bdc223798dcc09a"
+  integrity sha512-c4EMmhzbMQXjppxgvLe+fAxEkQ/v+tqa986d6Rn0Hua/i0lDF1+gfusonkOO2byp56wQfaf1iy8H+161+riarw==
   dependencies:
     multi-path-matcher "^2.0.15"
 
