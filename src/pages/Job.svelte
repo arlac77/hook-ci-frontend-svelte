@@ -4,8 +4,10 @@
   import { ActionButton } from "svelte-common";
   import NodeLink from "../components/NodeLink.svelte";
   import Step from "../components/Step.svelte";
-  import { queue, session, job, jobs, router } from "../main.mjs";
+  import { queue, session, job, jobs } from "../main.mjs";
   import api from "consts:api";
+
+  export let router;
 
   async function jobAction(suffix) {
     const response = await fetch(

@@ -1,8 +1,10 @@
 <script>
   import { onDestroy } from "svelte";
   import JobTable from "../components/JobTable.svelte";
-  import { router, jobs } from "../main.mjs";
+  import { jobs } from "../main.mjs";
 
+  export let router;
+  
   let queue = { name: "" };
 
   onDestroy(

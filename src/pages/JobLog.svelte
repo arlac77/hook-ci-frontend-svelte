@@ -1,8 +1,10 @@
 <script>
   import { onDestroy } from "svelte";
-  import { session, router } from "../main.mjs";
+  import { session } from "../main.mjs";
   import api from "consts:api";
 
+  export let router;
+  
   onDestroy(
     router.subscribe(router => {
       const job = router.params.job;
