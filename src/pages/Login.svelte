@@ -6,6 +6,6 @@
   export let router;
 </script>
 
-<div class="center">
+<div class="modal center">
   <Login {session} endpoint={api + '/authenticate'} result={() =>router.continue()} />
 </div>
