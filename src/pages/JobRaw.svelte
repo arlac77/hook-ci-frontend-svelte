@@ -1,7 +1,9 @@
 <script>
-  import { job } from "../main.mjs";
+  export let router;
+
+  const route = router.route;
 </script>
 
-{#if $job}
-  <div class="log">{JSON.stringify($job, undefined, 2)}</div>
+{#if $route}
+  <div class="log">{JSON.stringify($route, undefined, 2)}</div>
 {/if}

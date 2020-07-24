@@ -2,20 +2,24 @@
   import { ActionButton } from "svelte-common";
   import JobTable from "../components/JobTable.svelte";
   import PublishJobTable from "../components/PublishJobTable.svelte";
-  import { queue, session, jobs } from "../main.mjs";
+  import { session } from "../main.mjs";
   import api from 'consts:api';
 
+  export let router;
+
+  const route = router.route;
+
   async function queueAction(action) {
-    return fetch(`${api}/queue/${$queue.name}/${action}`, {
+    return fetch(`${api}/queue/${$route.name}/${action}`, {
       method: "POST",
       headers: session.authorizationHeader
     });
   }
 
   async function jobAction(suffix) {
-    for (const job of $jobs) {
+    for (const job of $route.jobs) {
       const response = await fetch(
-        `${api}/queue/${$queue.name}/job/${job.id}/${suffix}`,
+        `${api}/queue/${$route.name}/job/${job.id}/${suffix}`,
         {
           method: "POST",
           headers: session.authorizationHeader
@@ -26,16 +30,16 @@
 </script>
 
 <div class="card-panel">
-  {#if $queue}
+  {#if $route}
     <div class="card">
       <div class="card-content">
-        <h5 class="card-title">{$queue.name}</h5>
-        <p class="card-text">{$queue.active}</p>
-        <p class="card-text">{$queue.waiting}</p>
-        <p class="card-text">{$queue.completed}</p>
-        <p class="card-text">{$queue.failed}</p>
+        <h5 class="card-title">{$route.name}</h5>
+        <p class="card-text">{$route.active}</p>
+        <p class="card-text">{$route.waiting}</p>
+        <p class="card-text">{$route.completed}</p>
+        <p class="card-text">{$route.failed}</p>
         <ActionButton action={() => queueAction('pause')}>
-          Pause ({$queue.paused})
+          Pause ({$route.paused})
         </ActionButton>
         <ActionButton action={() => queueAction('resume')}>Resume</ActionButton>
         <ActionButton action={() => queueAction('empty')}>Empty</ActionButton>
@@ -43,10 +47,10 @@
         <ActionButton action={() => jobAction('cancel')}>Cancel</ActionButton>
       </div>
     </div>
-    {#if $queue.name === 'publish'}
-        <PublishJobTable queue={$queue} jobs={$jobs} />
+    {#if $route.name === 'publish'}
+        <PublishJobTable queue={$route} jobs={$route.jobs} />
     {:else}
-        <JobTable queue={$queue} jobs={$jobs} />
+        <JobTable queue={$route} jobs={$route.jobs} />
     {/if}
   {:else}No such queue{/if}
 </div>

@@ -1,10 +1,7 @@
 <script>
-  import { Link } from "svelte-guard-history-router";
+  import { ObjectLink } from "svelte-guard-history-router";
   import { formatSecondsSinceEpoch } from "svelte-common";
-  import RepositoryLink from "./RepositoryLink.svelte";
-  import NodeLink from "./NodeLink.svelte";
 
-  export let queue = {};
   export let jobs = [];
 </script>
 
@@ -21,11 +18,11 @@
     {#each jobs as job (job.id)}
       <tr>
         <td>
-          <Link href="/queue/{queue.name}/job/{job.id}">{job.id}</Link>
+          <ObjectLink object={job} />
         </td>
         <td>{formatSecondsSinceEpoch(job.processedOn)}</td>
         <td>
-          <NodeLink node={job.node} />
+          <ObjectLink object={job.node} />
         </td>
         <td>{job.artifact}</td>
       </tr>

@@ -1,12 +1,7 @@
 <script>
-  import { Link } from "svelte-guard-history-router";
-  export let node;
+  export let object;
 </script>
 
-{#if node}
-  <Link href="/node/{node.name}">
-    <slot>
-      <div aria-label={node.version} data-microtip-position="up" role="tooltip">{node.name}</div>
-    </slot>
-  </Link>
-{/if}
+<div aria-label={object.version} data-microtip-position="up" role="tooltip">
+  {object.name}
+</div>

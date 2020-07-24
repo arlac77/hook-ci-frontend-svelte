@@ -4,25 +4,27 @@
     Router,
     Route,
     Outlet,
-    link,
-    active
+    redirectGuard
   } from "svelte-guard-history-router";
   import { Menue } from "svelte-common";
-  import { router, session, needsSession } from "./main.mjs";
+  import { session } from "./main.mjs";
   import Home from "./pages/Home.svelte";
   import About from "./pages/About.svelte";
   import Login from "./pages/Login.svelte";
-  import Queues from "./pages/Queues.svelte";
-  import Repositories from "./pages/Repositories.svelte";
-  import RepositoryGroups from "./pages/RepositoryGroups.svelte";
-  import Nodes from "./pages/Nodes.svelte";
+  import base from "consts:base";
+
+  import NodeRoutes from "./NodeRoutes.svelte";
+  import QueueRoutes from "./QueueRoutes.svelte";
+  import JobRoutes from "./JobRoutes.svelte";
+
+  const enshureSession = redirectGuard("/login", () => !session.isValid);
 
   function logout() {
     session.invalidate();
   }
 </script>
 
-<Router {router}>
+<Router {base}>
   <nav>
     <Route href="/" path="*" component={Home}>
       <img class="logo" src="logo.svg" alt="Hook CI" />
@@ -30,27 +32,15 @@
     </Route>
     <ul class="left">
       <li>
-        <Route path="/queue" guards={needsSession} component={Queues}>
+        <QueueRoutes guards={enshureSession} {session}>
           Queues
-        </Route>
+          <div slot="queue">
+            <JobRoutes />
+          </div>
+        </QueueRoutes>
       </li>
       <li>
-        <Route path="/group" guards={needsSession} component={RepositoryGroups}>
-          Repository Groups
-        </Route>
-      </li>
-      <li>
-        <Route
-          path="/repository"
-          guards={needsSession}
-          component={Repositories}>
-          Repositories
-        </Route>
-      </li>
-      <li>
-        <Route path="/node" guards={needsSession} component={Nodes}>
-          Nodes
-        </Route>
+        <NodeRoutes guards={enshureSession}>Nodes</NodeRoutes>
       </li>
       <li>
         <Route path="/about" component={About}>About</Route>

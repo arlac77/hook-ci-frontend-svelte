@@ -1,3 +1,7 @@
+import graphQl from "consts:graphQl";
+import { setupClient, query } from "svql";
+
+
 export class Node {
   constructor(name, options) {
     Object.defineProperties(this, {
@@ -32,3 +36,60 @@ export class Node {
     };
   }
 }
+
+
+const NODES = `
+  {
+    nodes {
+      name
+      version
+      uptime
+      memory {
+        rss
+        heapTotal
+        heapUsed
+        external
+      }
+      isLocal
+    }
+  }
+`;
+
+const _nodes = new Map();
+
+function getNode(name, options) {
+  if (name === "" || name === undefined) {
+    return undefined;
+  }
+
+  let node = _nodes.get(name);
+
+  if (node === undefined) {
+    node = new myNode(name, options);
+    _nodes.set(name, node);
+  } else {
+    node.update(options);
+  }
+
+  return node;
+}
+
+setupClient({
+  url: graphQl
+});
+
+/*
+export const nodes = readable([], async set => {
+  const data = await query(NODES, {});
+  set(data.nodes.map(node => getNode(node.name, node)));
+  return () => {};
+});
+
+export const node = derived(
+  [nodes, router.keys.node],
+  ([$nodes, $node], set) => {
+    set($nodes.find(a => a.name === $node));
+    return () => {};
+  }
+);
+*/

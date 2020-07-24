@@ -4,14 +4,20 @@
   import { ActionButton } from "svelte-common";
   import NodeLink from "../components/NodeLink.svelte";
   import Step from "../components/Step.svelte";
-  import { queue, session, job, jobs } from "../main.mjs";
+  import { session } from "../main.mjs";
   import api from "consts:api";
 
   export let router;
 
+  const route = router.route;
+
+  let job = $route;
+  let queue = route.parent;
+  let jobs = queue.jobs;
+
   async function jobAction(suffix) {
     const response = await fetch(
-      `${api}/queue/${$queue.name}/job/${$job.id}/${suffix}`,
+      `${api}/queue/${queue.name}/job/${job.id}/${suffix}`,
       {
         method: "POST",
         headers: session.authorizationHeader
@@ -50,21 +56,21 @@
   }
 
   async function next() {
-    const id = findNext($jobs, parseInt(router.keys.job.value));
+    const id = findNext(jobs, parseInt(router.keys.job.value));
     if (id < Number.MAX_SAFE_INTEGER) {
-      return router.push(`/queue/${$queue.name}/job/${id}`);
+      return router.push(`/queue/${queue.name}/job/${id}`);
     }
   }
 
   async function previous() {
-    const id = findPrevious($jobs, parseInt(router.keys.job.value));
+    const id = findPrevious(jobs, parseInt(router.keys.job.value));
     if (id > 0) {
-      return router.push(`/queue/${$queue.name}/job/${id}`);
+      return router.push(`/queue/${queue.name}/job/${id}`);
     }
   }
 
   async function all() {
-    return router.push(`/queue/${$queue.name}`);
+    return router.push(`/queue/${queue.name}`);
   }
 </script>
 
@@ -78,20 +84,20 @@
 <ActionButton action={previous}>Previous</ActionButton>
 <ActionButton action={all}>All</ActionButton>
 
-{#if $job}
+{#if job}
   <div class="card">
     <div class="card-content">
-      <h5 class="card-title">Job {$job.id}</h5>
-      AttemptsMade: {$job.attemptsMade}
-      <NodeLink node={$job.node} />
+      <h5 class="card-title">Job {job.id}</h5>
+      AttemptsMade: {job.attemptsMade}
+      <NodeLink node={job.node} />
       <ActionButton action={() => jobAction('rerun')}>Rerun</ActionButton>
       <ActionButton action={() => jobAction('cancel')}>Cancel</ActionButton>
-      <Link href="/queue/{$queue.name}/job/{$job.id}/log">Log</Link>
-      <Link href="/queue/{$queue.name}/job/{$job.id}/raw">Raw</Link>
+      <Link href="/queue/{queue.name}/job/{job.id}/log">Log</Link>
+      <Link href="/queue/{queue.name}/job/{job.id}/raw">Raw</Link>
 
-      {#if $job.steps}
+      {#if job.steps}
         <ul>
-          {#each $job.steps as step, i}
+          {#each job.steps as step, i}
             <li>
               <Step {step} />
             </li>

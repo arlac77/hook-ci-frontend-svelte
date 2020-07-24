@@ -1,35 +1,48 @@
 <script>
-  import QueueLink from "../components/QueueLink.svelte";
-  import { queues }  from "../main.mjs";
+  import { ObjectLink } from "svelte-guard-history-router";
+
+  export let router;
+
+  const route = router.route;
 </script>
 
-<div>
-  <table class="bordered striped hoverable">
-    <thead>
+<table class="bordered striped hoverable">
+  <thead>
+    <tr>
+      <th aria-sort="none">Name</th>
+      <th aria-sort="none">Active</th>
+      <th aria-sort="none">Waiting</th>
+      <th aria-sort="none">Delayed</th>
+      <th aria-sort="none">Paused</th>
+      <th aria-sort="none">Completed</th>
+      <th aria-sort="none">Failed</th>
+    </tr>
+  </thead>
+  <tbody>
+    {#each $route as queue (queue.name)}
       <tr>
-        <th aria-sort="none">Name</th>
-        <th aria-sort="none">Active</th>
-        <th aria-sort="none">Waiting</th>
-        <th aria-sort="none">Delayed</th>
-        <th aria-sort="none">Paused</th>
-        <th aria-sort="none">Completed</th>
-        <th aria-sort="none">Failed</th>
+        <td>
+          <ObjectLink object={queue} />
+        </td>
+        <td>
+          <ObjectLink object={queue} suffix="/active" />
+        </td>
+        <td>
+          <ObjectLink object={queue} suffix="/waiting" />
+        </td>
+        <td>
+          <ObjectLink object={queue} suffix="/delayed" />
+        </td>
+        <td>
+          <ObjectLink object={queue} suffix="/paused" />
+        </td>
+        <td>
+          <ObjectLink object={queue} suffix="/completed" />
+        </td>
+        <td>
+          <ObjectLink object={queue} suffix="/failed" />
+        </td>
       </tr>
-    </thead>
-    <tbody>
-      {#each $queues as queue (queue.name)}
-        <tr>
-          <td>
-            <QueueLink {queue} state=''/>
-          </td>
-          <td><QueueLink {queue} state={'active'}>{queue.active}</QueueLink></td>
-          <td><QueueLink {queue} state={'waiting'}>{queue.waiting}</QueueLink></td>
-          <td><QueueLink {queue} state={'delayed'}>{queue.delayed}</QueueLink></td>
-          <td><QueueLink {queue} state={'paused'}>{queue.paused}</QueueLink></td>
-          <td><QueueLink {queue} state={'completed'}>{queue.completed}</QueueLink></td>
-          <td><QueueLink {queue} state={'failed'}>{queue.failed}</QueueLink></td>
-        </tr>
-      {/each}
-    </tbody>
-  </table>
-</div>
+    {/each}
+  </tbody>
+</table>

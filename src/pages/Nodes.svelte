@@ -1,20 +1,23 @@
 <script>
   import { Duration, ActionButton } from "svelte-common";
-  import NodeLink from "../components/NodeLink.svelte";
-  import { nodes } from "../main.mjs";
+  import { ObjectLink } from "svelte-guard-history-router";
+
+  export let router;
+
+  const route = router.route;
 </script>
 
 <div class="card-panel">
-  {#each $nodes as node (node.name)}
+  {#each $route as node (node.name)}
     <div class="card">
       <div class="card-content">
         <h5 class="card-title">{node.name}</h5>
-        <NodeLink {node}>
+        <ObjectLink object={node}>
           <span>
-            <Duration seconds={node.uptime}/>
+            <Duration seconds={node.uptime} />
             <abbr class={node.uptime > 0 ? 'ok-hint' : 'error-hint'} />
           </span>
-        </NodeLink>
+        </ObjectLink>
         <p class="card-text">{node.version}</p>
       </div>
     </div>
