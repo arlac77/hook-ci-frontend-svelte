@@ -18,10 +18,6 @@
   import JobRoutes from "./JobRoutes.svelte";
 
   const enshureSession = redirectGuard("/login", () => !session.isValid);
-
-  function logout() {
-    session.invalidate();
-  }
 </script>
 
 <Router {base}>
@@ -55,7 +51,7 @@
               <a
                 href="/"
                 class="dropdown-item"
-                on:click|preventDefault={logout}>
+                on:click|preventDefault={()=>session.invalidate()}>
                 Logout {$session.username}
               </a>
               <div class="dropdown-divider" />
