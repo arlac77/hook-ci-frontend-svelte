@@ -3447,10 +3447,10 @@ marked@^1.0.0:
   resolved "https://registry.yarnpkg.com/marked/-/marked-1.1.0.tgz#62504ad4d11550c942935ccc5e39d64e5a4c4e50"
   integrity sha512-EkE7RW6KcXfMHy2PA7Jg0YJE1l8UPEZE8k45tylzmZM30/r1M1MUXWQfJlrSbsTeh7m/XTwHbWUENvAJZpp1YA==
 
-matching-iterator@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/matching-iterator/-/matching-iterator-1.1.1.tgz#8e4f1172818dd7c59a365741f1ec2c4fab90e65b"
-  integrity sha512-kFCrJrLMfxqPxbf4ZZyplXcfFhnKVZ3bQqMvK3tqejHgRGnKnVlflXnmQsx/8WFo5qfcUvNrYoOd7d0RUkdr1A==
+matching-iterator@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/matching-iterator/-/matching-iterator-1.1.2.tgz#f8810bf02f54bc025ce194b745751daedc78c48c"
+  integrity sha512-oBnCB/Uh6yDGuaGhKjZgWu2zPARC7M5cMn6pSgrcavXVMQHatpJeVa+iM27iXj3Cg3r/Gu5klyZxhamkSPFcGw==
 
 mdn-data@2.0.4:
   version "2.0.4"
@@ -5183,12 +5183,12 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
-repository-provider@^23.6.4:
-  version "23.6.4"
-  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-23.6.4.tgz#a9424bda9776473ddceaca150e896c736c14a79c"
-  integrity sha512-5Vb5m74JEQUJP4rcnivvFnDkUiO2JZ5EdjW3uFwSv5z8VOy3fwGwYv12MCR+A/sSeL2+F13fDUsaz9U/VPHWPQ==
+repository-provider@^23.6.5:
+  version "23.6.5"
+  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-23.6.5.tgz#1e430535d24430bfc8461c4975b4cd5469fb4ad5"
+  integrity sha512-gwgcGDIyCEzaFyNk8VI5RTkifoaU+aBkTvsky17PpVmbGgyhfGgS1eoPhUzamNYWT1R8nl9DiTphiOlyEAb9yg==
   dependencies:
-    matching-iterator "^1.1.1"
+    matching-iterator "^1.1.2"
 
 request@^2.88.0:
   version "2.88.2"
