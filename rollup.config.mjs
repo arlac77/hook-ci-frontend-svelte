@@ -45,7 +45,7 @@ export default () => {
       }),
       postcss({
         extract: true,
-        sourcemap: true,
+        sourceMap: true,
         minimize: production,
         plugins: [postcssImport]
       }),
