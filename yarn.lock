@@ -5362,10 +5362,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.27.0:
-  version "2.27.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.27.0.tgz#f2b70a8dd583bc3675b36686289aa9a51e27af4f"
-  integrity sha512-1WlbhNdzhLjdhh2wsf6CDxmuBAYG+5O53fYqCcGv8aJOoX/ymCfCY6oZnvllXZzaC/Ng+lPPwq9EMbHOKc5ozA==
+rollup@^2.27.1:
+  version "2.27.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.27.1.tgz#372744e1d36eba0fd942d997600c2fc2ca266305"
+  integrity sha512-GiWHQvnmMgBktSpY/1+nrGpwPsTw4b9P28og2uedfeq4JZ16rzAmnQ5Pm/E0/BEmDNia1ZbY7+qu3nBgNa19Hg==
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -5927,10 +5927,10 @@ supports-hyperlinks@^2.1.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
-svelte-common@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.6.0.tgz#006e503d176099d14bbb378ee0c6b845c088f65c"
-  integrity sha512-9pOjB4vCubVvrN2HSroSc+yDHHCvtVqbrtaUujyY8baPu88QziHsQTFMJg+nUHs+WhLn91nH7/Hb5Fnsis3JSw==
+svelte-common@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.7.0.tgz#9f6c669d8242064f04439cdcfb2d80753462a6d3"
+  integrity sha512-NtQQsBDnOIA2RQjzkOmbIvIjVOmt5vHMRaTTccKNFYMlD6YQ0ZiDMBkOfFqtVWpEA9PTYUnK3XzM+X/upxQEHQ==
 
 svelte-guard-history-router@^2.24.0:
   version "2.24.0"
