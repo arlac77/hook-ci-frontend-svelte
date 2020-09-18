@@ -5183,10 +5183,10 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
-repository-provider@^23.7.0:
-  version "23.7.0"
-  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-23.7.0.tgz#9746c46266f77a8e01810beb911544b22e32a759"
-  integrity sha512-9ivtmBcPYDCiNycXMjJ5tU6quKdMucAzQggCByhqtnGqaXDRfTGbx59MnZX1hQ8cfTnnkBaU6tKWIj2iGqt/NA==
+repository-provider@^23.8.0:
+  version "23.8.0"
+  resolved "https://registry.yarnpkg.com/repository-provider/-/repository-provider-23.8.0.tgz#1aacc04e3749ef6a89e6ae70bcd5a4fe1f115764"
+  integrity sha512-jp2ZqgeuoTpJBvhVPhthPO4D5vUp8/jgDap39tNZNHwqypLiJzYRBP3p6Mn3YUGQXOfBnz3w5eplyocqC1dnjA==
   dependencies:
     matching-iterator "^1.1.2"
 
