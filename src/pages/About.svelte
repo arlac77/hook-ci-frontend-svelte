@@ -1,5 +1,5 @@
 <script>
-  import { DateTime, About, SessionDetails } from "svelte-common";
+  import { About, ApplicationDetails, SessionDetails } from "svelte-common";
   import { session } from "../main.mjs";
 
   import name from "consts:name";
@@ -8,7 +8,8 @@
   import graphQl from "consts:graphQl";
 </script>
 
-<About {name} {version} {description}>
+<About>
+  <ApplicationDetails {name} {version} {description} />
   <tr />
   <tr>
     <td>Graphql API</td>
