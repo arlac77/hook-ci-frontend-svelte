@@ -26,7 +26,7 @@
     "microtip": "^0.2.2",
     "repository-provider": "^23.9.0",
     "svelte-common": "^2.11.1",
-    "svelte-guard-history-router": "^2.24.0",
+    "svelte-guard-history-router": "^2.24.1",
     "svelte-session-manager": "^1.1.7"
   },
   "devDependencies": {
@@ -46,7 +46,7 @@
     "rollup-plugin-svelte": "git+https://github.com/ctavan/rollup-plugin-svelte.git#handle-missing-exports-gracefully",
     "rollup-plugin-terser": "^7.0.2",
     "semantic-release": "^17.1.2",
-    "svelte": "^3.25.1",
+    "svelte": "^3.26.0",
     "svql": "0.0.28"
   },
   "repository": {
