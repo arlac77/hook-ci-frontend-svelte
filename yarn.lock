@@ -3848,10 +3848,10 @@ npm-pick-manifest@^3.0.0, npm-pick-manifest@^3.0.2:
     npm-package-arg "^6.0.0"
     semver "^5.4.1"
 
-npm-pkgbuild@^6.12.8:
-  version "6.12.8"
-  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.12.8.tgz#f01b1d3f490d728edcb41e4e5e9e0b0a38cb364b"
-  integrity sha512-Hr3C3nnqpTBTWDwhmJ8zCqnly4IV+HDNspNstFQNhh67x9T6wvMKMoj9NF9r61lMGHn7rN+YV/KLty1stTIb9w==
+npm-pkgbuild@^6.12.9:
+  version "6.12.9"
+  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.12.9.tgz#38dc6c05e65f68cfb74f19632d34e9b5b22b31f0"
+  integrity sha512-15gTggkGYomf9nSXkgxIFN1Z4W1UJlXSxkLI9ir0btgs9YBs3dzzuucfytt9jhPOHdFqEMQ7J1LeUr8UOrp/Kw==
   dependencies:
     commander "^6.1.0"
     execa "^4.0.3"
