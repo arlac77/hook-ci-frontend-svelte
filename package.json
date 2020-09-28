@@ -61,7 +61,8 @@
     "api": "/services/ci/api",
     "base": "/services/ci",
     "graphQl": "/services/ci/api/graphql",
-    "proxyTarget": "https://mfelten.dynv6.net/"
+    "proxyTarget": "https://mfelten.dynv6.net/",
+    "title": "Appliction Name"
   },
   "pacman": {
     "groups": "webapp",
