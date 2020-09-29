@@ -10,10 +10,9 @@
 
 <About>
   <ApplicationDetails {name} {version} {description} />
-  <tr />
   <tr>
     <td>Graphql API</td>
-    <td>{graphQl}</td>
+    <td colspan="2">{graphQl}</td>
   </tr>
   <SessionDetails session={$session} />
 </About>
