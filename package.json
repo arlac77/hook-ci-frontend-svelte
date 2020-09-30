@@ -26,7 +26,7 @@
     "microtip": "^0.2.2",
     "repository-provider": "^23.10.0",
     "svelte-common": "^2.15.0",
-    "svelte-guard-history-router": "^2.26.0",
+    "svelte-guard-history-router": "^2.26.1",
     "svelte-session-manager": "^1.1.7"
   },
   "devDependencies": {
@@ -75,7 +75,7 @@
       "/etc/nginx/config.d/${name}.conf": "pacman/nginx.conf"
     },
     "depends": {
-      "nginx-mainline": ">=1.19.2",
+      "nginx-mainline": ">=1.19.3",
       "hook-ci": ">=1.56.0"
     }
   },
