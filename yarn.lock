@@ -6006,10 +6006,10 @@ supports-hyperlinks@^2.1.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
-svelte-common@^2.16.1:
-  version "2.16.1"
-  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.16.1.tgz#58666a01fd95a9d301ac2f4897a954f7ea1215c3"
-  integrity sha512-11D6y0VwKx9HzJExgCS0OCkss9dybWh/63+vK4+G0oGgW267UFUx4V3sMsmTf7xFdPMgMsFWfANPkfnWaVwr7A==
+svelte-common@^2.17.0:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.17.0.tgz#ace97ed90aeaab93e955c5442bef814ef8f0244d"
+  integrity sha512-VXJnx+Ete3GmIzqX/nZftzr26IadIvWKmhhTwVcEHtGzoS/f02BpW1q9VYSX0ZD8nh37HGNgxeXI7qyLZA6mYg==
 
 svelte-guard-history-router@^2.26.1:
   version "2.26.1"
