@@ -6065,10 +6065,10 @@ supports-hyperlinks@^2.1.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
-svelte-common@^2.18.0:
-  version "2.18.0"
-  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.18.0.tgz#2d41a2b293e6286322636bca27a3ec2a04e85cab"
-  integrity sha512-EqYRnz1J5LoSG9ydVOACb/EgsfVB6t/U6lHkQ9XseBcZjACOPTxImoHIxVHWrXDbXD3XD8UA071qX6cIPiiudg==
+svelte-common@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.19.0.tgz#0946da65280ac91ad56ec66f180b046042edfdd7"
+  integrity sha512-+RzoZoupkAaeARkkzr9mdrOx37BXvzGj8gPtxMqT68mLkAqnt7s2Q1UUBx+0ELnMElUS0pnXQP0EXeR3SbFrEQ==
 
 svelte-guard-history-router@^2.26.3:
   version "2.26.3"
