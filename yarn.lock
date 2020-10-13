@@ -1894,10 +1894,10 @@ execa@^4.0.0, execa@^4.0.3:
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
 
-expression-expander@^7.0.5:
-  version "7.0.5"
-  resolved "https://registry.yarnpkg.com/expression-expander/-/expression-expander-7.0.5.tgz#111758a50be2a5527025edf4dd9f36a1a8207e0d"
-  integrity sha512-SatxuPs/VtMkSoN/5ppJm9Tajkqq071Alh7HVptvPkTHzyhgUau6i4YDEA/aaREIJMHN47FVlxcmj4FngA0L4A==
+expression-expander@^7.0.6:
+  version "7.0.6"
+  resolved "https://registry.yarnpkg.com/expression-expander/-/expression-expander-7.0.6.tgz#e8cc1e47b2a1b11b859e963843ee82db6db90e10"
+  integrity sha512-3vNMcMiAMSsCnybj5dAysUTmowH2eGUy7ZmbfrGjNNzq7b/bSO++NGh15AhP2Bdhvd7EOmwCjyzDqlrnhxNYww==
 
 extend@~3.0.2:
   version "3.0.2"
@@ -2879,10 +2879,10 @@ issue-parser@^6.0.0:
     lodash.isstring "^4.0.1"
     lodash.uniqby "^4.7.0"
 
-iterable-string-interceptor@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/iterable-string-interceptor/-/iterable-string-interceptor-1.0.5.tgz#0f474f01d7c2b733ccda8284c97f1c6ff59c5786"
-  integrity sha512-ZkKMvnK5cTnWwZClAjo43lB5uAUD5pHvdRaI31pCWaZaKiD/7eX7hn/7H5D5ZEkQP2IoT8Z1cMXxm52GkqgxVw==
+iterable-string-interceptor@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/iterable-string-interceptor/-/iterable-string-interceptor-1.0.6.tgz#69545655e99806e9474dc8f80bd0694993a53f4e"
+  integrity sha512-CO81axi3mlYeklDteQZrnFgZJMCJsabRLhNGtN3eCIHqIwI/Hx7Uc2nVHZY7I4sKxmGWNDN9PqPDZfZA/JI+6g==
 
 java-properties@^1.0.0:
   version "1.0.2"
@@ -3908,16 +3908,16 @@ npm-pick-manifest@^3.0.0, npm-pick-manifest@^3.0.2:
     npm-package-arg "^6.0.0"
     semver "^5.4.1"
 
-npm-pkgbuild@^6.12.9:
-  version "6.12.9"
-  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.12.9.tgz#38dc6c05e65f68cfb74f19632d34e9b5b22b31f0"
-  integrity sha512-15gTggkGYomf9nSXkgxIFN1Z4W1UJlXSxkLI9ir0btgs9YBs3dzzuucfytt9jhPOHdFqEMQ7J1LeUr8UOrp/Kw==
+npm-pkgbuild@^6.12.10:
+  version "6.12.10"
+  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.12.10.tgz#e5631eb52467bdf137c2fc985f75f458690c53e7"
+  integrity sha512-+FJFY2wDE+ce0Q15aO/fygetGYpi/XrGJA8KpoTIz/+NjTp1ayhPjPk2RSbSNk8msO7rORlONE3d4LzLBmPRAg==
   dependencies:
     commander "^6.1.0"
     execa "^4.0.3"
-    expression-expander "^7.0.5"
+    expression-expander "^7.0.6"
     globby "^11.0.1"
-    iterable-string-interceptor "^1.0.5"
+    iterable-string-interceptor "^1.0.6"
     npm-packlist "^2.1.2"
 
 npm-profile@^4.0.2, npm-profile@^4.0.4:
@@ -5441,10 +5441,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.29.0:
-  version "2.29.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.29.0.tgz#0c5c5968530b21ca0e32f8b94b7cd9346cfb0eec"
-  integrity sha512-gtU0sjxMpsVlpuAf4QXienPmUAhd6Kc7owQ4f5lypoxBW18fw2UNYZ4NssLGsri6WhUZkE/Ts3EMRebN+gNLiQ==
+rollup@^2.30.0:
+  version "2.30.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.30.0.tgz#316a1eb0389dbda4082ef2d191b31488995e4c41"
+  integrity sha512-j4K1hUZfgFM03DUpayd3c7kZW+2wDbI6rj7ssQxpCpL1vsGpaM0vSorxBuePFwQDFq9O2DI6AOQbm174Awsq4w==
   optionalDependencies:
     fsevents "~2.1.2"
 
