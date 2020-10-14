@@ -1894,7 +1894,7 @@ execa@^4.0.0, execa@^4.0.3:
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
 
-expression-expander@^7.0.6:
+expression-expander@^7.0.5:
   version "7.0.6"
   resolved "https://registry.yarnpkg.com/expression-expander/-/expression-expander-7.0.6.tgz#e8cc1e47b2a1b11b859e963843ee82db6db90e10"
   integrity sha512-3vNMcMiAMSsCnybj5dAysUTmowH2eGUy7ZmbfrGjNNzq7b/bSO++NGh15AhP2Bdhvd7EOmwCjyzDqlrnhxNYww==
@@ -2879,7 +2879,7 @@ issue-parser@^6.0.0:
     lodash.isstring "^4.0.1"
     lodash.uniqby "^4.7.0"
 
-iterable-string-interceptor@^1.0.6:
+iterable-string-interceptor@^1.0.5:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/iterable-string-interceptor/-/iterable-string-interceptor-1.0.6.tgz#69545655e99806e9474dc8f80bd0694993a53f4e"
   integrity sha512-CO81axi3mlYeklDteQZrnFgZJMCJsabRLhNGtN3eCIHqIwI/Hx7Uc2nVHZY7I4sKxmGWNDN9PqPDZfZA/JI+6g==
@@ -3908,16 +3908,16 @@ npm-pick-manifest@^3.0.0, npm-pick-manifest@^3.0.2:
     npm-package-arg "^6.0.0"
     semver "^5.4.1"
 
-npm-pkgbuild@^6.12.10:
-  version "6.12.10"
-  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.12.10.tgz#e5631eb52467bdf137c2fc985f75f458690c53e7"
-  integrity sha512-+FJFY2wDE+ce0Q15aO/fygetGYpi/XrGJA8KpoTIz/+NjTp1ayhPjPk2RSbSNk8msO7rORlONE3d4LzLBmPRAg==
+npm-pkgbuild@^6.12.11:
+  version "6.12.11"
+  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.12.11.tgz#628ffa462c75c36ee8c0f5bfb565e4a08797a955"
+  integrity sha512-oDFYzFSc51Jjtax7ePUGzrObyzf8xtnqWWIhgQrlHPGAd9ghI6zaBC1UUq7Co+2weNfPeI0J/RY7ALOKLN92QA==
   dependencies:
     commander "^6.1.0"
     execa "^4.0.3"
-    expression-expander "^7.0.6"
+    expression-expander "^7.0.5"
     globby "^11.0.1"
-    iterable-string-interceptor "^1.0.6"
+    iterable-string-interceptor "^1.0.5"
     npm-packlist "^2.1.2"
 
 npm-profile@^4.0.2, npm-profile@^4.0.4:
@@ -6011,10 +6011,10 @@ svelte-common@^2.19.0:
   resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.19.0.tgz#0946da65280ac91ad56ec66f180b046042edfdd7"
   integrity sha512-+RzoZoupkAaeARkkzr9mdrOx37BXvzGj8gPtxMqT68mLkAqnt7s2Q1UUBx+0ELnMElUS0pnXQP0EXeR3SbFrEQ==
 
-svelte-guard-history-router@^2.26.3:
-  version "2.26.3"
-  resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-2.26.3.tgz#07c1a356e852def1b156699c4548a96fb4f0b778"
-  integrity sha512-9l3M7ePNVAJK/C4tdQvn90yDzRyygJxcwm4at2LiODcv7fSccrCKaiq4b0L+BK4h42gkt3bVcQn5MzYhgMhuxw==
+svelte-guard-history-router@^2.26.4:
+  version "2.26.4"
+  resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-2.26.4.tgz#c40a374933c24c4da18d4fd11a896dbc5ba2a903"
+  integrity sha512-NEBneWUIhRKSuUQUOAelU5dDqn0TMeh3apdH2jpgzpZjHlxg4xOb+AzBOyCM1ljsrnCmjFdYFu1/U5k6jrwEXw==
   dependencies:
     multi-path-matcher "^2.1.2"
 
