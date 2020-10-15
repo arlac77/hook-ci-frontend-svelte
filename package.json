@@ -28,7 +28,7 @@
     "rollup-plugin-livereload": "^2.0.0",
     "svelte-common": "^2.19.0",
     "svelte-guard-history-router": "^2.26.4",
-    "svelte-repository-provider": "^1.4.2",
+    "svelte-repository-provider": "^1.5.11",
     "svelte-session-manager": "^1.1.7"
   },
   "devDependencies": {
