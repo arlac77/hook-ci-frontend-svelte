@@ -25,6 +25,7 @@
     "mf-styling": "arlac77/mf-styling",
     "microtip": "^0.2.2",
     "repository-provider": "^23.6.3",
+    "rollup-plugin-livereload": "^2.0.0",
     "svelte-common": "^2.19.0",
     "svelte-guard-history-router": "^2.26.4",
     "svelte-repository-provider": "^1.4.2",
@@ -63,7 +64,7 @@
     "base": "/services/ci",
     "graphQl": "/services/ci/api/graphql",
     "proxyTarget": "https://mfelten.dynv6.net/",
-    "title": "Appliction Name"
+    "title": "Hook CI"
   },
   "pacman": {
     "groups": "webapp",
