@@ -1,6 +1,16 @@
 <script>
-  import { About, ApplicationDetails, SessionDetails } from "svelte-common";
-  import { session } from "../main.mjs";
+  import {
+    About,
+    ApplicationDetails,
+    SessionDetails,
+    ServiceWorkerDetails,
+    ServiceWorkerRegistrationDetails
+  } from "svelte-common";
+  import {
+    session,
+    serviceWorker,
+    serviceWorkerRegistration
+  } from "../main.mjs";
 
   import name from "consts:name";
   import version from "consts:version";
@@ -15,4 +25,7 @@
     <td colspan="2">{graphQl}</td>
   </tr>
   <SessionDetails session={$session} />
+  <ServiceWorkerDetails serviceWorker={$serviceWorker} />
+  <ServiceWorkerRegistrationDetails
+    serviceWorkerRegistration={$serviceWorkerRegistration} />
 </About>
