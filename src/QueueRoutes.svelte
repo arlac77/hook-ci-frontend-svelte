@@ -26,9 +26,10 @@
 
 <Route
   path="/queue"
-  iteratorFor={queueIterator}
   factory={IteratorStoreRoute}
   component={QueuesPage}
+  iteratorFor={queueIterator}
+  objectInstance={Queue}
   {guards}>
   <slot />
   <Route
