@@ -30,25 +30,25 @@
     </Route>
     <ul class="left">
       <li>
-        <Route path="/queue" guards={needsSession} component={Queues}>
+        <Route path="/queue" guard={needsSession} component={Queues}>
           Queues
         </Route>
       </li>
       <li>
-        <Route path="/group" guards={needsSession} component={RepositoryGroups}>
+        <Route path="/group" guard={needsSession} component={RepositoryGroups}>
           Repository Groups
         </Route>
       </li>
       <li>
         <Route
           path="/repository"
-          guards={needsSession}
+          guard={needsSession}
           component={Repositories}>
           Repositories
         </Route>
       </li>
       <li>
-        <Route path="/node" guards={needsSession} component={Nodes}>
+        <Route path="/node" guard={needsSession} component={Nodes}>
           Nodes
         </Route>
       </li>
