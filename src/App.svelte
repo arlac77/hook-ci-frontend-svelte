@@ -28,7 +28,7 @@
     </Route>
     <ul class="left">
       <li>
-        <QueueRoutes guards={enshureSession} {session}>
+        <QueueRoutes guard={enshureSession} {session}>
           Queues
           <div slot="queue">
             <JobRoutes />
@@ -36,7 +36,7 @@
         </QueueRoutes>
       </li>
       <li>
-        <NodeRoutes guards={enshureSession}>Nodes</NodeRoutes>
+        <NodeRoutes guard={enshureSession}>Nodes</NodeRoutes>
       </li>
       <li>
         <Route path="/about" component={About}>About</Route>
