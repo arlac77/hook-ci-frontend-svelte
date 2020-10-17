@@ -26,14 +26,13 @@
     "microtip": "^0.2.2",
     "repository-provider": "^23.11.1",
     "svelte-common": "^2.19.0",
-    "svelte-guard-history-router": "^2.27.4",
+    "svelte-guard-history-router": "^2.27.5",
     "svelte-log-view": "^4.2.3",
     "svelte-repository-provider": "^1.5.13",
     "svelte-session-manager": "^1.1.7"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^15.1.0",
-    "@rollup/plugin-inject": "^4.0.2",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-virtual": "^2.0.3",
     "@semantic-release/commit-analyzer": "^8.0.1",
