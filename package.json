@@ -29,7 +29,7 @@
     "svelte-guard-history-router": "^3.3.0",
     "svelte-log-view": "^4.2.3",
     "svelte-repository-provider": "^1.5.13",
-    "svelte-session-manager": "^1.1.8"
+    "svelte-session-manager": "^1.1.9"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",
