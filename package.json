@@ -24,7 +24,7 @@
   "dependencies": {
     "mf-styling": "arlac77/mf-styling",
     "microtip": "^0.2.2",
-    "repository-provider": "^24.8.2",
+    "repository-provider": "^24.8.3",
     "svelte-common": "^3.0.3",
     "svelte-guard-history-router": "^4.0.1",
     "svelte-session-manager": "^1.1.8"
