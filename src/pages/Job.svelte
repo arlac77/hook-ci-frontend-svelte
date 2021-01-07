@@ -1,5 +1,4 @@
 <script>
-  import { onDestroy } from "svelte";
   import { Link } from "svelte-guard-history-router";
   import { ActionButton } from "svelte-common";
   import NodeLink from "../components/NodeLink.svelte";

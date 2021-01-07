@@ -1,7 +1,6 @@
 <script>
   import { Duration, ActionButton, formatBytes } from "svelte-common";
   import KeyValues from "../components/KeyValues.svelte";
-
   import { session } from "../main.mjs";
   import api from "consts:api";
 

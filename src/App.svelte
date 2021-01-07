@@ -23,7 +23,7 @@
 <Router {base}>
   <nav>
     <Route href="/" path="*" component={Home}>
-      <img class="logo" src="images/logo.svg" alt="Hook CI" />
+      <img class="logo" src="images/icon.svg" alt="Hook CI" />
       Hook CI
     </Route>
     <ul class="left">
