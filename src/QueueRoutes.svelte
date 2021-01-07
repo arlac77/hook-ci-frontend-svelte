@@ -1,8 +1,8 @@
 <script>
   import {
     Route,
-    IteratorStoreRoute,
-    ChildStoreRoute
+    MasterRoute,
+    DetailRoute
   } from "svelte-guard-history-router";
   import QueuesPage from "./pages/Queues.svelte";
   import QueuePage from "./pages/Queue.svelte";
@@ -26,7 +26,7 @@
 
 <Route
   path="/queue"
-  factory={IteratorStoreRoute}
+  factory={MasterRoute}
   component={QueuesPage}
   iteratorFor={queueIterator}
   objectInstance={Queue}
@@ -35,7 +35,7 @@
   <Route
     path="/:queue"
     propertyMapping={{ queue: 'name' }}
-    factory={ChildStoreRoute}
+    factory={DetailRoute}
     linkComponent={QueueLink}
     component={QueuePage}>
 

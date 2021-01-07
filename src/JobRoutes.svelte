@@ -1,8 +1,8 @@
 <script>
   import {
     Route,
-    IteratorStoreRoute,
-    ChildStoreRoute
+    MasterRoute,
+    DetailRoute
   } from "svelte-guard-history-router";
   import JobsPage from "./pages/Jobs.svelte";
   import JobPage from "./pages/Job.svelte";
@@ -17,13 +17,13 @@
 <Route
   path="/job"
   iteratorFor={jobIterator}
-  factory={IteratorStoreRoute}
+  factory={MasterRoute}
   component={JobsPage}>
   <Route
     path="/:job"
     objectInstance={Job}
     propertyMapping={{ job: 'id' }}
-    factory={ChildStoreRoute}
+    factory={DetailRoute}
     linkComponent={JobLink}
     component={JobPage}>
     <Route path="/raw" component={JobRawPage} />
