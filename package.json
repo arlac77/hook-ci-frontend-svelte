@@ -26,7 +26,7 @@
     "microtip": "^0.2.2",
     "repository-provider": "^23.11.1",
     "svelte-common": "^4.4.6",
-    "svelte-guard-history-router": "^4.2.6",
+    "svelte-guard-history-router": "^4.2.7",
     "svelte-log-view": "^4.2.3",
     "svelte-repository-provider": "^1.5.13",
     "svelte-session-manager": "^1.3.4"
@@ -41,7 +41,7 @@
     "npm-pkgbuild": "^6.12.22",
     "postcss": "^8.2.4",
     "postcss-import": "^14.0.0",
-    "rollup": "^2.38.1",
+    "rollup": "^2.38.2",
     "rollup-plugin-consts": "^1.0.2",
     "rollup-plugin-dev": "^1.1.3",
     "rollup-plugin-livereload": "^2.0.0",
