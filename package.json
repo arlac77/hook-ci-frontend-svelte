@@ -78,7 +78,7 @@
       "/etc/nginx/config.d/${name}.conf": "pacman/nginx.conf"
     },
     "depends": {
-      "nginx-mainline": ">=1.19.8",
+      "nginx-mainline": ">=1.19.10",
       "hook-ci": ">=1.60.2"
     }
   },
