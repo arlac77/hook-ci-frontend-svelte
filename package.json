@@ -26,10 +26,10 @@
     "microtip": "^0.2.2",
     "repository-provider": "^23.11.1",
     "svelte-common": "^4.4.7",
-    "svelte-guard-history-router": "^4.2.9",
+    "svelte-guard-history-router": "^4.2.10",
     "svelte-log-view": "^4.2.3",
     "svelte-repository-provider": "^1.5.13",
-    "svelte-session-manager": "^1.4.4"
+    "svelte-session-manager": "^1.4.5"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.0",
@@ -38,10 +38,10 @@
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/release-notes-generator": "^9.0.3",
-    "npm-pkgbuild": "^6.12.36",
+    "npm-pkgbuild": "^6.12.37",
     "postcss": "^8.3.5",
     "postcss-import": "^14.0.2",
-    "rollup": "^2.52.6",
+    "rollup": "^2.52.7",
     "rollup-plugin-consts": "^1.0.2",
     "rollup-plugin-dev": "^1.1.3",
     "rollup-plugin-livereload": "^2.0.0",
