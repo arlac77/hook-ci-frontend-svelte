@@ -6,5 +6,4 @@
 [![GitHub Issues](https://img.shields.io/github/issues/arlac77/hook-ci-frontend-svelte.svg?style=flat-square)](https://github.com/arlac77/hook-ci-frontend-svelte/issues)
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Farlac77%2Fhook-ci-frontend-svelte%2Fbadge\&style=flat)](https://actions-badge.atrox.dev/arlac77/hook-ci-frontend-svelte/goto)
 [![Coverage Status](https://coveralls.io/repos/arlac77/hook-ci-frontend-svelte/badge.svg)](https://coveralls.io/github/arlac77/hook-ci-frontend-svelte)
-[![Tested with TestCafe](https://img.shields.io/badge/tested%20with-TestCafe-2fa4cf.svg)](https://github.com/DevExpress/testcafe)
 
