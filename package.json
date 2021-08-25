@@ -27,7 +27,7 @@
     "repository-provider": "^25.5.1",
     "svelte-common": "^4.4.11",
     "svelte-guard-history-router": "^4.2.15",
-    "svelte-session-manager": "^2.0.3"
+    "svelte-session-manager": "^2.0.4"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^20.0.0",
