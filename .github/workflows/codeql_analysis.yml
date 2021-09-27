@@ -19,7 +19,7 @@ jobs:
         uses: github/codeql-action/init@v1
         with:
           languages: javascript
-      - uses: actions/setup-node@v2.4.0
+      - uses: actions/setup-node@v2.4.1
         with:
           node-version: 14.17.6
       - run: npm install
