@@ -15,6 +15,7 @@ git:
   - .gitignore
 npm:
   - .npmignore
+  - package.json
 deployment:
   - netlify.toml
   - _redirects
@@ -23,3 +24,9 @@ rollup:
   - rollup.config.mjs
 labels:
   - .github/pr_labeler.yml
+vscode:
+  - .vscode/*
+openapi:
+  - openapi/*
+styling:
+  - '**/*.css'
