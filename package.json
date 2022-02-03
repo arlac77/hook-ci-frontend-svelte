@@ -66,16 +66,15 @@
     "proxyTarget": "https://mfelten.dynv6.net/",
     "title": "Appliction Name"
   },
-  "pacman": {
+  "pkg": {
     "groups": "webapp",
-    "hooks": "pacman/hooks.sh",
+    "hooks": "pkg/hooks.sh",
     "installdir": "/services/hook-ci/frontend",
     "content": {
       "${installdir}/": {
         "base": "public"
       },
-      "/etc/nginx/config.d/${name}.conf": "pacman/nginx.conf",
-      "/etc/nginx/sites/common/${name}.conf": "pacman/nginx.conf"
+      "/etc/nginx/sites/common/${name}.conf": "pkg/nginx.conf"
     },
     "depends": {
       "nginx-mainline": ">=1.21.4",
@@ -89,7 +88,7 @@
       [
         "@semantic-release/exec",
         {
-          "publishCmd": "npx npm-pkgbuild --pkgver ${nextRelease.version} pkgbuild pacman makepkg"
+          "publishCmd": "npx npm-pkgbuild"
         }
       ],
       "@semantic-release/npm",
