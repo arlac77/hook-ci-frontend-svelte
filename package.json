@@ -8,6 +8,7 @@
   "keywords": [
     "hook-ci",
     "svelte",
+    "vite",
     "web"
   ],
   "contributors": [
@@ -18,8 +19,10 @@
   ],
   "license": "BSD-2-Clause",
   "scripts": {
-    "prepare": "rollup -c rollup.config.mjs",
-    "start": "rollup -c -w rollup.config.mjs"
+    "prepare": "vite build",
+    "start": "rollup -c -w rollup.config.mjs && vite",
+    "dev": "vite",
+    "serve": "vite preview"
   },
   "dependencies": {
     "mf-styling": "arlac77/mf-styling",
@@ -33,10 +36,12 @@
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
-    "npm-pkgbuild": "^7.25.2",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.36",
+    "npm-pkgbuild": "^7.25.8",
     "semantic-release": "^19.0.2",
     "svelte": "^3.46.3",
-    "svql": "0.0.35"
+    "svql": "0.0.35",
+    "vite": "^2.8.2"
   },
   "repository": {
     "type": "git",
@@ -54,19 +59,19 @@
     "title": "Appliction Name"
   },
   "pkg": {
-    "groups": "webapp",
-    "hooks": "pkg/hooks.sh",
-    "installdir": "/services/hook-ci/frontend",
     "content": {
       "${installdir}/": {
         "base": "public"
       },
       "/etc/nginx/sites/common/${name}.conf": "pkg/nginx.conf"
     },
+    "hooks": "pkg/hooks.sh",
+    "groups": "webapp",
     "depends": {
       "nginx-mainline": ">=1.21.4",
       "hook-ci": ">=1.56.0"
-    }
+    },
+    "installdir": "/services/hook-ci/frontend"
   },
   "release": {
     "plugins": [
