@@ -18,5 +18,8 @@
     }
   ],
   "background_color": "#ffffff",
-  "categories": []
+  "categories": [
+    "productivity"
+  ],
+  "theme_color": "#A21CAF"
 }
