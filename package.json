@@ -1,12 +1,13 @@
 {
-  "name": "hook-ci-frontend-svelte",
+  "name": "@konsumation/frontend-svelte",
   "version": "0.0.0-semantic-release",
   "publishConfig": {
     "access": "public"
   },
-  "description": "hook-ci web fronend",
+  "description": "svelte web frontend for konsum",
   "keywords": [
     "hook-ci",
+    "konsum",
     "svelte",
     "vite",
     "web"
@@ -15,33 +16,52 @@
     {
       "name": "Markus Felten",
       "email": "markus.felten@gmx.de"
+    },
+    {
+      "name": "Konstantin Karpman"
     }
   ],
   "license": "BSD-2-Clause",
   "scripts": {
     "prepare": "vite build",
     "start": "rollup -c -w rollup.config.mjs && vite",
+    "startkonsum": "node_modules/konsum/src/konsum-cli.mjs -c tests/config start",
+    "startfrontend": "npm run dev",
+    "test": "npm run test:ava && npm run test:cafe",
+    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 7000 --app \"vite\"",
+    "test:ava": "ava --timeout 2m tests/*.mjs",
+    "cafeHead": "testcafe chrome tests/cafe/deleteValues.js -s build/test",
     "dev": "vite",
+    "pkg": "npm-pkgbuild --verbose -Dversion=0.0.0",
     "serve": "vite preview"
   },
   "dependencies": {
+    "imask": "^6.4.2",
+    "layercake": "^6.0.2",
     "mf-styling": "arlac77/mf-styling",
     "microtip": "^0.2.2",
     "repository-provider": "^27.0.0",
+    "streamsaver": "^2.0.6",
+    "svelte-command": "^1.1.6",
     "svelte-common": "^4.4.21",
     "svelte-guard-history-router": "^4.5.2",
-    "svelte-session-manager": "^2.0.10"
+    "svelte-session-manager": "^2.0.10",
+    "the-new-css-reset": "^1.4.7"
   },
   "devDependencies": {
+    "@konsumation/konsum": "github:konsumation/konsum",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.36",
-    "npm-pkgbuild": "^7.25.8",
+    "ava": "^4.0.1",
+    "konsum": "github:konsumation/konsum",
+    "npm-pkgbuild": "^7.25.11",
     "semantic-release": "^19.0.2",
-    "svelte": "^3.46.3",
+    "svelte": "^3.46.4",
     "svql": "0.0.35",
-    "vite": "^2.8.2"
+    "testcafe": "^1.18.3",
+    "vite": "^2.8.3"
   },
   "repository": {
     "type": "git",
@@ -65,16 +85,27 @@
       },
       "/etc/nginx/sites/common/${name}.conf": "pkg/nginx.conf"
     },
+    "output": {
+      "arch": {}
+    },
     "hooks": "pkg/hooks.sh",
     "groups": "webapp",
     "depends": {
       "nginx-mainline": ">=1.21.4",
-      "hook-ci": ">=1.56.0"
+      "hook-ci": ">=1.56.0",
+      "konsum": ">=5.0.39"
     },
-    "installdir": "/services/hook-ci/frontend"
+    "installdir": "/services/hook-ci/frontend",
+    "name": "konsum-frontend-svelte"
   },
   "release": {
     "plugins": [
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "npx npm-pkgbuild --verbose"
+        }
+      ],
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       [
