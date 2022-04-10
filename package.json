@@ -37,7 +37,7 @@
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.36",
-    "npm-pkgbuild": "^8.0.0",
+    "npm-pkgbuild": "^8.3.13",
     "semantic-release": "^19.0.2",
     "svelte": "^3.46.3",
     "svql": "0.0.35",
@@ -63,10 +63,10 @@
   },
   "pkg": {
     "content": {
-      "${installdir}": {
+      "${install.dir}": {
         "base": "public"
       },
-      "/etc/nginx/sites/common/${name}.conf": "pkg/nginx.conf"
+      "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
     "hooks": "pkg/hooks.sh",
     "groups": "webapp",
@@ -74,7 +74,7 @@
       "nginx-mainline": ">=1.21.4",
       "hook-ci": ">=1.56.0"
     },
-    "installdir": "/services/hook-ci/frontend/"
+    "install.dir": "/services/hook-ci/frontend/"
   },
   "release": {
     "plugins": [
