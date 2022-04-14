@@ -41,7 +41,7 @@
     "semantic-release": "^19.0.2",
     "svelte": "^3.47.0",
     "svql": "0.0.35",
-    "vite": "^2.9.4"
+    "vite": "^2.9.5"
   },
   "optionalDependencies": {
     "mf-hosting": "github:arlac77/mf-hosting"
