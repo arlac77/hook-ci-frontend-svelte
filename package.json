@@ -25,7 +25,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "mf-styling": "arlac77/mf-styling",
+    "mf-styling": "^1.0.6",
     "microtip": "^0.2.2",
     "repository-provider": "^28.0.0",
     "svelte-common": "^4.4.32",
@@ -80,14 +80,14 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github",
       [
         "@semantic-release/exec",
         {
           "publishCmd": "npx npm-pkgbuild"
         }
-      ],
-      "@semantic-release/npm",
-      "@semantic-release/github"
+      ]
     ]
   },
   "template": {
