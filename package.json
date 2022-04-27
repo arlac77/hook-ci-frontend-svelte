@@ -61,7 +61,7 @@
     "proxyTarget": "https://mfelten.dynv6.net/",
     "title": "Appliction Name"
   },
-  "pkg": {
+  "pkgbuild": {
     "content": {
       "${install.dir}": {
         "base": "public"
