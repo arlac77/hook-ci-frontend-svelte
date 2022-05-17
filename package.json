@@ -54,13 +54,6 @@
     "url": "https://github.com/arlac77/hook-ci-frontend-svelte/issues"
   },
   "homepage": "https://github.com/arlac77/hook-ci-frontend-svelte#readme",
-  "config": {
-    "api": "/services/ci/api",
-    "base": "/services/ci",
-    "graphQl": "/services/ci/api/graphql",
-    "proxyTarget": "https://mfelten.dynv6.net/",
-    "title": "Appliction Name"
-  },
   "pkgbuild": {
     "content": {
       "${install.dir}": {
@@ -74,6 +67,10 @@
       "nginx-mainline": ">=1.21.4",
       "hook-ci": ">=1.56.0"
     },
+    
+    "http.path": "/services/ci",
+    "api": "{{http.path}}/api",
+    "graphQl": "{{api}}/graphql",
     "install.dir": "${install.base.dir}hook-ci/frontend/"
   },
   "release": {
