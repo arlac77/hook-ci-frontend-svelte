@@ -74,7 +74,7 @@
       "nginx-mainline": ">=1.21.4",
       "hook-ci": ">=1.56.0"
     },
-    "install.dir": "/services/hook-ci/frontend/"
+    "install.dir": "${install.base.dir}hook-ci/frontend/"
   },
   "release": {
     "plugins": [
