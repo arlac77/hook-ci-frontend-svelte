@@ -50,9 +50,9 @@ export default defineConfig(async ({ command, mode }) => {
 
     server: {
       proxy: {
-        [api]: {
+        [pkg.api]: {
           target,
-          rewrite: path => path.substring(api.length)
+          rewrite: path => path.substring(pkg.api.length)
         }
       }
     }
