@@ -3,7 +3,7 @@
   import KeyValues from "../components/KeyValues.svelte";
 
   import { node, session } from "../main.mjs";
-  import api from 'consts:api';
+  import { api }from '../constants.mjs';
 
   async function postNode(suffix) {
     return fetch(`${api}/node/${$node.name}/${suffix}`, {

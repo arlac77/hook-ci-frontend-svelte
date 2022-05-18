@@ -2,13 +2,7 @@
   import { DateTime } from "svelte-common";
   import { session } from "../main.mjs";
 
-  import name from 'consts:name';
-  import version from 'consts:version';
-  import description from 'consts:description';
-  import base from 'consts:base';
-  import api from 'consts:api';
-  import graphQl from 'consts:graphQl';
-
+  import { name, version, description, base, api graphGql } from '../constants.mjs';
 </script>
 
 <div>

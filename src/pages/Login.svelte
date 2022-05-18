@@ -1,7 +1,7 @@
 <script>
   import { Login } from "svelte-session-manager";
   import { session } from "../main.mjs";
-  import api from "consts:api";
+  import { api } from "../constants.mjs";
 
   export let router;
 </script>

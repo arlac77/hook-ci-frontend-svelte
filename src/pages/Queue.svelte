@@ -3,7 +3,7 @@
   import JobTable from "../components/JobTable.svelte";
   import PublishJobTable from "../components/PublishJobTable.svelte";
   import { queue, session, jobs } from "../main.mjs";
-  import api from 'consts:api';
+  import { api } from '../constants.mjs';
 
   async function queueAction(action) {
     return fetch(`${api}/queue/${$queue.name}/${action}`, {

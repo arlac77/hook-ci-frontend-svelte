@@ -5,7 +5,7 @@
   import NodeLink from "../components/NodeLink.svelte";
   import Step from "../components/Step.svelte";
   import { queue, session, job, jobs } from "../main.mjs";
-  import api from "consts:api";
+  import { api }from "../constants.mjs";
 
   export let router;
 
