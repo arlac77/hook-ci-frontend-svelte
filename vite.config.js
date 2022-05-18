@@ -1,25 +1,24 @@
-import { readFile } from "fs/promises";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { defineConfig } from "vite";
 
 const encodingOptions = { encoding: "utf8" };
 
 export default defineConfig(async ({ command, mode }) => {
-  const pkg = JSON.parse(
-    await readFile(
-      new URL("package.json", import.meta.url).pathname,
-      encodingOptions
-    )
+  const { extractFromPackage } = await import(
+    new URL("node_modules/npm-pkgbuild/src/module.mjs", import.meta.url)
   );
+  const res = extractFromPackage({
+    dir: new URL("./", import.meta.url).pathname
+  });
+  const first = await res.next();
+  const pkg = first.value;
+  const base = pkg.properties["http.path"] + "/";
 
   const production = mode === "production";
   let target = "http://localhost:12345";
 
-
-  const base = "/services/ci/";
-  const api = `${base}api`;
-
-  process.env["VITE_API"] = api;
+  process.env["VITE_API"] = pkg.api;
+  process.env["VITE_GRAPHQL_API"] = pkg.graphQl;
   process.env["VITE_NAME"] = pkg.name;
   process.env["VITE_DESCRIPTION"] = pkg.description;
   process.env["VITE_VERSION"] = pkg.version;

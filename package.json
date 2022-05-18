@@ -67,7 +67,6 @@
       "nginx-mainline": ">=1.21.4",
       "hook-ci": ">=1.56.0"
     },
-    
     "http.path": "/services/ci",
     "api": "{{http.path}}/api",
     "graphQl": "{{api}}/graphql",

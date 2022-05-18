@@ -13,9 +13,7 @@ import JobLog from "./pages/JobLog.svelte";
 import Node from "./pages/Node.svelte";
 import App from "./App.svelte";
 import { Node as myNode } from "./Node.mjs";
-import base from "consts:base";
-import api from "consts:api";
-import graphQl from "consts:graphQl";
+import { base, api, graphQl } from "./constants.mjs";
 
 export const session = new Session(localStorage);
 
