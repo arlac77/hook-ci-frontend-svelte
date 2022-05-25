@@ -64,7 +64,6 @@
     "hooks": "pkg/hooks.sh",
     "groups": "webapp",
     "depends": {
-      "nginx-mainline": ">=1.21.4",
       "hook-ci": ">=1.56.0"
     },
     "http.path": "/services/ci",
