@@ -28,7 +28,7 @@
     "mf-styling": "^1.2.21",
     "microtip": "^0.2.2",
     "repository-provider": "^31.2.5",
-    "svelte-common": "^4.4.37",
+    "svelte-common": "^4.4.38",
     "svelte-guard-history-router": "^4.6.12",
     "svelte-session-manager": "^2.0.10"
   },
@@ -44,7 +44,7 @@
     "vite": "^2.9.9"
   },
   "optionalDependencies": {
-    "mf-hosting": "^1.6.2"
+    "mf-hosting": "^1.6.3"
   },
   "repository": {
     "type": "git",
