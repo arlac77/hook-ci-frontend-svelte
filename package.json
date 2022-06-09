@@ -29,7 +29,7 @@
     "microtip": "^0.2.2",
     "repository-provider": "^31.2.6",
     "svelte-common": "^4.4.40",
-    "svelte-guard-history-router": "^4.6.12",
+    "svelte-guard-history-router": "^4.6.14",
     "svelte-session-manager": "^2.0.10"
   },
   "devDependencies": {
