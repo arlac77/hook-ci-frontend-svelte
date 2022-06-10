@@ -41,7 +41,7 @@
     "semantic-release": "^19.0.3",
     "svelte": "^3.48.0",
     "svql": "0.0.35",
-    "vite": "^2.9.10"
+    "vite": "^2.9.12"
   },
   "optionalDependencies": {
     "mf-hosting": "^1.6.3"
