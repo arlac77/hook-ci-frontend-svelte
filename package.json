@@ -56,9 +56,7 @@
   "homepage": "https://github.com/arlac77/hook-ci-frontend-svelte#readme",
   "pkgbuild": {
     "content": {
-      "${install.dir}": {
-        "base": "public"
-      },
+      "${install.dir}": "public/",
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
     "hooks": "pkg/hooks.sh",
