@@ -25,11 +25,11 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "mf-styling": "^1.2.23",
+    "mf-styling": "^1.2.24",
     "microtip": "^0.2.2",
     "repository-provider": "^31.2.8",
     "svelte-common": "^4.6.2",
-    "svelte-guard-history-router": "^4.6.15",
+    "svelte-guard-history-router": "^4.6.16",
     "svelte-session-manager": "^2.0.10"
   },
   "devDependencies": {
