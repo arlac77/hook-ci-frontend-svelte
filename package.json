@@ -20,8 +20,7 @@
   "license": "BSD-2-Clause",
   "scripts": {
     "prepare": "vite build",
-    "start": "rollup -c -w rollup.config.mjs && vite",
-    "dev": "vite",
+    "start": "vite",
     "serve": "vite preview"
   },
   "dependencies": {
@@ -41,7 +40,7 @@
     "semantic-release": "^19.0.3",
     "svelte": "^3.48.0",
     "svql": "0.0.35",
-    "vite": "^2.9.12"
+    "vite": "^2.9.13"
   },
   "optionalDependencies": {
     "mf-hosting": "^1.7.0"
@@ -56,17 +55,16 @@
   "homepage": "https://github.com/arlac77/hook-ci-frontend-svelte#readme",
   "pkgbuild": {
     "content": {
-      "${install.dir}": "public/",
+      "${install.dir}": "build/",
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
-    "hooks": "pkg/hooks.sh",
     "groups": "webapp",
     "depends": {
       "hook-ci": ">=1.56.0"
     },
-    "http.path": "/services/ci",
-    "api": "{{http.path}}/api",
-    "graphQl": "{{api}}/graphql",
+    "http.path": "${http.base.path}/ci",
+    "api": "${http.path}/api",
+    "graphQl": "${api}/graphql",
     "install.dir": "${install.base.dir}hook-ci/frontend/"
   },
   "release": {
