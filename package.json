@@ -24,7 +24,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "mf-styling": "^1.2.29",
+    "mf-styling": "^1.2.31",
     "microtip": "^0.2.2",
     "repository-provider": "^32.0.4",
     "svelte-common": "^4.6.6",
@@ -43,7 +43,7 @@
     "vite": "^2.9.14"
   },
   "optionalDependencies": {
-    "mf-hosting": "^1.7.0"
+    "mf-hosting": "^1.7.1"
   },
   "repository": {
     "type": "git",
