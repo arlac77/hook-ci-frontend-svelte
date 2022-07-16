@@ -58,7 +58,6 @@
       "${install.dir}": "build/",
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
-    "groups": "webapp",
     "depends": {
       "hook-ci": ">=1.56.0"
     },
