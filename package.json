@@ -36,7 +36,7 @@
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.49",
-    "npm-pkgbuild": "^10.12.2",
+    "npm-pkgbuild": "^10.13.0",
     "semantic-release": "^19.0.3",
     "svelte": "^3.49.0",
     "svql": "0.0.35",
