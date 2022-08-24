@@ -27,7 +27,7 @@
     "mf-styling": "^1.5.0",
     "microtip": "^0.2.2",
     "repository-provider": "^32.1.0",
-    "svelte-common": "^4.13.4",
+    "svelte-common": "^4.15.0",
     "svelte-guard-history-router": "^5.1.15",
     "svelte-session-manager": "^2.0.10"
   },
