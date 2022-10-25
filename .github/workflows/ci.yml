@@ -1,7 +1,7 @@
 name: CI
 'on': push
 jobs:
-  test:
+  test-node:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -18,7 +18,7 @@ jobs:
       - run: npm run cover --if-present
   release:
     needs:
-      - test
+      - test-node
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
