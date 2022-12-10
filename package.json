@@ -91,7 +91,7 @@
   "template": {
     "inheritFrom": [
       "arlac77/template-arlac77-github",
-      "arlac77/template-svelte-app#next"
+      "arlac77/template-svelte-app"
     ]
   }
 }
