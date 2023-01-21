@@ -43,7 +43,7 @@
     "vite": "^3.2.5"
   },
   "optionalDependencies": {
-    "mf-hosting": "^1.8.3"
+    "mf-hosting-frontend": "^1.4.0"
   },
   "repository": {
     "type": "git",
@@ -55,12 +55,12 @@
   "homepage": "https://github.com/arlac77/hook-ci-frontend-svelte#readme",
   "pkgbuild": {
     "content": {
-      "${install.dir}": "build/",
-      "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
+      "${install.dir}": "build/"
     },
     "depends": {
       "hook-ci": ">=1.56.0"
     },
+    "frontend": true,
     "http.path": "${http.base.path}/ci",
     "api": "${http.path}/api",
     "graphQl": "${api}/graphql",
