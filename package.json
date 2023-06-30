@@ -28,8 +28,8 @@
     "microtip": "^0.2.2",
     "repository-provider": "^32.7.26",
     "svelte-common": "^5.0.5",
-    "svelte-guard-history-router": "^5.5.37",
-    "svelte-session-manager": "^2.2.7"
+    "svelte-guard-history-router": "^5.5.38",
+    "svelte-session-manager": "^2.2.8"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^10.0.1",
