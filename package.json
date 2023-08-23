@@ -24,10 +24,10 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "mf-styling": "^3.0.3",
+    "mf-styling": "^3.0.4",
     "microtip": "^0.2.2",
     "repository-provider": "^32.7.29",
-    "svelte-common": "^6.6.2",
+    "svelte-common": "^6.6.3",
     "svelte-guard-history-router": "^6.0.5",
     "svelte-session-manager": "^2.2.12"
   },
