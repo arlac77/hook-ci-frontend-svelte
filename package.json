@@ -24,7 +24,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "mf-styling": "^3.1.1",
+    "mf-styling": "^3.1.2",
     "microtip": "^0.2.2",
     "repository-provider": "^34.0.2",
     "svelte-common": "^6.9.2",
