@@ -40,7 +40,7 @@
     "semantic-release": "^22.0.12",
     "svelte": "^3.59.2",
     "svql": "0.0.35",
-    "vite": "^5.0.9"
+    "vite": "^5.0.10"
   },
   "optionalDependencies": {
     "mf-hosting-frontend": "^2.2.5"
