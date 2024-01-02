@@ -21,6 +21,9 @@
   "scripts": {
     "prepare": "vite build",
     "start": "vite",
+    "lint": "npm run lint:css",
+    "lint:css": "stylelint ./src/*.css",
+    "preview": "vite preview",
     "serve": "vite preview"
   },
   "dependencies": {
@@ -38,7 +41,9 @@
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
     "npm-pkgbuild": "^13.0.9",
     "semantic-release": "^22.0.12",
-    "svelte": "^3.59.2",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0",
+    "svelte": "^4.2.8",
     "svql": "0.0.35",
     "vite": "^5.0.10"
   },
@@ -47,7 +52,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arlac77/hook-ci-frontend-svelte.git"
+    "url": "https://github.com/arlac77/hook-ci-frontend-svelte"
   },
   "bugs": {
     "url": "https://github.com/arlac77/hook-ci-frontend-svelte/issues"
@@ -57,13 +62,13 @@
     "content": {
       "${install.dir}": "build/"
     },
+    "api": "${http.path}/api",
     "depends": {
       "hook-ci": ">=1.56.0"
     },
     "frontend": true,
-    "http.path": "${http.base.path}/ci",
-    "api": "${http.path}/api",
     "graphQl": "${api}/graphql",
+    "http.path": "${http.base.path}/ci",
     "install.dir": "${install.base.dir}hook-ci/frontend/"
   },
   "release": {
@@ -71,6 +76,12 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/npm",
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "npx npm-pkgbuild --available --continue --publish dist"
+        }
+      ],
       [
         "@semantic-release/github",
         {
@@ -111,6 +122,7 @@
   "template": {
     "inheritFrom": [
       "arlac77/template-arlac77-github",
+      "arlac77/template-npm-pkgbuild",
       "arlac77/template-svelte-app"
     ]
   }
