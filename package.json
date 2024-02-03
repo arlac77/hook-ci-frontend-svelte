@@ -2,7 +2,8 @@
   "name": "hook-ci-frontend-svelte",
   "version": "0.0.0-semantic-release",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "description": "hook-ci web fronend",
   "keywords": [
