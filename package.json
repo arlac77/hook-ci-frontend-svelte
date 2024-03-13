@@ -65,7 +65,7 @@
       "${install.dir}": "build/"
     },
     "api": "${http.path}/api",
-    "depends": {
+    "dependencies": {
       "hook-ci": ">=1.56.0"
     },
     "frontend": true,
