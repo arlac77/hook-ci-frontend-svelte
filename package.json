@@ -32,7 +32,7 @@
     "mf-styling": "^3.1.6",
     "microtip": "^0.2.2",
     "repository-provider": "^35.2.15",
-    "svelte-common": "^6.10.3",
+    "svelte-common": "^6.10.4",
     "svelte-guard-history-router": "^6.0.6",
     "svelte-session-manager": "^2.2.14"
   },
