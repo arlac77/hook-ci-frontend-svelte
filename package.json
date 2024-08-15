@@ -44,7 +44,7 @@
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
     "npm-pkgbuild": "^15.3.29",
     "semantic-release": "^24.0.0",
-    "stylelint": "^16.8.1",
+    "stylelint": "^16.8.2",
     "stylelint-config-standard": "^36.0.1",
     "svelte": "^5.0.0-next.221",
     "svql": "0.0.35",
