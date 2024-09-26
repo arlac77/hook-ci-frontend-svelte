@@ -29,10 +29,10 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "mf-styling": "^3.2.2",
+    "mf-styling": "^3.2.3",
     "microtip": "^0.2.2",
     "repository-provider": "^35.2.23",
-    "svelte-common": "^6.15.17",
+    "svelte-common": "^6.15.18",
     "svelte-guard-history-router": "^6.1.2",
     "svelte-session-manager": "^3.0.5"
   },
