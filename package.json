@@ -20,10 +20,10 @@
   ],
   "license": "BSD-2-Clause",
   "scripts": {
-    "prepare": "npm run prepare:vite",
+    "prepare": "node --run prepare:vite",
     "prepare:vite": "vite build",
     "start": "vite",
-    "lint": "npm run lint:css",
+    "lint": "node --run lint:css",
     "lint:css": "stylelint ./src/*.css",
     "preview": "vite preview",
     "serve": "vite preview"
