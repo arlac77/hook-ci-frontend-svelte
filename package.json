@@ -32,7 +32,7 @@
     "mf-styling": "^3.2.6",
     "microtip": "^0.2.2",
     "repository-provider": "^35.2.26",
-    "svelte-common": "^6.15.25",
+    "svelte-common": "^6.15.26",
     "svelte-guard-history-router": "^6.1.2",
     "svelte-session-manager": "^3.0.8"
   },
@@ -48,7 +48,7 @@
     "stylelint-config-standard": "^36.0.1",
     "svelte": "^5.1.13",
     "svql": "0.0.35",
-    "vite": "^5.4.10"
+    "vite": "^5.4.11"
   },
   "optionalDependencies": {
     "mf-hosting-frontend": "^3.8.2"
