@@ -24,7 +24,7 @@
     "prepare:vite": "vite build",
     "start": "vite",
     "lint": "node --run lint:css",
-    "lint:css": "stylelint ./src/*.css",
+    "lint:css": "stylelint ./src**/*.css",
     "preview": "vite preview",
     "serve": "vite preview"
   },
