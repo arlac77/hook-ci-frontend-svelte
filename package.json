@@ -32,9 +32,9 @@
     "mf-styling": "^3.2.11",
     "microtip": "^0.2.2",
     "repository-provider": "^35.2.27",
-    "svelte-common": "^6.18.0",
+    "svelte-common": "^6.18.1",
     "svelte-guard-history-router": "^6.1.2",
-    "svelte-session-manager": "^3.0.32"
+    "svelte-session-manager": "^3.0.33"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^13.0.1",
