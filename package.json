@@ -31,7 +31,7 @@
   "dependencies": {
     "mf-styling": "^3.2.13",
     "microtip": "^0.2.2",
-    "repository-provider": "^35.4.16",
+    "repository-provider": "^35.4.17",
     "svelte-common": "^6.19.11",
     "svelte-guard-history-router": "^6.1.2",
     "svelte-session-manager": "^3.0.42"
