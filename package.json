@@ -61,7 +61,7 @@
   "bugs": {
     "url": "https://github.com/arlac77/hook-ci-frontend-svelte/issues"
   },
-  "homepage": "https://github.com/arlac77/hook-ci-frontend-svelte#readme",
+  "homepage": "",
   "pkgbuild": {
     "content": {
       "${install.dir}": "build/"
