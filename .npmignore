@@ -10,5 +10,6 @@ rollup.config.*
 .github
 *.map
 pkg
+vite.config.mts
 .stylelintrc.json
 dist
