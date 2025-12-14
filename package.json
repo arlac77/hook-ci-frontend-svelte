@@ -34,8 +34,8 @@
     "microtip": "^0.2.2",
     "repository-provider": "^36.0.9",
     "svelte-common": "^6.19.35",
-    "svelte-guard-history-router": "^7.0.0",
-    "svelte-session-manager": "^3.0.62"
+    "svelte-guard-history-router": "^7.0.1",
+    "svelte-session-manager": "^3.0.63"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^13.0.1",
