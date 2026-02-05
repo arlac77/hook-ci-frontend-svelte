@@ -33,9 +33,9 @@
     "mf-styling": "^3.3.3",
     "microtip": "^0.2.2",
     "repository-provider": "^36.1.1",
-    "svelte-common": "^6.19.66",
-    "svelte-guard-history-router": "^7.0.11",
-    "svelte-session-manager": "^3.0.77"
+    "svelte-common": "^6.19.67",
+    "svelte-guard-history-router": "^7.0.12",
+    "svelte-session-manager": "^3.0.78"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^13.0.1",
@@ -52,7 +52,7 @@
     "vite": "^7.3.1"
   },
   "optionalDependencies": {
-    "mf-hosting-frontend": "^3.9.12"
+    "mf-hosting-frontend": "^4.0.0"
   },
   "repository": {
     "type": "git",
