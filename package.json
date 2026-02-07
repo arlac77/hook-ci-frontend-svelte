@@ -30,12 +30,12 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "mf-styling": "^3.3.7",
+    "mf-styling": "^3.3.8",
     "microtip": "^0.2.2",
     "repository-provider": "^36.1.2",
     "svelte-common": "^6.19.68",
-    "svelte-guard-history-router": "^7.0.13",
-    "svelte-session-manager": "^3.0.79"
+    "svelte-guard-history-router": "^7.0.15",
+    "svelte-session-manager": "^3.0.81"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^13.0.1",
