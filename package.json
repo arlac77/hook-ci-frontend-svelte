@@ -49,7 +49,7 @@
     "stylelint-config-standard": "^40.0.0",
     "svelte": "^5.55.2",
     "svql": "0.0.35",
-    "vite": "^8.0.7"
+    "vite": "^8.0.8"
   },
   "optionalDependencies": {
     "mf-hosting-frontend": "^4.0.3"
