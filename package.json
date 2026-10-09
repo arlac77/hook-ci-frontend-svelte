@@ -30,7 +30,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "mf-styling": "^3.3.35",
+    "mf-styling": "^3.3.36",
     "microtip": "^0.2.2",
     "repository-provider": "^37.1.23",
     "svelte-common": "^6.19.80",
