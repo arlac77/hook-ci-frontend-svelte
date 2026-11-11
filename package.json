@@ -5,7 +5,7 @@
     "access": "public",
     "provenance": true
   },
-  "packageManager": "npm@11.18.0",
+  "packageManager": "npm@11.20.0",
   "description": "hook-ci web fronend",
   "keywords": [
     "hook-ci",
@@ -49,7 +49,7 @@
     "stylelint-config-standard": "^41.0.0",
     "svelte": "^5.57.3",
     "svql": "0.0.35",
-    "vite": "^8.3.6"
+    "vite": "^8.3.8"
   },
   "optionalDependencies": {
     "mf-hosting-frontend": "^4.1.1"
